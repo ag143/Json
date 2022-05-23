@@ -1,0 +1,24 @@
+<html>
+<head>
+
+<script src="jquery.min.js"></script>
+</head>
+
+<script>
+$.ajax({
+  url: 'https://raw.githubusercontent.com/ag143/json/main/aws/awslist.json',
+  dataType: 'json',
+  success: function(data) {
+    console.log(data);
+	
+	document.getElementById("testid").innerHTML=data.items[0].key;
+	
+  }
+});
+</script>
+<body>
+<div id=testid>
+
+</div>
+</body>
+</html>
