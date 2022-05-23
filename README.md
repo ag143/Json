@@ -1,5 +1,3 @@
-# json-parsing
+# json
 
-Parse JSON feed using jQuery
-
-[https://josefzacek.github.io/json-parsing/](https://josefzacek.github.io/json-parsing/)
+> Everything about Json
