@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+$.ajax({
+  url: 'https://ag143.github.io/Json/devops/git.json',
+  dataType: 'json',
+  success: function(data) {
+    console.log(data);
+	
+	document.getElementById("testid").innerHTML=data.name;
+	document.getElementById("testid2").innerHTML=data.name;
+	
+  }
+});
+</script>
+<style>
+.flex-container {
+  display: flex;
+}
+.divs {
+  margin: 3px;
+  background-color: yellow;
+}
+.div3 {
+	flex:8;
+}
+.div4 {
+	flex:2;
+}
+</style>
+</head>
+<body>
+<h1>Flexible Boxes</h1>
+
+<div class="flex-container">
+  <div id=testid class="div4 divs">4<br>
+  asdf
+  </div>
+  <div id=testid2 class="div3 divs">3</div>
+  
+</div>
+
+</body>
+</html>
