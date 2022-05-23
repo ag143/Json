@@ -1,0 +1,25 @@
+
+<html>
+<head>
+
+<script src="jquery.min.js"></script>
+</head>
+
+<script>
+$.ajax({
+  url: 'https://ag143.github.io/Json/devops/git.json',
+  dataType: 'json',
+  success: function(data) {
+    console.log(data);
+	
+	document.getElementById("testid").innerHTML=data.items[0].key;
+	
+  }
+});
+</script>
+<body>
+<div id=testid>
+
+</div>
+</body>
+</html>
