@@ -23,11 +23,11 @@ $.ajax({
 	}
 	else if( key == "free" || key == "description" || key == "url" )
 	{
-	console.log("other name-->"+dataobject[key])
+	//console.log("other name-->"+dataobject[key])
 	}
 	else if(key=="children")
 	{
-	console.log("children---->"+dataobject[key])
+	//console.log("children---->"+dataobject[key])
 	for (var key1 in dataobject[key]){
 	printchildren(dataobject[key][key1]);
 	}
