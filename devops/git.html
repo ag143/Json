@@ -21,6 +21,7 @@ $.ajax({
   
   counter=counter+1;
   indexContent = indexContent + "<ul>";
+  mainContent = mainContent + "<ul>";
    for (var key in dataobject){
     //console.log( key + ": " + dataobject[key]);
 	if ( key == "name")
@@ -28,8 +29,10 @@ $.ajax({
 	console.log("name-->"+counter+"-->"+dataobject[key])
 	for (let i = 0; i < counter; i++) {
 		indexContent = indexContent + "";
+		mainContent = mainContent + "";
 		}
 	indexContent = indexContent + "<li>"+dataobject[key] + "</li>"
+	mainContent = mainContent + "<li>"+dataobject[key] + "</li>"
 	}
 	else if( key == "free" || key == "description" || key == "url" )
 	{
@@ -48,6 +51,7 @@ $.ajax({
 	
 }
 indexContent = indexContent +"</ul>"
+mainContent = mainContent + "</ul>";
 }
 printchildren(data);
 
@@ -60,18 +64,22 @@ printchildren(data);
 	//document.getElementById("testid2").innerHTML=data.name;
 	//countDown(3);
 	document.getElementById("testid").innerHTML=indexContent;
-	//document.getElementById("testid2").innerHTML=indexContent;	
+	document.getElementById("testid2").innerHTML=mainContent;	
   }
   
 
 });
 </script>
 <body>
-<div id=testid>
+<div style="width:100%;" >
+<div id=testid style="float:left; width:25%;">
 
 </div>
-<div id=testid2>
+<div id=testid2 style="float:left; width:74%; margin-left:10px;">
 
 </div>
+
+</div>
+
 </body>
 </html>
