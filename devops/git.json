@@ -1,10 +1,6 @@
 {
    "name":"Git_Topics",
-<<<<<<< HEAD
-   "url":"http://example.com"
-=======
    "url":"http://example.com",
->>>>>>> 9232083c480bb821b121cc166e00cacaa11202d0
    "children":[
       {
          "name":"Setup_and_config",
