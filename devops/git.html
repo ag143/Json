@@ -14,12 +14,22 @@ $.ajax({
   dataType: 'json',
   success: function(data) {
   var dataobject=data;
+  var indexContent="";
+  var mainContent="";
+  var counter=0;
   function printchildren(dataobject) {
+  
+  counter=counter+1;
+  indexContent = indexContent + "<ul>";
    for (var key in dataobject){
     //console.log( key + ": " + dataobject[key]);
 	if ( key == "name")
 	{
-	console.log("name-->"+dataobject[key])
+	console.log("name-->"+counter+"-->"+dataobject[key])
+	for (let i = 0; i < counter; i++) {
+		indexContent = indexContent + "";
+		}
+	indexContent = indexContent + "<li>"+dataobject[key] + "</li>"
 	}
 	else if( key == "free" || key == "description" || key == "url" )
 	{
@@ -30,16 +40,17 @@ $.ajax({
 	//console.log("children---->"+dataobject[key])
 	for (var key1 in dataobject[key]){
 	printchildren(dataobject[key][key1]);
+	counter=counter-1;
 	}
 	
 	}
 	
-	document.getElementById("testid").innerHTML=data.name;
-	document.getElementById("testid2").innerHTML=data.name;
+	
 }
-
+indexContent = indexContent +"</ul>"
 }
 printchildren(data);
+
     /*console.log(data);
 	console.log(Object.values(data).length);
 	console.log(data.name);
@@ -48,7 +59,8 @@ printchildren(data);
 	//document.getElementById("testid").innerHTML=data.name;
 	//document.getElementById("testid2").innerHTML=data.name;
 	//countDown(3);
-	
+	document.getElementById("testid").innerHTML=indexContent;
+	//document.getElementById("testid2").innerHTML=indexContent;	
   }
   
 
