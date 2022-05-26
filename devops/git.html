@@ -4,19 +4,49 @@
 <head>
 
 <script src="./../commonlib/jquery.min.js"></script>
+<link rel="icon" href="git.png">
 </head>
 
 <script>
+
 $.ajax({
   url: 'https://ag143.github.io/Json/devops/git.json',
   dataType: 'json',
   success: function(data) {
-    console.log(data);
+  function printchildren(data) {
+   for (var key in data){
+    console.log( key + ": " + data[key]);
+	if ( key == "name")
+	{
+	console.log("name-->"+data[key])
+	}
+	else if( key == "free" || key == "description" || key == "url" )
+	{
+	console.log("other name-->"+data[key])
+	}
+	else if(key=="children")
+	{
+	console.log("children---->"+data[key])
+	printchildren(data[key][0]);
+	}
+	document.getElementById("testid").innerHTML=data.name;
+	document.getElementById("testid2").innerHTML=data.name;
+}
+
+}
+printchildren(data);
+    /*console.log(data);
+	console.log(Object.values(data).length);
+	console.log(data.name);
+	console.log(data.children);*/
 	
 	document.getElementById("testid").innerHTML=data.name;
 	document.getElementById("testid2").innerHTML=data.name;
+	//countDown(3);
 	
   }
+  
+
 });
 </script>
 <body>
