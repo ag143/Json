@@ -13,22 +13,27 @@ $.ajax({
   url: 'https://ag143.github.io/Json/devops/git.json',
   dataType: 'json',
   success: function(data) {
-  function printchildren(data) {
-   for (var key in data){
-    console.log( key + ": " + data[key]);
+  var dataobject=data;
+  function printchildren(dataobject) {
+   for (var key in dataobject){
+    console.log( key + ": " + dataobject[key]);
 	if ( key == "name")
 	{
-	console.log("name-->"+data[key])
+	console.log("name-->"+dataobject[key])
 	}
 	else if( key == "free" || key == "description" || key == "url" )
 	{
-	console.log("other name-->"+data[key])
+	console.log("other name-->"+dataobject[key])
 	}
 	else if(key=="children")
 	{
-	console.log("children---->"+data[key])
-	printchildren(data[key][0]);
+	console.log("children---->"+dataobject[key])
+	for (var key1 in dataobject[key]){
+	printchildren(dataobject[key][key1]);
 	}
+	
+	}
+	
 	document.getElementById("testid").innerHTML=data.name;
 	document.getElementById("testid2").innerHTML=data.name;
 }
@@ -40,8 +45,8 @@ printchildren(data);
 	console.log(data.name);
 	console.log(data.children);*/
 	
-	document.getElementById("testid").innerHTML=data.name;
-	document.getElementById("testid2").innerHTML=data.name;
+	//document.getElementById("testid").innerHTML=data.name;
+	//document.getElementById("testid2").innerHTML=data.name;
 	//countDown(3);
 	
   }
