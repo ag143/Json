@@ -1,6 +1,8 @@
 {
    "name":"Git_Topics",
    "url":"http://example.com",
+   "description":"Setup_and_config",
+   "longDescription":"",
    "image":"",
    "children":[
       {
@@ -15,6 +17,7 @@
                "name":"git",
                "description":"Web-based 'cloud' applications for authoring data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -59,6 +62,7 @@
                "name":"Benefits and considerations",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -66,6 +70,7 @@
                "name":"Cloud services",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             }
@@ -75,6 +80,7 @@
          "name":"Getting_and_creating_projects",
          "description":"create and clone projects",
          "longDescription":"",
+         "url":"http://example.com",
          "image":"",
          "free":true,
          "children":[
@@ -82,6 +88,7 @@
                "name":"Init",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -89,6 +96,7 @@
                "name":"Clone",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             }
@@ -98,6 +106,7 @@
          "name":"Basic Snapshoting",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
+         "url":"http://example.com",
          "image":"",
          "free":true,
          "children":[
@@ -105,6 +114,7 @@
                "name":"add",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -112,6 +122,7 @@
                "name":"status",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -119,6 +130,7 @@
                "name":"diff",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -126,6 +138,7 @@
                "name":"commit",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -133,6 +146,7 @@
                "name":"Notes",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -140,6 +154,7 @@
                "name":"restore",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -147,6 +162,7 @@
                "name":"reset",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -154,6 +170,7 @@
                "name":"rm",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -161,6 +178,7 @@
                "name":"mv",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             }
@@ -170,6 +188,7 @@
          "name":"Branching_and_merging",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
+         "url":"http://example.com",
          "image":"",
          "free":true,
          "children":[
@@ -177,24 +196,28 @@
                "name":"Virtual Network fundamentals",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":""
             },
             {
                "name":"Virtual Network Settings",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":""
             },
             {
                "name":"VPN Gateway Fundamentals",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":""
             },
             {
                "name":"Express Route fundamentals",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":""
             }
          ]
@@ -203,6 +226,7 @@
          "name":"Sharing_and_updating_projects",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
+         "url":"http://example.com",
          "image":"",
          "free":true,
          "children":[
@@ -210,6 +234,7 @@
                "name":"AZ Storage A/c Fundamentals",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -217,6 +242,7 @@
                "name":"Disk Storage fundamentals",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -224,6 +250,7 @@
                "name":"Blob Storage Fundamentals",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -231,6 +258,7 @@
                "name":"Prometheus Architecuture",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -238,6 +266,7 @@
                "name":"Azure File Fundamentals",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -245,6 +274,7 @@
                "name":"Understand Blob Access Tiers",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             }
@@ -254,6 +284,7 @@
          "name":"Inspection_and_comparision",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
+         "url":"http://example.com",
          "image":"",
          "free":true,
          "children":[
@@ -261,6 +292,7 @@
                "name":"AZ Cosmos DB",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -268,6 +300,7 @@
                "name":"AZ SQL DB",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -275,6 +308,7 @@
                "name":"CreateSQL DB",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -282,6 +316,7 @@
                "name":"AZ DB for my SQL",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -289,6 +324,7 @@
                "name":"AZ DB for Postgres SQL",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -296,6 +332,7 @@
                "name":"AZ SQL Managed Instance",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -303,6 +340,7 @@
                "name":"Explore Big data & Analytics",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             }
@@ -312,6 +350,7 @@
          "name":"Patching",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
+         "url":"http://example.com",
          "image":"",
          "free":true,
          "children":[
@@ -319,6 +358,7 @@
                "name":"Identify Product options",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -326,6 +366,7 @@
                "name":"Analyze decision Criteria",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -333,6 +374,7 @@
                "name":"Use of IOT HUB",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -340,6 +382,7 @@
                "name":"Use of IOT central",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -347,6 +390,7 @@
                "name":"use Azure Sphere",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             }
@@ -356,6 +400,7 @@
          "name":"Debugging",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
+         "url":"http://example.com",
          "image":"",
          "free":true,
          "children":[
@@ -363,6 +408,7 @@
                "name":"Introduction",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -370,6 +416,7 @@
                "name":"use Machine Learning for Decision Support systems",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -377,6 +424,7 @@
                "name":"Use cognitive services for Data Analysis",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -384,6 +432,7 @@
                "name":"use Bot service for Interactive Chat experience",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             }
@@ -393,17 +442,20 @@
          "name":"Guides",
          "longDescription":"",
          "image":"",
+         "url":"http://example.com",
          "free":true,
          "children":[
             {
                "name":"Azure functions",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
             {
                "name":"Azure Logi Apps",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             }
@@ -413,6 +465,7 @@
          "name":"Email",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
+         "url":"http://example.com",
          "image":"",
          "free":true,
          "children":[
@@ -420,6 +473,7 @@
                "name":"Azure Devops to Manage Application Development Lifecycle",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -427,6 +481,7 @@
                "name":"Github to contribute to Manage testing Environment",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -434,6 +489,7 @@
                "name":"Azure devtest Labs to Manage Testing Environment",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             }
@@ -443,6 +499,7 @@
          "name":"ExternalSystems",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
+         "url":"http://example.com",
          "image":"",
          "free":true,
          "children":[
@@ -450,6 +507,7 @@
                "name":"Azure portal to visually understand and manage cloud Environment",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -457,6 +515,7 @@
                "name":"Azure powershell for one-off administrative Taks",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -464,6 +523,7 @@
                "name":"Azure cli for one-off administrative Taks",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -471,6 +531,7 @@
                "name":"Azure Mobile app to manage Azure on the go",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -478,6 +539,7 @@
                "name":"ARM templates to deply entrire cloud infrastructure",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             }
@@ -487,6 +549,7 @@
          "name":"Administration",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
+         "url":"http://example.com",
          "image":"",
          "free":true,
          "children":[
@@ -494,6 +557,7 @@
                "name":"Azure Advisor",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -501,6 +565,7 @@
                "name":"Azure Monitor",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -508,6 +573,7 @@
                "name":"Azure Service Health",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             }
@@ -517,6 +583,7 @@
          "name":"ServerAdmin",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
+         "url":"http://example.com",
          "image":"",
          "free":true,
          "children":[
@@ -524,6 +591,7 @@
                "name":"Protect against seucurity Threats by using Azure security Center",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -531,6 +599,7 @@
                "name":"Azure Sentinel",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -538,6 +607,7 @@
                "name":"Azure Key vault",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -546,6 +616,7 @@
                "description":"The language behind most (all?) browser-based data visualisations",
                "image":"",
                "longDescription":"",
+               "url":"http://example.com",
                "free":true
             }
          ]
@@ -554,6 +625,7 @@
          "name":"Plumbing_commands",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
+         "url":"http://example.com",
          "image":"",
          "free":true,
          "children":[
@@ -561,6 +633,7 @@
                "name":"Azure Firewall",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -568,6 +641,7 @@
                "name":"Azure DDos protection",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             },
@@ -575,6 +649,7 @@
                "name":"Network Security Solution",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
+               "url":"http://example.com",
                "image":"",
                "free":true
             }
