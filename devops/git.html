@@ -85,8 +85,13 @@ printchildren(data);
   
 
 });
+function togglediv(id) {
+    var div = document.getElementById(id);
+    div.style.display = div.style.display == "none" ? "block" : "none";
+}
 </script>
 <body>
+<button onclick="togglediv('Index')">Toggle div</button>
 <div style="width:100%;" >
 <div id=Index style="float:left; width:25%;border: 2px solid black;border-radius: 5px;overflow: scroll;height:100%">
 
