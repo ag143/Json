@@ -87,16 +87,24 @@ printchildren(data);
 });
 function togglediv(id) {
     var div = document.getElementById(id);
-    div.style.display = div.style.display == "none" ? "block" : "none";
+    //div.style.display = div.style.display == "none" ? "block" : "none";
+	if (div.style.display !== 'none') {
+        div.style.display = 'none';
+		document.getElementById("Main").style.width="90%"
+    }
+    else {
+        div.style.display = 'block';
+		document.getElementById("Main").style.width="70%"
+    }
 }
 </script>
 <body>
-<button onclick="togglediv('Index')">Toggle div</button>
+<button onclick="togglediv('Index')" style="background-color: Transparent;border: none;"><img src="./../images/hamburg.png" width=20px height=20px/></button>
 <div style="width:100%;" >
-<div id=Index style="float:left; width:25%;border: 2px solid black;border-radius: 5px;overflow: scroll;height:100%">
+<div id=Index style="float:left; width:25%;border-right: 1px solid ;border-radius: 5px;overflow: scroll;height:100% ">
 
 </div>
-<div id=Main style="float:left; width:70%; margin-left:10px;border: 2px solid black;border-radius: 5px;overflow: scroll;height:100%">
+<div id=Main style="float:left; width:70%; margin-left:10px;border-radius: 5px;overflow: scroll;height:100%">
 
 </div>
 
