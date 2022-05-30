@@ -31,8 +31,16 @@ $.ajax({
 		indexContent = indexContent + "";
 		mainContent = mainContent + "";
 		}
-	indexContent = indexContent + "<li>"+dataobject[key] + "</li>"
-	mainContent = mainContent + "<li>"+dataobject[key] + "</li>"
+	indexContent = indexContent + "<li><a href=#"+dataobject[key]+" style='text-decoration: none;'>"+dataobject[key] + "</a></li>"
+	mainContent = mainContent + "<h3 id="+dataobject[key]+">"+dataobject[key] + "</h3>"
+	}
+	else if( key=="longDescription")
+	{
+	mainContent = mainContent + "<p>"+dataobject[key] + "</p>"
+	}
+	else if( key=="image")
+	{
+	mainContent = mainContent + "<img src="+dataobject[key]+" />"
 	}
 	else if( key == "free" || key == "description" || key == "url" )
 	{
@@ -45,6 +53,7 @@ $.ajax({
 	printchildren(dataobject[key][key1]);
 	counter=counter-1;
 	}
+	
 	
 	}
 	
@@ -72,10 +81,10 @@ printchildren(data);
 </script>
 <body>
 <div style="width:100%;" >
-<div id=Index style="float:left; width:25%;">
+<div id=Index style="float:left; width:25%;border: 2px solid black;border-radius: 5px;;">
 
 </div>
-<div id=Main style="float:left; width:74%; margin-left:10px;">
+<div id=Main style="float:left; width:70%; margin-left:10px;">
 
 </div>
 
