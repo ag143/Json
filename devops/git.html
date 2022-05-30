@@ -40,7 +40,14 @@ $.ajax({
 	}
 	else if( key=="image")
 	{
-	mainContent = mainContent + "<img src="+dataobject[key]+" />"
+	  if(dataobject[key]=="")
+	  {
+	  mainContent = mainContent + "<img src='./../images/default.png' height=5px width=5px />"
+	  }
+	  else
+	  {
+	  mainContent = mainContent + "<img src="+dataobject[key]+" />"
+	  }
 	}
 	else if( key == "free" || key == "description" || key == "url" )
 	{
