@@ -1,0 +1,124 @@
+https://docs.ansible.com/ansible/latest/index.html
+Installation, Upgrade & Configuration
+
+Installation Guide
+Installing Ansible
+Configuring Ansible
+Ansible Porting Guides
+Using Ansible
+
+User Guide
+Getting started
+Writing tasks, plays, and playbooks
+Working with inventory
+Interacting with data
+Executing playbooks
+Advanced features and reference
+Traditional Table of Contents
+Contributing to Ansible
+
+Ansible Community Guide
+Getting started
+Going deeper
+Working with the Ansible repo
+Traditional Table of Contents
+Extending Ansible
+
+Developer Guide
+Adding modules and plugins locally
+Should you develop a module?
+Developing Ansible modules
+Contributing your module to an existing Ansible collection
+Conventions, tips, and pitfalls
+Ansible and Python 3
+Debugging modules
+Module format and documentation
+Windows module development walkthrough
+Developing Cisco ACI modules
+Guidelines for Ansible Amazon AWS module development
+OpenStack Ansible Modules
+oVirt Ansible Modules
+Guidelines for VMware module development
+Guidelines for VMware REST module development
+Creating a new collection
+Testing Ansible
+The lifecycle of an Ansible module or plugin
+Developing plugins
+Developing dynamic inventory
+Developing ansible-core
+Ansible module architecture
+Python API
+Rebasing a pull request
+Using and developing module utilities
+Developing collections
+Migrating Roles to Roles in Collections on Galaxy
+Collection Galaxy metadata structure
+Ansible architecture
+Common Ansible Scenarios
+
+Legacy Public Cloud Guides
+Network Technology Guides
+Virtualization and Containerization Guides
+Network Automation
+
+Network Getting Started
+Basic Concepts
+How Network Automation is Different
+Run Your First Command and Playbook
+Build Your Inventory
+Use Ansible network roles
+Beyond the basics
+Working with network connection options
+Resources and next steps
+Network Advanced Topics
+Network Resource Modules
+Ansible Network Examples
+Parsing semi-structured text with Ansible
+Validate data against set criteria with Ansible
+Network Debug and Troubleshooting Guide
+Working with command output and prompts in network modules
+Ansible Network FAQ
+Platform Options
+Network Developer Guide
+Developing network resource modules
+Developing network plugins
+Documenting new network platforms
+Ansible Galaxy
+
+Galaxy User Guide
+Finding collections on Galaxy
+Installing collections
+Finding roles on Galaxy
+Installing roles from Galaxy
+Galaxy Developer Guide
+Creating collections for Galaxy
+Creating roles for Galaxy
+Reference & Appendices
+
+Collection Index
+Indexes of all modules and plugins
+Playbook Keywords
+Return Values
+Ansible Configuration Settings
+Controlling how Ansible behaves: precedence rules
+YAML Syntax
+Python 3 Support
+Interpreter Discovery
+Releases and maintenance
+Testing Strategies
+Sanity Tests
+Frequently Asked Questions
+Glossary
+Ansible Reference: Module Utilities
+Special Variables
+Red Hat Ansible Automation Platform
+Ansible Automation Hub
+Logging Ansible output
+Roadmaps
+
+Ansible Roadmap
+Ansible project 5.0
+Ansible project 4.0
+Ansible project 3.0
+Ansible project 2.10
+Older Roadmaps
