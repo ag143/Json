@@ -3,7 +3,7 @@
         "slno": "1",
         "topic": "Setup and Config",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -11,7 +11,7 @@
         "slno": "1.01",
         "topic": "git",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -19,7 +19,7 @@
         "slno": "1.02",
         "topic": "config",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -27,7 +27,7 @@
         "slno": "1.03",
         "topic": "help",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -35,7 +35,7 @@
         "slno": "1.04",
         "topic": "bugreport",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -43,7 +43,7 @@
         "slno": "2",
         "topic": "Getting and Creating Projects",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -51,7 +51,7 @@
         "slno": "2.01",
         "topic": "init",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -59,7 +59,7 @@
         "slno": "2.02",
         "topic": "clone",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -67,7 +67,7 @@
         "slno": "3",
         "topic": "Basic Snapshotting",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -75,7 +75,7 @@
         "slno": "3.01",
         "topic": "add",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -83,7 +83,7 @@
         "slno": "3.02",
         "topic": "status",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -91,7 +91,7 @@
         "slno": "3.03",
         "topic": "diff",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -99,7 +99,7 @@
         "slno": "3.04",
         "topic": "commit",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -107,7 +107,7 @@
         "slno": "3.05",
         "topic": "notes",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -115,7 +115,7 @@
         "slno": "3.06",
         "topic": "restore",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -123,7 +123,7 @@
         "slno": "3.07",
         "topic": "reset",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -131,7 +131,7 @@
         "slno": "3.08",
         "topic": "rm",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -139,7 +139,7 @@
         "slno": "3.09",
         "topic": "mv",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -147,7 +147,7 @@
         "slno": "4",
         "topic": "Branching and Merging",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -155,7 +155,7 @@
         "slno": "4.01",
         "topic": "branch",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -163,7 +163,7 @@
         "slno": "4.02",
         "topic": "checkout",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -171,7 +171,7 @@
         "slno": "4.03",
         "topic": "switch",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -179,7 +179,7 @@
         "slno": "4.04",
         "topic": "merge",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -187,7 +187,7 @@
         "slno": "4.05",
         "topic": "mergetool",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -195,7 +195,7 @@
         "slno": "4.06",
         "topic": "log",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -203,7 +203,7 @@
         "slno": "4.07",
         "topic": "stash",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -211,7 +211,7 @@
         "slno": "4.08",
         "topic": "tag",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -219,7 +219,7 @@
         "slno": "4.09",
         "topic": "worktree",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -227,7 +227,7 @@
         "slno": "5",
         "topic": "Sharing and Updating Projects",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -235,7 +235,7 @@
         "slno": "5.01",
         "topic": "fetch",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -243,7 +243,7 @@
         "slno": "5.02",
         "topic": "pull",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -251,7 +251,7 @@
         "slno": "5.03",
         "topic": "push",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -259,7 +259,7 @@
         "slno": "5.04",
         "topic": "remote",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -267,7 +267,7 @@
         "slno": "5.05",
         "topic": "submodule",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -275,7 +275,7 @@
         "slno": "6",
         "topic": "Inspection and Comparison",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -283,7 +283,7 @@
         "slno": "6.01",
         "topic": "show",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -291,7 +291,7 @@
         "slno": "6.02",
         "topic": "log",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -299,7 +299,7 @@
         "slno": "6.03",
         "topic": "diff",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -307,7 +307,7 @@
         "slno": "6.04",
         "topic": "difftool",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -315,7 +315,7 @@
         "slno": "6.05",
         "topic": "range-diff",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -323,7 +323,7 @@
         "slno": "6.06",
         "topic": "shortlog",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -331,7 +331,7 @@
         "slno": "6.07",
         "topic": "describe",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -339,7 +339,7 @@
         "slno": "7",
         "topic": "Patching",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -347,7 +347,7 @@
         "slno": "7.01",
         "topic": "apply",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -355,7 +355,7 @@
         "slno": "7.02",
         "topic": "cherry-pick",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -363,7 +363,7 @@
         "slno": "7.03",
         "topic": "diff",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -371,7 +371,7 @@
         "slno": "7.04",
         "topic": "rebase",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -379,7 +379,7 @@
         "slno": "7.05",
         "topic": "revert",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -387,7 +387,7 @@
         "slno": "8",
         "topic": "Debugging",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -395,7 +395,7 @@
         "slno": "8.01",
         "topic": "bisect",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -403,7 +403,7 @@
         "slno": "8.02",
         "topic": "blame",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -411,7 +411,7 @@
         "slno": "8.03",
         "topic": "grep",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -419,7 +419,7 @@
         "slno": "9",
         "topic": "Guides",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -427,7 +427,7 @@
         "slno": "9.01",
         "topic": "gitattributes",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -435,7 +435,7 @@
         "slno": "9.02",
         "topic": "Command-line interface conventions",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -443,7 +443,7 @@
         "slno": "9.03",
         "topic": "Everyday Git",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -451,7 +451,7 @@
         "slno": "9.04",
         "topic": "Frequently Asked Questions (FAQ)",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -459,7 +459,7 @@
         "slno": "9.05",
         "topic": "Glossary",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -467,7 +467,7 @@
         "slno": "9.06",
         "topic": "Hooks",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -475,7 +475,7 @@
         "slno": "9.07",
         "topic": "gitignore",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -483,7 +483,7 @@
         "slno": "9.08",
         "topic": "gitmodules",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -491,7 +491,7 @@
         "slno": "9.09",
         "topic": "Revisions",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -499,7 +499,7 @@
         "slno": "9.1",
         "topic": "Submodules",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -507,7 +507,7 @@
         "slno": "9.11",
         "topic": "Tutorial",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -515,7 +515,7 @@
         "slno": "9.12",
         "topic": "Workflows",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -523,7 +523,7 @@
         "slno": "9.13",
         "topic": "All guides...",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -531,7 +531,7 @@
         "slno": "10",
         "topic": "Email",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -539,7 +539,7 @@
         "slno": "10.01",
         "topic": "am",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -547,7 +547,7 @@
         "slno": "10.02",
         "topic": "apply",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -555,7 +555,7 @@
         "slno": "10.03",
         "topic": "format-patch",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -563,7 +563,7 @@
         "slno": "10.04",
         "topic": "send-email",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -571,7 +571,7 @@
         "slno": "10.05",
         "topic": "request-pull",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -579,7 +579,7 @@
         "slno": "11",
         "topic": "External Systems",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -587,7 +587,7 @@
         "slno": "11.01",
         "topic": "svn",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -595,7 +595,7 @@
         "slno": "11.02",
         "topic": "fast-import",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -603,7 +603,7 @@
         "slno": "12",
         "topic": "Administration",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -611,7 +611,7 @@
         "slno": "12.01",
         "topic": "clean",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -619,7 +619,7 @@
         "slno": "12.02",
         "topic": "gc",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -627,7 +627,7 @@
         "slno": "12.03",
         "topic": "fsck",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -635,7 +635,7 @@
         "slno": "12.04",
         "topic": "reflog",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -643,7 +643,7 @@
         "slno": "12.05",
         "topic": "filter-branch",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -651,7 +651,7 @@
         "slno": "12.06",
         "topic": "instaweb",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -659,7 +659,7 @@
         "slno": "12.07",
         "topic": "archive",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -667,7 +667,7 @@
         "slno": "12.08",
         "topic": "bundle",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -675,7 +675,7 @@
         "slno": "13",
         "topic": "Server Admin",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -683,7 +683,7 @@
         "slno": "13.01",
         "topic": "daemon",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -691,7 +691,7 @@
         "slno": "13.02",
         "topic": "update-server-info",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -699,7 +699,7 @@
         "slno": "14",
         "topic": "Plumbing Commands",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -707,7 +707,7 @@
         "slno": "14.01",
         "topic": "cat-file",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -715,7 +715,7 @@
         "slno": "14.02",
         "topic": "check-ignore",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -723,7 +723,7 @@
         "slno": "14.03",
         "topic": "checkout-index",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -731,7 +731,7 @@
         "slno": "14.04",
         "topic": "commit-tree",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -739,7 +739,7 @@
         "slno": "14.05",
         "topic": "count-objects",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -747,7 +747,7 @@
         "slno": "14.06",
         "topic": "diff-index",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -755,7 +755,7 @@
         "slno": "14.07",
         "topic": "for-each-ref",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -763,7 +763,7 @@
         "slno": "14.08",
         "topic": "hash-object",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -771,7 +771,7 @@
         "slno": "14.09",
         "topic": "ls-files",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -779,7 +779,7 @@
         "slno": "15",
         "topic": "ls-tree",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -787,7 +787,7 @@
         "slno": "15.01",
         "topic": "merge-base",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -795,7 +795,7 @@
         "slno": "15.02",
         "topic": "read-tree",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -803,7 +803,7 @@
         "slno": "15.03",
         "topic": "rev-list",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -811,7 +811,7 @@
         "slno": "15.04",
         "topic": "rev-parse",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -819,7 +819,7 @@
         "slno": "15.05",
         "topic": "show-ref",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -827,7 +827,7 @@
         "slno": "15.06",
         "topic": "symbolic-ref",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -835,7 +835,7 @@
         "slno": "15.07",
         "topic": "update-index",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -843,7 +843,7 @@
         "slno": "15.08",
         "topic": "update-ref",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -851,7 +851,7 @@
         "slno": "15.09",
         "topic": "verify-pack",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     },
@@ -859,7 +859,7 @@
         "slno": "15.1",
         "topic": "write-tree",
         "description": "",
-        "longDescription": "",
+        "longDescription": "Description for above topic goes here",
         "url": "",
         "image": ""
     }
