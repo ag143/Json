@@ -6,15 +6,15 @@
    "image":"",
    "children":[
       {
-         "name":"Setup_and_config",
+         "name":"AzureFunadmentals",
          "free":true,
-         "description":"Setup_and_config",
+         "description":"AzureFunadmentals",
          "longDescription":"",
          "image":"",
          "url":"http://www.tableausoftware.com/products/desktop",
          "children":[
             {
-               "name":"git",
+               "name":"CloudComputing",
                "description":"Web-based 'cloud' applications for authoring data visualisations",
                "longDescription":"",
                "url":"http://example.com",
@@ -22,24 +22,10 @@
                "free":true
             },
             {
-               "name":"config",
+               "name":"AzureServices",
                "description":"Powerful tool for data analytics and visualisation",
                "longDescription":"<pre>git config --global user.email 'your_email@example.com' <br>git config --global user.name 'username or ID' </pre>",
                "image":"./../images/git_config.gif",
-               "url":"http://www.tableausoftware.com/products/desktop"
-            },
-            {
-               "name":"help",
-               "description":"Powerful tool for data analytics and visualisation",
-               "longDescription":"",
-               "image":"",
-               "url":"http://www.tableausoftware.com/products/desktop"
-            },
-            {
-               "name":"bugreport",
-               "description":"Powerful tool for data analytics and visualisation",
-               "longDescription":"",
-               "image":"",
                "url":"http://www.tableausoftware.com/products/desktop"
             }
          ]
@@ -77,15 +63,15 @@
          ]
       },
       {
-         "name":"Getting_and_creating_projects",
-         "description":"create and clone projects",
+         "name":"Architecutre_components",
+         "description":"Architecutre_components",
          "longDescription":"",
          "url":"http://example.com",
          "image":"",
          "free":true,
          "children":[
             {
-               "name":"Init",
+               "name":"Subscription_MgmtGroups_Resources",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
                "url":"http://example.com",
@@ -93,7 +79,15 @@
                "free":true
             },
             {
-               "name":"Clone",
+               "name":"Regions_Availabity_Zones",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+			{
+               "name":"Regions_Manager",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
                "url":"http://example.com",
@@ -103,15 +97,15 @@
          ]
       },
       {
-         "name":"Basic Snapshoting",
-         "description":"Code-based data visualisation creation",
+         "name":"Compute_Services",
+         "description":"Compute_Services",
          "longDescription":"",
          "url":"http://example.com",
          "image":"",
          "free":true,
          "children":[
             {
-               "name":"add",
+               "name":"Compute_Services",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
                "url":"http://example.com",
@@ -119,7 +113,7 @@
                "free":true
             },
             {
-               "name":"status",
+               "name":"VirtualMachines",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
                "url":"http://example.com",
@@ -127,7 +121,7 @@
                "free":true
             },
             {
-               "name":"diff",
+               "name":"AppService",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
                "url":"http://example.com",
@@ -135,7 +129,7 @@
                "free":true
             },
             {
-               "name":"commit",
+               "name":"AKS_or_AZ Container Instance",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
                "url":"http://example.com",
@@ -143,7 +137,7 @@
                "free":true
             },
             {
-               "name":"Notes",
+               "name":"AZ_functions",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
                "url":"http://example.com",
@@ -151,31 +145,7 @@
                "free":true
             },
             {
-               "name":"restore",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"reset",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"rm",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"mv",
+               "name":"Virtual_Desktop",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
                "url":"http://example.com",
@@ -185,7 +155,7 @@
          ]
       },
       {
-         "name":"Branching_and_merging",
+         "name":"Network_Services",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
          "url":"http://example.com",
@@ -223,7 +193,7 @@
          ]
       },
       {
-         "name":"Sharing_and_updating_projects",
+         "name":"Azure_Storage_Services",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
          "url":"http://example.com",
@@ -281,7 +251,7 @@
          ]
       },
       {
-         "name":"Inspection_and_comparision",
+         "name":"Database_and_Analytical_service",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
          "url":"http://example.com",
@@ -347,7 +317,7 @@
          ]
       },
       {
-         "name":"Patching",
+         "name":"IOT_Service",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
          "url":"http://example.com",
@@ -397,7 +367,7 @@
          ]
       },
       {
-         "name":"Debugging",
+         "name":"AI_Service",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
          "url":"http://example.com",
@@ -439,7 +409,7 @@
          ]
       },
       {
-         "name":"Guides",
+         "name":"Azure_ServerLess",
          "longDescription":"",
          "image":"",
          "url":"http://example.com",
@@ -462,7 +432,7 @@
          ]
       },
       {
-         "name":"Email",
+         "name":"Tools_Build_Org_Solutions",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
          "url":"http://example.com",
@@ -496,7 +466,7 @@
          ]
       },
       {
-         "name":"ExternalSystems",
+         "name":"Tools_Manage_Az_Env",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
          "url":"http://example.com",
@@ -546,7 +516,7 @@
          ]
       },
       {
-         "name":"Administration",
+         "name":"Monitoring_Services",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
          "url":"http://example.com",
@@ -580,7 +550,7 @@
          ]
       },
       {
-         "name":"ServerAdmin",
+         "name":"SecurityThreats",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
          "url":"http://example.com",
@@ -622,7 +592,7 @@
          ]
       },
       {
-         "name":"Plumbing_commands",
+         "name":"Network_Connectivity",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
          "url":"http://example.com",
@@ -653,6 +623,170 @@
                "image":"",
                "free":true
             }
+         ]
+      },
+	   {
+         "name":"Azure_Identity_Services",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"http://example.com",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"Compare_Authorization_Authentication",
+               "description":"The language behind most (all?) browser-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure Active Directory",
+               "description":"The language behind most (all?) browser-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"MFA_and_Conditiona_Access",
+               "description":"The language behind most (all?) browser-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      },
+	   {
+         "name":"Cloud_Gov_Strategy",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"http://example.com",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"Azure_Role_based_Access_Control",
+               "description":"The language behind most (all?) browser-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure_Resources_by_Tags",
+               "description":"The language behind most (all?) browser-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure_Policy",
+               "description":"The language behind most (all?) browser-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+			{
+               "name":"Azure_Blue_Prints",
+               "description":"The language behind most (all?) browser-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+			{
+               "name":"Cloud_Adoption_Frwk_for_Azure",
+               "description":"The language behind most (all?) browser-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+			{
+               "name":"Subscription_Gov_Strategy",
+               "description":"The language behind most (all?) browser-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+			
+         ]
+      },
+	  {
+         "name":"Azure_Costs",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"http://example.com",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"Compare_Costs_Using_TCO_Calc",
+               "description":"The language behind most (all?) browser-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Purchase_Azure_Services",
+               "description":"The language behind most (all?) browser-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            
+			
+         ]
+      },
+	  {
+         "name":"Az_services_4_SLA_and_Lifecycle",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"http://example.com",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"SLA",
+               "description":"The language behind most (all?) browser-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Application_SLA",
+               "description":"The language behind most (all?) browser-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Application_Meets_SLA",
+               "description":"The language behind most (all?) browser-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+			{
+               "name":"Access_preview_Services_and_Features",
+               "description":"The language behind most (all?) browser-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+			
          ]
       }
    ]
