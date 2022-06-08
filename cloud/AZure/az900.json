@@ -86,7 +86,7 @@
                "image":"",
                "free":true
             },
-			{
+            {
                "name":"Regions_Manager",
                "description":"Non-JavaScript languages for producing web-based data visualisations",
                "longDescription":"",
@@ -625,7 +625,7 @@
             }
          ]
       },
-	   {
+      {
          "name":"Azure_Identity_Services",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
@@ -659,7 +659,7 @@
             }
          ]
       },
-	   {
+      {
          "name":"Cloud_Gov_Strategy",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
@@ -691,7 +691,7 @@
                "image":"",
                "free":true
             },
-			{
+            {
                "name":"Azure_Blue_Prints",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
@@ -699,7 +699,7 @@
                "image":"",
                "free":true
             },
-			{
+            {
                "name":"Cloud_Adoption_Frwk_for_Azure",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
@@ -707,7 +707,7 @@
                "image":"",
                "free":true
             },
-			{
+            {
                "name":"Subscription_Gov_Strategy",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
@@ -715,10 +715,9 @@
                "image":"",
                "free":true
             }
-			
          ]
       },
-	  {
+      {
          "name":"Azure_Costs",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
@@ -741,12 +740,10 @@
                "url":"http://example.com",
                "image":"",
                "free":true
-            },
-            
-			
+            }
          ]
       },
-	  {
+      {
          "name":"Az_services_4_SLA_and_Lifecycle",
          "description":"Code-based data visualisation creation",
          "longDescription":"",
@@ -778,15 +775,14 @@
                "image":"",
                "free":true
             },
-			{
+            {
                "name":"Access_preview_Services_and_Features",
                "description":"The language behind most (all?) browser-based data visualisations",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
                "free":true
-            },
-			
+            }
          ]
       }
    ]
