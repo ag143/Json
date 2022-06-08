@@ -753,8 +753,8 @@
          "children":[
             {
                "name":"SLA",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"a service-level agreement (SLA) is a formal agreement between a service company and the customer. For Azure, this agreement defines the performance standards that Microsoft commits to for you, the customer.",
+               "longDescription":"a service-level agreement (SLA) is a formal agreement between a service company and the customer. For Azure, this agreement defines the performance standards that Microsoft commits to for you, the customer.  <br> A Typical SLA will have 1) Introduction 2) General Terms 3) SLA details <br> There are different percentages w.r.to Downtime  like 99, 99.9, 99.95, 99.99, 99.999 <br>Service Credits --> A service credit is the percentage of the fees you paid that are credited back to you according to the claim approval process. Monthly Uptime percentage--> <99.99--> servie credit percentage(10), <99-->(25), <95-->(100) ",
                "url":"http://example.com",
                "image":"",
                "free":true
@@ -777,8 +777,7 @@
             },
             {
                "name":"Access_preview_Services_and_Features",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"",
                "url":"http://example.com",
                "image":"",
                "free":true
