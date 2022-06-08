@@ -24,45 +24,11 @@ $.ajax({
   mainContent = mainContent + "<ul>";
    for (var key in dataobject){
     //console.log( key + ": " + dataobject[key]);
-	if ( key == "name")
-	{
-	console.log("name-->"+counter+"-->"+dataobject[key])
-	for (let i = 0; i < counter; i++) {
-		indexContent = indexContent + "";
-		mainContent = mainContent + "";
-		}
-	indexContent = indexContent + "<li><a href=#"+dataobject[key]+" style='text-decoration: none;' alt='---->'>"+dataobject[key] + "</a></li>"
-	mainContent = mainContent + "<h3 id="+dataobject[key]+">"+dataobject[key] + "</h3>"
-	}
-	else if( key=="longDescription")
-	{
-	mainContent = mainContent + "<p>"+dataobject[key] + "</p>"
-	}
-	else if( key=="image")
-	{
-	  if(dataobject[key]=="")
-	  {
-	  mainContent = mainContent + "<img src='./../images/default.png' height=5px width=5px />"
-	  }
-	  else
-	  {
-	  mainContent = mainContent + "<img src="+dataobject[key]+" />"
-	  }
-	}
-	else if( key == "free" || key == "description" || key == "url" )
-	{
-	//console.log("other name-->"+dataobject[key])
-	}
-	else if(key=="children")
-	{
-	//console.log("children---->"+dataobject[key])
-	for (var key1 in dataobject[key]){
-	printchildren(dataobject[key][key1]);
-	counter=counter-1;
-	}
-	
-	
-	}
+	 
+	indexContent = indexContent + "<li><a href=#"+dataobject[key].topic+" style='text-decoration: none;' alt='---->'>"+dataobject[key].slno+" -  "+dataobject[key].topic + "</a></li>"
+	mainContent = mainContent + "<h3 id="+dataobject[key].topic+">"+dataobject[key].slno+" - "+dataobject[key].topic + "</h3>"
+	 
+	 
 	
 	
 }
