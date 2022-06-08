@@ -36,7 +36,7 @@
          "longDescription":"",
          "image":"",
          "free":true,
-		 "url":"https://docs.microsoft.com/en-us/learn/modules/fundamental-azure-concepts/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/fundamental-azure-concepts/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
          "children":[
             {
                "name":"Cloud Models",
@@ -668,13 +668,13 @@
             }
          ]
       },
-	  {
+      {
          "name":"Examin_privacy_Compliance_Dataprotection",
          "description":"Examin_privacy_Compliance_Dataprotection",
          "longDescription":"",
          "url":"https://docs.microsoft.com/en-us/learn/modules/build-cloud-governance-strategy-azure/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
          "image":"",
-         "free":true,
+         "free":true
       },
       {
          "name":"Cloud_Gov_Strategy",
@@ -795,7 +795,7 @@
             {
                "name":"Access_preview_Services_and_Features",
                "description":"The service lifecycle defines how every Azure service is released for public use.",
-			   "longDescription":"The service lifecycle defines how every Azure service is released for public use. <br><br> Each Azure preview defines its own terms and conditions. All preview-specific terms and conditions are excluded from the service level agreements and limited warranty. <br><br> You can access preview services from the Azure portal. <br><br> 1) Go to the Azure portal and sign in. 2) Select Create a resource 3) Enter preview in the search box, and select Enter. 4) Select a preview service to learn more about it. You can also launch the service if you'd like to try it out. <br><br> The Azure updates page provides information about the latest updates to Azure products, services, and features, and product roadmaps and announcements.",
+               "longDescription":"The service lifecycle defines how every Azure service is released for public use. <br><br> Each Azure preview defines its own terms and conditions. All preview-specific terms and conditions are excluded from the service level agreements and limited warranty. <br><br> You can access preview services from the Azure portal. <br><br> 1) Go to the Azure portal and sign in. 2) Select Create a resource 3) Enter preview in the search box, and select Enter. 4) Select a preview service to learn more about it. You can also launch the service if you'd like to try it out. <br><br> The Azure updates page provides information about the latest updates to Azure products, services, and features, and product roadmaps and announcements.",
                "url":"http://example.com",
                "image":"",
                "free":true
