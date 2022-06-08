@@ -39,7 +39,7 @@
          "children":[
             {
                "name":"Cloud Models",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "image":"",
                "free":true
@@ -72,7 +72,7 @@
          "children":[
             {
                "name":"Subscription_MgmtGroups_Resources",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -106,7 +106,7 @@
          "children":[
             {
                "name":"Compute_Services",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -164,28 +164,28 @@
          "children":[
             {
                "name":"Virtual Network fundamentals",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":""
             },
             {
                "name":"Virtual Network Settings",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":""
             },
             {
                "name":"VPN Gateway Fundamentals",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":""
             },
             {
                "name":"Express Route fundamentals",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":""
@@ -202,7 +202,7 @@
          "children":[
             {
                "name":"AZ Storage A/c Fundamentals",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -210,7 +210,7 @@
             },
             {
                "name":"Disk Storage fundamentals",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -218,7 +218,7 @@
             },
             {
                "name":"Blob Storage Fundamentals",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -226,7 +226,7 @@
             },
             {
                "name":"Prometheus Architecuture",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -234,7 +234,7 @@
             },
             {
                "name":"Azure File Fundamentals",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -242,7 +242,7 @@
             },
             {
                "name":"Understand Blob Access Tiers",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -260,7 +260,7 @@
          "children":[
             {
                "name":"AZ Cosmos DB",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -326,7 +326,7 @@
          "children":[
             {
                "name":"Identify Product options",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -376,7 +376,7 @@
          "children":[
             {
                "name":"Introduction",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -441,7 +441,7 @@
          "children":[
             {
                "name":"Azure Devops to Manage Application Development Lifecycle",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -449,7 +449,7 @@
             },
             {
                "name":"Github to contribute to Manage testing Environment",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -457,7 +457,7 @@
             },
             {
                "name":"Azure devtest Labs to Manage Testing Environment",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -475,7 +475,7 @@
          "children":[
             {
                "name":"Azure portal to visually understand and manage cloud Environment",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -483,7 +483,7 @@
             },
             {
                "name":"Azure powershell for one-off administrative Taks",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -491,7 +491,7 @@
             },
             {
                "name":"Azure cli for one-off administrative Taks",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -499,7 +499,7 @@
             },
             {
                "name":"Azure Mobile app to manage Azure on the go",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -507,7 +507,7 @@
             },
             {
                "name":"ARM templates to deply entrire cloud infrastructure",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -525,7 +525,7 @@
          "children":[
             {
                "name":"Azure Advisor",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -533,7 +533,7 @@
             },
             {
                "name":"Azure Monitor",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -541,7 +541,7 @@
             },
             {
                "name":"Azure Service Health",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -559,7 +559,7 @@
          "children":[
             {
                "name":"Protect against seucurity Threats by using Azure security Center",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -567,7 +567,7 @@
             },
             {
                "name":"Azure Sentinel",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -575,7 +575,7 @@
             },
             {
                "name":"Azure Key vault",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "longDescription":"",
                "url":"http://example.com",
                "image":"",
@@ -583,7 +583,7 @@
             },
             {
                "name":"Azure Dedicated Host",
-               "description":"The language behind most (all?) browser-based data visualisations",
+               "description":"ShortDescription",
                "image":"",
                "longDescription":"",
                "url":"http://example.com",
@@ -600,25 +600,33 @@
          "free":true,
          "children":[
             {
+               "name":"Defense in depth",
+               "description":"ShortDescription",
+               "longDescription":"The objective of defense in depth is to protect information and prevent it from being stolen by those who aren't authorized to access it. \n A defense-in-depth strategy uses a series of mechanisms to slow the advance of an attack that aims at acquiring unauthorized access to data. \n  Layers of defense in depth Here's a brief overview of the role of each layer: \n The physical security layer is the first line of defense to protect computing hardware in the datacenter. \n The identity and access layer controls access to infrastructure and change control. \n The perimeter layer uses distributed denial of service (DDoS) protection to filter large-scale attacks before they can cause a denial of service for users. \n The network layer limits communication between resources through segmentation and access controls. \n The compute layer secures access to virtual machines. \n The application layer helps ensure that applications are secure and free of security vulnerabilities. \n The data layer controls access to business and customer data that you need to protect. ",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
                "name":"Azure Firewall",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"ShortDescription",
+               "longDescription":"Azure Firewall is a managed, cloud-based network security service that helps protect resources in your Azure virtual networks. A virtual network is similar to a traditional network that you'd operate in your own datacenter. It's a fundamental building block for your private network that enables virtual machines and other compute resources to securely communicate with each other, the internet, and on-premises networks.",
                "url":"http://example.com",
                "image":"",
                "free":true
             },
             {
                "name":"Azure DDos protection",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"ShortDescription",
+               "longDescription":"A distributed denial of service attack attempts to overwhelm and exhaust an application's resources, making the application slow or unresponsive to legitimate users. DDoS attacks can target any resource that's publicly reachable through the internet, including websites.",
                "url":"http://example.com",
                "image":"",
                "free":true
             },
             {
                "name":"Network Security Solution",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"ShortDescription",
+               "longDescription":"A network security group enables you to filter network traffic to and from Azure resources within an Azure virtual network. You can think of NSGs like an internal firewall. An NSG can contain multiple inbound and outbound security rules that enable you to filter traffic to and from resources by source and destination IP address, port, and protocol.",
                "url":"http://example.com",
                "image":"",
                "free":true
@@ -635,24 +643,24 @@
          "children":[
             {
                "name":"Compare_Authorization_Authentication",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"ShortDescription",
+               "longDescription":"Compare authentication and authorization \n Recall that Tailwind Traders must ensure that only employees can sign in and access its business applications.\n Tailwind Traders also needs to ensure that employees can access only authorized applications. For example, all employees can access inventory and pricing software, but only store managers can access payroll and certain accounting software. \n Two fundamental concepts that you need to understand when talking about identity and access are authentication (AuthN) and authorization (AuthZ). \n Authentication and authorization both support everything else that happens. They occur sequentially in the identity and access process. \n  Let's take a brief look at each. What is authentication? \n Authentication is the process of establishing the identity of a person or service that wants to access a resource. It involves the act of challenging a party for legitimate credentials and provides the basis for creating a security principal for identity and access control. It establishes whether the user is who they say they are. \n  What is authorization? \n Authentication establishes the user's identity, but authorization is the process of establishing what level of access an authenticated person or service has. It specifies what data they're allowed to access and what they can do with it. How are authentication and authorization related? \n Here's a diagram that shows the relationship between authentication and authorization: \n A diagram that shows an identification card and the various kinds of resources the user can access. The identification card represents the user's credentials. \n The identification card represents credentials that the user has to prove their identity (you'll learn more about the types of credentials later in this module.) Once authenticated, authorization defines what kinds of applications, resources, and data that user can access.",
                "url":"http://example.com",
                "image":"",
                "free":true
             },
             {
                "name":"Azure Active Directory",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"ShortDescription",
+               "longDescription":"Microsoft introduced Active Directory in Windows 2000 to give organizations the ability to manage multiple on-premises infrastructure components and systems by using a single identity per user. \n For on-premises environments, Active Directory running on Windows Server provides an identity and access management service that's managed by your own organization. Azure AD is Microsoft's cloud-based identity and access management service. With Azure AD, you control the identity accounts, but Microsoft ensures that the service is available globally. If you've worked with Active Directory, Azure AD will be familiar to you. \n What services does Azure AD provide?  Authentication, Single sign-on, Application management, Device management",
                "url":"http://example.com",
                "image":"",
                "free":true
             },
             {
                "name":"MFA_and_Conditiona_Access",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"ShortDescription",
+               "longDescription":"Multifactor authentication is a process where a user is prompted during the sign-in process for an additional form of identification. Examples include a code on their mobile phone or a fingerprint scan.Multifactor authentication provides additional security for your identities by requiring two or more elements to fully authenticate. \n These elements fall into three categories: \n Something the user knows \n  This might be an email address and password. \n  Something the user has \n This might be a code that's sent to the user's mobile phone. \n  Something the user is \n This is typically some sort of biometric property, such as a fingerprint or face scan that's used on many mobile devices. ",
                "url":"http://example.com",
                "image":"",
                "free":true
@@ -669,48 +677,48 @@
          "children":[
             {
                "name":"Azure_Role_based_Access_Control",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"ShortDescription",
+               "longDescription":"Instead of defining the detailed access requirements for each individual, and then updating access requirements when new resources are created, Azure enables you to control access through Azure role-based access control (Azure RBAC). \n  Use Azure RBAC when you need to:  Allow one user to manage VMs in a subscription and another user to manage virtual networks. \n Allow a database administrator group to manage SQL databases in a subscription. \n Allow a user to manage all resources in a resource group, such as virtual machines, websites, and subnets. \n Allow an application to access all resources in a resource group.",
                "url":"http://example.com",
                "image":"",
                "free":true
             },
             {
                "name":"Azure_Resources_by_Tags",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"ShortDescription",
+               "longDescription":"One way to organize related resources is to place them in their own subscriptions. You can also use resource groups to manage related resources. Resource tags are another way to organize resources. Tags provide extra information, or metadata, about your resources. This metadata is useful for: Resource management Tags enable you to locate and act on resources that are associated with specific workloads, environments, business units, and owners. \n Cost management and optimization Tags enable you to group resources so that you can report on costs, allocate internal cost centers, track budgets, and forecast estimated cost. \n Operations management Tags enable you to group resources according to how critical their availability is to your business. This grouping helps you formulate service-level agreements (SLAs). An SLA is an uptime or performance guarantee between you and your users. \n Security Tags enable you to classify data by its security level, such as public or confidential. \n Governance and regulatory compliance Tags enable you to identify resources that align with governance or regulatory compliance requirements, such as ISO 27001. Tags can also be part of your standards enforcement efforts. For example, you might require that all resources be tagged with an owner or department name. \n Workload optimization and automation Tags can help you visualize all of the resources that participate in complex deployments. For example, you might tag a resource with its associated workload or application name and use software such as Azure DevOps to perform automated tasks on those resources.",
                "url":"http://example.com",
                "image":"",
                "free":true
             },
             {
                "name":"Azure_Policy",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"ShortDescription",
+               "longDescription":"Azure Policy enables you to define both individual policies and groups of related policies, known as initiatives. Azure Policy evaluates your resources and highlights resources that aren't compliant with the policies you've created. Azure Policy can also prevent noncompliant resources from being created.   \n  Azure Policy comes with built-in policy and initiative definitions for Storage, Networking, Compute, Security Center, and Monitoring. For example, if you define a policy that allows only a certain SKU (stock-keeping unit) size for the virtual machines (VMs) to be used in your environment, that policy is invoked when you create a new VM and whenever you resize existing VMs. Azure Policy also evaluates and monitors all current VMs in your environment.   Azure Policy in action  1) Create a policy definition. 2) Assign the definition to resources. 3) Review the evaluation results.",
                "url":"http://example.com",
                "image":"",
                "free":true
             },
             {
                "name":"Azure_Blue_Prints",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"Azure Blueprints orchestrates the deployment of various resource templates and other artifacts, such as:",
+               "longDescription":"Azure Blueprints orchestrates the deployment of various resource templates and other artifacts, such as: Role assignments ,Policy assignments, Azure Resource Manager templates, Resource groups    \n ",
                "url":"http://example.com",
                "image":"",
                "free":true
             },
             {
                "name":"Cloud_Adoption_Frwk_for_Azure",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"Cloud Adoption Framework consists of tools, documentation, and proven practices. The Cloud Adoption Framework includes these stages:",
+               "longDescription":"Cloud Adoption Framework consists of tools, documentation, and proven practices. The Cloud Adoption Framework includes these stages: 1)  Define your strategy. 2) Make a plan. 3) Ready your organization. 4) Adopt the cloud. 5) Govern and manage your cloud environments. \n ",
                "url":"http://example.com",
                "image":"",
                "free":true
             },
             {
                "name":"Subscription_Gov_Strategy",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"Teams often start their Azure governance strategy at the subscription level. There are three main aspects to consider when you create and manage subscriptions: billing, access control, and subscription limits.",
+               "longDescription":"Teams often start their Azure governance strategy at the subscription level. There are three main aspects to consider when you create and manage subscriptions: billing, access control, and subscription limits.  \n You can create one billing report per subscription. If you have multiple departments and need to do a "chargeback" of cloud costs, one possible solution is to organize subscriptions by department or by project.  \n  A subscription is a deployment boundary for Azure resources. Every subscription is associated with an Azure Active Directory tenant. Each tenant provides administrators the ability to set granular access through defined roles by using Azure role-based access control.  \n Subscriptions also have some resource limitations. For example, the maximum number of network Azure ExpressRoute circuits per subscription is 10. Those limits should be considered during your design phase. If you'll need to exceed those limits, you might need to add more subscriptions. If you hit a hard limit maximum, there's no flexibility to increase it \n Management groups are also available to assist with managing subscriptions. A management group manages access, policies, and compliance across multiple Azure subscriptions. You'll learn more about management groups later in this module.",
                "url":"http://example.com",
                "image":"",
                "free":true
@@ -727,16 +735,16 @@
          "children":[
             {
                "name":"Compare_Costs_Using_TCO_Calc",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"The TCO Calculator helps you estimate the cost savings of operating your solution on Azure over time compared to operating in your on-premises datacenter. ",
+               "longDescription":"The TCO Calculator helps you estimate the cost savings of operating your solution on Azure over time compared to operating in your on-premises datacenter. \n The term total cost of ownership is used commonly in finance. It can be hard to see all the hidden costs related to operating a technology capability on-premises. Software licenses and hardware are additional costs. \n With the TCO Calculator, you'll enter the details of your on-premises workloads. Then you can review the suggested industry-average cost (which you can adjust) for related operational costs. These costs include electricity, network maintenance, and IT labor. You're then presented with a side-by-side report. Using the report, you can compare those costs with the same workloads running on Azure.  ",
                "url":"http://example.com",
                "image":"",
                "free":true
             },
             {
                "name":"Purchase_Azure_Services",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":" Azure subscription provides you with access to Azure resources such as virtual machines (VMs), storage, and databases. The types of resources you use affect your monthly bill.",
+               "longDescription":" Azure subscription provides you with access to Azure resources such as virtual machines (VMs), storage, and databases. The types of resources you use affect your monthly bill.  \n Azure offers both free and paid subscription options to fit your needs and requirements. They are: 1) Free Trial 2) Pay as you go 3) Member offers    \n   How do I purchase Azure services?  --> Through an Enterprise Agreement --> Directly from the web --> Through a Cloud Solution Provider \n What factors affect cost?   >  Resource type, Usage meters, Resource usage   \n Different regions can have different associated prices. Because geographic regions can affect where your network traffic flows, network traffic is a cost influence to consider as well.  ",
                "url":"http://example.com",
                "image":"",
                "free":true
