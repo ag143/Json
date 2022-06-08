@@ -754,30 +754,31 @@
             {
                "name":"SLA",
                "description":"a service-level agreement (SLA) is a formal agreement between a service company and the customer. For Azure, this agreement defines the performance standards that Microsoft commits to for you, the customer.",
-               "longDescription":"a service-level agreement (SLA) is a formal agreement between a service company and the customer. For Azure, this agreement defines the performance standards that Microsoft commits to for you, the customer.  <br> A Typical SLA will have 1) Introduction 2) General Terms 3) SLA details <br> There are different percentages w.r.to Downtime  like 99, 99.9, 99.95, 99.99, 99.999 <br>Service Credits --> A service credit is the percentage of the fees you paid that are credited back to you according to the claim approval process. Monthly Uptime percentage--> <99.99--> servie credit percentage(10), <99-->(25), <95-->(100) ",
+               "longDescription":"a service-level agreement (SLA) is a formal agreement between a service company and the customer. For Azure, this agreement defines the performance standards that Microsoft commits to for you, the customer.  <br><br> A Typical SLA will have 1) Introduction 2) General Terms 3) SLA details <br><br> There are different percentages w.r.to Downtime  like 99, 99.9, 99.95, 99.99, 99.999 <br><br>Service Credits --> A service credit is the percentage of the fees you paid that are credited back to you according to the claim approval process. Monthly Uptime percentage--> <99.99--> servie credit percentage(10), <99-->(25), <95-->(100) <br><br> Azure status provides a global view of the health of Azure services and regions. If you suspect there's an outage, this is often a good place to start your investigation. <br><br>Typically, you need to file a claim with Microsoft to receive a service credit. If you purchase Azure services from a Cloud Solution Provider (CSP) partner, your CSP typically manages the claims process",
                "url":"http://example.com",
                "image":"",
                "free":true
             },
             {
                "name":"Application_SLA",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"An application SLA defines the SLA requirements for a specific application. This term typically refers to an application that you build on Azure.",
+               "longDescription":"An application SLA defines the SLA requirements for a specific application. This term typically refers to an application that you build on Azure. \n  Business Impact : If application goes down, what would the business impact be? In this case, customers can't place new orders through the store and staff can't check the status of existing orders. Customers will either need to try again later or possibly go to a competitor.  \n ",
                "url":"http://example.com",
                "image":"",
                "free":true
             },
             {
                "name":"Application_Meets_SLA",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
+               "description":"A workload is a distinct capability or task that's logically separated from other tasks, in terms of business logic and data storage requirements. Each workload defines a set of requirements for availability, scalability, data consistency, and disaster recovery.",
+               "longDescription":"A workload is a distinct capability or task that's logically separated from other tasks, in terms of business logic and data storage requirements. Each workload defines a set of requirements for availability, scalability, data consistency, and disaster recovery. \n  On Azure, the Special Orders application will require: 1) Two virtual machines. 2) One instance of Azure SQL Database. 3) One instance of Azure Load Balancer  \n The process of combining SLAs helps you compute the composite SLA for a set of services. Computing the composite SLA requires that you multiply the SLA of each individual service. \n For example, to improve the availability of the application, avoid having any single points of failure. So instead of adding more virtual machines, you can deploy one or more extra instances of the same virtual machine across the different availability zones in the same Azure region. \n To ensure high availability, you might plan for your application to have duplicate components across several regions, known as redundancy. Conversely, to minimize costs during non-critical periods, you might run your application only in a single region. Tailwind Traders might consider this if there's a trend that the special order rates are much higher during certain months or seasons. \n To achieve maximum availability in your application, add redundancy to every single part of the application. This redundancy includes the application itself, as well as the underlying services and infrastructure. Be aware, however, that doing so can be difficult and expensive, and often results in solutions that are more complex than they need to be.",
                "url":"http://example.com",
                "image":"",
                "free":true
             },
             {
                "name":"Access_preview_Services_and_Features",
-               "description":"",
+               "description":"The service lifecycle defines how every Azure service is released for public use.",
+			   "longDescription":"The service lifecycle defines how every Azure service is released for public use. \n Each Azure preview defines its own terms and conditions. All preview-specific terms and conditions are excluded from the service level agreements and limited warranty. \n You can access preview services from the Azure portal. \n 1) Go to the Azure portal and sign in. 2) Select Create a resource 3) Enter preview in the search box, and select Enter. 4) Select a preview service to learn more about it. You can also launch the service if you'd like to try it out. \n The Azure updates page provides information about the latest updates to Azure products, services, and features, and product roadmaps and announcements.",
                "url":"http://example.com",
                "image":"",
                "free":true
