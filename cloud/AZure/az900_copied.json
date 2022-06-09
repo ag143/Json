@@ -1,0 +1,806 @@
+{
+   "name":"AZ900",
+   "url":"http://example.com",
+   "description":"Setup_and_config",
+   "longDescription":"",
+   "image":"",
+   "children":[
+      {
+         "name":"AzureFunadmentals",
+         "free":true,
+         "description":"AzureFunadmentals",
+         "longDescription":"",
+         "image":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-fundamentals/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "children":[
+            {
+               "name":"CloudComputing",
+               "description":"Web-based 'cloud' applications for authoring data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"AzureServices",
+               "description":"Powerful tool for data analytics and visualisation",
+               "longDescription":"<pre>git config --global user.email 'your_email@example.com' <br>git config --global user.name 'username or ID' </pre>",
+               "image":"./../images/git_config.gif",
+               "url":"http://www.tableausoftware.com/products/desktop"
+            }
+         ]
+      },
+      {
+         "name":"Azure funadmental Concepts",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "image":"",
+         "free":true,
+         "url":"https://docs.microsoft.com/en-us/learn/modules/fundamental-azure-concepts/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "children":[
+            {
+               "name":"Cloud Models",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Benefits and considerations",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Cloud services",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      },
+      {
+         "name":"Architecutre_components",
+         "description":"Architecutre_components",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/azure-architecture-fundamentals/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"Subscription_MgmtGroups_Resources",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Regions_Availabity_Zones",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Regions_Manager",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      },
+      {
+         "name":"Compute_Services",
+         "description":"Compute_Services",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/azure-compute-fundamentals/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"Compute_Services",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"VirtualMachines",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"AppService",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"AKS_or_AZ Container Instance",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"AZ_functions",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Virtual_Desktop",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      },
+      {
+         "name":"Network_Services",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/azure-networking-fundamentals/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"Virtual Network fundamentals",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":""
+            },
+            {
+               "name":"Virtual Network Settings",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":""
+            },
+            {
+               "name":"VPN Gateway Fundamentals",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":""
+            },
+            {
+               "name":"Express Route fundamentals",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":""
+            }
+         ]
+      },
+      {
+         "name":"Azure_Storage_Services",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/azure-storage-fundamentals/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"AZ Storage A/c Fundamentals",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Disk Storage fundamentals",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Blob Storage Fundamentals",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Prometheus Architecuture",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure File Fundamentals",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Understand Blob Access Tiers",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      },
+      {
+         "name":"Database_and_Analytical_service",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/azure-database-fundamentals/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"AZ Cosmos DB",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"AZ SQL DB",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"CreateSQL DB",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"AZ DB for my SQL",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"AZ DB for Postgres SQL",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"AZ SQL Managed Instance",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Explore Big data & Analytics",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      },
+      {
+         "name":"IOT_Service",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/iot-fundamentals/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"Identify Product options",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Analyze decision Criteria",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Use of IOT HUB",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Use of IOT central",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"use Azure Sphere",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      },
+      {
+         "name":"AI_Service",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/ai-machine-learning-fundamentals/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"Introduction",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"use Machine Learning for Decision Support systems",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Use cognitive services for Data Analysis",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"use Bot service for Interactive Chat experience",
+               "description":"Non-JavaScript languages for producing web-based data visualisations",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      },
+      {
+         "name":"Azure_ServerLess",
+         "longDescription":"",
+         "image":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/serverless-fundamentals/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "free":true,
+         "children":[
+            {
+               "name":"Azure functions",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure Logi Apps",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      },
+      {
+         "name":"Tools_Build_Org_Solutions",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/azure-devops-devtest-labs/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"Azure Devops to Manage Application Development Lifecycle",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Github to contribute to Manage testing Environment",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure devtest Labs to Manage Testing Environment",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      },
+      {
+         "name":"Tools_Manage_Az_Env",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/management-fundamentals/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"Azure portal to visually understand and manage cloud Environment",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure powershell for one-off administrative Taks",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure cli for one-off administrative Taks",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure Mobile app to manage Azure on the go",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"ARM templates to deply entrire cloud infrastructure",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      },
+      {
+         "name":"Monitoring_Services",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/monitoring-fundamentals/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"Azure Advisor",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure Monitor",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure Service Health",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      },
+      {
+         "name":"SecurityThreats",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/protect-against-security-threats-azure/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"Protect against seucurity Threats by using Azure security Center",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure Sentinel",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure Key vault",
+               "description":"ShortDescription",
+               "longDescription":"",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure Dedicated Host",
+               "description":"ShortDescription",
+               "image":"",
+               "longDescription":"",
+               "url":"http://example.com",
+               "free":true
+            }
+         ]
+      },
+      {
+         "name":"Network_Connectivity",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/secure-network-connectivity-azure/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"Defense in depth",
+               "description":"ShortDescription",
+               "longDescription":"The objective of defense in depth is to protect information and prevent it from being stolen by those who aren't authorized to access it. <br><br> A defense-in-depth strategy uses a series of mechanisms to slow the advance of an attack that aims at acquiring unauthorized access to data. <br><br>  Layers of defense in depth Here's a brief overview of the role of each layer: <br><br> The physical security layer is the first line of defense to protect computing hardware in the datacenter. <br><br> The identity and access layer controls access to infrastructure and change control. <br><br> The perimeter layer uses distributed denial of service (DDoS) protection to filter large-scale attacks before they can cause a denial of service for users. <br><br> The network layer limits communication between resources through segmentation and access controls. <br><br> The compute layer secures access to virtual machines. <br><br> The application layer helps ensure that applications are secure and free of security vulnerabilities. <br><br> The data layer controls access to business and customer data that you need to protect. ",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure Firewall",
+               "description":"ShortDescription",
+               "longDescription":"Azure Firewall is a managed, cloud-based network security service that helps protect resources in your Azure virtual networks. A virtual network is similar to a traditional network that you'd operate in your own datacenter. It's a fundamental building block for your private network that enables virtual machines and other compute resources to securely communicate with each other, the internet, and on-premises networks.",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure DDos protection",
+               "description":"ShortDescription",
+               "longDescription":"A distributed denial of service attack attempts to overwhelm and exhaust an application's resources, making the application slow or unresponsive to legitimate users. DDoS attacks can target any resource that's publicly reachable through the internet, including websites.",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Network Security Solution",
+               "description":"ShortDescription",
+               "longDescription":"A network security group enables you to filter network traffic to and from Azure resources within an Azure virtual network. You can think of NSGs like an internal firewall. An NSG can contain multiple inbound and outbound security rules that enable you to filter traffic to and from resources by source and destination IP address, port, and protocol.",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      },
+      {
+         "name":"Azure_Identity_Services",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/secure-access-azure-identity-services/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"Compare_Authorization_Authentication",
+               "description":"ShortDescription",
+               "longDescription":"Compare authentication and authorization <br><br> Recall that Tailwind Traders must ensure that only employees can sign in and access its business applications.<br><br> Tailwind Traders also needs to ensure that employees can access only authorized applications. For example, all employees can access inventory and pricing software, but only store managers can access payroll and certain accounting software. <br><br> Two fundamental concepts that you need to understand when talking about identity and access are authentication (AuthN) and authorization (AuthZ). <br><br> Authentication and authorization both support everything else that happens. They occur sequentially in the identity and access process. <br><br>  Let's take a brief look at each. What is authentication? <br><br> Authentication is the process of establishing the identity of a person or service that wants to access a resource. It involves the act of challenging a party for legitimate credentials and provides the basis for creating a security principal for identity and access control. It establishes whether the user is who they say they are. <br><br>  What is authorization? <br><br> Authentication establishes the user's identity, but authorization is the process of establishing what level of access an authenticated person or service has. It specifies what data they're allowed to access and what they can do with it. How are authentication and authorization related? <br><br> Here's a diagram that shows the relationship between authentication and authorization: <br><br> A diagram that shows an identification card and the various kinds of resources the user can access. The identification card represents the user's credentials. <br><br> The identification card represents credentials that the user has to prove their identity (you'll learn more about the types of credentials later in this module.) Once authenticated, authorization defines what kinds of applications, resources, and data that user can access.",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure Active Directory",
+               "description":"ShortDescription",
+               "longDescription":"Microsoft introduced Active Directory in Windows 2000 to give organizations the ability to manage multiple on-premises infrastructure components and systems by using a single identity per user. <br><br> For on-premises environments, Active Directory running on Windows Server provides an identity and access management service that's managed by your own organization. Azure AD is Microsoft's cloud-based identity and access management service. With Azure AD, you control the identity accounts, but Microsoft ensures that the service is available globally. If you've worked with Active Directory, Azure AD will be familiar to you. <br><br> What services does Azure AD provide?  Authentication, Single sign-on, Application management, Device management",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"MFA_and_Conditiona_Access",
+               "description":"ShortDescription",
+               "longDescription":"Multifactor authentication is a process where a user is prompted during the sign-in process for an additional form of identification. Examples include a code on their mobile phone or a fingerprint scan.Multifactor authentication provides additional security for your identities by requiring two or more elements to fully authenticate. <br><br> These elements fall into three categories: <br><br> Something the user knows <br><br>  This might be an email address and password. <br><br>  Something the user has <br><br> This might be a code that's sent to the user's mobile phone. <br><br>  Something the user is <br><br> This is typically some sort of biometric property, such as a fingerprint or face scan that's used on many mobile devices. ",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      },
+      {
+         "name":"Examin_privacy_Compliance_Dataprotection",
+         "description":"Examin_privacy_Compliance_Dataprotection",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/build-cloud-governance-strategy-azure/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true
+      },
+      {
+         "name":"Cloud_Gov_Strategy",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/build-cloud-governance-strategy-azure/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"Azure_Role_based_Access_Control",
+               "description":"ShortDescription",
+               "longDescription":"Instead of defining the detailed access requirements for each individual, and then updating access requirements when new resources are created, Azure enables you to control access through Azure role-based access control (Azure RBAC). <br><br>  Use Azure RBAC when you need to:  Allow one user to manage VMs in a subscription and another user to manage virtual networks. <br><br> Allow a database administrator group to manage SQL databases in a subscription. <br><br> Allow a user to manage all resources in a resource group, such as virtual machines, websites, and subnets. <br><br> Allow an application to access all resources in a resource group.",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure_Resources_by_Tags",
+               "description":"ShortDescription",
+               "longDescription":"One way to organize related resources is to place them in their own subscriptions. You can also use resource groups to manage related resources. Resource tags are another way to organize resources. Tags provide extra information, or metadata, about your resources. This metadata is useful for: Resource management Tags enable you to locate and act on resources that are associated with specific workloads, environments, business units, and owners. <br><br> Cost management and optimization Tags enable you to group resources so that you can report on costs, allocate internal cost centers, track budgets, and forecast estimated cost. <br><br> Operations management Tags enable you to group resources according to how critical their availability is to your business. This grouping helps you formulate service-level agreements (SLAs). An SLA is an uptime or performance guarantee between you and your users. <br><br> Security Tags enable you to classify data by its security level, such as public or confidential. <br><br> Governance and regulatory compliance Tags enable you to identify resources that align with governance or regulatory compliance requirements, such as ISO 27001. Tags can also be part of your standards enforcement efforts. For example, you might require that all resources be tagged with an owner or department name. <br><br> Workload optimization and automation Tags can help you visualize all of the resources that participate in complex deployments. For example, you might tag a resource with its associated workload or application name and use software such as Azure DevOps to perform automated tasks on those resources.",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure_Policy",
+               "description":"ShortDescription",
+               "longDescription":"Azure Policy enables you to define both individual policies and groups of related policies, known as initiatives. Azure Policy evaluates your resources and highlights resources that aren't compliant with the policies you've created. Azure Policy can also prevent noncompliant resources from being created.   <br><br>  Azure Policy comes with built-in policy and initiative definitions for Storage, Networking, Compute, Security Center, and Monitoring. For example, if you define a policy that allows only a certain SKU (stock-keeping unit) size for the virtual machines (VMs) to be used in your environment, that policy is invoked when you create a new VM and whenever you resize existing VMs. Azure Policy also evaluates and monitors all current VMs in your environment.   Azure Policy in action  1) Create a policy definition. 2) Assign the definition to resources. 3) Review the evaluation results.",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Azure_Blue_Prints",
+               "description":"Azure Blueprints orchestrates the deployment of various resource templates and other artifacts, such as:",
+               "longDescription":"Azure Blueprints orchestrates the deployment of various resource templates and other artifacts, such as: Role assignments ,Policy assignments, Azure Resource Manager templates, Resource groups    <br><br> ",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Cloud_Adoption_Frwk_for_Azure",
+               "description":"Cloud Adoption Framework consists of tools, documentation, and proven practices. The Cloud Adoption Framework includes these stages:",
+               "longDescription":"Cloud Adoption Framework consists of tools, documentation, and proven practices. The Cloud Adoption Framework includes these stages: 1)  Define your strategy. 2) Make a plan. 3) Ready your organization. 4) Adopt the cloud. 5) Govern and manage your cloud environments. <br><br> ",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Subscription_Gov_Strategy",
+               "description":"Teams often start their Azure governance strategy at the subscription level. There are three main aspects to consider when you create and manage subscriptions: billing, access control, and subscription limits.",
+               "longDescription":"Teams often start their Azure governance strategy at the subscription level. There are three main aspects to consider when you create and manage subscriptions: billing, access control, and subscription limits.  <br><br> You can create one billing report per subscription. If you have multiple departments and need to do a chargeback of cloud costs, one possible solution is to organize subscriptions by department or by project.  <br><br>  A subscription is a deployment boundary for Azure resources. Every subscription is associated with an Azure Active Directory tenant. Each tenant provides administrators the ability to set granular access through defined roles by using Azure role-based access control.  <br><br> Subscriptions also have some resource limitations. For example, the maximum number of network Azure ExpressRoute circuits per subscription is 10. Those limits should be considered during your design phase. If you'll need to exceed those limits, you might need to add more subscriptions. If you hit a hard limit maximum, there's no flexibility to increase it <br><br> Management groups are also available to assist with managing subscriptions. A management group manages access, policies, and compliance across multiple Azure subscriptions. You'll learn more about management groups later in this module.",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      },
+      {
+         "name":"Azure_Costs",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/plan-manage-azure-costs/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"Compare_Costs_Using_TCO_Calc",
+               "description":"The TCO Calculator helps you estimate the cost savings of operating your solution on Azure over time compared to operating in your on-premises datacenter. ",
+               "longDescription":"The TCO Calculator helps you estimate the cost savings of operating your solution on Azure over time compared to operating in your on-premises datacenter. <br><br> The term total cost of ownership is used commonly in finance. It can be hard to see all the hidden costs related to operating a technology capability on-premises. Software licenses and hardware are additional costs. <br><br> With the TCO Calculator, you'll enter the details of your on-premises workloads. Then you can review the suggested industry-average cost (which you can adjust) for related operational costs. These costs include electricity, network maintenance, and IT labor. You're then presented with a side-by-side report. Using the report, you can compare those costs with the same workloads running on Azure.  ",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Purchase_Azure_Services",
+               "description":" Azure subscription provides you with access to Azure resources such as virtual machines (VMs), storage, and databases. The types of resources you use affect your monthly bill.",
+               "longDescription":" Azure subscription provides you with access to Azure resources such as virtual machines (VMs), storage, and databases. The types of resources you use affect your monthly bill.  <br><br> Azure offers both free and paid subscription options to fit your needs and requirements. They are: 1) Free Trial 2) Pay as you go 3) Member offers    <br><br>   How do I purchase Azure services?  --> Through an Enterprise Agreement --> Directly from the web --> Through a Cloud Solution Provider <br><br> What factors affect cost?   >  Resource type, Usage meters, Resource usage   <br><br> Different regions can have different associated prices. Because geographic regions can affect where your network traffic flows, network traffic is a cost influence to consider as well.  ",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      },
+      {
+         "name":"Az_services_4_SLA_and_Lifecycle",
+         "description":"Code-based data visualisation creation",
+         "longDescription":"",
+         "url":"https://docs.microsoft.com/en-us/learn/modules/choose-azure-services-sla-lifecycle/?WT.mc_id=cloudskillschallenge_6f975a2d-d4e3-470b-a09a-178c662fa17f",
+         "image":"",
+         "free":true,
+         "children":[
+            {
+               "name":"SLA",
+               "description":"a service-level agreement (SLA) is a formal agreement between a service company and the customer. For Azure, this agreement defines the performance standards that Microsoft commits to for you, the customer.",
+               "longDescription":"a service-level agreement (SLA) is a formal agreement between a service company and the customer. For Azure, this agreement defines the performance standards that Microsoft commits to for you, the customer.  <br><br> A Typical SLA will have 1) Introduction 2) General Terms 3) SLA details <br><br> There are different percentages w.r.to Downtime  like 99, 99.9, 99.95, 99.99, 99.999 <br><br>Service Credits --> A service credit is the percentage of the fees you paid that are credited back to you according to the claim approval process. Monthly Uptime percentage--> <99.99--> servie credit percentage(10), <99-->(25), <95-->(100) <br><br> Azure status provides a global view of the health of Azure services and regions. If you suspect there's an outage, this is often a good place to start your investigation. <br><br>Typically, you need to file a claim with Microsoft to receive a service credit. If you purchase Azure services from a Cloud Solution Provider (CSP) partner, your CSP typically manages the claims process",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Application_SLA",
+               "description":"An application SLA defines the SLA requirements for a specific application. This term typically refers to an application that you build on Azure.",
+               "longDescription":"An application SLA defines the SLA requirements for a specific application. This term typically refers to an application that you build on Azure. <br><br>  Business Impact : If application goes down, what would the business impact be? In this case, customers can't place new orders through the store and staff can't check the status of existing orders. Customers will either need to try again later or possibly go to a competitor.  <br><br> ",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Application_Meets_SLA",
+               "description":"A workload is a distinct capability or task that's logically separated from other tasks, in terms of business logic and data storage requirements. Each workload defines a set of requirements for availability, scalability, data consistency, and disaster recovery.",
+               "longDescription":"A workload is a distinct capability or task that's logically separated from other tasks, in terms of business logic and data storage requirements. Each workload defines a set of requirements for availability, scalability, data consistency, and disaster recovery. <br><br>  On Azure, the Special Orders application will require: 1) Two virtual machines. 2) One instance of Azure SQL Database. 3) One instance of Azure Load Balancer  <br><br> The process of combining SLAs helps you compute the composite SLA for a set of services. Computing the composite SLA requires that you multiply the SLA of each individual service. <br><br> For example, to improve the availability of the application, avoid having any single points of failure. So instead of adding more virtual machines, you can deploy one or more extra instances of the same virtual machine across the different availability zones in the same Azure region. <br><br> To ensure high availability, you might plan for your application to have duplicate components across several regions, known as redundancy. Conversely, to minimize costs during non-critical periods, you might run your application only in a single region. Tailwind Traders might consider this if there's a trend that the special order rates are much higher during certain months or seasons. <br><br> To achieve maximum availability in your application, add redundancy to every single part of the application. This redundancy includes the application itself, as well as the underlying services and infrastructure. Be aware, however, that doing so can be difficult and expensive, and often results in solutions that are more complex than they need to be.",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            },
+            {
+               "name":"Access_preview_Services_and_Features",
+               "description":"The service lifecycle defines how every Azure service is released for public use.",
+               "longDescription":"The service lifecycle defines how every Azure service is released for public use. <br><br> Each Azure preview defines its own terms and conditions. All preview-specific terms and conditions are excluded from the service level agreements and limited warranty. <br><br> You can access preview services from the Azure portal. <br><br> 1) Go to the Azure portal and sign in. 2) Select Create a resource 3) Enter preview in the search box, and select Enter. 4) Select a preview service to learn more about it. You can also launch the service if you'd like to try it out. <br><br> The Azure updates page provides information about the latest updates to Azure products, services, and features, and product roadmaps and announcements.",
+               "url":"http://example.com",
+               "image":"",
+               "free":true
+            }
+         ]
+      }
+   ]
+}
