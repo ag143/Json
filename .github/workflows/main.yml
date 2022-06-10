@@ -37,7 +37,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           python -V
-          python3 devops/test.py
+          python3 topicindex/test.py
           git status
           git add . 
           git commit -m " Update output ."
