@@ -3,7 +3,7 @@ import json
 import os
 print(os.getcwd())
 dir = os.path.dirname('README.md')
-file = os.path.join(dir, './git.csv')
+file = os.path.join(dir, 'git.csv')
 json_file = os.path.join(dir, './test_output.json')
 
 #Read CSV File
