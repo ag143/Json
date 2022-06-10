@@ -1,6 +1,7 @@
 import csv
 import json
 import os
+print(os.getcwd())
 dir = os.path.dirname('README.md')
 file = os.path.join(dir, '/topcindex/git.csv')
 json_file = os.path.join(dir, '/devops/test_output.json')
