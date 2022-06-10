@@ -3,7 +3,7 @@
         "slno": "1",
         "topic": "Setup and Config",
         "description": "",
-        "longDescription": "Description for above topic goes here",
+        "longDescription": "git config --global user.name userid <br> git config --global user.email example@example.com",
         "url": "",
         "image": ""
     },
@@ -11,7 +11,7 @@
         "slno": "1.01",
         "topic": "git",
         "description": "",
-        "longDescription": "Description for above topic goes here",
+        "longDescription": "git --version",
         "url": "",
         "image": ""
     },
@@ -27,7 +27,7 @@
         "slno": "1.03",
         "topic": "help",
         "description": "",
-        "longDescription": "Description for above topic goes here",
+        "longDescription": "git help",
         "url": "",
         "image": ""
     },
@@ -43,7 +43,7 @@
         "slno": "2",
         "topic": "Getting and Creating Projects",
         "description": "",
-        "longDescription": "Description for above topic goes here",
+        "longDescription": "git init <br> or <br> git clone <ssh or https url of repo>",
         "url": "",
         "image": ""
     },
@@ -75,7 +75,7 @@
         "slno": "3.01",
         "topic": "add",
         "description": "",
-        "longDescription": "Description for above topic goes here",
+        "longDescription": "git add . <br> git add &ltfilename&gt",
         "url": "",
         "image": ""
     },
