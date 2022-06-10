@@ -2,10 +2,11 @@ import csv
 import json
 import os
 print(os.getcwd())
-dir = os.path.dirname('topicindex/git.csv')
+dir = os.getcwd()
+#os.path.dirname('topicindex/git.csv')
 print(dir)
-file = os.path.join(dir, '/git.csv')
-json_file = os.path.join(dir, '/test_output.json')
+file = os.path.join(dir, '/topicindex/git.csv')
+json_file = os.path.join(dir, 'topicindex/test_output.json')
 
 #Read CSV File
 def read_CSV(file, json_file):
