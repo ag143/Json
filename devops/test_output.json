@@ -43,7 +43,7 @@
         "slno": "2",
         "topic": "Getting and Creating Projects",
         "description": "",
-        "longDescription": "git init <br> or <br> git clone <ssh or https url of repo>",
+        "longDescription": "git init <br> or <br> git clone &ltssh or https url of repo&gt",
         "url": "",
         "image": ""
     },
