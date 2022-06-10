@@ -1,8 +1,8 @@
 import csv
 import json
 
-file = 'test.csv'
-json_file = 'output_file_name_test1.json'
+file = './../topicindex/test.csv'
+json_file = 'test_output.json'
 
 #Read CSV File
 def read_CSV(file, json_file):
