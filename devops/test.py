@@ -1,7 +1,9 @@
 import csv
 import json
-
-file = './../topicindex/test.csv'
+import os
+dir = os.path.dirname('.')
+file = os.path.join(dir, '../topcindex/git.csv')
+file = os.path.join(dir, 'test_output.json')
 json_file = 'test_output.json'
 
 #Read CSV File
