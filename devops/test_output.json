@@ -19,7 +19,7 @@
         "slno": "1.02",
         "topic": "config",
         "description": "",
-        "longDescription": "Description for above topic goes here",
+        "longDescription": "git config list",
         "url": "",
         "image": ""
     },
@@ -51,7 +51,7 @@
         "slno": "2.01",
         "topic": "init",
         "description": "",
-        "longDescription": "Description for above topic goes here",
+        "longDescription": "it will intialize local git repository<br>git init",
         "url": "",
         "image": ""
     },
@@ -59,7 +59,7 @@
         "slno": "2.02",
         "topic": "clone",
         "description": "",
-        "longDescription": "Description for above topic goes here",
+        "longDescription": "it will clone remote repository to local folder  <br> git clone <https or ssh git url>",
         "url": "",
         "image": ""
     },
@@ -83,7 +83,7 @@
         "slno": "3.02",
         "topic": "status",
         "description": "",
-        "longDescription": "Description for above topic goes here",
+        "longDescription": "check current status of git staging(staged, modified, commited,) <br> git status",
         "url": "",
         "image": ""
     },
@@ -91,7 +91,7 @@
         "slno": "3.03",
         "topic": "diff",
         "description": "",
-        "longDescription": "Description for above topic goes here",
+        "longDescription":" check diff of changed files <br>git diff",
         "url": "",
         "image": ""
     },
@@ -99,7 +99,7 @@
         "slno": "3.04",
         "topic": "commit",
         "description": "",
-        "longDescription": "Description for above topic goes here",
+        "longDescription": "commit staged files which are ready to push<br> git commit - 'commit message '",
         "url": "",
         "image": ""
     },
@@ -139,7 +139,7 @@
         "slno": "3.09",
         "topic": "mv",
         "description": "",
-        "longDescription": "Description for above topic goes here",
+        "longDescription": "move the files with in git repsitory. <br> git reset HEAD ~1",
         "url": "",
         "image": ""
     },
@@ -155,7 +155,7 @@
         "slno": "4.01",
         "topic": "branch",
         "description": "",
-        "longDescription": "Description for above topic goes here",
+        "longDescription": "to create or view git branches<br> git branch <br> ",
         "url": "",
         "image": ""
     },
@@ -195,7 +195,7 @@
         "slno": "4.06",
         "topic": "log",
         "description": "",
-        "longDescription": "Description for above topic goes here",
+        "longDescription": "to list the commits <br> git log",
         "url": "",
         "image": ""
     },
@@ -243,7 +243,7 @@
         "slno": "5.02",
         "topic": "pull",
         "description": "",
-        "longDescription": "Description for above topic goes here",
+        "longDescription": "to pull latest changes from remote repository to local folder<br> git pull",
         "url": "",
         "image": ""
     },
@@ -251,7 +251,7 @@
         "slno": "5.03",
         "topic": "push",
         "description": "",
-        "longDescription": "Description for above topic goes here",
+        "longDescription": "to push commited local changes to remote repository <br> git push",
         "url": "",
         "image": ""
     },
