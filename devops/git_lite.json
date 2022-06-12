@@ -291,7 +291,7 @@
       "slno":"5.03",
       "topic":"push",
       "description":"",
-      "longDescription":"# push the current branch by default	<BR># Equivalent to git push origin, which actually pushes to a default repository named origin<BR>git push<BR><BR># push to master branch<BR>git push -u origin master<BR><BR># Local branch is pushed to remote branch, local branch: remote branch<BR>git push origin <branchName>:<branchName><BR><BR># Force push, --force shorthand<BR>git push -f",
+      "longDescription":"",
       "url":"",
       "image":""
    },
@@ -699,7 +699,7 @@
       "slno":"12.07",
       "topic":"archive",
       "description":"",
-      "longDescription":"Creating an archive file can be understood as compressing the current project into a file. The .git directory is ignored.<BR><BR>But unlike compression such as zip / tar, git archive supports archiving a branch or commit.<BR><BR>parameter<BR><BR>Parameters	Description<BR>--format	Optional, specify the format, the default is tar, tar and zip are supported, if not filled, it will be inferred according to the --output suffix format<BR>--output	Output to the specified directory<BR># Archive the master branch and package it in the current directory output.tar.gz<BR>git archive --output './output.tar.gz' master<BR><BR># Archive the specified commit<BR>git archive --output './output.tar.gz' d485a8ba9d2bcb5<BR><BR># Archive as zip, no need to specify --format because it will be inferred from the file suffix<BR>git archive --output './output.zip' master<BR><BR># Archive one or more directories, not the entire project<BR>git archive --output './output.zip' master src tests",
+      "longDescription":"",
       "url":"",
       "image":""
    },
