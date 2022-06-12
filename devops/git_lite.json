@@ -1,9 +1,17 @@
 [
     {
+        "slno": "0",
+        "topic": "Introduction",
+        "description": "",
+        "longDescription": "Git is a version-control system for tracking changes in computer files and coordinating work on those files among multiple people. Git is a Distributed Version Control System. So Git does not necessarily rely on a central server to store all the versions of a project’s files.",
+        "url": "",
+        "image": ""
+    },
+    {
         "slno": "1",
         "topic": "Setup and Config",
         "description": "",
-        "longDescription": "git config --global user.name userid <br> git config --global user.email example@example.com",
+        "longDescription": "# View global configuration list <BR> git config --global -l <BR> # View local configuration list <BR> git config --local -l <BR>  <BR> # View all configurations and the files they are in <BR> git config --list --show-origin <BR>  <BR> # View the set global username/email <BR> git config --global --get user.name <BR> git config --global --get user.email <BR>  <BR> # Set global username/email <BR> git config --global user.name "xiejiahe" <BR> git config --global user.email "example@example.com" <BR>  <BR> # Set the user name/email of the local current workspace warehouse <BR> git config --local user.name "xiejiahe" <BR> git config --local user.email "example@example.com" <BR>  <BR> # delete configuration <BR> git config --unset --global user.name <BR> git config --unset --global user.email <BR> # Modify the default text editor, such as nano <BR> # Common editors: emacs / nano / vim / vi <BR> git config --global core.editor nano <BR>  <BR> # Set the default differential analysis tool to vimdiff <BR> git config --global merge.tool vimdiff <BR>  <BR> # Edit the current repository configuration file <BR> git config -e # Equivalent to vi .git/config <BR>  <BR> # Changes in file permissions will also be considered changes, and file permission changes can be ignored through the following configuration <BR> git config core.fileMode false <BR>  <BR> # File case is set to be sensitive, git ignores case by default <BR> git config --global core.ignorecase false <BR>  <BR> # When configuring git pull, all submodule contents are pulled by default <BR> git config submodule.recurse true <BR>  <BR> # Remember to submit the account password, the account password can be waived for the next operation <BR> git config --global credential.helper store # permanent <BR> git config --global credential.helper cache # Temporary, default 15 minutes <BR> ",
         "url": "",
         "image": ""
     },
@@ -40,6 +48,38 @@
         "image": ""
     },
     {
+        "slno": "1.05",
+        "topic": "alias",
+        "description": "",
+        "longDescription": "# git st is equivalent to git status <BR> git config --global alias.st status <BR>  <BR> # If added before, you need to add --replace-all to override <BR> git config --global --replace-all alias.st status <BR>  <BR> # To execute external commands, just add ! in front <BR> git config --global alias.st '!echo hello'; <BR> # Add "!" to execute an external command to execute a complex process of merging code, for example: <BR> git config --global alias.mg '!git checkout develop && git pull && git merge master && git checkout -'; <BR>  <BR> # remove the st alias <BR> git config --global --unset alias.st <BR> ",
+        "url": "",
+        "image": ""
+    },
+    {
+        "slno": "1.06",
+        "topic": "proxy",
+        "description": "",
+        "longDescription": "# set up<BR>git config --global https.proxy http://127.0.0.1:1087<BR>git config --global http.proxy http://127.0.0.1:1087<BR><BR># Check<BR>git config --global --get http.proxy<BR>git config --global --get https.proxy<BR><BR># cancel proxy<BR>git config --global --unset http.proxy<BR>git config --global --unset https.proxy",
+        "url": "",
+        "image": ""
+    },
+    {
+        "slno": "1.07",
+        "topic": "Initialize",
+        "description": "",
+        "longDescription": "# will generate .git in the current directory<BR>git init<BR><BR># Create in quiet mode, only print errors or warnings<BR>git init -q<BR><BR># Create a bare repository in the current directory with only all files under .git<BR>git init --bare",
+        "url": "",
+        "image": ""
+    },
+    {
+        "slno": "1.08",
+        "topic": "Initialize",
+        "description": "",
+        "longDescription": "# will generate .git in the current directory<BR>git init<BR><BR># Create in quiet mode, only print errors or warnings<BR>git init -q<BR><BR># Create a bare repository in the current directory with only all files under .git<BR>git init --bare",
+        "url": "",
+        "image": ""
+    },
+    {
         "slno": "2",
         "topic": "Getting and Creating Projects",
         "description": "",
@@ -51,7 +91,7 @@
         "slno": "2.01",
         "topic": "init",
         "description": "",
-        "longDescription": "it will intialize local git repository<br>git init",
+        "longDescription": "# will generate .git in the current directory<BR>git init<BR><BR># Create in quiet mode, only print errors or warnings<BR>git init -q<BR><BR># Create a bare repository in the current directory with only all files under .git<BR>git init --bare",
         "url": "",
         "image": ""
     },
@@ -59,7 +99,7 @@
         "slno": "2.02",
         "topic": "clone",
         "description": "",
-        "longDescription": "it will clone remote repository to local folder  <br> git clone <https or ssh git url>",
+        "longDescription": "# https protocol clone<BR>git clone https://github.com/xjh22222228/git-manual.git<BR><BR># SSH protocol clone<BR>git clone git@github.com:xjh22222228/git-manual.git<BR><BR># Clone the specified branch, -b specifies the branch name, which actually clones all branches and switches to the develop branch<BR>git clone -b develop https://github.com/xjh22222228/git-manual.git<BR><BR># --single-branch clone only the specified branch completely<BR>git clone -b develop --single-branch https://github.com/xjh22222228/git-manual.git<BR><BR># Specify the cloned folder name<BR>git clone https://github.com/xjh22222228/git-manual.git git-study # If followed by . Create in the current directory<BR><BR># Recursive clone, useful if the project contains submodules<BR>git clone --recursive https://github.com/xjh22222228/git-manual.git<BR><BR># Shallow clone, the clone depth is 1, only the specified branch is cloned and only the last record is kept, usually used to reduce the clone time and project size<BR>git clone --depth=1 https://github.com/xjh22222228/git-manual.git<BR>git clone --depth=1 --no-single-branch https://github.com/xjh22222228/git-manual.git # --no-single-branch also clones all other branches<BR><BR><BR># Bare clone, no workspace content, cannot be submitted for modification, generally used to copy warehouses<BR>git clone --bare https://github.com/xjh22222228/git-manual.git<BR><BR># Mirror clone, which is also a bare clone, is different from including the upstream repository registration<BR>git clone --mirror https://github.com/xjh22222228/git-manual.`",
         "url": "",
         "image": ""
     },
