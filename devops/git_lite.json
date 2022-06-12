@@ -115,7 +115,7 @@
       "slno":"3.01",
       "topic":"add",
       "description":"",
-      "longDescription":"git add . <br> git add &ltfilename&gt",
+      "longDescription":"# staging all<BR>git add -A<BR><BR># Staging a file<BR>git add ./README.md<BR><BR># Temporarily store all changed files in the current directory<BR>git add .<BR><BR># Staging a series of files<BR>git add 1.txt 2.txt ...",
       "url":"",
       "image":""
    },
