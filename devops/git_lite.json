@@ -139,7 +139,7 @@
       "slno":"3.04",
       "topic":"commit",
       "description":"",
-      "longDescription":"commit staged files which are ready to push<br> git commit - 'commit message '",
+      "longDescription":"# -m Submitted description information<BR>git commit -m 'changes log'<BR><BR># commit only a certain file<BR>git commit README.md -m 'message'<BR><BR># Commit and show diff changes<BR>git commit -v<BR><BR># Allows to submit empty messages, usually the -m parameter must be specified<BR>git commit --allow-empty-message<BR><BR># Rewrite the last commit information to ensure that the current workspace has not changed<BR>git commit --amend -m 'new commit info'<BR><BR># Skip validation if tools like husky are used.<BR>git commit --no-verify -m 'Example'",
       "url":"",
       "image":""
    },
@@ -147,7 +147,7 @@
       "slno":"3.05",
       "topic":"notes",
       "description":"",
-      "longDescription":"Description for above topic goes here",
+      "longDescription":"# Order<BR>$ git config branch.{branch_name}.description Remarks<BR><BR># Add remarks to hotfix/tip branch<BR>$ git config branch.hotfix/tip.description fix details",
       "url":"",
       "image":""
    },
@@ -195,7 +195,7 @@
       "slno":"4.01",
       "topic":"branch",
       "description":"",
-      "longDescription":"to create or view git branches<br> git branch <br> ",
+      "longDescription":"# view all branches<BR>git branch -a<BR><BR># View local branch<BR>git branch<BR><BR># View remote branches<BR>git branch -r<BR><BR># View the remote branch associated with the local branch<BR>git branch -vv<BR><BR># View the creation time of the local master branch<BR>git reflog show --date=iso master<BR><BR># Search branches, searched with grep command, contains keyword dev<BR>git branch -a | grep dev ",
       "url":"",
       "image":""
    },
@@ -211,7 +211,7 @@
       "slno":"4.03",
       "topic":"switch",
       "description":"",
-      "longDescription":"Description for above topic goes here",
+      "longDescription":"# switch to master branch<BR>git checkout master<BR><BR># switch to the previous branch<BR>git checkout -<BR><BR># Force switch, but be careful, if the file is not saved, the changes will be overwritten directly<BR>git checkout -f master<BR><BR># -t, switch remote branches, if you use git remote to add a new repository, you need to use -t to switch<BR>git checkout -t upstream/main <br> <br> # switch to develop branch<BR>git switch develop<BR><BR># switch to the previous branch<BR>git switch -<BR><BR># Force switch to develop branch and discard all local changes<BR>git switch -f develop<BR><BR># create branch and switch<BR>git switch -c newBranch<BR><BR># Force the creation of a branch<BR>git switch -C newBranch<BR><BR># Create a new branch from the previous 3 commits<BR>git switch -c newBranch HEAD~3<BR><BR># -t, switch remote branches, if you use git remote to add a new repository, you need to use -t to switch<BR>git switch -t upstream/main",
       "url":"",
       "image":""
    },
@@ -243,7 +243,7 @@
       "slno":"4.07",
       "topic":"stash",
       "description":"",
-      "longDescription":"Description for above topic goes here",
+      "longDescription":"# Save the current modified workspace content<BR>git stash<BR><BR># Add comments when saving, this command is recommended<BR>git stash save "Modified #28 bug"<BR><BR># save files that contain untracked by git<BR>git stash -u<BR><BR># View the current save list<BR>git stash list<BR><BR># Restore the modified workspace content, it will be removed from the git stash list<BR>git stash pop # Restore the last saved content to the workspace, by default, the changes in the stash area will be restored to the workspace<BR>git stash pop stash@{1} # Restore the specified id, which can be found through git stash list<BR>git stash pop --index # Restore the last saved content to the workspace, but if the content of the temporary storage area is also restored to the temporary storage area<BR><BR># Same as the pop command, the only difference is that the save list is not removed<BR>git stash apply<BR><BR># clear all saves<BR>git stash clear<BR><BR># Clear the specified stash id, if the id is not specified after the drop, clear the most recent one<BR>git stash drop stash@{0}<BR>git stash drop # clear the last time",
       "url":"",
       "image":""
    },
@@ -291,7 +291,7 @@
       "slno":"5.03",
       "topic":"push",
       "description":"",
-      "longDescription":"to push commited local changes to remote repository <br> git push",
+      "longDescription":"# push the current branch by default	<BR># Equivalent to git push origin, which actually pushes to a default repository named origin<BR>git push<BR><BR># push to master branch<BR>git push -u origin master<BR><BR># Local branch is pushed to remote branch, local branch: remote branch<BR>git push origin <branchName>:<branchName><BR><BR># Force push, --force shorthand<BR>git push -f",
       "url":"",
       "image":""
    },
