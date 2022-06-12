@@ -27,7 +27,7 @@
       "slno":"1.02",
       "topic":"config",
       "description":"",
-      "longDescription":"git config list",
+      "longDescription":"# 1. Global configuration<BR>git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C( bold blue)<%an>%Creset' --abbrev-commit"<BR># 2. Enter the following command, the log becomes very intuitive<BR>git lg<BR><BR># There are several other modes here, you can choose the one you like for alias configuration<BR>git config --global alias.lg "log --graph --pretty=format:'%Cred%h - %Cgreen[%an]%Creset -%C(yellow)%d%Creset %s %C(yellow) <%cr>%Creset' --abbrev-commit --date=relative"<BR><BR>git config --global alias.his "log --graph --decorate --oneline --pretty=format:'%Creset %s %C(magenta)in %Cred%h %C(magenta)commited by %Cgreen% cn %C(magenta)on %C(yellow) %cd %C(magenta)from %Creset %C(yellow)%d' --abbrev-commit --date=format:'%Y-%m-%d %H:%M:%S'"<BR><BR>git config --global alias.hist "log --graph --decorate --oneline --pretty=format:'%Cred%h - %C(bold white) %s %Creset %C(yellow)%d %C (cyan) <%cd> %Creset %Cgreen(%cn)' --abbrev-commit --date=format:'%Y-%m-%d %H:%M:%S'"",
       "url":"",
       "image":""
    },
@@ -35,7 +35,7 @@
       "slno":"1.03",
       "topic":"help",
       "description":"",
-      "longDescription":"git help",
+      "longDescription":"# print all git commands in detail<BR>git help<BR><BR># Print all git commands, this command will not have detailed information, it is more clear<BR>git help -a<BR><BR># List all configurable variables<BR>git help -c",
       "url":"",
       "image":""
    },
@@ -155,7 +155,7 @@
       "slno":"3.06",
       "topic":"restore",
       "description":"",
-      "longDescription":"Description for above topic goes here",
+      "longDescription":"Restore operations are done via the git restore command.<BR><BR>git restore was introduced in 2.23 to separate git checkout / git reset responsibilities.<BR><BR># Undo workspace file modifications, excluding new files<BR>git restore README.md # a file<BR>git restore README.md README2.md # Multiple files<BR>git restore . # All current files<BR><BR># Return to the workspace from the staging area<BR>git restore --staged README.md",
       "url":"",
       "image":""
    },
@@ -163,7 +163,7 @@
       "slno":"3.07",
       "topic":"reset",
       "description":"",
-      "longDescription":"Description for above topic goes here",
+      "longDescription":"git reset command usage:<BR><BR># Roll back the previous version<BR>git reset --hard HEAD^<BR><BR># Roll back the last two versions<BR>git reset --hard HEAD^^<BR><BR># Roll back to the specified commit_id and view it through git log<BR>git reset --hard 'commit id'<BR><BR># After rolling back but not pushing to the remote, you can disconnect the current operation and perform the pull:<BR>git pull<BR><BR># push<BR>git push -f",
       "url":"",
       "image":""
    },
@@ -179,7 +179,7 @@
       "slno":"3.09",
       "topic":"mv",
       "description":"",
-      "longDescription":"move the files with in git repsitory. <br> git reset HEAD ~1",
+      "longDescription":"The git mv command is used to rename files or move files. Most developers choose to move files manually. There is a difference between manual and git mv.<BR><BR>Difference between manual and command (assuming README.md is renamed to README2.md):<BR><BR>Manual: delete README.md first, then create README2.md, history cannot be tracked normally<BR>git mv: actually update the index and rename the file, which can be easily retrieved through history<BR>git mv is very similar to the uninx mv command, if you are familiar with it.<BR><BR>Note: git mv is not supported for newly created files and must be committed first.<BR><BR># rename 1.txt to 2.txt<BR>git mv 1.txt 2.txt<BR><BR># Force 1.txt to be renamed to 2.txt, regardless of whether the 2.txt file exists or not<BR>git mv -f 1.txt 2.txt<BR><BR># The same goes for moving directories<BR>git mv temp temp2",
       "url":"",
       "image":""
    },
@@ -219,7 +219,7 @@
       "slno":"4.04",
       "topic":"merge",
       "description":"",
-      "longDescription":"Description for above topic goes here",
+      "longDescription":"merge<BR>feature/v1.0.0 branch code merged into develop<BR><BR>git checkout develop<BR>git merge feature/v1.0.0<BR>Merge the previous branch code into the current branch<BR><BR>git merge -<BR>Merge in silent mode, merge the develop branch into the current branch without outputting any information<BR><BR>git merge develop -q<BR>Merge without editing information, skip interaction<BR><BR>git merge develop --no-edit<BR>Do not commit after merging branch<BR><BR>git merge develop --no-commit<BR>Exit the merge and revert to the state before the merge<BR><BR>git merge --abort<BR>Merge a specified file or directory in a branch, it should be noted that this will directly overwrite the existing file, rather than essentially merging.<BR><BR># Merge the 2 files src/utils/http.js src/utils/load.js from the dev branch into the current branch<BR>git checkout dev src/utils/http.js src/utils/load.js",
       "url":"",
       "image":""
    },
@@ -235,7 +235,7 @@
       "slno":"4.06",
       "topic":"log",
       "description":"",
-      "longDescription":"to list the commits <br> git log",
+      "longDescription":"# View full commit history<BR>git log<BR><BR># View the previous N commit records commit message<BR>git log -2<BR><BR># View the first N commit records, including diff<BR>git log -p -2<BR><BR># Search from commit, you can specify -i to ignore case<BR>git log -i --grep="fix: #28"<BR><BR># Search from the working directory when the code containing alert(1) was introduced<BR>git log -S "alert(1)"<BR><BR># View the history of the specified author<BR>git log --author=xjh22222228<BR><BR># View a file's commit history<BR>git log README.md<BR><BR># only show merge logs<BR>git log --merges<BR><BR># View log records graphically, --oneline optional<BR>git log --graph --oneline<BR><BR># View history in reverse order<BR>git log --reverse<BR>git shortlog outputs the log in a short form, usually used to count the amount of code by contributors.<BR><BR># Defaults to grouping by contributors<BR>git shortlog<BR><BR># List the number of committers' code contributions, print the number of authors and contributions<BR>git shortlog -sn<BR><BR># Sort by number of commits and print out the message<BR>git shortlog -n<BR><BR># Use email format to view the contribution<BR>git shortlog -e",
       "url":"",
       "image":""
    },
@@ -251,7 +251,7 @@
       "slno":"4.08",
       "topic":"tag",
       "description":"",
-      "longDescription":"Description for above topic goes here",
+      "longDescription":"# List all local tags<BR>git tag<BR><BR># List all remote tags<BR>git ls-remote --tags origin<BR><BR># Find tags by specific pattern, `*` template search<BR>git tag -l "v1.0.0*"<BR><BR># create labels with annotations<BR>git tag -a v1.1.0 -m "tag description"<BR><BR># Create lightweight tags without any parameters<BR>git tag v1.1.0<BR><BR># Tag later, if you forget to tag before, you can check the commit id through git log<BR>git log<BR>git tag -a v1.1.0 <commit_id><BR><BR># Push to the remote, the default is only created locally<BR>git push origin v1.1.0<BR><BR># Push all tags to remote at once<BR>git push origin --tags<BR><BR># To delete the tag, you need to run git push origin v1.1.0 again to delete the remote tag<BR>git tag -d v1.1.0<BR><BR># delete remote tag<BR>git push origin --delete v1.1.0<BR><BR># checkout tags<BR>git checkout v1.1.0<BR><BR># View the details of a local label<BR>git show v1.1.0",
       "url":"",
       "image":""
    },
@@ -283,7 +283,7 @@
       "slno":"5.02",
       "topic":"pull",
       "description":"",
-      "longDescription":"to pull latest changes from remote repository to local folder<br> git pull",
+      "longDescription":"git pull pulls the latest content and merges it.<BR><BR>Pull the latest content of the remote branch<BR>Pulls the current branch by default<BR><BR># Automatically merge if there is a conflict<BR>git pull<BR>Pull the specified branch<BR># remote branch name: local branch name<BR>git pull origin master:master<BR># If a remote branch is pulled and merged into the current branch, it can be omitted<BR>git pull origin master<BR>Pull the specified working directory<BR># By default, the pull will be in the current working directory, but if you want to pull the specified working directory, you can specify `-C`<BR>git -C /opt/work pull",
       "url":"",
       "image":""
    },
@@ -307,7 +307,7 @@
       "slno":"5.05",
       "topic":"submodule",
       "description":"",
-      "longDescription":"Description for above topic goes here",
+      "longDescription":"The role of git submodule submodule is similar to package management, similar to npm, mainly to reuse warehouses, but it is more convenient to use than package management.<BR><BR>Submodules do not need to create version branch management code, because it depends on the main application, so the version branch can be operated from the main application, then once a new version branch is created, all current content will be locked on this branch, regardless of submodules How to modify the warehouse.<BR><BR>Add submodules<BR>After adding submodules, you will find that there is a .gitmodules metadata file in the root directory, which is mainly used to manage submodules.<BR><BR>git submodule add https://github.com/xjh22222228/git-manual.git # Add to the current directory by default<BR>git submodule add https://github.com/xjh22222228/git-manual.git submodules/git-manual # Add to the specified directory<BR><BR># -b specifies a branch that needs to be added to the repository<BR>git submodule add -b develop https://github.com/xjh22222228/git-manual.git<BR>remove submodules<BR># 1. Directly delete the submodule directory<BR>rm -rf submodule<BR><BR># 2. Edit the .gitmodules file in the directory to delete the submodules that need to be deleted<BR><BR># Finally push directly<BR>git add -A<BR>git commit -m "remove submodule"<BR>git push<BR>Clone a repository with submodules<BR># --recursive for recursive cloning, otherwise the submodule directory is empty<BR>git clone --recursive https://github.com/xjh22222228/git-manual.git<BR><BR># If you have cloned a project with submodules but forgot to --recursive, you can use this command to initialize, grab and checkout any nested submodules<BR>git submodule update --init --recursive<BR>Fix submodule branch<BR>When you clone a repository containing submodules, you will find that the submodule branch is wrong, you can use the following command to correct it:<BR><BR>git submodule foreach -q --recursive 'git checkout $(git config -f $toplevel/.gitmodules submodule.$name.branch || echo master)'<BR>Update submodule code<BR>Method 1: Usually we only need to execute git pull to update the code, which is a stupid way.<BR><BR># Recursively grab all changes in submodules, but do not update submodule contents<BR>git pull<BR><BR># At this time, you need to enter the submodule directory to update, so that a submodule update is completed, but if there are many submodules, it will be more troublesome<BR>cd git-manual && git pull<BR>Method 2: Use git submodule update to update submodules<BR><BR># git will try to update all submodules, if you only need to update a submodule just specify the submodule name after --remote<BR>git submodule update --remote<BR><BR># --recursive will recurse all submodules, including submodules in submodules<BR>git submodule update --init --recursive<BR>Method 3: Use git pull to update, this is a new update mode, which requires >= 2.14<BR><BR>git pull --recurse-submodules<BR>If you feel troublesome, you need to manually add --recurse-submodules every time you git pull, you can configure the default behavior of git pull, please refer to Configuration<BR><BR>For specific use, you can also see here git submodule submodule usage tutorial",
       "url":"",
       "image":""
    },
@@ -323,7 +323,7 @@
       "slno":"6.01",
       "topic":"show",
       "description":"",
-      "longDescription":"Description for above topic goes here",
+      "longDescription":"You can view historical commit information with the git show command.<BR><BR># Do not specify parameters to view the latest information by default<BR>git show<BR><BR># Specify commit_id to view<BR>git show d68a1ef<BR><BR># You can also specify commit_id to view the commit information of the specified file<BR>git show d68a1ef README.md<BR><BR># Specify only the file name to view the commit information that contains this file in the last commit<BR>git show README.md<BR><BR># Specify the branch name to view the last commit information<BR>git show feature/dev",
       "url":"",
       "image":""
    },
@@ -339,7 +339,7 @@
       "slno":"6.03",
       "topic":"diff",
       "description":"",
-      "longDescription":"Description for above topic goes here",
+      "longDescription":"The git diff command is used to view the differences between the contents of the workspace file and the staging area or remote.<BR><BR>git diff<BR># View all file differences between workspace and staging area<BR>git diff<BR><BR># View the difference between the specified file workspace and the staging area<BR>git diff README.md<BR><BR># View the content difference of the specified commit<BR>git diff dce06bd<BR><BR># Compare the difference between 2 commits<BR>git diff e3848eb dce06bd<BR><BR># Compare the difference between the latest submissions of the two branches, the develop branch and the master branch, if there is no difference, return empty<BR>git diff develop master<BR><BR># Compare the content differences of the specified files in the 2 branches, the differences between develop and master READNE.md files<BR>git diff develop master README.md README.md<BR><BR># View workspace conflict file differences<BR>git diff --name-only --diff-filter=U<BR><BR># See which files were last modified<BR>git diff --name-only HEAD~<BR>git diff --name-only HEAD~~ # The first 2 times...",
       "url":"",
       "image":""
    },
@@ -411,7 +411,7 @@
       "slno":"7.04",
       "topic":"rebase",
       "description":"",
-      "longDescription":"Description for above topic goes here",
+      "longDescription":"The git rebase command has two useful functions:<BR><BR>Combine multiple commit records into one<BR>instead of git mrege merge code<BR>1. Combine multiple commit records into one<BR>Pay attention to ensure that there is no content in the current workspace to operate.<BR><BR>Specify the record that needs to be operated, and then enter the interactive command<BR># start starting point is required, end is optional, defaults to the commit pointed to by the current branch HEAD<BR>git rebase -i <start> <end><BR><BR>git rebase -i HEAD~5 # Operate the last 5 commit records<BR>git rebase -i e88835de # or operate with commit_id",
       "url":"",
       "image":""
    },
@@ -435,7 +435,7 @@
       "slno":"8.01",
       "topic":"bisect",
       "description":"",
-      "longDescription":"Description for above topic goes here",
+      "longDescription":"# start<BR>git bisect start [end] [start] # Determine start and end by git log<BR>git bisect start HEAD 4d83cf<BR><BR># It is good to record this commit<BR>git bisect good<BR><BR># Record this commit is bad<BR>git bisect bad<BR><BR># quit<BR>git bisect reset",
       "url":"",
       "image":""
    },
@@ -443,7 +443,7 @@
       "slno":"8.02",
       "topic":"blame",
       "description":"",
-      "longDescription":"Description for above topic goes here",
+      "longDescription":"git blame means to blame, you know.<BR><BR>git blame is used to view the modification history of a file by which author made the changes.<BR><BR># View the modification history of the README.md file, including time, author, and content<BR>git blame README.md<BR><BR># See who changed lines 11-12 of the README.md file<BR>git blame -L 11,12 README.md<BR>git blame -L 11 README.md # Look after line 11<BR><BR># show the full hash value<BR>git blame -l README.md<BR><BR># Display the number of modified lines<BR>git blame -n README.md<BR><BR># show author email<BR>git blame -e README.md<BR><BR># Do a combined query on the parameters<BR>git blame -enl -L 11 README.md",
       "url":"",
       "image":""
    },
@@ -555,7 +555,7 @@
       "slno":"9.12",
       "topic":"Workflows",
       "description":"",
-      "longDescription":"Description for above topic goes here",
+      "longDescription":"Git Flow is a set of git-based workflows that define a strict model for how to create branches around project releases.<BR><BR>git flow just simplifies the operation commands, you can do it without git flow, just follow the git flow process operation, and the same is true for manual command execution.<BR><BR>git flow is not a built-in command and needs to be installed separately.<BR><BR>Initialize<BR>Each repository must be initialized once before it can be used, which is for the current user.<BR><BR># Usually just press Enter to complete the default settings<BR>git flow init<BR>Start developing a feature<BR>Suppose we want to start developing a new feature such as login and registration. At this time, we need to open a feature branch for independent development.<BR><BR># Step 1: Enable new features, create a branch named v1.1.0, and create a branch named feature/v1.1.0<BR>git flow feature start v1.1.0<BR><BR># Step 2: Push the branch to the remote, this step is indispensable in team collaboration<BR>git flow feature publish v1.1.0<BR><BR># Finally: complete the feature, merge the current branch into the develop branch and delete the feature/v1.1.0 branch and go back to develop<BR>git flow feature finish v1.1.0<BR>Patch<BR>When do you need to patch? Assuming that the functions that have been launched have bugs that need to be fixed, they need to be patched.<BR><BR>A hotfix is ​​a patch for the master branch.<BR><BR># Step 1: Open a patch branch called fix_doc to modify document errors, and the branch name after establishment is hotfix/fix_doc<BR>git flow hotfix start fix_doc<BR><BR># Step 2: Push to the remote, or not push, if multiple people change the bug at the same time, they need to push the shared branch<BR>git flow hotfix publish fix_doc<BR><BR># Finally: finish patch, merge current branch into master and develop, then delete branch and go back to develop<BR>git flow hotfix finish fix_doc<BR>Post<BR>Assuming that the product has given a new requirement and completed, you can choose to release it at this time. It’s okay to not release it, but there will be version distinctions after release, and it’s very convenient to find the code of a certain version in the future.<BR><BR># Step 1: Create a release version v1.1.0 The branch is named release/v1.1.0<BR>git flow release start v1.1.0<BR><BR># Step 2: Push to remote, optional<BR>git flow release publish v1.1.0<BR><BR># Finally: merge the current branch into master and develop, add a tag, then delete the current branch and go back to develop<BR>git flow release finish v1.1.0<BR>refer to:<BR><BR>https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow<BR>[https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/git-flow](https://www.git-tower.com/learn/git /ebook/cn/command-line/advanced-topics/git-flow)",
       "url":"",
       "image":""
    },
@@ -699,7 +699,7 @@
       "slno":"12.07",
       "topic":"archive",
       "description":"",
-      "longDescription":"Description for above topic goes here",
+      "longDescription":"Creating an archive file can be understood as compressing the current project into a file. The .git directory is ignored.<BR><BR>But unlike compression such as zip / tar, git archive supports archiving a branch or commit.<BR><BR>parameter<BR><BR>Parameters	Description<BR>--format	Optional, specify the format, the default is tar, tar and zip are supported, if not filled, it will be inferred according to the --output suffix format<BR>--output	Output to the specified directory<BR># Archive the master branch and package it in the current directory output.tar.gz<BR>git archive --output "./output.tar.gz" master<BR><BR># Archive the specified commit<BR>git archive --output "./output.tar.gz" d485a8ba9d2bcb5<BR><BR># Archive as zip, no need to specify --format because it will be inferred from the file suffix<BR>git archive --output "./output.zip" master<BR><BR># Archive one or more directories, not the entire project<BR>git archive --output "./output.zip" master src tests",
       "url":"",
       "image":""
    },
