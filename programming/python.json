@@ -1,538 +1,538 @@
 [
-    {
-        "Topic": "1. Whetting Your Appetite",
-        "Description": ""
-    },
-    {
-        "Topic": "2. Using the Python Interpreter",
-        "Description": ""
-    },
-    {
-        "Topic": "2.1. Invoking the Interpreter",
-        "Description": ""
-    },
-    {
-        "Topic": "2.1.1. Argument Passing",
-        "Description": ""
-    },
-    {
-        "Topic": "2.1.2. Interactive Mode",
-        "Description": ""
-    },
-    {
-        "Topic": "2.2. The Interpreter and Its Environment",
-        "Description": ""
-    },
-    {
-        "Topic": "2.2.1. Source Code Encoding",
-        "Description": ""
-    },
-    {
-        "Topic": "3. An Informal Introduction to Python",
-        "Description": "https://docs.python.org/3/tutorial/index.html#tutorial-index"
-    },
-    {
-        "Topic": "3.1. Using Python as a Calculator",
-        "Description": ""
-    },
-    {
-        "Topic": "3.1.1. Numbers",
-        "Description": ">>> 2 + 2<BR>4<BR> >>> 50 - 5*6<BR>20<BR> >>> (50 - 5*6) / 4<BR>5.0<BR> >>> 8 / 5  # division always returns a floating point number<BR>1.6<BR><BR>>>> 17 / 3  # classic division returns a float<BR>5.666666666666667<BR>>>><BR>>>> 17 // 3  # floor division discards the fractional part<BR>5<BR> >>> 17 % 3  # the % operator returns the remainder of the division<BR>2<BR> >>> 5 * 3 + 2  # floored quotient * divisor + remainder<BR>17<BR><BR>>>> 5 ** 2  # 5 squared<BR>25<BR> >>> 2 ** 7  # 2 to the power of 7<BR>128<BR><BR>>>> width = 20<BR> >>> height = 5 * 9<BR> >>> width * height<BR>900<BR><BR>>>> tax = 12.5 / 100<BR> >>> price = 100.50<BR> >>> price * tax<BR>12.5625<BR> >>> price + _<BR>113.0625<BR> >>> round(_, 2)<BR>113.06"
-    },
-    {
-        "Topic": "3.1.2. Strings",
-        "Description": ">>> 'spam eggs'  # single quotes<BR>'spam eggs'<BR> >>> 'doesn't'  # use ' to escape the single quote...<BR>doesn't<BR> >>> 'doesn't'   ...or use double quotes instead<BR>'doesnt<BR> >>> 'Yes, they said.'<BR>'Yes, they said.'<BR>>>> Yes, they said.'<BR>''Yes,' they said.'<BR>>>> 'Isn\'t, they said.'<BR>'Isn\'t, they said.'<BR><BR>>>> 'Isn\'t, they said.'<BR>'Isn\'t, they said.'<BR>>>> print('Isn\'t, they said.')<BR>Isn't, they said.<BR>>>> s = 'First line.\nSecond line.'  # \n means newline<BR> >>> s  # without print(), \n is included in the output<BR>'First line.\nSecond line.'<BR>>>> print(s)  # with print(), \n produces a new line<BR>First line.<BR>Second line.<BR><BR>>>> print('C:\some\name')  # here \n means newline!<BR>C:\some<BR>ame<BR> >>> print(r'C:\some\name')  # note the r before the quote<BR>C:\some\name<BR><BR>print(\<BR>Usage: thingy [OPTIONS]<BR>     -h                        Display this usage message<BR>     -H hostname               Hostname to connect to<BR>)<BR><BR>Usage: thingy [OPTIONS]<BR>     -h                        Display this usage message<BR>     -H hostname               Hostname to connect to<BR>	 <BR> >>> # 3 times 'un', followed by 'ium'<BR> >>> 3 * 'un' + 'ium'<BR>'unununium'<BR><BR> >>> 'Py' 'thon'<BR>'Python'<BR><BR> >>> text = ('Put several strings within parentheses '<BR>...         'to have them joined together.')<BR> >>> text<BR>'Put several strings within parentheses to have them joined together.'<BR><BR> >>> prefix = 'Py'<BR> >>> prefix 'thon'  # can't concatenate a variable and a string literal<BR>  File '<stdin>', line 1<BR>    prefix 'thon'<BR>                ^<BR>SyntaxError: invalid syntax<BR> >>> ('un' * 3) 'ium'<BR>  File '<stdin>', line 1<BR>    ('un' * 3) 'ium'<BR>                   ^<BR>SyntaxError: invalid syntax<BR><BR><BR> >>> prefix + 'thon'<BR>'Python'<BR><BR>>>> word = 'Python'<BR>>>> word[0]  # character in position 0<BR>'P'<BR>>>> word[5]  # character in position 5<BR>'n'<BR><BR>>>> word[-1]  # last character<BR>'n'<BR>>>> word[-2]  # second-last character<BR>'o'<BR>>>> word[-6]<BR>'P'<BR><BR>>>> word[0:2]  # characters from position 0 (included) to 2 (excluded)<BR>'Py'<BR>>>> word[2:5]  # characters from position 2 (included) to 5 (excluded)<BR>'tho'<BR><BR>>>> word[:2]   # character from the beginning to position 2 (excluded)<BR>'Py'<BR>>>> word[4:]   # characters from position 4 (included) to the end<BR>'on'<BR>>>> word[-2:]  # characters from the second-last (included) to the end<BR>'on'<BR><BR>>>> word[:2] + word[2:]<BR>'Python'<BR>>>> word[:4] + word[4:]<BR>'Python'<BR><BR> +---+---+---+---+---+---+<BR> | P | y | t | h | o | n |<BR> +---+---+---+---+---+---+<BR> 0   1   2   3   4   5   6<BR>-6  -5  -4  -3  -2  -1<BR><BR>>>> word[42]  # the word only has 6 characters<BR>Traceback (most recent call last):<BR>  File '<stdin>', line 1, in <module><BR>IndexError: string index out of range<BR><BR>>>> word[4:42]<BR>'on'<BR>>>> word[42:]<BR>''<BR><BR>>>> word[0] = 'J'<BR>Traceback (most recent call last):<BR>  File '<stdin>', line 1, in <module><BR>TypeError: 'str' object does not support item assignment<BR> >>> word[2:] = 'py'<BR>Traceback (most recent call last):<BR>  File '<stdin>', line 1, in <module><BR>TypeError: 'str' object does not support item assignment<BR><BR>>>> 'J' + word[1:]<BR>'Jython'<BR>>>> word[:2] + 'py'<BR>'Pypy'<BR><BR>>>> s = 'supercalifragilisticexpialidocious'<BR>>>> len(s)<BR>34"
-    },
-    {
-        "Topic": "3.1.3. Lists",
-        "Description": ">>> squares = [1, 4, 9, 16, 25]<BR> >>> squares<BR>[1, 4, 9, 16, 25]<BR><BR> >>> squares[0]  # indexing returns the item<BR>1<BR> >>>  squares[-1]<BR>25<BR> >>>  squares[-3:]  # slicing returns a new list<BR>[9, 16, 25]<BR><BR>>>> squares[:]<BR>[1, 4, 9, 16, 25]<BR><BR>>>> squares + [36, 49, 64, 81, 100]<BR>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]<BR><BR><BR>>>> cubes = [1, 8, 27, 65, 125]  # something's wrong here<BR> >>>  4 ** 3  # the cube of 4 is 64, not 65!<BR>64<BR> >>>  cubes[3] = 64  # replace the wrong value<BR> >>>  cubes<BR>[1, 8, 27, 64, 125]<BR><BR>>>> cubes.append(216)  # add the cube of 6<BR> >>>  cubes.append(7 ** 3)  # and the cube of 7<BR> >>>  cubes<BR>[1, 8, 27, 64, 125, 216, 343]<BR><BR>>>> letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']<BR>>>> letters<BR>['a', 'b', 'c', 'd', 'e', 'f', 'g']<BR>>>> # replace some values<BR> >>>  letters[2:5] = ['C', 'D', 'E']<BR>>>> letters<BR>['a', 'b', 'C', 'D', 'E', 'f', 'g']<BR>>>> # now remove them<BR> >>>  letters[2:5] = []<BR>>>> letters<BR>['a', 'b', 'f', 'g']<BR>>>> # clear the list by replacing all the elements with an empty list<BR> >>>  letters[:] = []<BR>>>> letters<BR>[]<BR><BR> >>> letters = ['a', 'b', 'c', 'd']<BR>>>> len(letters)<BR>4<BR><BR>>>> a = ['a', 'b', 'c']<BR>>>> n = [1, 2, 3]<BR>>>> x = [a, n]<BR>>>> x<BR>[['a', 'b', 'c'], [1, 2, 3]]<BR>>>> x[0]<BR>['a', 'b', 'c']<BR>>>> x[0][1]<BR>'b'<BR><BR>"
-    },
-    {
-        "Topic": "3.2. First Steps Towards Programming",
-        "Description": ">>> # Fibonacci series:<BR>... # the sum of two elements defines the next<BR>... a, b = 0, 1<BR> >>>  while a < 10:<BR>...     print(a)<BR>...     a, b = b, a+b<BR>...<BR>0<BR>1<BR>1<BR>2<BR>3<BR>5<BR>8<BR><BR><BR>>>> i = 256*256<BR> >>>  print('The value of i is', i)<BR>The value of i is 65536<BR><BR>>>> a, b = 0, 1<BR> >>>  while a < 1000:<BR>...     print(a, end=',')<BR>...     a, b = b, a+b<BR>...<BR>0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,<BR><BR>"
-    },
-    {
-        "Topic": "4. More Control Flow Tools",
-        "Description": ""
-    },
-    {
-        "Topic": "4.1. if Statements",
-        "Description": ""
-    },
-    {
-        "Topic": "4.2. for Statements",
-        "Description": ""
-    },
-    {
-        "Topic": "4.3. The range() Function",
-        "Description": ""
-    },
-    {
-        "Topic": "4.4. break and continue Statements, and else Clauses on Loops",
-        "Description": ""
-    },
-    {
-        "Topic": "4.5. pass Statements",
-        "Description": ""
-    },
-    {
-        "Topic": "4.6. match Statements",
-        "Description": ""
-    },
-    {
-        "Topic": "4.7. Defining Functions",
-        "Description": ""
-    },
-    {
-        "Topic": "4.8. More on Defining Functions",
-        "Description": ""
-    },
-    {
-        "Topic": "4.8.1. Default Argument Values",
-        "Description": ""
-    },
-    {
-        "Topic": "4.8.2. Keyword Arguments",
-        "Description": ""
-    },
-    {
-        "Topic": "4.8.3. Special parameters",
-        "Description": ""
-    },
-    {
-        "Topic": "4.8.3.1. Positional-or-Keyword Arguments",
-        "Description": ""
-    },
-    {
-        "Topic": "4.8.3.2. Positional-Only Parameters",
-        "Description": ""
-    },
-    {
-        "Topic": "4.8.3.3. Keyword-Only Arguments",
-        "Description": ""
-    },
-    {
-        "Topic": "4.8.3.4. Function Examples",
-        "Description": ""
-    },
-    {
-        "Topic": "4.8.3.5. Recap",
-        "Description": ""
-    },
-    {
-        "Topic": "4.8.4. Arbitrary Argument Lists",
-        "Description": ""
-    },
-    {
-        "Topic": "4.8.5. Unpacking Argument Lists",
-        "Description": ""
-    },
-    {
-        "Topic": "4.8.6. Lambda Expressions",
-        "Description": ""
-    },
-    {
-        "Topic": "4.8.7. Documentation Strings",
-        "Description": ""
-    },
-    {
-        "Topic": "4.8.8. Function Annotations",
-        "Description": ""
-    },
-    {
-        "Topic": "4.9. Intermezzo: Coding Style",
-        "Description": ""
-    },
-    {
-        "Topic": "5. Data Structures",
-        "Description": ""
-    },
-    {
-        "Topic": "5.1. More on Lists",
-        "Description": ""
-    },
-    {
-        "Topic": "5.1.1. Using Lists as Stacks",
-        "Description": ""
-    },
-    {
-        "Topic": "5.1.2. Using Lists as Queues",
-        "Description": ""
-    },
-    {
-        "Topic": "5.1.3. List Comprehensions",
-        "Description": ""
-    },
-    {
-        "Topic": "5.1.4. Nested List Comprehensions",
-        "Description": ""
-    },
-    {
-        "Topic": "5.2. The del statement",
-        "Description": ""
-    },
-    {
-        "Topic": "5.3. Tuples and Sequences",
-        "Description": ""
-    },
-    {
-        "Topic": "5.4. Sets",
-        "Description": ""
-    },
-    {
-        "Topic": "5.5. Dictionaries",
-        "Description": ""
-    },
-    {
-        "Topic": "5.6. Looping Techniques",
-        "Description": ""
-    },
-    {
-        "Topic": "5.7. More on Conditions",
-        "Description": ""
-    },
-    {
-        "Topic": "5.8. Comparing Sequences and Other Types",
-        "Description": ""
-    },
-    {
-        "Topic": "6. Modules",
-        "Description": ""
-    },
-    {
-        "Topic": "6.1. More on Modules",
-        "Description": ""
-    },
-    {
-        "Topic": "6.1.1. Executing modules as scripts",
-        "Description": ""
-    },
-    {
-        "Topic": "6.1.2. The Module Search Path",
-        "Description": ""
-    },
-    {
-        "Topic": "6.1.3. Compiled Python files",
-        "Description": ""
-    },
-    {
-        "Topic": "6.2. Standard Modules",
-        "Description": ""
-    },
-    {
-        "Topic": "6.3. The dir() Function",
-        "Description": ""
-    },
-    {
-        "Topic": "6.4. Packages",
-        "Description": ""
-    },
-    {
-        "Topic": "6.4.1. Importing * From a Package",
-        "Description": ""
-    },
-    {
-        "Topic": "6.4.2. Intra-package References",
-        "Description": ""
-    },
-    {
-        "Topic": "6.4.3. Packages in Multiple Directories",
-        "Description": ""
-    },
-    {
-        "Topic": "7. Input and Output",
-        "Description": ""
-    },
-    {
-        "Topic": "7.1. Fancier Output Formatting",
-        "Description": ""
-    },
-    {
-        "Topic": "7.1.1. Formatted String Literals",
-        "Description": ""
-    },
-    {
-        "Topic": "7.1.2. The String format() Method",
-        "Description": ""
-    },
-    {
-        "Topic": "7.1.3. Manual String Formatting",
-        "Description": ""
-    },
-    {
-        "Topic": "7.1.4. Old string formatting",
-        "Description": ""
-    },
-    {
-        "Topic": "7.2. Reading and Writing Files",
-        "Description": ""
-    },
-    {
-        "Topic": "7.2.1. Methods of File Objects",
-        "Description": ""
-    },
-    {
-        "Topic": "7.2.2. Saving structured data with json",
-        "Description": ""
-    },
-    {
-        "Topic": "8. Errors and Exceptions",
-        "Description": ""
-    },
-    {
-        "Topic": "8.1. Syntax Errors",
-        "Description": ""
-    },
-    {
-        "Topic": "8.2. Exceptions",
-        "Description": ""
-    },
-    {
-        "Topic": "8.3. Handling Exceptions",
-        "Description": ""
-    },
-    {
-        "Topic": "8.4. Raising Exceptions",
-        "Description": ""
-    },
-    {
-        "Topic": "8.5. Exception Chaining",
-        "Description": ""
-    },
-    {
-        "Topic": "8.6. User-defined Exceptions",
-        "Description": ""
-    },
-    {
-        "Topic": "8.7. Defining Clean-up Actions",
-        "Description": ""
-    },
-    {
-        "Topic": "8.8. Predefined Clean-up Actions",
-        "Description": ""
-    },
-    {
-        "Topic": "9. Classes",
-        "Description": ""
-    },
-    {
-        "Topic": "9.1. A Word About Names and Objects",
-        "Description": ""
-    },
-    {
-        "Topic": "9.2. Python Scopes and Namespaces",
-        "Description": ""
-    },
-    {
-        "Topic": "9.2.1. Scopes and Namespaces Example",
-        "Description": ""
-    },
-    {
-        "Topic": "9.3. A First Look at Classes",
-        "Description": ""
-    },
-    {
-        "Topic": "9.3.1. Class Definition Syntax",
-        "Description": ""
-    },
-    {
-        "Topic": "9.3.2. Class Objects",
-        "Description": ""
-    },
-    {
-        "Topic": "9.3.3. Instance Objects",
-        "Description": ""
-    },
-    {
-        "Topic": "9.3.4. Method Objects",
-        "Description": ""
-    },
-    {
-        "Topic": "9.3.5. Class and Instance Variables",
-        "Description": ""
-    },
-    {
-        "Topic": "9.4. Random Remarks",
-        "Description": ""
-    },
-    {
-        "Topic": "9.5. Inheritance",
-        "Description": ""
-    },
-    {
-        "Topic": "9.5.1. Multiple Inheritance",
-        "Description": ""
-    },
-    {
-        "Topic": "9.6. Private Variables",
-        "Description": ""
-    },
-    {
-        "Topic": "9.7. Odds and Ends",
-        "Description": ""
-    },
-    {
-        "Topic": "9.8. Iterators",
-        "Description": ""
-    },
-    {
-        "Topic": "9.9. Generators",
-        "Description": ""
-    },
-    {
-        "Topic": "9.10. Generator Expressions",
-        "Description": ""
-    },
-    {
-        "Topic": "10. Brief Tour of the Standard Library",
-        "Description": ""
-    },
-    {
-        "Topic": "10.1. Operating System Interface",
-        "Description": ""
-    },
-    {
-        "Topic": "10.2. File Wildcards",
-        "Description": ""
-    },
-    {
-        "Topic": "10.3. Command Line Arguments",
-        "Description": ""
-    },
-    {
-        "Topic": "10.4. Error Output Redirection and Program Termination",
-        "Description": ""
-    },
-    {
-        "Topic": "10.5. String Pattern Matching",
-        "Description": ""
-    },
-    {
-        "Topic": "10.6. Mathematics",
-        "Description": ""
-    },
-    {
-        "Topic": "10.7. Internet Access",
-        "Description": ""
-    },
-    {
-        "Topic": "10.8. Dates and Times",
-        "Description": ""
-    },
-    {
-        "Topic": "10.9. Data Compression",
-        "Description": ""
-    },
-    {
-        "Topic": "10.10. Performance Measurement",
-        "Description": ""
-    },
-    {
-        "Topic": "10.11. Quality Control",
-        "Description": ""
-    },
-    {
-        "Topic": "10.12. Batteries Included",
-        "Description": ""
-    },
-    {
-        "Topic": "11. Brief Tour of the Standard Library \u00e2\u20ac\u201d Part II",
-        "Description": ""
-    },
-    {
-        "Topic": "11.1. Output Formatting",
-        "Description": ""
-    },
-    {
-        "Topic": "11.2. Templating",
-        "Description": ""
-    },
-    {
-        "Topic": "11.3. Working with Binary Data Record Layouts",
-        "Description": ""
-    },
-    {
-        "Topic": "11.4. Multi-threading",
-        "Description": ""
-    },
-    {
-        "Topic": "11.5. Logging",
-        "Description": ""
-    },
-    {
-        "Topic": "11.6. Weak References",
-        "Description": ""
-    },
-    {
-        "Topic": "11.7. Tools for Working with Lists",
-        "Description": ""
-    },
-    {
-        "Topic": "11.8. Decimal Floating Point Arithmetic",
-        "Description": ""
-    },
-    {
-        "Topic": "12. Virtual Environments and Packages",
-        "Description": ""
-    },
-    {
-        "Topic": "12.1. Introduction",
-        "Description": ""
-    },
-    {
-        "Topic": "12.2. Creating Virtual Environments",
-        "Description": ""
-    },
-    {
-        "Topic": "12.3. Managing Packages with pip",
-        "Description": ""
-    },
-    {
-        "Topic": "13. What Now?",
-        "Description": ""
-    },
-    {
-        "Topic": "14. Interactive Input Editing and History Substitution",
-        "Description": ""
-    },
-    {
-        "Topic": "14.1. Tab Completion and History Editing",
-        "Description": ""
-    },
-    {
-        "Topic": "14.2. Alternatives to the Interactive Interpreter",
-        "Description": ""
-    },
-    {
-        "Topic": "15. Floating Point Arithmetic: Issues and Limitations",
-        "Description": ""
-    },
-    {
-        "Topic": "15.1. Representation Error",
-        "Description": ""
-    },
-    {
-        "Topic": "16. Appendix",
-        "Description": ""
-    },
-    {
-        "Topic": "16.1. Interactive Mode",
-        "Description": ""
-    },
-    {
-        "Topic": "16.1.1. Error Handling",
-        "Description": ""
-    },
-    {
-        "Topic": "16.1.2. Executable Python Scripts",
-        "Description": ""
-    },
-    {
-        "Topic": "16.1.3. The Interactive Startup File",
-        "Description": ""
-    },
-    {
-        "Topic": "16.1.4. The Customization Modules",
-        "Description": ""
-    }
+   {
+      "Topic":"1. Whetting Your Appetite",
+      "Description":""
+   },
+   {
+      "Topic":"2. Using the Python Interpreter",
+      "Description":""
+   },
+   {
+      "Topic":"2.1. Invoking the Interpreter",
+      "Description":""
+   },
+   {
+      "Topic":"2.1.1. Argument Passing",
+      "Description":""
+   },
+   {
+      "Topic":"2.1.2. Interactive Mode",
+      "Description":""
+   },
+   {
+      "Topic":"2.2. The Interpreter and Its Environment",
+      "Description":""
+   },
+   {
+      "Topic":"2.2.1. Source Code Encoding",
+      "Description":""
+   },
+   {
+      "Topic":"3. An Informal Introduction to Python",
+      "Description":"https://docs.python.org/3/tutorial/index.html#tutorial-index"
+   },
+   {
+      "Topic":"3.1. Using Python as a Calculator",
+      "Description":""
+   },
+   {
+      "Topic":"3.1.1. Numbers",
+      "Description":">>> 2 + 2<BR>4<BR> >>> 50 - 5*6<BR>20<BR> >>> (50 - 5*6) / 4<BR>5.0<BR> >>> 8 / 5  # division always returns a floating point number<BR>1.6<BR><BR>>>> 17 / 3  # classic division returns a float<BR>5.666666666666667<BR>>>><BR>>>> 17 // 3  # floor division discards the fractional part<BR>5<BR> >>> 17 % 3  # the % operator returns the remainder of the division<BR>2<BR> >>> 5 * 3 + 2  # floored quotient * divisor + remainder<BR>17<BR><BR>>>> 5 ** 2  # 5 squared<BR>25<BR> >>> 2 ** 7  # 2 to the power of 7<BR>128<BR><BR>>>> width = 20<BR> >>> height = 5 * 9<BR> >>> width * height<BR>900<BR><BR>>>> tax = 12.5 / 100<BR> >>> price = 100.50<BR> >>> price * tax<BR>12.5625<BR> >>> price + _<BR>113.0625<BR> >>> round(_, 2)<BR>113.06"
+   },
+   {
+      "Topic":"3.1.2. Strings",
+      "Description":">>> 'spam eggs'  # single quotes<BR>'spam eggs'<BR> >>> 'doesn't'  # use ' to escape the single quote...<BR>doesn't<BR> >>> 'doesn't'   ...or use double quotes instead<BR>'doesnt<BR> >>> 'Yes, they said.'<BR>'Yes, they said.'<BR>>>> Yes, they said.'<BR>''Yes,' they said.'<BR>>>> 'Isn\\'t, they said.'<BR>'Isn\\'t, they said.'<BR><BR>>>> 'Isn\\'t, they said.'<BR>'Isn\\'t, they said.'<BR>>>> print('Isn\\'t, they said.')<BR>Isn't, they said.<BR>>>> s = 'First line.\nSecond line.'  # \n means newline<BR> >>> s  # without print(), \n is included in the output<BR>'First line.\nSecond line.'<BR>>>> print(s)  # with print(), \n produces a new line<BR>First line.<BR>Second line.<BR><BR>>>> print('C:\\some\name')  # here \n means newline!<BR>C:\\some<BR>ame<BR> >>> print(r'C:\\some\name')  # note the r before the quote<BR>C:\\some\name<BR><BR>print(\\<BR>Usage: thingy [OPTIONS]<BR>     -h                        Display this usage message<BR>     -H hostname               Hostname to connect to<BR>)<BR><BR>Usage: thingy [OPTIONS]<BR>     -h                        Display this usage message<BR>     -H hostname               Hostname to connect to<BR>	 <BR> >>> # 3 times 'un', followed by 'ium'<BR> >>> 3 * 'un' + 'ium'<BR>'unununium'<BR><BR> >>> 'Py' 'thon'<BR>'Python'<BR><BR> >>> text = ('Put several strings within parentheses '<BR>...         'to have them joined together.')<BR> >>> text<BR>'Put several strings within parentheses to have them joined together.'<BR><BR> >>> prefix = 'Py'<BR> >>> prefix 'thon'  # can't concatenate a variable and a string literal<BR>  File '<stdin>', line 1<BR>    prefix 'thon'<BR>                ^<BR>SyntaxError: invalid syntax<BR> >>> ('un' * 3) 'ium'<BR>  File '<stdin>', line 1<BR>    ('un' * 3) 'ium'<BR>                   ^<BR>SyntaxError: invalid syntax<BR><BR><BR> >>> prefix + 'thon'<BR>'Python'<BR><BR>>>> word = 'Python'<BR>>>> word[0]  # character in position 0<BR>'P'<BR>>>> word[5]  # character in position 5<BR>'n'<BR><BR>>>> word[-1]  # last character<BR>'n'<BR>>>> word[-2]  # second-last character<BR>'o'<BR>>>> word[-6]<BR>'P'<BR><BR>>>> word[0:2]  # characters from position 0 (included) to 2 (excluded)<BR>'Py'<BR>>>> word[2:5]  # characters from position 2 (included) to 5 (excluded)<BR>'tho'<BR><BR>>>> word[:2]   # character from the beginning to position 2 (excluded)<BR>'Py'<BR>>>> word[4:]   # characters from position 4 (included) to the end<BR>'on'<BR>>>> word[-2:]  # characters from the second-last (included) to the end<BR>'on'<BR><BR>>>> word[:2] + word[2:]<BR>'Python'<BR>>>> word[:4] + word[4:]<BR>'Python'<BR><BR> +---+---+---+---+---+---+<BR> | P | y | t | h | o | n |<BR> +---+---+---+---+---+---+<BR> 0   1   2   3   4   5   6<BR>-6  -5  -4  -3  -2  -1<BR><BR>>>> word[42]  # the word only has 6 characters<BR>Traceback (most recent call last):<BR>  File '<stdin>', line 1, in <module><BR>IndexError: string index out of range<BR><BR>>>> word[4:42]<BR>'on'<BR>>>> word[42:]<BR>''<BR><BR>>>> word[0] = 'J'<BR>Traceback (most recent call last):<BR>  File '<stdin>', line 1, in <module><BR>TypeError: 'str' object does not support item assignment<BR> >>> word[2:] = 'py'<BR>Traceback (most recent call last):<BR>  File '<stdin>', line 1, in <module><BR>TypeError: 'str' object does not support item assignment<BR><BR>>>> 'J' + word[1:]<BR>'Jython'<BR>>>> word[:2] + 'py'<BR>'Pypy'<BR><BR>>>> s = 'supercalifragilisticexpialidocious'<BR>>>> len(s)<BR>34"
+   },
+   {
+      "Topic":"3.1.3. Lists",
+      "Description":">>> squares = [1, 4, 9, 16, 25]<BR> >>> squares<BR>[1, 4, 9, 16, 25]<BR><BR> >>> squares[0]  # indexing returns the item<BR>1<BR> >>>  squares[-1]<BR>25<BR> >>>  squares[-3:]  # slicing returns a new list<BR>[9, 16, 25]<BR><BR>>>> squares[:]<BR>[1, 4, 9, 16, 25]<BR><BR>>>> squares + [36, 49, 64, 81, 100]<BR>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]<BR><BR><BR>>>> cubes = [1, 8, 27, 65, 125]  # something's wrong here<BR> >>>  4 ** 3  # the cube of 4 is 64, not 65!<BR>64<BR> >>>  cubes[3] = 64  # replace the wrong value<BR> >>>  cubes<BR>[1, 8, 27, 64, 125]<BR><BR>>>> cubes.append(216)  # add the cube of 6<BR> >>>  cubes.append(7 ** 3)  # and the cube of 7<BR> >>>  cubes<BR>[1, 8, 27, 64, 125, 216, 343]<BR><BR>>>> letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']<BR>>>> letters<BR>['a', 'b', 'c', 'd', 'e', 'f', 'g']<BR>>>> # replace some values<BR> >>>  letters[2:5] = ['C', 'D', 'E']<BR>>>> letters<BR>['a', 'b', 'C', 'D', 'E', 'f', 'g']<BR>>>> # now remove them<BR> >>>  letters[2:5] = []<BR>>>> letters<BR>['a', 'b', 'f', 'g']<BR>>>> # clear the list by replacing all the elements with an empty list<BR> >>>  letters[:] = []<BR>>>> letters<BR>[]<BR><BR> >>> letters = ['a', 'b', 'c', 'd']<BR>>>> len(letters)<BR>4<BR><BR>>>> a = ['a', 'b', 'c']<BR>>>> n = [1, 2, 3]<BR>>>> x = [a, n]<BR>>>> x<BR>[['a', 'b', 'c'], [1, 2, 3]]<BR>>>> x[0]<BR>['a', 'b', 'c']<BR>>>> x[0][1]<BR>'b'<BR><BR>"
+   },
+   {
+      "Topic":"3.2. First Steps Towards Programming",
+      "Description":">>> # Fibonacci series:<BR>... # the sum of two elements defines the next<BR>... a, b = 0, 1<BR> >>>  while a < 10:<BR>...     print(a)<BR>...     a, b = b, a+b<BR>...<BR>0<BR>1<BR>1<BR>2<BR>3<BR>5<BR>8<BR><BR><BR>>>> i = 256*256<BR> >>>  print('The value of i is', i)<BR>The value of i is 65536<BR><BR>>>> a, b = 0, 1<BR> >>>  while a < 1000:<BR>...     print(a, end=',')<BR>...     a, b = b, a+b<BR>...<BR>0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,<BR><BR>"
+   },
+   {
+      "Topic":"4. More Control Flow Tools",
+      "Description":""
+   },
+   {
+      "Topic":"4.1. if Statements",
+      "Description":""
+   },
+   {
+      "Topic":"4.2. for Statements",
+      "Description":""
+   },
+   {
+      "Topic":"4.3. The range() Function",
+      "Description":""
+   },
+   {
+      "Topic":"4.4. break and continue Statements, and else Clauses on Loops",
+      "Description":""
+   },
+   {
+      "Topic":"4.5. pass Statements",
+      "Description":""
+   },
+   {
+      "Topic":"4.6. match Statements",
+      "Description":""
+   },
+   {
+      "Topic":"4.7. Defining Functions",
+      "Description":""
+   },
+   {
+      "Topic":"4.8. More on Defining Functions",
+      "Description":""
+   },
+   {
+      "Topic":"4.8.1. Default Argument Values",
+      "Description":""
+   },
+   {
+      "Topic":"4.8.2. Keyword Arguments",
+      "Description":""
+   },
+   {
+      "Topic":"4.8.3. Special parameters",
+      "Description":""
+   },
+   {
+      "Topic":"4.8.3.1. Positional-or-Keyword Arguments",
+      "Description":""
+   },
+   {
+      "Topic":"4.8.3.2. Positional-Only Parameters",
+      "Description":""
+   },
+   {
+      "Topic":"4.8.3.3. Keyword-Only Arguments",
+      "Description":""
+   },
+   {
+      "Topic":"4.8.3.4. Function Examples",
+      "Description":""
+   },
+   {
+      "Topic":"4.8.3.5. Recap",
+      "Description":""
+   },
+   {
+      "Topic":"4.8.4. Arbitrary Argument Lists",
+      "Description":""
+   },
+   {
+      "Topic":"4.8.5. Unpacking Argument Lists",
+      "Description":""
+   },
+   {
+      "Topic":"4.8.6. Lambda Expressions",
+      "Description":""
+   },
+   {
+      "Topic":"4.8.7. Documentation Strings",
+      "Description":""
+   },
+   {
+      "Topic":"4.8.8. Function Annotations",
+      "Description":""
+   },
+   {
+      "Topic":"4.9. Intermezzo: Coding Style",
+      "Description":""
+   },
+   {
+      "Topic":"5. Data Structures",
+      "Description":""
+   },
+   {
+      "Topic":"5.1. More on Lists",
+      "Description":""
+   },
+   {
+      "Topic":"5.1.1. Using Lists as Stacks",
+      "Description":""
+   },
+   {
+      "Topic":"5.1.2. Using Lists as Queues",
+      "Description":""
+   },
+   {
+      "Topic":"5.1.3. List Comprehensions",
+      "Description":""
+   },
+   {
+      "Topic":"5.1.4. Nested List Comprehensions",
+      "Description":""
+   },
+   {
+      "Topic":"5.2. The del statement",
+      "Description":""
+   },
+   {
+      "Topic":"5.3. Tuples and Sequences",
+      "Description":""
+   },
+   {
+      "Topic":"5.4. Sets",
+      "Description":""
+   },
+   {
+      "Topic":"5.5. Dictionaries",
+      "Description":""
+   },
+   {
+      "Topic":"5.6. Looping Techniques",
+      "Description":""
+   },
+   {
+      "Topic":"5.7. More on Conditions",
+      "Description":""
+   },
+   {
+      "Topic":"5.8. Comparing Sequences and Other Types",
+      "Description":""
+   },
+   {
+      "Topic":"6. Modules",
+      "Description":""
+   },
+   {
+      "Topic":"6.1. More on Modules",
+      "Description":""
+   },
+   {
+      "Topic":"6.1.1. Executing modules as scripts",
+      "Description":""
+   },
+   {
+      "Topic":"6.1.2. The Module Search Path",
+      "Description":""
+   },
+   {
+      "Topic":"6.1.3. Compiled Python files",
+      "Description":""
+   },
+   {
+      "Topic":"6.2. Standard Modules",
+      "Description":""
+   },
+   {
+      "Topic":"6.3. The dir() Function",
+      "Description":""
+   },
+   {
+      "Topic":"6.4. Packages",
+      "Description":""
+   },
+   {
+      "Topic":"6.4.1. Importing * From a Package",
+      "Description":""
+   },
+   {
+      "Topic":"6.4.2. Intra-package References",
+      "Description":""
+   },
+   {
+      "Topic":"6.4.3. Packages in Multiple Directories",
+      "Description":""
+   },
+   {
+      "Topic":"7. Input and Output",
+      "Description":""
+   },
+   {
+      "Topic":"7.1. Fancier Output Formatting",
+      "Description":""
+   },
+   {
+      "Topic":"7.1.1. Formatted String Literals",
+      "Description":""
+   },
+   {
+      "Topic":"7.1.2. The String format() Method",
+      "Description":""
+   },
+   {
+      "Topic":"7.1.3. Manual String Formatting",
+      "Description":""
+   },
+   {
+      "Topic":"7.1.4. Old string formatting",
+      "Description":""
+   },
+   {
+      "Topic":"7.2. Reading and Writing Files",
+      "Description":""
+   },
+   {
+      "Topic":"7.2.1. Methods of File Objects",
+      "Description":""
+   },
+   {
+      "Topic":"7.2.2. Saving structured data with json",
+      "Description":""
+   },
+   {
+      "Topic":"8. Errors and Exceptions",
+      "Description":""
+   },
+   {
+      "Topic":"8.1. Syntax Errors",
+      "Description":""
+   },
+   {
+      "Topic":"8.2. Exceptions",
+      "Description":""
+   },
+   {
+      "Topic":"8.3. Handling Exceptions",
+      "Description":""
+   },
+   {
+      "Topic":"8.4. Raising Exceptions",
+      "Description":""
+   },
+   {
+      "Topic":"8.5. Exception Chaining",
+      "Description":""
+   },
+   {
+      "Topic":"8.6. User-defined Exceptions",
+      "Description":""
+   },
+   {
+      "Topic":"8.7. Defining Clean-up Actions",
+      "Description":""
+   },
+   {
+      "Topic":"8.8. Predefined Clean-up Actions",
+      "Description":""
+   },
+   {
+      "Topic":"9. Classes",
+      "Description":""
+   },
+   {
+      "Topic":"9.1. A Word About Names and Objects",
+      "Description":""
+   },
+   {
+      "Topic":"9.2. Python Scopes and Namespaces",
+      "Description":""
+   },
+   {
+      "Topic":"9.2.1. Scopes and Namespaces Example",
+      "Description":""
+   },
+   {
+      "Topic":"9.3. A First Look at Classes",
+      "Description":""
+   },
+   {
+      "Topic":"9.3.1. Class Definition Syntax",
+      "Description":""
+   },
+   {
+      "Topic":"9.3.2. Class Objects",
+      "Description":""
+   },
+   {
+      "Topic":"9.3.3. Instance Objects",
+      "Description":""
+   },
+   {
+      "Topic":"9.3.4. Method Objects",
+      "Description":""
+   },
+   {
+      "Topic":"9.3.5. Class and Instance Variables",
+      "Description":""
+   },
+   {
+      "Topic":"9.4. Random Remarks",
+      "Description":""
+   },
+   {
+      "Topic":"9.5. Inheritance",
+      "Description":""
+   },
+   {
+      "Topic":"9.5.1. Multiple Inheritance",
+      "Description":""
+   },
+   {
+      "Topic":"9.6. Private Variables",
+      "Description":""
+   },
+   {
+      "Topic":"9.7. Odds and Ends",
+      "Description":""
+   },
+   {
+      "Topic":"9.8. Iterators",
+      "Description":""
+   },
+   {
+      "Topic":"9.9. Generators",
+      "Description":""
+   },
+   {
+      "Topic":"9.10. Generator Expressions",
+      "Description":""
+   },
+   {
+      "Topic":"10. Brief Tour of the Standard Library",
+      "Description":""
+   },
+   {
+      "Topic":"10.1. Operating System Interface",
+      "Description":""
+   },
+   {
+      "Topic":"10.2. File Wildcards",
+      "Description":""
+   },
+   {
+      "Topic":"10.3. Command Line Arguments",
+      "Description":""
+   },
+   {
+      "Topic":"10.4. Error Output Redirection and Program Termination",
+      "Description":""
+   },
+   {
+      "Topic":"10.5. String Pattern Matching",
+      "Description":""
+   },
+   {
+      "Topic":"10.6. Mathematics",
+      "Description":""
+   },
+   {
+      "Topic":"10.7. Internet Access",
+      "Description":""
+   },
+   {
+      "Topic":"10.8. Dates and Times",
+      "Description":""
+   },
+   {
+      "Topic":"10.9. Data Compression",
+      "Description":""
+   },
+   {
+      "Topic":"10.10. Performance Measurement",
+      "Description":""
+   },
+   {
+      "Topic":"10.11. Quality Control",
+      "Description":""
+   },
+   {
+      "Topic":"10.12. Batteries Included",
+      "Description":""
+   },
+   {
+      "Topic":"11. Brief Tour of the Standard Library \u00e2\u20ac\u201d Part II",
+      "Description":""
+   },
+   {
+      "Topic":"11.1. Output Formatting",
+      "Description":""
+   },
+   {
+      "Topic":"11.2. Templating",
+      "Description":""
+   },
+   {
+      "Topic":"11.3. Working with Binary Data Record Layouts",
+      "Description":""
+   },
+   {
+      "Topic":"11.4. Multi-threading",
+      "Description":""
+   },
+   {
+      "Topic":"11.5. Logging",
+      "Description":""
+   },
+   {
+      "Topic":"11.6. Weak References",
+      "Description":""
+   },
+   {
+      "Topic":"11.7. Tools for Working with Lists",
+      "Description":""
+   },
+   {
+      "Topic":"11.8. Decimal Floating Point Arithmetic",
+      "Description":""
+   },
+   {
+      "Topic":"12. Virtual Environments and Packages",
+      "Description":""
+   },
+   {
+      "Topic":"12.1. Introduction",
+      "Description":""
+   },
+   {
+      "Topic":"12.2. Creating Virtual Environments",
+      "Description":""
+   },
+   {
+      "Topic":"12.3. Managing Packages with pip",
+      "Description":""
+   },
+   {
+      "Topic":"13. What Now?",
+      "Description":""
+   },
+   {
+      "Topic":"14. Interactive Input Editing and History Substitution",
+      "Description":""
+   },
+   {
+      "Topic":"14.1. Tab Completion and History Editing",
+      "Description":""
+   },
+   {
+      "Topic":"14.2. Alternatives to the Interactive Interpreter",
+      "Description":""
+   },
+   {
+      "Topic":"15. Floating Point Arithmetic: Issues and Limitations",
+      "Description":""
+   },
+   {
+      "Topic":"15.1. Representation Error",
+      "Description":""
+   },
+   {
+      "Topic":"16. Appendix",
+      "Description":""
+   },
+   {
+      "Topic":"16.1. Interactive Mode",
+      "Description":""
+   },
+   {
+      "Topic":"16.1.1. Error Handling",
+      "Description":""
+   },
+   {
+      "Topic":"16.1.2. Executable Python Scripts",
+      "Description":""
+   },
+   {
+      "Topic":"16.1.3. The Interactive Startup File",
+      "Description":""
+   },
+   {
+      "Topic":"16.1.4. The Customization Modules",
+      "Description":""
+   }
 ]
