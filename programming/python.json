@@ -1,538 +1,538 @@
 [
     {
-        "Topic": "1.Whetting Your Appetite",
+        "Topic": "1. Whetting Your Appetite",
         "Description": ""
     },
     {
-        "Topic": "2.Using the Python Interpreter",
+        "Topic": "2. Using the Python Interpreter",
         "Description": ""
     },
     {
-        "Topic": "2.1.Invoking the Interpreter",
+        "Topic": "2.1. Invoking the Interpreter",
         "Description": ""
     },
     {
-        "Topic": "2.1.1.Argument Passing",
+        "Topic": "2.1.1. Argument Passing",
         "Description": ""
     },
     {
-        "Topic": "2.1.2.Interactive Mode",
+        "Topic": "2.1.2. Interactive Mode",
         "Description": ""
     },
     {
-        "Topic": "2.2.The Interpreter and Its Environment",
+        "Topic": "2.2. The Interpreter and Its Environment",
         "Description": ""
     },
     {
-        "Topic": "2.2.1.Source Code Encoding",
+        "Topic": "2.2.1. Source Code Encoding",
         "Description": ""
     },
     {
-        "Topic": "3.An Informal Introduction to Python",
-        "Description": ""
+        "Topic": "3. An Informal Introduction to Python",
+        "Description": "https://docs.python.org/3/tutorial/index.html#tutorial-index"
     },
     {
-        "Topic": "3.1.Using Python as a Calculator",
+        "Topic": "3.1. Using Python as a Calculator",
         "Description": ""
     },
     {
-        "Topic": "3.1.1.Numbers",
+        "Topic": "3.1.1. Numbers",
         "Description": ""
     },
     {
-        "Topic": "3.1.2.Strings",
+        "Topic": "3.1.2. Strings",
         "Description": ""
     },
     {
-        "Topic": "3.1.3.Lists",
+        "Topic": "3.1.3. Lists",
         "Description": ""
     },
     {
-        "Topic": "3.2.First Steps Towards Programming",
+        "Topic": "3.2. First Steps Towards Programming",
         "Description": ""
     },
     {
-        "Topic": "4.More Control Flow Tools",
+        "Topic": "4. More Control Flow Tools",
         "Description": ""
     },
     {
-        "Topic": "4.1.if Statements",
+        "Topic": "4.1. if Statements",
         "Description": ""
     },
     {
-        "Topic": "4.2.for Statements",
+        "Topic": "4.2. for Statements",
         "Description": ""
     },
     {
-        "Topic": "4.3.The range() Function",
+        "Topic": "4.3. The range() Function",
         "Description": ""
     },
     {
-        "Topic": "4.4.break and continue Statements, and else Clauses on Loops",
+        "Topic": "4.4. break and continue Statements, and else Clauses on Loops",
         "Description": ""
     },
     {
-        "Topic": "4.5.pass Statements",
+        "Topic": "4.5. pass Statements",
         "Description": ""
     },
     {
-        "Topic": "4.6.match Statements",
+        "Topic": "4.6. match Statements",
         "Description": ""
     },
     {
-        "Topic": "4.7.Defining Functions",
+        "Topic": "4.7. Defining Functions",
         "Description": ""
     },
     {
-        "Topic": "4.8.More on Defining Functions",
+        "Topic": "4.8. More on Defining Functions",
         "Description": ""
     },
     {
-        "Topic": "4.8.1.Default Argument Values",
+        "Topic": "4.8.1. Default Argument Values",
         "Description": ""
     },
     {
-        "Topic": "4.8.2.Keyword Arguments",
+        "Topic": "4.8.2. Keyword Arguments",
         "Description": ""
     },
     {
-        "Topic": "4.8.3.Special parameters",
+        "Topic": "4.8.3. Special parameters",
         "Description": ""
     },
     {
-        "Topic": "4.8.3.1.Positional-or-Keyword Arguments",
+        "Topic": "4.8.3.1. Positional-or-Keyword Arguments",
         "Description": ""
     },
     {
-        "Topic": "4.8.3.2.Positional-Only Parameters",
+        "Topic": "4.8.3.2. Positional-Only Parameters",
         "Description": ""
     },
     {
-        "Topic": "4.8.3.3.Keyword-Only Arguments",
+        "Topic": "4.8.3.3. Keyword-Only Arguments",
         "Description": ""
     },
     {
-        "Topic": "4.8.3.4.Function Examples",
+        "Topic": "4.8.3.4. Function Examples",
         "Description": ""
     },
     {
-        "Topic": "4.8.3.5.Recap",
+        "Topic": "4.8.3.5. Recap",
         "Description": ""
     },
     {
-        "Topic": "4.8.4.Arbitrary Argument Lists",
+        "Topic": "4.8.4. Arbitrary Argument Lists",
         "Description": ""
     },
     {
-        "Topic": "4.8.5.Unpacking Argument Lists",
+        "Topic": "4.8.5. Unpacking Argument Lists",
         "Description": ""
     },
     {
-        "Topic": "4.8.6.Lambda Expressions",
+        "Topic": "4.8.6. Lambda Expressions",
         "Description": ""
     },
     {
-        "Topic": "4.8.7.Documentation Strings",
+        "Topic": "4.8.7. Documentation Strings",
         "Description": ""
     },
     {
-        "Topic": "4.8.8.Function Annotations",
+        "Topic": "4.8.8. Function Annotations",
         "Description": ""
     },
     {
-        "Topic": "4.9.Intermezzo: Coding Style",
+        "Topic": "4.9. Intermezzo: Coding Style",
         "Description": ""
     },
     {
-        "Topic": "5.Data Structures",
+        "Topic": "5. Data Structures",
         "Description": ""
     },
     {
-        "Topic": "5.1.More on Lists",
+        "Topic": "5.1. More on Lists",
         "Description": ""
     },
     {
-        "Topic": "5.1.1.Using Lists as Stacks",
+        "Topic": "5.1.1. Using Lists as Stacks",
         "Description": ""
     },
     {
-        "Topic": "5.1.2.Using Lists as Queues",
+        "Topic": "5.1.2. Using Lists as Queues",
         "Description": ""
     },
     {
-        "Topic": "5.1.3.List Comprehensions",
+        "Topic": "5.1.3. List Comprehensions",
         "Description": ""
     },
     {
-        "Topic": "5.1.4.Nested List Comprehensions",
+        "Topic": "5.1.4. Nested List Comprehensions",
         "Description": ""
     },
     {
-        "Topic": "5.2.The del statement",
+        "Topic": "5.2. The del statement",
         "Description": ""
     },
     {
-        "Topic": "5.3.Tuples and Sequences",
+        "Topic": "5.3. Tuples and Sequences",
         "Description": ""
     },
     {
-        "Topic": "5.4.Sets",
+        "Topic": "5.4. Sets",
         "Description": ""
     },
     {
-        "Topic": "5.5.Dictionaries",
+        "Topic": "5.5. Dictionaries",
         "Description": ""
     },
     {
-        "Topic": "5.6.Looping Techniques",
+        "Topic": "5.6. Looping Techniques",
         "Description": ""
     },
     {
-        "Topic": "5.7.More on Conditions",
+        "Topic": "5.7. More on Conditions",
         "Description": ""
     },
     {
-        "Topic": "5.8.Comparing Sequences and Other Types",
+        "Topic": "5.8. Comparing Sequences and Other Types",
         "Description": ""
     },
     {
-        "Topic": "6.Modules",
+        "Topic": "6. Modules",
         "Description": ""
     },
     {
-        "Topic": "6.1.More on Modules",
+        "Topic": "6.1. More on Modules",
         "Description": ""
     },
     {
-        "Topic": "6.1.1.Executing modules as scripts",
+        "Topic": "6.1.1. Executing modules as scripts",
         "Description": ""
     },
     {
-        "Topic": "6.1.2.The Module Search Path",
+        "Topic": "6.1.2. The Module Search Path",
         "Description": ""
     },
     {
-        "Topic": "6.1.3.Compiled Python files",
+        "Topic": "6.1.3. Compiled Python files",
         "Description": ""
     },
     {
-        "Topic": "6.2.Standard Modules",
+        "Topic": "6.2. Standard Modules",
         "Description": ""
     },
     {
-        "Topic": "6.3.The dir() Function",
+        "Topic": "6.3. The dir() Function",
         "Description": ""
     },
     {
-        "Topic": "6.4.Packages",
+        "Topic": "6.4. Packages",
         "Description": ""
     },
     {
-        "Topic": "6.4.1.Importing * From a Package",
+        "Topic": "6.4.1. Importing * From a Package",
         "Description": ""
     },
     {
-        "Topic": "6.4.2.Intra-package References",
+        "Topic": "6.4.2. Intra-package References",
         "Description": ""
     },
     {
-        "Topic": "6.4.3.Packages in Multiple Directories",
+        "Topic": "6.4.3. Packages in Multiple Directories",
         "Description": ""
     },
     {
-        "Topic": "7.Input and Output",
+        "Topic": "7. Input and Output",
         "Description": ""
     },
     {
-        "Topic": "7.1.Fancier Output Formatting",
+        "Topic": "7.1. Fancier Output Formatting",
         "Description": ""
     },
     {
-        "Topic": "7.1.1.Formatted String Literals",
+        "Topic": "7.1.1. Formatted String Literals",
         "Description": ""
     },
     {
-        "Topic": "7.1.2.The String format() Method",
+        "Topic": "7.1.2. The String format() Method",
         "Description": ""
     },
     {
-        "Topic": "7.1.3.Manual String Formatting",
+        "Topic": "7.1.3. Manual String Formatting",
         "Description": ""
     },
     {
-        "Topic": "7.1.4.Old string formatting",
+        "Topic": "7.1.4. Old string formatting",
         "Description": ""
     },
     {
-        "Topic": "7.2.Reading and Writing Files",
+        "Topic": "7.2. Reading and Writing Files",
         "Description": ""
     },
     {
-        "Topic": "7.2.1.Methods of File Objects",
+        "Topic": "7.2.1. Methods of File Objects",
         "Description": ""
     },
     {
-        "Topic": "7.2.2.Saving structured data with json",
+        "Topic": "7.2.2. Saving structured data with json",
         "Description": ""
     },
     {
-        "Topic": "8.Errors and Exceptions",
+        "Topic": "8. Errors and Exceptions",
         "Description": ""
     },
     {
-        "Topic": "8.1.Syntax Errors",
+        "Topic": "8.1. Syntax Errors",
         "Description": ""
     },
     {
-        "Topic": "8.2.Exceptions",
+        "Topic": "8.2. Exceptions",
         "Description": ""
     },
     {
-        "Topic": "8.3.Handling Exceptions",
+        "Topic": "8.3. Handling Exceptions",
         "Description": ""
     },
     {
-        "Topic": "8.4.Raising Exceptions",
+        "Topic": "8.4. Raising Exceptions",
         "Description": ""
     },
     {
-        "Topic": "8.5.Exception Chaining",
+        "Topic": "8.5. Exception Chaining",
         "Description": ""
     },
     {
-        "Topic": "8.6.User-defined Exceptions",
+        "Topic": "8.6. User-defined Exceptions",
         "Description": ""
     },
     {
-        "Topic": "8.7.Defining Clean-up Actions",
+        "Topic": "8.7. Defining Clean-up Actions",
         "Description": ""
     },
     {
-        "Topic": "8.8.Predefined Clean-up Actions",
+        "Topic": "8.8. Predefined Clean-up Actions",
         "Description": ""
     },
     {
-        "Topic": "9.Classes",
+        "Topic": "9. Classes",
         "Description": ""
     },
     {
-        "Topic": "9.1.A Word About Names and Objects",
+        "Topic": "9.1. A Word About Names and Objects",
         "Description": ""
     },
     {
-        "Topic": "9.2.Python Scopes and Namespaces",
+        "Topic": "9.2. Python Scopes and Namespaces",
         "Description": ""
     },
     {
-        "Topic": "9.2.1.Scopes and Namespaces Example",
+        "Topic": "9.2.1. Scopes and Namespaces Example",
         "Description": ""
     },
     {
-        "Topic": "9.3.A First Look at Classes",
+        "Topic": "9.3. A First Look at Classes",
         "Description": ""
     },
     {
-        "Topic": "9.3.1.Class Definition Syntax",
+        "Topic": "9.3.1. Class Definition Syntax",
         "Description": ""
     },
     {
-        "Topic": "9.3.2.Class Objects",
+        "Topic": "9.3.2. Class Objects",
         "Description": ""
     },
     {
-        "Topic": "9.3.3.Instance Objects",
+        "Topic": "9.3.3. Instance Objects",
         "Description": ""
     },
     {
-        "Topic": "9.3.4.Method Objects",
+        "Topic": "9.3.4. Method Objects",
         "Description": ""
     },
     {
-        "Topic": "9.3.5.Class and Instance Variables",
+        "Topic": "9.3.5. Class and Instance Variables",
         "Description": ""
     },
     {
-        "Topic": "9.4.Random Remarks",
+        "Topic": "9.4. Random Remarks",
         "Description": ""
     },
     {
-        "Topic": "9.5.Inheritance",
+        "Topic": "9.5. Inheritance",
         "Description": ""
     },
     {
-        "Topic": "9.5.1.Multiple Inheritance",
+        "Topic": "9.5.1. Multiple Inheritance",
         "Description": ""
     },
     {
-        "Topic": "9.6.Private Variables",
+        "Topic": "9.6. Private Variables",
         "Description": ""
     },
     {
-        "Topic": "9.7.Odds and Ends",
+        "Topic": "9.7. Odds and Ends",
         "Description": ""
     },
     {
-        "Topic": "9.8.Iterators",
+        "Topic": "9.8. Iterators",
         "Description": ""
     },
     {
-        "Topic": "9.9.Generators",
+        "Topic": "9.9. Generators",
         "Description": ""
     },
     {
-        "Topic": "9.10.Generator Expressions",
+        "Topic": "9.10. Generator Expressions",
         "Description": ""
     },
     {
-        "Topic": "10.Brief Tour of the Standard Library",
+        "Topic": "10. Brief Tour of the Standard Library",
         "Description": ""
     },
     {
-        "Topic": "10.1.Operating System Interface",
+        "Topic": "10.1. Operating System Interface",
         "Description": ""
     },
     {
-        "Topic": "10.2.File Wildcards",
+        "Topic": "10.2. File Wildcards",
         "Description": ""
     },
     {
-        "Topic": "10.3.Command Line Arguments",
+        "Topic": "10.3. Command Line Arguments",
         "Description": ""
     },
     {
-        "Topic": "10.4.Error Output Redirection and Program Termination",
+        "Topic": "10.4. Error Output Redirection and Program Termination",
         "Description": ""
     },
     {
-        "Topic": "10.5.String Pattern Matching",
+        "Topic": "10.5. String Pattern Matching",
         "Description": ""
     },
     {
-        "Topic": "10.6.Mathematics",
+        "Topic": "10.6. Mathematics",
         "Description": ""
     },
     {
-        "Topic": "10.7.Internet Access",
+        "Topic": "10.7. Internet Access",
         "Description": ""
     },
     {
-        "Topic": "10.8.Dates and Times",
+        "Topic": "10.8. Dates and Times",
         "Description": ""
     },
     {
-        "Topic": "10.9.Data Compression",
+        "Topic": "10.9. Data Compression",
         "Description": ""
     },
     {
-        "Topic": "10.10.Performance Measurement",
+        "Topic": "10.10. Performance Measurement",
         "Description": ""
     },
     {
-        "Topic": "10.11.Quality Control",
+        "Topic": "10.11. Quality Control",
         "Description": ""
     },
     {
-        "Topic": "10.12.Batteries Included",
+        "Topic": "10.12. Batteries Included",
         "Description": ""
     },
     {
-        "Topic": "11.Brief Tour of the Standard Library \u00e2\u20ac\u201d Part II",
+        "Topic": "11. Brief Tour of the Standard Library \u00e2\u20ac\u201d Part II",
         "Description": ""
     },
     {
-        "Topic": "11.1.Output Formatting",
+        "Topic": "11.1. Output Formatting",
         "Description": ""
     },
     {
-        "Topic": "11.2.Templating",
+        "Topic": "11.2. Templating",
         "Description": ""
     },
     {
-        "Topic": "11.3.Working with Binary Data Record Layouts",
+        "Topic": "11.3. Working with Binary Data Record Layouts",
         "Description": ""
     },
     {
-        "Topic": "11.4.Multi-threading",
+        "Topic": "11.4. Multi-threading",
         "Description": ""
     },
     {
-        "Topic": "11.5.Logging",
+        "Topic": "11.5. Logging",
         "Description": ""
     },
     {
-        "Topic": "11.6.Weak References",
+        "Topic": "11.6. Weak References",
         "Description": ""
     },
     {
-        "Topic": "11.7.Tools for Working with Lists",
+        "Topic": "11.7. Tools for Working with Lists",
         "Description": ""
     },
     {
-        "Topic": "11.8.Decimal Floating Point Arithmetic",
+        "Topic": "11.8. Decimal Floating Point Arithmetic",
         "Description": ""
     },
     {
-        "Topic": "12.Virtual Environments and Packages",
+        "Topic": "12. Virtual Environments and Packages",
         "Description": ""
     },
     {
-        "Topic": "12.1.Introduction",
+        "Topic": "12.1. Introduction",
         "Description": ""
     },
     {
-        "Topic": "12.2.Creating Virtual Environments",
+        "Topic": "12.2. Creating Virtual Environments",
         "Description": ""
     },
     {
-        "Topic": "12.3.Managing Packages with pip",
+        "Topic": "12.3. Managing Packages with pip",
         "Description": ""
     },
     {
-        "Topic": "13.What Now?",
+        "Topic": "13. What Now?",
         "Description": ""
     },
     {
-        "Topic": "14.Interactive Input Editing and History Substitution",
+        "Topic": "14. Interactive Input Editing and History Substitution",
         "Description": ""
     },
     {
-        "Topic": "14.1.Tab Completion and History Editing",
+        "Topic": "14.1. Tab Completion and History Editing",
         "Description": ""
     },
     {
-        "Topic": "14.2.Alternatives to the Interactive Interpreter",
+        "Topic": "14.2. Alternatives to the Interactive Interpreter",
         "Description": ""
     },
     {
-        "Topic": "15.Floating Point Arithmetic: Issues and Limitations",
+        "Topic": "15. Floating Point Arithmetic: Issues and Limitations",
         "Description": ""
     },
     {
-        "Topic": "15.1.Representation Error",
+        "Topic": "15.1. Representation Error",
         "Description": ""
     },
     {
-        "Topic": "16.Appendix",
+        "Topic": "16. Appendix",
         "Description": ""
     },
     {
-        "Topic": "16.1.Interactive Mode",
+        "Topic": "16.1. Interactive Mode",
         "Description": ""
     },
     {
-        "Topic": "16.1.1.Error Handling",
+        "Topic": "16.1.1. Error Handling",
         "Description": ""
     },
     {
-        "Topic": "16.1.2.Executable Python Scripts",
+        "Topic": "16.1.2. Executable Python Scripts",
         "Description": ""
     },
     {
-        "Topic": "16.1.3.The Interactive Startup File",
+        "Topic": "16.1.3. The Interactive Startup File",
         "Description": ""
     },
     {
-        "Topic": "16.1.4.The Customization Modules",
+        "Topic": "16.1.4. The Customization Modules",
         "Description": ""
     }
 ]
