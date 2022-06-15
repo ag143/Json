@@ -1,5 +1,5 @@
-import csv
-import json
+#import csv
+#import json
 
 file = '.\git.csv'
 json_file = '.\output_file_name.json'
