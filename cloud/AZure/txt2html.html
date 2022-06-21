@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <body onload=scan()>
+      <pre id="fileDisplayArea" class="collapsible">
+      <pre>
+      <footer id="footer"></footer>
+      <script>
+         function scan(){
+         var lineoutput,  details;
+         var output1="";
+         var f = new XMLHttpRequest();
+             f.open("GET", "https://ag143.github.io/Json/cloud/AZure/az900_coied_txtfile.txt", false);
+             f.onreadystatechange = function ()
+             {
+                 if(f.readyState === 4)
+                 {
+                     if(f.status === 200 || f.status == 0)
+                     {
+                         var res= f.responseText;
+                         // alert(res);
+         		    console.log(res);
+         		 
+         		   lineoutput = res.split("\n");
+         					for (var x=0;x<lineoutput.length;x++)
+         					{
+          					console.log("output-->"+lineoutput[x]);
+         					output1 = output1 + lineoutput[x]+"<br>";
+         				    }
+         		    	fileDisplayArea.innerHTML= output1;
+         		    }
+                 }
+             }
+             f.send(null);
+         	}
+         	
+      </script>
+      <script></script>
+   </body>
+</html>
