@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>900 Basics</title>
+      <title>git Basics</title>
       <script src="./../../commonlib/jquery.min.js"></script>
+   </head>
+   <body onload=scan()>
+      <button onclick="togglediv('Index')" style="background-color: Transparent;border: none;"><img src="./../images/hamburg.png" width=15px height=15px/>    GIT</button>
+      <div style="width:100%;" >
+         <div id=Index style="float:left; width:25%;border-right: 1px solid ;border-radius: 5px;overflow: scroll;height:100% ">
+         </div>
+         <div id=Main style="float:left; width:70%; margin-left:10px;border-radius: 5px;overflow: scroll;height:100%">
+            <pre id="fileDisplayArea" class="collapsible">
+            <pre>
+         </div>
+      </div>
+      <footer id="footer"></footer>
       <script>
          function scan(){
          var lineoutput,  details;
@@ -26,16 +38,17 @@
           					console.log("output-->"+lineoutput[x]);
                         if(lineoutput[x].startsWith("@"))
                         {
-                           indexContent = indexContent + "<li><a href=#"+lineoutput[x].replace(/@/g,'')+">"+lineoutput[x].replace(/@/g,'')+"</a></li>";
-                           output1 = output1 +"<h3 id="+lineoutput[x].replace(/@/g,'')+">"+lineoutput[x].replace(/@/g,'')+"</h3><br>";
+                           output1 = output1 +"<h3>"+lineoutput[x].replace(/@/g,'')+"</h3><br>";
+                           indexContent = indexContent + "<li><a href=#"+lineoutput[x].replace(/@/g,'')+"></a></li>";
                         }
                            else
                            {
          					output1 = output1 + lineoutput[x]+"<br>";
                            }
          				    }
-                     document.getElementById("Main").innerHTML= output1;
-                     document.getElementById("Index").innerHTML = indexContent;
+                     indexContent = indexContent + "</ol>";
+         		    	Main.innerHTML= output1;
+                     Index.innerHTML = indexContent;
          		    }
                  }
              }
@@ -43,14 +56,6 @@
          	}
          	
       </script>
-   </head>
-   <body onload=scan() style="background-color: Transparent;border: none;">
-      <div style="width:100%;" >
-         <div id=Index style="float:left; width:25%;border-right: 1px solid ;border-radius: 5px;overflow: scroll;height:100%;display:'block'>
-      </div>
-      <div id=Main style="float:left; width:70%; margin-left:10px;border-radius: 5px;overflow: scroll;height:100%";display:'block'>>
-      </div>
-      </div>
-      <footer id="footer"></footer>
+      <script></script>
    </body>
 </html>
