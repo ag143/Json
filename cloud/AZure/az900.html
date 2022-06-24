@@ -1,47 +1,41 @@
 <html>
-<head>
-<title>900 Basics</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <head>
+        <title>900 Basics</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <button onclick="togglediv('Index')" style="background-color: Transparent; border: none;">900</button>
+        <div style="width: 100%;">
+            <div id="Index" style="float: left; width: 25%; border-right: 1px solid; border-radius: 5px; overflow: scroll; height: 100%;"></div>
+            <div id="Main" style="float: left; width: 70%; margin-left: 10px; border-radius: 5px; overflow: scroll; height: 100%;"></div>
+        </div>
+    </body>
+    <script>
+        $.ajax({
+            url: "https://ag143.github.io/Json/cloud/AZure/az900_coied_txtfile.txt",
+            async: false,
+            success: function (data) {
+                var dataobject = data;
+                var output1 = "";
+                var indexContent = "";
+                var mainContent = "";
+                var counter = 0;
+                //console.log("started---->"+dataobject);
+                lineoutput = dataobject.split("\n");
+                for (var x = 0; x < lineoutput.length; x++) {
+                    if (lineoutput[x].startsWith("@")) {
+                        mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/@/g, "") + ">" + lineoutput[x].replace(/@/g, "") + "</h3><br>";
+                        indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/@/g, "") + ">" + lineoutput[x].replace(/@/g, "") + "</a></li>";
+                    } else {
+                        mainContent = mainContent + "<p id=" + lineoutput[x].replace(/@/g, "") + ">" + lineoutput[x].replace(/@/g, "") + "</p><br>";
+                    }
+                    //console.log("output-->"+lineoutput[x]);
+                    //mainContent = mainContent + lineoutput[x]+"<br>";
+                }
 
-</head>
-<body>
-<button onclick="togglediv('Index')" style="background-color: Transparent;border: none;">    GIT</button>
-<div style="width:100%;" >
-<div id=Index style="float:left; width:25%;border-right: 1px solid ;border-radius: 5px;overflow: scroll;height:100% ">
-
-</div>
-<div id=Main style="float:left; width:70%; margin-left:10px;border-radius: 5px;overflow: scroll;height:100%">
-
-</div>
-
-</div>
-
-</body>
-<script>
-
-$.ajax({
-  url: 'https://ag143.github.io/Json/cloud/AZure/az900_coied_txtfile.txt',
-  async: false,
-  success: function(data) {
-  var dataobject=data;
-  var indexContent="";
-  var mainContent="";
-  var counter=0;
-  console.log("started---->"+dataobject);
-  lineoutput = dataobject.split("\n");
-  for (var x=0;x<lineoutput.length;x++)
-         					{
-          					console.log("output-->"+lineoutput[x]);
-							mainContent = mainContent + lineoutput[x];
-							}
-
-	//document.getElementById("Index").innerHTML="hi";
-	document.getElementById("Main").innerHTML=mainContent;	
-  }
-  
-
-});
-
-</script>
-
+                document.getElementById("Index").innerHTML = indexContent;
+                document.getElementById("Main").innerHTML = mainContent;
+            },
+        });
+    </script>
 </html>
