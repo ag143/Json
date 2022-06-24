@@ -1,61 +1,41 @@
-<!DOCTYPE html>
 <html>
-   <head>
-      <title>900 Basics</title>
-      <script src="./../../commonlib/jquery.min.js"></script>
-   </head>
-   <body onload=scan()>
-      <button onclick="togglediv('Index')" style="background-color: Transparent;border: none;"><img src="./../images/hamburg.png" width=15px height=15px/>    900</button>
-      <div style="width:100%;" >
-         <div id=Index style="float:left; width:25%;border-right: 1px solid ;border-radius: 5px;overflow: scroll;height:100% ">
-         </div>
-         <div id=Main style="float:left; width:70%; margin-left:10px;border-radius: 5px;overflow: scroll;height:100%">
-            <pre id="fileDisplayArea" class="collapsible">
-            <pre>
-         </div>
-      </div>
-      <footer id="footer"></footer>
-      <script>
-         function scan(){
-         var lineoutput,  details;
-         var output1="";
-         var indexContent = "<ol>";
-         var f = new XMLHttpRequest();
-             f.open("GET", "https://ag143.github.io/Json/cloud/AZure/az900_coied_txtfile.txt", false);
-             f.onreadystatechange = function ()
-             {
-                 if(f.readyState === 4)
-                 {
-                     if(f.status === 200 || f.status == 0)
-                     {
-                         var res= f.responseText;
-                         // alert(res);
-         		    console.log(res);
-         		 
-         		   lineoutput = res.split("\n");
-         					for (var x=0;x<lineoutput.length;x++)
-         					{
-          					console.log("output-->"+lineoutput[x]);
-                        if(lineoutput[x].startsWith("@"))
-                        {
-                           output1 = output1 +"<h3 id="+lineoutput[x].replace(/@/g,'')+">"+lineoutput[x].replace(/@/g,'')+"</h3><br>";
-                           indexContent = indexContent + "<li><a href=#"+lineoutput[x].replace(/@/g,'')+">"+lineoutput[x].replace(/@/g,'')+"</a></li>";
-                        }
-                           else
-                           {
-         					output1 = output1 + lineoutput[x]+"<br>";
-                           }
-         				    }
-                     indexContent = indexContent + "</ol>";
-         		    	Main.innerHTML= output1;
-                     Index.innerHTML = indexContent;
-         		    }
-                 }
-             }
-             f.send(null);
-         	}
-         	
-      </script>
-      <script></script>
-   </body>
+    <head>
+        <title>900 Basics</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <button onclick="togglediv('Index')" style="background-color: Transparent; border: none;">900</button>
+        <div style="width: 100%;">
+            <div id="Index" style="float: left; width: 25%; border-right: 1px solid; border-radius: 5px; overflow: scroll; height: 100%;"></div>
+            <div id="Main" style="float: left; width: 70%; margin-left: 10px; border-radius: 5px; overflow: scroll; height: 100%;"></div>
+        </div>
+    </body>
+    <script>
+        $.ajax({
+            url: "https://ag143.github.io/Json/cloud/AZure/az900_coied_txtfile.txt",
+            async: false,
+            success: function (data) {
+                var dataobject = data;
+                var output1 = "";
+                var indexContent = "";
+                var mainContent = "";
+                var counter = 0;
+                //console.log("started---->"+dataobject);
+                lineoutput = dataobject.split("\n");
+                for (var x = 0; x < lineoutput.length; x++) {
+                    if (lineoutput[x].startsWith("@")) {
+                        mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/@/g, "") + ">" + lineoutput[x].replace(/@/g, "") + "</h3><br>";
+                        indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/@/g, "") + ">" + lineoutput[x].replace(/@/g, "") + "</a></li>";
+                    } else {
+                        mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/@/g, "") + ">" + lineoutput[x].replace(/@/g, "") + "</h3><br>";
+                    }
+                    //console.log("output-->"+lineoutput[x]);
+                    //mainContent = mainContent + lineoutput[x]+"<br>";
+                }
+
+                document.getElementById("Index").innerHTML = indexContent;
+                document.getElementById("Main").innerHTML = mainContent;
+            },
+        });
+    </script>
 </html>
