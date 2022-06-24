@@ -1,105 +1,11 @@
-
-
 <html>
 <head>
-<title>git Basics</title>
-<script src="./../../commonlib/jquery.min.js"></script>
-<link rel="icon" href="git.png">
+<title>900 Basics</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
-
-<script>
-
-$.ajax({
-  url: 'https://ag143.github.io/Json/cloud/AZure/az900_coied_txtfile.txt',
-  dataType: 'json',
-  success: function(data) {
-  var dataobject=data;
-  var indexContent="";
-  var mainContent="";
-  var counter=0;
-  function printchildren(dataobject) {
-  
-  counter=counter+1;
-  indexContent = indexContent + "<ul>";
-  mainContent = mainContent + "<ul>";
-   for (var key in dataobject){
-    //console.log( key + ": " + dataobject[key]);
-	if ( key == "name")
-	{
-	console.log("name-->"+counter+"-->"+dataobject[key])
-	for (let i = 0; i < counter; i++) {
-		indexContent = indexContent + "";
-		mainContent = mainContent + "";
-		}
-	indexContent = indexContent + "<li><a href=#"+dataobject[key]+" style='text-decoration: none;' alt='---->'>"+dataobject[key] + "</a></li>"
-	mainContent = mainContent + "<h3 id="+dataobject[key]+">"+dataobject[key] + "</h3>"
-	}
-	else if( key=="longDescription")
-	{
-	mainContent = mainContent + "<p>"+dataobject[key] + "</p>"
-	}
-	else if( key=="image")
-	{
-	  if(dataobject[key]=="")
-	  {
-	  mainContent = mainContent + "<img src='./../images/default.png' height=5px width=5px />"
-	  }
-	  else
-	  {
-	  mainContent = mainContent + "<img src="+dataobject[key]+" />"
-	  }
-	}
-	else if( key == "free" || key == "description" || key == "url" )
-	{
-	//console.log("other name-->"+dataobject[key])
-	}
-	else if(key=="children")
-	{
-	//console.log("children---->"+dataobject[key])
-	for (var key1 in dataobject[key]){
-	printchildren(dataobject[key][key1]);
-	counter=counter-1;
-	}
-	
-	
-	}
-	
-	
-}
-indexContent = indexContent +"</ul>"
-mainContent = mainContent + "</ul>";
-}
-printchildren(data);
-
-    /*console.log(data);
-	console.log(Object.values(data).length);
-	console.log(data.name);
-	console.log(data.children);*/
-	
-	//document.getElementById("testid").innerHTML=data.name;
-	//document.getElementById("testid2").innerHTML=data.name;
-	//countDown(3);
-	document.getElementById("Index").innerHTML=indexContent;
-	document.getElementById("Main").innerHTML=mainContent;	
-  }
-  
-
-});
-function togglediv(id) {
-    var div = document.getElementById(id);
-    //div.style.display = div.style.display == "none" ? "block" : "none";
-	if (div.style.display !== 'none') {
-        div.style.display = 'none';
-		document.getElementById("Main").style.width="90%"
-    }
-    else {
-        div.style.display = 'block';
-		document.getElementById("Main").style.width="70%"
-    }
-}
-</script>
 <body>
-<button onclick="togglediv('Index')" style="background-color: Transparent;border: none;"><img src="./../images/hamburg.png" width=15px height=15px/>    GIT</button>
+<button onclick="togglediv('Index')" style="background-color: Transparent;border: none;">    GIT</button>
 <div style="width:100%;" >
 <div id=Index style="float:left; width:25%;border-right: 1px solid ;border-radius: 5px;overflow: scroll;height:100% ">
 
@@ -111,4 +17,31 @@ function togglediv(id) {
 </div>
 
 </body>
+<script>
+
+$.ajax({
+  url: 'https://ag143.github.io/Json/cloud/AZure/az900_coied_txtfile.txt',
+  async: false,
+  success: function(data) {
+  var dataobject=data;
+  var indexContent="";
+  var mainContent="";
+  var counter=0;
+  console.log("started---->"+dataobject);
+  lineoutput = dataobject.split("\n");
+  for (var x=0;x<lineoutput.length;x++)
+         					{
+          					console.log("output-->"+lineoutput[x]);
+							mainContent = mainContent + lineoutput[x];
+							}
+
+	//document.getElementById("Index").innerHTML="hi";
+	document.getElementById("Main").innerHTML=mainContent;	
+  }
+  
+
+});
+
+</script>
+
 </html>
