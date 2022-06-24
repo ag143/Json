@@ -24,7 +24,14 @@
          					for (var x=0;x<lineoutput.length;x++)
          					{
           					console.log("output-->"+lineoutput[x]);
+                        if(lineoutput[x].startsWith("@@@@@@");)
+                        {
+                           output1 = output1 +"<h3>"+lineoutput[x]+"</h3><br>";
+                        }
+                           else
+                           {
          					output1 = output1 + lineoutput[x]+"<br>";
+                           }
          				    }
          		    	fileDisplayArea.innerHTML= output1;
          		    }
