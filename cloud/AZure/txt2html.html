@@ -39,7 +39,7 @@
                         if(lineoutput[x].startsWith("@"))
                         {
                            output1 = output1 +"<h3>"+lineoutput[x].replace(/@/g,'')+"</h3><br>";
-                           indexContent = indexContent + "<li><a href=#"+lineoutput[x].replace(/@/g,'')+"></a></li>";
+                           indexContent = indexContent + "<li><a href=#"+lineoutput[x].replace(/@/g,'')+">"+lineoutput[x].replace(/@/g,'')+"</a></li>";
                         }
                            else
                            {
