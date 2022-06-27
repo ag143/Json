@@ -1,5 +1,5 @@
 **************************
-@@@@@@@@@Azure funadmentals
+@@@@@@@@@Azure_funadmentals
 ************************
 ##################
 Introduction
@@ -536,7 +536,7 @@ Many of the Learn exercises use a technology called the sandbox, which creates a
 
 When you're completing a Learn module, you're welcome to use your personal subscription to complete the exercises in a module. The sandbox is the preferred method to use though, because it allows you to create and test Azure resources at no cost to you.
 ****************************************************
-@@@@@@@@@Azure fundamental concepts
+@@@@@@@@@Azure_fundamental_concepts
 ***********************************************
 ############################
 Introduction
@@ -767,7 +767,7 @@ It's important to note that servers are still running the code. The "serverless"
 
 
 *****************************************************
-@@@@@@@@@core Azure architectural components
+@@@@@@@@@core_Azure_architectural_components
 *******************************************************
 ###############################################
 Introduction
@@ -988,7 +988,7 @@ Each management group can have many children.
 All subscriptions and management groups are within a single hierarchy in each directory.
 
 *********************************************
-@@@@@@@@@Azure compute services
+@@@@@@@@@Azure_compute_services
 *************************************************
 #################################
 Introduction
@@ -1384,7 +1384,7 @@ Buy one-year or three-year Azure Reserved Virtual Machine Instances to save you 
 
 Next unit: Knowledge check
 ***************************************************
-@@@@@@@@@Azure networking services
+@@@@@@@@@Azure_networking_services
 *************************************************
 ##############################################
 Introduction
@@ -1736,7 +1736,7 @@ Next unit: Knowledge check
 
 
 ***************************************************************
-@@@@@@@@@Azure storage services
+@@@@@@@@@Azure_storage_services
 *******************************************************************
 ###########################################################
 Introduction
@@ -1891,7 +1891,7 @@ Next unit: Knowledge check
 
 
 ***************************************************
-@@@@@@@@@Azure database and analytics services
+@@@@@@@@@Azure_database_and_analytics_services
 ********************************************************
 #########################################################
 Introduction
@@ -2241,7 +2241,7 @@ Next unit: Knowledge check
 
 
 ************************************************
-@@@@@@@@@Azure iot service
+@@@@@@@@@Azure_iot_service
 ****************************************
 ##########################################
 Introduction
@@ -2448,7 +2448,7 @@ By using IoT Central, Tailwind Traders would actually be using Azure IoT Hub beh
 
 Next unit: Knowledge check
 ***************************************************
-@@@@@@@@@Azure AI service
+@@@@@@@@@Azure_AI_service
 ******************************************************
 #################################################
 Introduction
@@ -2636,7 +2636,7 @@ Next unit: Knowledge check
 
 
 ***************************************
-@@@@@@@@@Azure serverless technology
+@@@@@@@@@Azure_serverless_technology
 ******************************************
 ########################################
 Introduction
@@ -2783,7 +2783,7 @@ Next unit: Knowledge check
 
 
 *******************************************
-@@@@@@@@@Choose the best tools to help organizations build better solutions
+@@@@@@@@@Choose_the_best_tools_to_help_organizations_build_better_solutions
 *******************************************
 ############################################
 Introduction
@@ -2971,7 +2971,7 @@ Next unit: Knowledge check
 
 
 ****************************************************
-@@@@@@@@@Choose the best tools for managing and configuring your Azure environment
+@@@@@@@@@Choose_the_best_tools_for_managing_and_configuring_your_Azure_environment
 *****************************************************
 #####################################################
 Introduction
@@ -3176,7 +3176,7 @@ In this scenario, ARM templates are the correct choice.
 Next unit: Knowledge check
 #######################################################
 ***********************************************
-@@@@@@@@@Choose the best monitoring service for visibility, insight, and outage mitigation
+@@@@@@@@@Choose_the_best_monitoring_service_for_visibility_insight_and_outage_mitigation
 **********************************************
 ##########################################
 Introduction
@@ -3730,7 +3730,7 @@ Next unit: Knowledge check
 
 
 ************************************************
-@@@@@@@@@Secure network connectivity on Azure
+@@@@@@@@@Secure_network_connectivity_on_Azure
 ********************************************
 #######################################
 Introduction
@@ -4314,7 +4314,7 @@ Combining them provides more layers of protection.
 Next unit: Knowledge check
 ##############################
 *******************************************
-@@@@@@@@@Secure access to your applications by using Azure identity services
+@@@@@@@@@Secure_access_to_your_applications_by_using_Azure_identity_services
 ******************************************
 ############################################
 Introduction
@@ -4583,7 +4583,7 @@ Where is Conditional Access available?
 To use Conditional Access, you need an Azure AD Premium P1 or P2 license. If you have a Microsoft 365 Business Premium license, you also have access to Conditional Access features.
 
 ************************************************
-@@@@@@@@@Build a cloud governance strategy on Azure
+@@@@@@@@@Build_a_cloud_governance_strategy_on_Azure
 **************************************************
 #####################################################
 Introduction
@@ -5458,7 +5458,7 @@ Next unit: Knowledge check
 
 
 ******************************************
-@@@@@@@@@Examine privacy, compliance, and data protection standards on Azure
+@@@@@@@@@Examine_privacy_compliance_and_data_protection_standards_on_Azure
 ********************************************
 ##############################################
 Introduction
@@ -6435,7 +6435,7 @@ Next unit: Knowledge check
 
 
 **********************************************************
-@@@@@@@@@Choose the right Azure services by examining SLAs and service lifecycle
+@@@@@@@@@Choose_the_right_Azure_services_by_examining_SLAs_and_service_lifecycle
 ********************************************************
 ###########################################################
 Introduction
