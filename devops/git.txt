@@ -1,0 +1,1023 @@
+@0 - Introduction
+     
+Git is a version-control system for tracking changes in computer files and coordinating work on those files among multiple people. Git is a Distributed Version Control System. So Git does not necessarily rely on a central server to store all the versions of a project’s files.
+
+@1 - Setup and Config
+     
+# View global configuration list
+git config --global -l
+# View local configuration list
+git config --local -l
+
+# View all configurations and the files they are in
+git config --list --show-origin
+
+# View the set global username/email
+git config --global --get user.name
+git config --global --get user.email
+
+# Set global username/email
+git config --global user.name 'userid'
+git config --global user.email 'example@example.com'
+
+# Set the user name/email of the local current workspace warehouse
+git config --local user.name 'userid'
+git config --local user.email 'example@example.com
+
+# delete configuration
+git config --unset --global user.name
+git config --unset --global user.email
+# Modify the default text editor, such as nano
+# Common editors: emacs / nano / vim / vi
+git config --global core.editor nano
+
+# Set the default differential analysis tool to vimdiff
+git config --global merge.tool vimdiff
+
+# Edit the current repository configuration file
+git config -e # Equivalent to vi .git/config
+
+# Changes in file permissions will also be considered changes, and file permission changes can be ignored through the following configuration
+git config core.fileMode false
+
+# File case is set to be sensitive, git ignores case by default
+git config --global core.ignorecase false
+
+# When configuring git pull, all submodule contents are pulled by default
+git config submodule.recurse true
+
+# Remember to submit the account password, the account password can be waived for the next operation
+git config --global credential.helper store # permanent
+git config --global credential.helper cache # Temporary, default 15 minutes
+@1.01 - git
+     
+git --version
+
+@1.02 - config
+     
+# 1. Global configuration
+git config --global alias.lg log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C( bold blue)<%an>%Creset' --abbrev-commit
+# 2. Enter the following command, the log becomes very intuitive
+git lg
+
+# There are several other modes here, you can choose the one you like for alias configuration
+git config --global alias.lg log --graph --pretty=format:'%Cred%h - %Cgreen[%an]%Creset -%C(yellow)%d%Creset %s %C(yellow) <%cr>%Creset' --abbrev-commit --date=relative
+
+git config --global alias.his log --graph --decorate --oneline --pretty=format:'%Creset %s %C(magenta)in %Cred%h %C(magenta)commited by %Cgreen% cn %C(magenta)on %C(yellow) %cd %C(magenta)from %Creset %C(yellow)%d' --abbrev-commit --date=format:'%Y-%m-%d %H:%M:%S'
+
+git config --global alias.hist log --graph --decorate --oneline --pretty=format:'%Cred%h - %C(bold white) %s %Creset %C(yellow)%d %C (cyan) <%cd> %Creset %Cgreen(%cn)' --abbrev-commit --date=format:'%Y-%m-%d %H:%M:%S'
+
+@1.03 - help
+     
+# print all git commands in detail
+git help
+
+# Print all git commands, this command will not have detailed information, it is more clear
+git help -a
+
+# List all configurable variables
+git help -c
+
+@1.04 - bugreport
+     
+Description for above topic goes here
+
+@1.05 - alias
+     
+# git st is equivalent to git status
+git config --global alias.st status
+
+# If added before, you need to add --replace-all to override
+git config --global --replace-all alias.st status
+
+# To execute external commands, just add ! in front
+git config --global alias.st '!echo hello';
+# Add '!' to execute an external command to execute a complex process of merging code, for example:
+git config --global alias.mg '!git checkout develop && git pull && git merge master && git checkout -';
+
+# remove the st alias
+git config --global --unset alias.st
+@1.06 - proxy
+     
+# set up
+git config --global https.proxy http://127.0.0.1:1087
+git config --global http.proxy http://127.0.0.1:1087
+
+# Check
+git config --global --get http.proxy
+git config --global --get https.proxy
+
+# cancel proxy
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+
+@1.07 - Initialize
+     
+# will generate .git in the current directory
+git init
+
+# Create in quiet mode, only print errors or warnings
+git init -q
+
+# Create a bare repository in the current directory with only all files under .git
+git init --bare
+
+@1.08 - Initialize
+     
+# will generate .git in the current directory
+git init
+
+# Create in quiet mode, only print errors or warnings
+git init -q
+
+# Create a bare repository in the current directory with only all files under .git
+git init --bare
+
+@2 - Getting and Creating Projects
+     
+git init
+or
+git clone <ssh or https url of repo>
+
+@2.01 - init
+     
+# will generate .git in the current directory
+git init
+
+# Create in quiet mode, only print errors or warnings
+git init -q
+
+# Create a bare repository in the current directory with only all files under .git
+git init --bare
+
+@2.02 - clone
+     
+# https protocol clone
+git clone https://github.com/userid/git-manual.git
+
+# SSH protocol clone
+git clone git@github.com:userid/git-manual.git
+
+# Clone the specified branch, -b specifies the branch name, which actually clones all branches and switches to the develop branch
+git clone -b develop https://github.com/userid/git-manual.git
+
+# --single-branch clone only the specified branch completely
+git clone -b develop --single-branch https://github.com/userid/git-manual.git
+
+# Specify the cloned folder name
+git clone https://github.com/userid/git-manual.git git-study # If followed by . Create in the current directory
+
+# Recursive clone, useful if the project contains submodules
+git clone --recursive https://github.com/userid/git-manual.git
+
+# Shallow clone, the clone depth is 1, only the specified branch is cloned and only the last record is kept, usually used to reduce the clone time and project size
+git clone --depth=1 https://github.com/userid/git-manual.git
+git clone --depth=1 --no-single-branch https://github.com/userid/git-manual.git # --no-single-branch also clones all other branches
+
+
+# Bare clone, no workspace content, cannot be submitted for modification, generally used to copy warehouses
+git clone --bare https://github.com/userid/git-manual.git
+
+# Mirror clone, which is also a bare clone, is different from including the upstream repository registration
+git clone --mirror https://github.com/userid/git-manual.
+
+@3 - Basic Snapshotting
+     
+Description for above topic goes here
+
+@3.01 - add
+     
+# staging all
+git add -A
+
+# Staging a file
+git add ./README.md
+
+# Temporarily store all changed files in the current directory
+git add .
+
+# Staging a series of files
+git add 1.txt 2.txt ...
+
+@3.02 - status
+     
+check current status of git staging(staged, modified, commited,)
+git status
+
+@3.03 - diff
+     
+check diff of changed files
+git diff
+
+@3.04 - commit
+     
+# -m Submitted description information
+git commit -m 'changes log'
+
+# commit only a certain file
+git commit README.md -m 'message'
+
+# Commit and show diff changes
+git commit -v
+
+# Allows to submit empty messages, usually the -m parameter must be specified
+git commit --allow-empty-message
+
+# Rewrite the last commit information to ensure that the current workspace has not changed
+git commit --amend -m 'new commit info'
+
+# Skip validation if tools like husky are used.
+git commit --no-verify -m 'Example'
+
+@3.05 - notes
+     
+# Order
+$ git config branch.{branch_name}.description Remarks
+
+# Add remarks to hotfix/tip branch
+$ git config branch.hotfix/tip.description fix details
+
+@3.06 - restore
+     
+Restore operations are done via the git restore command.
+
+git restore was introduced in 2.23 to separate git checkout / git reset responsibilities.
+
+# Undo workspace file modifications, excluding new files
+git restore README.md # a file
+git restore README.md README2.md # Multiple files
+git restore . # All current files
+
+# Return to the workspace from the staging area
+git restore --staged README.md
+
+@3.07 - reset
+     
+git reset command usage:
+
+# Roll back the previous version
+git reset --hard HEAD^
+
+# Roll back the last two versions
+git reset --hard HEAD^^
+
+# Roll back to the specified commit_id and view it through git log
+git reset --hard 'commit id'
+
+# After rolling back but not pushing to the remote, you can disconnect the current operation and perform the pull:
+git pull
+
+# push
+git push -f
+
+@3.08 - rm
+     
+Description for above topic goes here
+
+@3.09 - mv
+     
+The git mv command is used to rename files or move files. Most developers choose to move files manually. There is a difference between manual and git mv.
+
+Difference between manual and command (assuming README.md is renamed to README2.md):
+
+Manual: delete README.md first, then create README2.md, history cannot be tracked normally
+git mv: actually update the index and rename the file, which can be easily retrieved through history
+git mv is very similar to the uninx mv command, if you are familiar with it.
+
+Note: git mv is not supported for newly created files and must be committed first.
+
+# rename 1.txt to 2.txt
+git mv 1.txt 2.txt
+
+# Force 1.txt to be renamed to 2.txt, regardless of whether the 2.txt file exists or not
+git mv -f 1.txt 2.txt
+
+# The same goes for moving directories
+git mv temp temp2
+
+@4 - Branching and Merging
+     
+Description for above topic goes here
+
+@4.01 - branch
+     
+# view all branches
+git branch -a
+
+# View local branch
+git branch
+
+# View remote branches
+git branch -r
+
+# View the remote branch associated with the local branch
+git branch -vv
+
+# View the creation time of the local master branch
+git reflog show --date=iso master
+
+# Search branches, searched with grep command, contains keyword dev
+git branch -a | grep dev
+
+@4.02 - checkout
+     
+Description for above topic goes here
+
+@4.03 - switch
+     
+# switch to master branch
+git checkout master
+
+# switch to the previous branch
+git checkout -
+
+# Force switch, but be careful, if the file is not saved, the changes will be overwritten directly
+git checkout -f master
+
+# -t, switch remote branches, if you use git remote to add a new repository, you need to use -t to switch
+git checkout -t upstream/main
+
+# switch to develop branch
+git switch develop
+
+# switch to the previous branch
+git switch -
+
+# Force switch to develop branch and discard all local changes
+git switch -f develop
+
+# create branch and switch
+git switch -c newBranch
+
+# Force the creation of a branch
+git switch -C newBranch
+
+# Create a new branch from the previous 3 commits
+git switch -c newBranch HEAD~3
+
+# -t, switch remote branches, if you use git remote to add a new repository, you need to use -t to switch
+git switch -t upstream/main
+
+@4.04 - merge
+     
+merge
+feature/v1.0.0 branch code merged into develop
+
+git checkout develop
+git merge feature/v1.0.0
+Merge the previous branch code into the current branch
+
+git merge -
+Merge in silent mode, merge the develop branch into the current branch without outputting any information
+
+git merge develop -q
+Merge without editing information, skip interaction
+
+git merge develop --no-edit
+Do not commit after merging branch
+
+git merge develop --no-commit
+Exit the merge and revert to the state before the merge
+
+git merge --abort
+Merge a specified file or directory in a branch, it should be noted that this will directly overwrite the existing file, rather than essentially merging.
+
+# Merge the 2 files src/utils/http.js src/utils/load.js from the dev branch into the current branch
+git checkout dev src/utils/http.js src/utils/load.js
+
+@4.05 - mergetool
+     
+Description for above topic goes here
+
+@4.06 - log
+     
+# View full commit history
+git log
+
+# View the previous N commit records commit message
+git log -2
+
+# View the first N commit records, including diff
+git log -p -2
+
+# Search from commit, you can specify -i to ignore case
+git log -i --grep=fix: #28
+
+# Search from the working directory when the code containing alert(1) was introduced
+git log -S alert(1)
+
+# View the history of the specified author
+git log --author=userid
+
+# View a file's commit history
+git log README.md
+
+# only show merge logs
+git log --merges
+
+# View log records graphically, --oneline optional
+git log --graph --oneline
+
+# View history in reverse order
+git log --reverse
+git shortlog outputs the log in a short form, usually used to count the amount of code by contributors.
+
+# Defaults to grouping by contributors
+git shortlog
+
+# List the number of committers' code contributions, print the number of authors and contributions
+git shortlog -sn
+
+# Sort by number of commits and print out the message
+git shortlog -n
+
+# Use email format to view the contribution
+git shortlog -e
+
+@4.07 - stash
+     
+# Save the current modified workspace content
+git stash
+
+# Add comments when saving, this command is recommended
+git stash save Modified #28 bug
+
+# save files that contain untracked by git
+git stash -u
+
+# View the current save list
+git stash list
+
+# Restore the modified workspace content, it will be removed from the git stash list
+git stash pop # Restore the last saved content to the workspace, by default, the changes in the stash area will be restored to the workspace
+git stash pop stash@{1} # Restore the specified id, which can be found through git stash list
+git stash pop --index # Restore the last saved content to the workspace, but if the content of the temporary storage area is also restored to the temporary storage area
+
+# Same as the pop command, the only difference is that the save list is not removed
+git stash apply
+
+# clear all saves
+git stash clear
+
+# Clear the specified stash id, if the id is not specified after the drop, clear the most recent one
+git stash drop stash@{0}
+git stash drop # clear the last time
+
+@4.08 - tag
+     
+# List all local tags
+git tag
+
+# List all remote tags
+git ls-remote --tags origin
+
+# Find tags by specific pattern `*` template search
+git tag -l v1.0.0*
+
+# create labels with annotations
+git tag -a v1.1.0 -m tag description
+
+# Create lightweight tags without any parameters
+git tag v1.1.0
+
+# Tag later, if you forget to tag before, you can check the commit id through git log
+git log
+git tag -a v1.1.0
+
+# Push to the remote, the default is only created locally
+git push origin v1.1.0
+
+# Push all tags to remote at once
+git push origin --tags
+
+# To delete the tag, you need to run git push origin v1.1.0 again to delete the remote tag
+git tag -d v1.1.0
+
+# delete remote tag
+git push origin --delete v1.1.0
+
+# checkout tags
+git checkout v1.1.0
+
+# View the details of a local label
+git show v1.1.0
+
+@4.09 - worktree
+     
+Description for above topic goes here
+
+@5 - Sharing and Updating Projects
+     
+Description for above topic goes here
+
+@5.01 - fetch
+     
+Description for above topic goes here
+
+@5.02 - pull
+     
+git pull pulls the latest content and merges it.
+
+Pull the latest content of the remote branch
+Pulls the current branch by default
+
+# Automatically merge if there is a conflict
+git pull
+Pull the specified branch
+# remote branch name: local branch name
+git pull origin master:master
+# If a remote branch is pulled and merged into the current branch, it can be omitted
+git pull origin master
+Pull the specified working directory
+# By default, the pull will be in the current working directory, but if you want to pull the specified working directory, you can specify `-C`
+git -C /opt/work pull
+
+@5.03 - push
+     
+@5.04 - remote
+     
+Description for above topic goes here
+
+@5.05 - submodule
+     
+The role of git submodule submodule is similar to package management, similar to npm, mainly to reuse warehouses, but it is more convenient to use than package management.
+
+Submodules do not need to create version branch management code, because it depends on the main application, so the version branch can be operated from the main application, then once a new version branch is created, all current content will be locked on this branch, regardless of submodules How to modify the warehouse.
+
+Add submodules
+After adding submodules, you will find that there is a .gitmodules metadata file in the root directory, which is mainly used to manage submodules.
+
+git submodule add https://github.com/userid/git-manual.git # Add to the current directory by default
+git submodule add https://github.com/userid/git-manual.git submodules/git-manual # Add to the specified directory
+
+# -b specifies a branch that needs to be added to the repository
+git submodule add -b develop https://github.com/userid/git-manual.git
+remove submodules
+# 1. Directly delete the submodule directory
+rm -rf submodule
+
+# 2. Edit the .gitmodules file in the directory to delete the submodules that need to be deleted
+
+# Finally push directly
+git add -A
+git commit -m 'remove submodule'
+git push
+Clone a repository with submodules
+# --recursive for recursive cloning, otherwise the submodule directory is empty
+git clone --recursive https://github.com/userid/git-manual.git
+
+# If you have cloned a project with submodules but forgot to --recursive, you can use this command to initialize, grab and checkout any nested submodules
+git submodule update --init --recursive
+Fix submodule branch
+When you clone a repository containing submodules, you will find that the submodule branch is wrong, you can use the following command to correct it:
+
+git submodule foreach -q --recursive 'git checkout $(git config -f $toplevel/.gitmodules submodule.$name.branch || echo master)'
+Update submodule code
+Method 1: Usually we only need to execute git pull to update the code, which is a stupid way.
+
+# Recursively grab all changes in submodules, but do not update submodule contents
+git pull
+
+# At this time, you need to enter the submodule directory to update, so that a submodule update is completed, but if there are many submodules, it will be more troublesome
+cd git-manual && git pull
+Method 2: Use git submodule update to update submodules
+
+# git will try to update all submodules, if you only need to update a submodule just specify the submodule name after --remote
+git submodule update --remote
+
+# --recursive will recurse all submodules, including submodules in submodules
+git submodule update --init --recursive
+Method 3: Use git pull to update, this is a new update mode, which requires >= 2.14
+
+git pull --recurse-submodules
+If you feel troublesome, you need to manually add --recurse-submodules every time you git pull, you can configure the default behavior of git pull, please refer to Configuration
+
+For specific use, you can also see here git submodule submodule usage tutorial
+
+@6 - Inspection and Comparison
+     
+Description for above topic goes here
+
+@6.01 - show
+     
+You can view historical commit information with the git show command.
+
+# Do not specify parameters to view the latest information by default
+git show
+
+# Specify commit_id to view
+git show d68a1ef
+
+# You can also specify commit_id to view the commit information of the specified file
+git show d68a1ef README.md
+
+# Specify only the file name to view the commit information that contains this file in the last commit
+git show README.md
+
+# Specify the branch name to view the last commit information
+git show feature/dev
+
+@6.02 - log
+     
+Description for above topic goes here
+
+@6.03 - diff
+     
+The git diff command is used to view the differences between the contents of the workspace file and the staging area or remote.
+
+git diff
+# View all file differences between workspace and staging area
+git diff
+
+# View the difference between the specified file workspace and the staging area
+git diff README.md
+
+# View the content difference of the specified commit
+git diff dce06bd
+
+# Compare the difference between 2 commits
+git diff e3848eb dce06bd
+
+# Compare the difference between the latest submissions of the two branches, the develop branch and the master branch, if there is no difference, return empty
+git diff develop master
+
+# Compare the content differences of the specified files in the 2 branches, the differences between develop and master READNE.md files
+git diff develop master README.md README.md
+
+# View workspace conflict file differences
+git diff --name-only --diff-filter=U
+
+# See which files were last modified
+git diff --name-only HEAD~
+git diff --name-only HEAD~~ # The first 2 times...
+
+@6.04 - difftool
+     
+Description for above topic goes here
+
+@6.05 - range-diff
+     
+Description for above topic goes here
+
+@6.06 - shortlog
+     
+Description for above topic goes here
+
+@6.07 - describe
+     
+Description for above topic goes here
+
+@7 - Patching
+     
+Description for above topic goes here
+
+@7.01 - apply
+     
+Description for above topic goes here
+
+@7.02 - cherry-pick
+     
+Description for above topic goes here
+
+@7.03 - diff
+     
+Description for above topic goes here
+
+@7.04 - rebase
+     
+The git rebase command has two useful functions:
+
+Combine multiple commit records into one
+instead of git mrege merge code
+1. Combine multiple commit records into one
+Pay attention to ensure that there is no content in the current workspace to operate.
+
+Specify the record that needs to be operated, and then enter the interactive command
+# start starting point is required, end is optional, defaults to the commit pointed to by the current branch HEAD
+git rebase -i
+
+git rebase -i HEAD~5 # Operate the last 5 commit records
+git rebase -i e88835de # or operate with commit_id
+
+@7.05 - revert
+     
+Description for above topic goes here
+
+@8 - Debugging
+     
+Description for above topic goes here
+
+@8.01 - bisect
+     
+# start
+git bisect start [end] [start] # Determine start and end by git log
+git bisect start HEAD 4d83cf
+
+# It is good to record this commit
+git bisect good
+
+# Record this commit is bad
+git bisect bad
+
+# quit
+git bisect reset
+
+@8.02 - blame
+     
+git blame means to blame, you know.
+
+git blame is used to view the modification history of a file by which author made the changes.
+
+# View the modification history of the README.md file, including time, author, and content
+git blame README.md
+
+# See who changed lines 11-12 of the README.md file
+git blame -L 11,12 README.md
+git blame -L 11 README.md # Look after line 11
+
+# show the full hash value
+git blame -l README.md
+
+# Display the number of modified lines
+git blame -n README.md
+
+# show author email
+git blame -e README.md
+
+# Do a combined query on the parameters
+git blame -enl -L 11 README.md
+
+@8.03 - grep
+     
+Description for above topic goes here
+
+@9 - Guides
+     
+Description for above topic goes here
+
+@9.01 - gitattributes
+     
+Description for above topic goes here
+
+@9.02 - Command-line interface conventions
+     
+Description for above topic goes here
+
+@9.03 - Everyday Git
+     
+Description for above topic goes here
+
+@9.04 - Frequently Asked Questions (FAQ)
+     
+Description for above topic goes here
+
+@9.05 - Glossary
+     
+Description for above topic goes here
+
+@9.06 - Hooks
+     
+Description for above topic goes here
+
+@9.07 - gitignore
+     
+Description for above topic goes here
+
+@9.08 - gitmodules
+     
+Description for above topic goes here
+
+@9.09 - Revisions
+     
+Description for above topic goes here
+
+@9.1 - Submodules
+     
+Description for above topic goes here
+
+@9.11 - Tutorial
+     
+Description for above topic goes here
+
+@9.12 - Workflows
+     
+Git Flow is a set of git-based workflows that define a strict model for how to create branches around project releases.
+
+git flow just simplifies the operation commands, you can do it without git flow, just follow the git flow process operation, and the same is true for manual command execution.
+
+git flow is not a built-in command and needs to be installed separately.
+
+Initialize
+Each repository must be initialized once before it can be used, which is for the current user.
+
+# Usually just press Enter to complete the default settings
+git flow init
+Start developing a feature
+Suppose we want to start developing a new feature such as login and registration. At this time, we need to open a feature branch for independent development.
+
+# Step 1: Enable new features, create a branch named v1.1.0, and create a branch named feature/v1.1.0
+git flow feature start v1.1.0
+
+# Step 2: Push the branch to the remote, this step is indispensable in team collaboration
+git flow feature publish v1.1.0
+
+# Finally: complete the feature, merge the current branch into the develop branch and delete the feature/v1.1.0 branch and go back to develop
+git flow feature finish v1.1.0
+Patch
+When do you need to patch? Assuming that the functions that have been launched have bugs that need to be fixed, they need to be patched.
+
+A hotfix is ​​a patch for the master branch.
+
+# Step 1: Open a patch branch called fix_doc to modify document errors, and the branch name after establishment is hotfix/fix_doc
+git flow hotfix start fix_doc
+
+# Step 2: Push to the remote, or not push, if multiple people change the bug at the same time, they need to push the shared branch
+git flow hotfix publish fix_doc
+
+# Finally: finish patch, merge current branch into master and develop, then delete branch and go back to develop
+git flow hotfix finish fix_doc
+Post
+Assuming that the product has given a new requirement and completed, you can choose to release it at this time. It’s okay to not release it, but there will be version distinctions after release, and it’s very convenient to find the code of a certain version in the future.
+
+# Step 1: Create a release version v1.1.0 The branch is named release/v1.1.0
+git flow release start v1.1.0
+
+# Step 2: Push to remote, optional
+git flow release publish v1.1.0
+
+# Finally: merge the current branch into master and develop, add a tag, then delete the current branch and go back to develop
+git flow release finish v1.1.0
+refer to:
+
+https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+[https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/git-flow](https://www.git-tower.com/learn/git /ebook/cn/command-line/advanced-topics/git-flow)
+
+@9.13 - All guides...
+     
+Description for above topic goes here
+
+@10 - Email
+     
+Description for above topic goes here
+
+@10.01 - am
+     
+Description for above topic goes here
+
+@10.02 - apply
+     
+Description for above topic goes here
+
+@10.03 - format-patch
+     
+Description for above topic goes here
+
+@10.04 - send-email
+     
+Description for above topic goes here
+
+@10.05 - request-pull
+     
+Description for above topic goes here
+
+@11 - External Systems
+     
+Description for above topic goes here
+
+@11.01 - svn
+     
+Description for above topic goes here
+
+@11.02 - fast-import
+     
+Description for above topic goes here
+
+@12 - Administration
+     
+Description for above topic goes here
+
+@12.01 - clean
+     
+Description for above topic goes here
+
+@12.02 - gc
+     
+Description for above topic goes here
+
+@12.03 - fsck
+     
+Description for above topic goes here
+
+@12.04 - reflog
+     
+Description for above topic goes here
+
+@12.05 - filter-branch
+     
+Description for above topic goes here
+
+@12.06 - instaweb
+     
+Description for above topic goes here
+
+@12.07 - archive
+     
+@12.08 - bundle
+     
+Description for above topic goes here
+
+@13 - Server Admin
+     
+Description for above topic goes here
+
+@13.01 - daemon
+     
+Description for above topic goes here
+
+@13.02 - update-server-info
+     
+Description for above topic goes here
+
+@14 - Plumbing Commands
+     
+Description for above topic goes here
+
+@14.01 - cat-file
+     
+Description for above topic goes here
+
+@14.02 - check-ignore
+     
+Description for above topic goes here
+
+@14.03 - checkout-index
+     
+Description for above topic goes here
+
+@14.04 - commit-tree
+     
+Description for above topic goes here
+
+@14.05 - count-objects
+     
+Description for above topic goes here
+
+@14.06 - diff-index
+     
+Description for above topic goes here
+
+@14.07 - for-each-ref
+     
+Description for above topic goes here
+
+@14.08 - hash-object
+     
+Description for above topic goes here
+
+@14.09 - ls-files
+     
+Description for above topic goes here
+
+@15 - ls-tree
+     
+Description for above topic goes here
+
+@15.01 - merge-base
+     
+Description for above topic goes here
+
+@15.02 - read-tree
+     
+Description for above topic goes here
+
+@15.03 - rev-list
+     
+Description for above topic goes here
+
+@15.04 - rev-parse
+     
+Description for above topic goes here
+
+@15.05 - show-ref
+     
+Description for above topic goes here
+
+@15.06 - symbolic-ref
+     
+Description for above topic goes here
+
+@15.07 - update-index
+     
+Description for above topic goes here
+
+@15.08 - update-ref
+     
+Description for above topic goes here
+
+@15.09 - verify-pack
+     
+Description for above topic goes here
+
+@15.1 - write-tree
+     
+Description for above topic goes here
