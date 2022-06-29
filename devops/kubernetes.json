@@ -1,659 +1,1358 @@
+cluster
+node
+pod
+container
+deamonsets
+deployment-replicaset
+statefulset
+cronjobs
+
+
+
+networking
+ingress-services-endpoints
+
+
+services-Cluster IP, nodeport, loadbalancer
+
+Policies-pod policy, network policy
+
+Persistent and voulmes- configmaps, secret, PVC
+
+Resource management- Resource QUota, limit quots, Nodes
+
+IAM- service account, cluster scale
+
+
+
+
+
+Kubernetes: 
+Architecutre:
+
+Kubectl: Kubectl is a command line tool for controlling Kubernetes clusters. kubectl looks for a file named config in the $HOME/.kube directory. You can specify other kubeconfig files by setting the KUBECONFIG environment variable or by setting the --kubeconfig flag.
+
+Node: A node is a worker machine in Kubernetes, previously known as a minion. A node may be a VM or physical machine, depending on the cluster. Each node contains the services necessary to run pods and is managed by the master components. The services on a node include the container runtime, kubelet and kube-proxy
+
+Get existing Nodes
+>kubectl get nodes
+NAME                                                         STATUS   ROLES    AGE     VERSION
+shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-44688   Ready       22h     v1.17.3
+shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-5l6vd   Ready       7d22h   v1.17.3
+shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-75pmh   Ready       3h10m   v1.17.3
+shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-n98ms   Ready       21m     v1.17.3
+shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-nl749   Ready       24h     v1.17.3
+
+
+Get Detailed info about a node
+>kubectl describe node shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-44688
+
+Name:               shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-44688
+Roles:              
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=n1-standard-4
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=asia-southeast1
+                    failure-domain.beta.kubernetes.io/zone=asia-southeast1-a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-44688
+                    kubernetes.io/os=linux
+                    node.kubernetes.io/instance-type=n1-standard-4
+                    node.kubernetes.io/role=node
+                    topology.kubernetes.io/region=asia-southeast1
+                    topology.kubernetes.io/zone=asia-southeast1-a
+                    worker.garden.sapcloud.io/group=worker-mkr24
+                    worker.gardener.cloud/pool=worker-mkr24
+Annotations:        node.alpha.kubernetes.io/ttl: 0
+                    projectcalico.org/IPv4Address: 10.250.0.4/32
+                    projectcalico.org/IPv4IPIPTunnelAddr: 100.96.2.1
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Tue, 03 Mar 2020 08:48:33 +0000
+Taints:             
+Unschedulable:      false
+Lease:
+  HolderIdentity:  shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-44688
+  AcquireTime:     
+  RenewTime:       Wed, 04 Mar 2020 07:09:52 +0000
+Conditions:
+  Type                          Status  LastHeartbeatTime                 LastTransitionTime                Reason                          Message
+  ----                          ------  -----------------                 ------------------                ------                          -------
+  FrequentKubeletRestart        False   Wed, 04 Mar 2020 07:09:41 +0000   Tue, 03 Mar 2020 08:49:56 +0000   NoFrequentKubeletRestart        kubelet is functioning properly
+  FrequentDockerRestart         False   Wed, 04 Mar 2020 07:09:41 +0000   Tue, 03 Mar 2020 08:49:56 +0000   NoFrequentDockerRestart         docker is functioning properly
+  FrequentContainerdRestart     False   Wed, 04 Mar 2020 07:09:41 +0000   Tue, 03 Mar 2020 08:49:56 +0000   NoFrequentContainerdRestart     containerd is functioning properly
+  KernelDeadlock                False   Wed, 04 Mar 2020 07:09:41 +0000   Tue, 03 Mar 2020 08:49:56 +0000   KernelHasNoDeadlock             kernel has no deadlock
+  ReadonlyFilesystem            False   Wed, 04 Mar 2020 07:09:41 +0000   Tue, 03 Mar 2020 08:49:56 +0000   FilesystemIsNotReadOnly         Filesystem is not read-only
+  CorruptDockerOverlay2         False   Wed, 04 Mar 2020 07:09:41 +0000   Tue, 03 Mar 2020 08:49:56 +0000   NoCorruptDockerOverlay2         docker overlay2 is functioning properly
+  FrequentUnregisterNetDevice   False   Wed, 04 Mar 2020 07:09:41 +0000   Tue, 03 Mar 2020 08:49:56 +0000   NoFrequentUnregisterNetDevice   node is functioning properly
+  NetworkUnavailable            False   Tue, 03 Mar 2020 08:49:17 +0000   Tue, 03 Mar 2020 08:49:17 +0000   CalicoIsUp                      Calico is running on this node
+  MemoryPressure                False   Wed, 04 Mar 2020 07:09:48 +0000   Tue, 03 Mar 2020 08:48:33 +0000   KubeletHasSufficientMemory      kubelet has sufficient memory available
+  DiskPressure                  False   Wed, 04 Mar 2020 07:09:48 +0000   Tue, 03 Mar 2020 08:48:33 +0000   KubeletHasNoDiskPressure        kubelet has no disk pressure
+  PIDPressure                   False   Wed, 04 Mar 2020 07:09:48 +0000   Tue, 03 Mar 2020 08:48:33 +0000   KubeletHasSufficientPID         kubelet has sufficient PID available
+  Ready                         True    Wed, 04 Mar 2020 07:09:48 +0000   Tue, 03 Mar 2020 08:48:55 +0000   KubeletReady                    kubelet is posting ready status
+Addresses:
+  InternalIP:   10.250.0.4
+  ExternalIP:   
+  InternalDNS:  shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-44688.c.sap-pi-coo-acdc-dev.internal
+  Hostname:     shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-44688.c.sap-pi-coo-acdc-dev.internal
+Capacity:
+  attachable-volumes-gce-pd:  127
+  cpu:                        4
+  ephemeral-storage:          48375392Ki
+  hugepages-1Gi:              0
+  hugepages-2Mi:              0
+  memory:                     15393600Ki
+  pods:                       110
+Allocatable:
+  attachable-volumes-gce-pd:  127
+  cpu:                        3920m
+  ephemeral-storage:          47059581301
+  hugepages-1Gi:              0
+  hugepages-2Mi:              0
+  memory:                     13296448Ki
+  pods:                       110
+System Info:
+  Machine ID:                 1b7bd020960c59f565704f1190247e09
+  System UUID:                1b7bd020-960c-59f5-6570-4f1190247e09
+  Boot ID:                    a12e7771-0d44-4610-b045-a1105aabda76
+  Kernel Version:             4.19.86-coreos
+  OS Image:                   Container Linux by CoreOS 2303.3.0 (Rhyolite)
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  docker://18.6.3
+  Kubelet Version:            v1.17.3
+  Kube-Proxy Version:         v1.17.3
+PodCIDR:                      100.96.2.0/24
+PodCIDRs:                     100.96.2.0/24
+ProviderID:                   gce://sap-pi-coo-acdc-dev/asia-southeast1-a/shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-44688
+Non-terminated Pods:          (38 in total)
+  Namespace                   Name                                       CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                   ----                                       ------------  ----------  ---------------  -------------  ---
+  default                     ds-one-lkrtt                               0 (0%)        0 (0%)      0 (0%)           0 (0%)         166m
+  kube-system                 calico-node-mrgq8                          100m (2%)     500m (12%)  100Mi (0%)       700Mi (5%)     22h
+  kube-system                 kube-proxy-bln9p                           20m (0%)      0 (0%)      64Mi (0%)        0 (0%)         22h
+  kube-system                 node-exporter-tbxp7                        5m (0%)       25m (0%)    10Mi (0%)        100Mi (0%)     22h
+  kube-system                 node-problem-detector-bs7hw                20m (0%)      200m (5%)   20Mi (0%)        100Mi (0%)     22h
+  part-0004                   nginx-deployment-6f78bbd49f-hjvxz          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0004                   nginx-deployment-6f78bbd49f-lkhhl          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0004                   nginx-https-deployment-6cf7454dd9-pp8fm    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     52m
+  part-0004                   nginx-liveness-pod-new                     100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     21h
+  part-0005                   nginx-storage-pod                          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     18h
+  part-0005                   simple-nginx-7bbf484b6b-j42pc              100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     48m
+  part-0007                   nginx-https-deployment-6cf7454dd9-fsj9s    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     69m
+  part-0011                   nginx-demo-676df54686-6mctw                100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     21h
+  part-0012                   rms-dep-6dcf847bb9-5d6pc                   100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0012                   rms-dep-6dcf847bb9-nvcsv                   100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0012                   rms-dep-6dcf847bb9-tb7vt                   100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0012                   rmsdepf-649b795f9d-mqnzg                   100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0012                   rmsdepf-649b795f9d-rkdgv                   100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0012                   rmsdepf-649b795f9d-vzl48                   100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0012                   rmsdepf-649b795f9d-z22ls                   100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0013                   mbr-pod                                    200m (5%)     1 (25%)     200Mi (1%)       600Mi (4%)     22h
+  part-0013                   nginx-56d9b98b88-4lb2h                     100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     43m
+  part-0019                   nginx-785467575f-qck2p                     100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     21h
+  part-0019                   nginx2-6474d9f7df-jn85f                    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     21h
+  part-0021                   nginx-https-deployment-6cf7454dd9-j529t    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     102m
+  part-0023                   nginx-deployment-6f78bbd49f-5gbm9          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0023                   nginx-deployment-6f78bbd49f-t7gxr          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0023                   nginx-deployment-6f78bbd49f-w2qqt          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0023                   nginx-deployment-pv-69cb77dd74-z4j7l       100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     20h
+  part-0023                   nginx-storage-pod                          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     20h
+  part-0025                   nginx-demo-676df54686-6cdmw                100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     21h
+  part-0025                   nginx-deployment-6f78bbd49f-d5rkh          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     3h36m
+  part-0025                   nginx-deployment-6f78bbd49f-xjjz4          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     3h36m
+  part-0025                   non-root-pod                               100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     3h34m
+  part-0025                   regular-pod                                100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     3h34m
+  part-0030                   nginx-deployment-6f78bbd49f-crg44          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0030                   nginx-https-deployment-6cf7454dd9-8qrz6    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     62m
+  part-0031                   nginx-56d9b98b88-xtjrq                     100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                   Requests      Limits
+  --------                   --------      ------
+  cpu                        3545m (90%)   17725m (452%)
+  memory                     3594Mi (27%)  11100Mi (85%)
+  ephemeral-storage          0 (0%)        0 (0%)
+  attachable-volumes-gce-pd  0             0
+Events:                      
+
+
+The kubectl proxy command allows you to open a tunnel to the API server and make it available locally - usually on localhost:8001 / 127.0.0.1:8001. When you want to explore the API, this is an easy way to gain access.
+
+
+Dealing with the API directly can be cumbersome. If you want to get an overview of existing APIs kubectl offers the api-versions command. Give it a try and compare the output with APIs you found in step 3.
+
+With kubernetes version 1.11 the kubectl binary was extend with an api-resources function. It is even more convenient and lets you discover resources available in your cluster. Firstly, check your kubectl version. If it is 1.11.x or higher, run the api-resources command and search for the short name for the nodes resource. 
+
+>kubectl version
+Client Version: version.Info{Major:"1", Minor:"17", GitVersion:"v1.17.3", GitCommit:"06ad960bfd03b39c8310aaf92d1e7c12ce618213", GitTreeState:"clean", BuildDate:"2020-02-11T18:14:22Z", GoVersion:"go1.13.6", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"17", GitVersion:"v1.17.3", GitCommit:"06ad960bfd03b39c8310aaf92d1e7c12ce618213", GitTreeState:"clean", BuildDate:"2020-02-11T18:07:13Z", GoVersion:"go1.13.6", Compiler:"gc", Platform:"linux/amd64"}
+
+
+>kubectl api-resources
+NAME                              SHORTNAMES   APIGROUP                       NAMESPACED   KIND
+bindings                                                                      true         Binding
+componentstatuses                 cs                                          false        ComponentStatus
+configmaps                        cm                                          true         ConfigMap
+endpoints                         ep                                          true         Endpoints
+events                            ev                                          true         Event
+limitranges                       limits                                      true         LimitRange
+namespaces                        ns                                          false        Namespace
+nodes                             no                                          false        Node
+persistentvolumeclaims            pvc                                         true         PersistentVolumeClaim
+persistentvolumes                 pv                                          false        PersistentVolume
+pods                              po                                          true         Pod
+podtemplates                                                                  true         PodTemplate
+replicationcontrollers            rc                                          true         ReplicationController
+resourcequotas                    quota                                       true         ResourceQuota
+secrets                                                                       true         Secret
+serviceaccounts                   sa                                          true         ServiceAccount
+services                          svc                                         true         Service
+mutatingwebhookconfigurations                  admissionregistration.k8s.io   false        MutatingWebhookConfiguration
+validatingwebhookconfigurations                admissionregistration.k8s.io   false        ValidatingWebhookConfiguration
+customresourcedefinitions         crd,crds     apiextensions.k8s.io           false        CustomResourceDefinition
+apiservices                                    apiregistration.k8s.io         false        APIService
+controllerrevisions                            apps                           true         ControllerRevision
+daemonsets                        ds           apps                           true         DaemonSet
+deployments                       deploy       apps                           true         Deployment
+replicasets                       rs           apps                           true         ReplicaSet
+statefulsets                      sts          apps                           true         StatefulSet
+tokenreviews                                   authentication.k8s.io          false        TokenReview
+localsubjectaccessreviews                      authorization.k8s.io           true         LocalSubjectAccessReview
+selfsubjectaccessreviews                       authorization.k8s.io           false        SelfSubjectAccessReview
+selfsubjectrulesreviews                        authorization.k8s.io           false        SelfSubjectRulesReview
+subjectaccessreviews                           authorization.k8s.io           false        SubjectAccessReview
+horizontalpodautoscalers          hpa          autoscaling                    true         HorizontalPodAutoscaler
+cronjobs                          cj           batch                          true         CronJob
+jobs                                           batch                          true         Job
+certificates                      cert         cert.gardener.cloud            true         Certificate
+certificatesigningrequests        csr          certificates.k8s.io            false        CertificateSigningRequest
+leases                                         coordination.k8s.io            true         Lease
+bgpconfigurations                              crd.projectcalico.org          false        BGPConfiguration
+bgppeers                                       crd.projectcalico.org          false        BGPPeer
+blockaffinities                                crd.projectcalico.org          false        BlockAffinity
+clusterinformations                            crd.projectcalico.org          false        ClusterInformation
+felixconfigurations                            crd.projectcalico.org          false        FelixConfiguration
+globalnetworkpolicies                          crd.projectcalico.org          false        GlobalNetworkPolicy
+globalnetworksets                              crd.projectcalico.org          false        GlobalNetworkSet
+hostendpoints                                  crd.projectcalico.org          false        HostEndpoint
+ipamblocks                                     crd.projectcalico.org          false        IPAMBlock
+ipamconfigs                                    crd.projectcalico.org          false        IPAMConfig
+ipamhandles                                    crd.projectcalico.org          false        IPAMHandle
+ippools                                        crd.projectcalico.org          false        IPPool
+networkpolicies                                crd.projectcalico.org          true         NetworkPolicy
+networksets                                    crd.projectcalico.org          true         NetworkSet
+endpointslices                                 discovery.k8s.io               true         EndpointSlice
+dnsentries                        dnse         dns.gardener.cloud             true         DNSEntry
+events                            ev           events.k8s.io                  true         Event
+ingresses                         ing          extensions                     true         Ingress
+nodes                                          metrics.k8s.io                 false        NodeMetrics
+pods                                           metrics.k8s.io                 true         PodMetrics
+ingresses                         ing          networking.k8s.io              true         Ingress
+networkpolicies                   netpol       networking.k8s.io              true         NetworkPolicy
+runtimeclasses                                 node.k8s.io                    false        RuntimeClass
+poddisruptionbudgets              pdb          policy                         true         PodDisruptionBudget
+podsecuritypolicies               psp          policy                         false        PodSecurityPolicy
+clusterrolebindings                            rbac.authorization.k8s.io      false        ClusterRoleBinding
+clusterroles                                   rbac.authorization.k8s.io      false        ClusterRole
+rolebindings                                   rbac.authorization.k8s.io      true         RoleBinding
+roles                                          rbac.authorization.k8s.io      true         Role
+priorityclasses                   pc           scheduling.k8s.io              false        PriorityClass
+csidrivers                                     storage.k8s.io                 false        CSIDriver
+csinodes                                       storage.k8s.io                 false        CSINode
+storageclasses                    sc           storage.k8s.io                 false        StorageClass
+volumeattachments                              storage.k8s.io                 false        VolumeAttachment
+
+
+vagrant@ubuntu1804:~/exercise$ kubectl api-versions
+admissionregistration.k8s.io/v1
+admissionregistration.k8s.io/v1beta1
+apiextensions.k8s.io/v1
+apiextensions.k8s.io/v1beta1
+apiregistration.k8s.io/v1
+apiregistration.k8s.io/v1beta1
+apps/v1
+authentication.k8s.io/v1
+authentication.k8s.io/v1beta1
+authorization.k8s.io/v1
+authorization.k8s.io/v1beta1
+autoscaling/v1
+autoscaling/v2beta1
+autoscaling/v2beta2
+batch/v1
+batch/v1beta1
+cert.gardener.cloud/v1alpha1
+certificates.k8s.io/v1beta1
+coordination.k8s.io/v1
+coordination.k8s.io/v1beta1
+crd.projectcalico.org/v1
+discovery.k8s.io/v1beta1
+dns.gardener.cloud/v1alpha1
+events.k8s.io/v1beta1
+extensions/v1beta1
+metrics.k8s.io/v1beta1
+networking.k8s.io/v1
+networking.k8s.io/v1beta1
+node.k8s.io/v1beta1
+policy/v1beta1
+rbac.authorization.k8s.io/v1
+rbac.authorization.k8s.io/v1beta1
+scheduling.k8s.io/v1
+scheduling.k8s.io/v1beta1
+storage.k8s.io/v1
+storage.k8s.io/v1beta1
+v1
+
+vagrant@ubuntu1804:~/exercise$ kubectl describe node
+Name:               shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-44688
+Roles:              
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=n1-standard-4
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=asia-southeast1
+                    failure-domain.beta.kubernetes.io/zone=asia-southeast1-a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-44688
+                    kubernetes.io/os=linux
+                    node.kubernetes.io/instance-type=n1-standard-4
+                    node.kubernetes.io/role=node
+                    topology.kubernetes.io/region=asia-southeast1
+                    topology.kubernetes.io/zone=asia-southeast1-a
+                    worker.garden.sapcloud.io/group=worker-mkr24
+                    worker.gardener.cloud/pool=worker-mkr24
+Annotations:        node.alpha.kubernetes.io/ttl: 0
+                    projectcalico.org/IPv4Address: 10.250.0.4/32
+                    projectcalico.org/IPv4IPIPTunnelAddr: 100.96.2.1
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Tue, 03 Mar 2020 08:48:33 +0000
+Taints:             
+Unschedulable:      false
+Lease:
+  HolderIdentity:  shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-44688
+  AcquireTime:     
+  RenewTime:       Wed, 04 Mar 2020 07:19:09 +0000
+Conditions:
+  Type                          Status  LastHeartbeatTime                 LastTransitionTime                Reason                          Message
+  ----                          ------  -----------------                 ------------------                ------                          -------
+  FrequentUnregisterNetDevice   False   Wed, 04 Mar 2020 07:18:46 +0000   Tue, 03 Mar 2020 08:49:56 +0000   NoFrequentUnregisterNetDevice   node is functioning properly
+  FrequentKubeletRestart        False   Wed, 04 Mar 2020 07:18:46 +0000   Tue, 03 Mar 2020 08:49:56 +0000   NoFrequentKubeletRestart        kubelet is functioning properly
+  FrequentDockerRestart         False   Wed, 04 Mar 2020 07:18:46 +0000   Tue, 03 Mar 2020 08:49:56 +0000   NoFrequentDockerRestart         docker is functioning properly
+  FrequentContainerdRestart     False   Wed, 04 Mar 2020 07:18:46 +0000   Tue, 03 Mar 2020 08:49:56 +0000   NoFrequentContainerdRestart     containerd is functioning properly
+  KernelDeadlock                False   Wed, 04 Mar 2020 07:18:46 +0000   Tue, 03 Mar 2020 08:49:56 +0000   KernelHasNoDeadlock             kernel has no deadlock
+  ReadonlyFilesystem            False   Wed, 04 Mar 2020 07:18:46 +0000   Tue, 03 Mar 2020 08:49:56 +0000   FilesystemIsNotReadOnly         Filesystem is not read-only
+  CorruptDockerOverlay2         False   Wed, 04 Mar 2020 07:18:46 +0000   Tue, 03 Mar 2020 08:49:56 +0000   NoCorruptDockerOverlay2         docker overlay2 is functioning properly
+  NetworkUnavailable            False   Tue, 03 Mar 2020 08:49:17 +0000   Tue, 03 Mar 2020 08:49:17 +0000   CalicoIsUp                      Calico is running on this node
+  MemoryPressure                False   Wed, 04 Mar 2020 07:19:10 +0000   Tue, 03 Mar 2020 08:48:33 +0000   KubeletHasSufficientMemory      kubelet has sufficient memory available
+  DiskPressure                  False   Wed, 04 Mar 2020 07:19:10 +0000   Tue, 03 Mar 2020 08:48:33 +0000   KubeletHasNoDiskPressure        kubelet has no disk pressure
+  PIDPressure                   False   Wed, 04 Mar 2020 07:19:10 +0000   Tue, 03 Mar 2020 08:48:33 +0000   KubeletHasSufficientPID         kubelet has sufficient PID available
+  Ready                         True    Wed, 04 Mar 2020 07:19:10 +0000   Tue, 03 Mar 2020 08:48:55 +0000   KubeletReady                    kubelet is posting ready status
+Addresses:
+  InternalIP:   10.250.0.4
+  ExternalIP:   
+  InternalDNS:  shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-44688.c.sap-pi-coo-acdc-dev.internal
+  Hostname:     shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-44688.c.sap-pi-coo-acdc-dev.internal
+Capacity:
+  attachable-volumes-gce-pd:  127
+  cpu:                        4
+  ephemeral-storage:          48375392Ki
+  hugepages-1Gi:              0
+  hugepages-2Mi:              0
+  memory:                     15393600Ki
+  pods:                       110
+Allocatable:
+  attachable-volumes-gce-pd:  127
+  cpu:                        3920m
+  ephemeral-storage:          47059581301
+  hugepages-1Gi:              0
+  hugepages-2Mi:              0
+  memory:                     13296448Ki
+  pods:                       110
+System Info:
+  Machine ID:                 1b7bd020960c59f565704f1190247e09
+  System UUID:                1b7bd020-960c-59f5-6570-4f1190247e09
+  Boot ID:                    a12e7771-0d44-4610-b045-a1105aabda76
+  Kernel Version:             4.19.86-coreos
+  OS Image:                   Container Linux by CoreOS 2303.3.0 (Rhyolite)
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  docker://18.6.3
+  Kubelet Version:            v1.17.3
+  Kube-Proxy Version:         v1.17.3
+PodCIDR:                      100.96.2.0/24
+PodCIDRs:                     100.96.2.0/24
+ProviderID:                   gce://sap-pi-coo-acdc-dev/asia-southeast1-a/shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-44688
+Non-terminated Pods:          (38 in total)
+  Namespace                   Name                                       CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                   ----                                       ------------  ----------  ---------------  -------------  ---
+  default                     ds-one-lkrtt                               0 (0%)        0 (0%)      0 (0%)           0 (0%)         175m
+  kube-system                 calico-node-mrgq8                          100m (2%)     500m (12%)  100Mi (0%)       700Mi (5%)     22h
+  kube-system                 kube-proxy-bln9p                           20m (0%)      0 (0%)      64Mi (0%)        0 (0%)         22h
+  kube-system                 node-exporter-tbxp7                        5m (0%)       25m (0%)    10Mi (0%)        100Mi (0%)     22h
+  kube-system                 node-problem-detector-bs7hw                20m (0%)      200m (5%)   20Mi (0%)        100Mi (0%)     22h
+  part-0004                   nginx-deployment-6f78bbd49f-hjvxz          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0004                   nginx-deployment-6f78bbd49f-lkhhl          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0004                   nginx-https-deployment-6cf7454dd9-pp8fm    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     61m
+  part-0004                   nginx-liveness-pod-new                     100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     21h
+  part-0005                   nginx-storage-pod                          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     18h
+  part-0005                   simple-nginx-7bbf484b6b-j42pc              100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     57m
+  part-0007                   nginx-https-deployment-6cf7454dd9-fsj9s    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     78m
+  part-0011                   nginx-demo-676df54686-6mctw                100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     21h
+  part-0012                   rms-dep-6dcf847bb9-5d6pc                   100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0012                   rms-dep-6dcf847bb9-nvcsv                   100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0012                   rms-dep-6dcf847bb9-tb7vt                   100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0012                   rmsdepf-649b795f9d-mqnzg                   100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0012                   rmsdepf-649b795f9d-rkdgv                   100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0012                   rmsdepf-649b795f9d-vzl48                   100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0012                   rmsdepf-649b795f9d-z22ls                   100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0013                   mbr-pod                                    200m (5%)     1 (25%)     200Mi (1%)       600Mi (4%)     22h
+  part-0013                   nginx-56d9b98b88-4lb2h                     100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     52m
+  part-0019                   nginx-785467575f-qck2p                     100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     21h
+  part-0019                   nginx2-6474d9f7df-jn85f                    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     21h
+  part-0021                   nginx-https-deployment-6cf7454dd9-j529t    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     111m
+  part-0023                   nginx-deployment-6f78bbd49f-5gbm9          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0023                   nginx-deployment-6f78bbd49f-t7gxr          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0023                   nginx-deployment-6f78bbd49f-w2qqt          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0023                   nginx-deployment-pv-69cb77dd74-z4j7l       100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     20h
+  part-0023                   nginx-storage-pod                          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     20h
+  part-0025                   nginx-demo-676df54686-6cdmw                100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     21h
+  part-0025                   nginx-deployment-6f78bbd49f-d5rkh          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     3h45m
+  part-0025                   nginx-deployment-6f78bbd49f-xjjz4          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     3h45m
+  part-0025                   non-root-pod                               100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     3h43m
+  part-0025                   regular-pod                                100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     3h43m
+  part-0030                   nginx-deployment-6f78bbd49f-crg44          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0030                   nginx-https-deployment-6cf7454dd9-8qrz6    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     72m
+  part-0031                   nginx-56d9b98b88-xtjrq                     100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                   Requests      Limits
+  --------                   --------      ------
+  cpu                        3545m (90%)   17725m (452%)
+  memory                     3594Mi (27%)  11100Mi (85%)
+  ephemeral-storage          0 (0%)        0 (0%)
+  attachable-volumes-gce-pd  0             0
+Events:                      
+
+
+Name:               shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-5l6vd
+Roles:              
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=n1-standard-4
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=asia-southeast1
+                    failure-domain.beta.kubernetes.io/zone=asia-southeast1-a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-5l6vd
+                    kubernetes.io/os=linux
+                    node.kubernetes.io/instance-type=n1-standard-4
+                    node.kubernetes.io/role=node
+                    topology.kubernetes.io/region=asia-southeast1
+                    topology.kubernetes.io/zone=asia-southeast1-a
+                    worker.garden.sapcloud.io/group=worker-mkr24
+                    worker.gardener.cloud/pool=worker-mkr24
+Annotations:        node.alpha.kubernetes.io/ttl: 0
+                    projectcalico.org/IPv4Address: 10.250.0.2/32
+                    projectcalico.org/IPv4IPIPTunnelAddr: 100.96.0.1
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Tue, 25 Feb 2020 08:47:58 +0000
+Taints:             
+Unschedulable:      false
+Lease:
+  HolderIdentity:  shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-5l6vd
+  AcquireTime:     
+  RenewTime:       Wed, 04 Mar 2020 07:19:15 +0000
+Conditions:
+  Type                          Status  LastHeartbeatTime                 LastTransitionTime                Reason                          Message
+  ----                          ------  -----------------                 ------------------                ------                          -------
+  FrequentKubeletRestart        False   Wed, 04 Mar 2020 07:19:00 +0000   Tue, 25 Feb 2020 08:49:28 +0000   NoFrequentKubeletRestart        kubelet is functioning properly
+  FrequentDockerRestart         False   Wed, 04 Mar 2020 07:19:00 +0000   Tue, 25 Feb 2020 08:49:28 +0000   NoFrequentDockerRestart         docker is functioning properly
+  FrequentContainerdRestart     False   Wed, 04 Mar 2020 07:19:00 +0000   Tue, 25 Feb 2020 08:49:28 +0000   NoFrequentContainerdRestart     containerd is functioning properly
+  KernelDeadlock                False   Wed, 04 Mar 2020 07:19:00 +0000   Tue, 25 Feb 2020 08:49:28 +0000   KernelHasNoDeadlock             kernel has no deadlock
+  ReadonlyFilesystem            False   Wed, 04 Mar 2020 07:19:00 +0000   Tue, 25 Feb 2020 08:49:28 +0000   FilesystemIsNotReadOnly         Filesystem is not read-only
+  CorruptDockerOverlay2         False   Wed, 04 Mar 2020 07:19:00 +0000   Tue, 25 Feb 2020 08:49:28 +0000   NoCorruptDockerOverlay2         docker overlay2 is functioning properly
+  FrequentUnregisterNetDevice   False   Wed, 04 Mar 2020 07:19:00 +0000   Tue, 25 Feb 2020 08:49:28 +0000   NoFrequentUnregisterNetDevice   node is functioning properly
+  NetworkUnavailable            False   Tue, 25 Feb 2020 08:48:53 +0000   Tue, 25 Feb 2020 08:48:53 +0000   CalicoIsUp                      Calico is running on this node
+  MemoryPressure                False   Wed, 04 Mar 2020 07:19:10 +0000   Tue, 25 Feb 2020 08:47:58 +0000   KubeletHasSufficientMemory      kubelet has sufficient memory available
+  DiskPressure                  False   Wed, 04 Mar 2020 07:19:10 +0000   Tue, 25 Feb 2020 08:47:58 +0000   KubeletHasNoDiskPressure        kubelet has no disk pressure
+  PIDPressure                   False   Wed, 04 Mar 2020 07:19:10 +0000   Tue, 25 Feb 2020 08:47:58 +0000   KubeletHasSufficientPID         kubelet has sufficient PID available
+  Ready                         True    Wed, 04 Mar 2020 07:19:10 +0000   Tue, 25 Feb 2020 08:48:20 +0000   KubeletReady                    kubelet is posting ready status
+Addresses:
+  InternalIP:   10.250.0.2
+  ExternalIP:   
+  InternalDNS:  shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-5l6vd.c.sap-pi-coo-acdc-dev.internal
+  Hostname:     shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-5l6vd.c.sap-pi-coo-acdc-dev.internal
+Capacity:
+  attachable-volumes-gce-pd:  127
+  cpu:                        4
+  ephemeral-storage:          48375392Ki
+  hugepages-1Gi:              0
+  hugepages-2Mi:              0
+  memory:                     15393600Ki
+  pods:                       110
+Allocatable:
+  attachable-volumes-gce-pd:  127
+  cpu:                        3920m
+  ephemeral-storage:          47059581301
+  hugepages-1Gi:              0
+  hugepages-2Mi:              0
+  memory:                     13296448Ki
+  pods:                       110
+System Info:
+  Machine ID:                 3d74b072c356a84863f1a775bcee0cf3
+  System UUID:                3d74b072-c356-a848-63f1-a775bcee0cf3
+  Boot ID:                    a22885c8-f1f7-45d4-b40d-68b63480392f
+  Kernel Version:             4.19.86-coreos
+  OS Image:                   Container Linux by CoreOS 2303.3.0 (Rhyolite)
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  docker://18.6.3
+  Kubelet Version:            v1.17.3
+  Kube-Proxy Version:         v1.17.3
+PodCIDR:                      100.96.0.0/24
+PodCIDRs:                     100.96.0.0/24
+ProviderID:                   gce://sap-pi-coo-acdc-dev/asia-southeast1-a/shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-5l6vd
+Non-terminated Pods:          (45 in total)
+  Namespace                   Name                                                               CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                   ----                                                               ------------  ----------  ---------------  -------------  ---
+  default                     ds-one-vdsdk                                                       0 (0%)        0 (0%)      0 (0%)           0 (0%)         175m
+  default                     nginx-demo-676df54686-fzwsv                                        0 (0%)        0 (0%)      0 (0%)           0 (0%)         39h
+  kube-system                 addons-nginx-ingress-controller-5796c65bf8-4qfhd                   100m (2%)     2 (51%)     100Mi (0%)       1Gi (7%)       2d
+  kube-system                 addons-nginx-ingress-nginx-ingress-k8s-backend-7444ff98ff-rng4w    0 (0%)        0 (0%)      0 (0%)           0 (0%)         2d
+  kube-system                 blackbox-exporter-58cf74dd57-p7p7w                                 5m (0%)       10m (0%)    5Mi (0%)         35Mi (0%)      7d22h
+  kube-system                 calico-kube-controllers-6f864659cf-km6fq                           10m (0%)      50m (1%)    50Mi (0%)        100Mi (0%)     7d22h
+  kube-system                 calico-node-tk9rj                                                  100m (2%)     500m (12%)  100Mi (0%)       700Mi (5%)     7d22h
+  kube-system                 calico-typha-deploy-6c5dc7856f-mkbkn                               200m (5%)     500m (12%)  100Mi (0%)       700Mi (5%)     7d22h
+  kube-system                 calico-typha-horizontal-autoscaler-6455dc88c9-dlm8v                10m (0%)      10m (0%)    50Mi (0%)        50Mi (0%)      7d22h
+  kube-system                 calico-typha-vertical-autoscaler-7b9954b9df-9vmxg                  10m (0%)      10m (0%)    50Mi (0%)        50Mi (0%)      7d22h
+  kube-system                 coredns-db5c59c87-xbjd4                                            50m (1%)      100m (2%)   15Mi (0%)        100Mi (0%)     7d22h
+  kube-system                 coredns-db5c59c87-ztzql                                            50m (1%)      100m (2%)   15Mi (0%)        100Mi (0%)     7d22h
+  kube-system                 kube-proxy-gtklm                                                   20m (0%)      0 (0%)      64Mi (0%)        0 (0%)         7d22h
+  kube-system                 metrics-server-f55f65899-wv4xr                                     20m (0%)      80m (2%)    100Mi (0%)       400Mi (3%)     7d22h
+  kube-system                 node-exporter-rsqjq                                                5m (0%)       25m (0%)    10Mi (0%)        100Mi (0%)     7d22h
+  kube-system                 node-problem-detector-ktg9w                                        20m (0%)      200m (5%)   20Mi (0%)        100Mi (0%)     7d22h
+  kube-system                 vpn-shoot-54845d758f-9q9hr                                         100m (2%)     1 (25%)     100Mi (0%)       1000Mi (7%)    7d22h
+  part-0003                   web-0                                                              100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     32m
+  part-0004                   nginx-https-deployment-6cf7454dd9-nlf7w                            100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     61m
+  part-0004                   nginx-liveness-pod                                                 100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     24h
+  part-0007                   simple-nginx-7bbf484b6b-thlfx                                      100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     54m
+  part-0011                   nginx-deployment-6f78bbd49f-gcxkv                                  100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0012                   rms-dep-6dcf847bb9-cmmpt                                           100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0013                   excercise1-podname1                                                100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     61m
+  part-0013                   nginx-56d9b98b88-65pbg                                             100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     52m
+  part-0018                   nginx-deployment-6f78bbd49f-bjqx5                                  100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     76m
+  part-0019                   nginx-https-deployment-6cf7454dd9-x2q2z                            100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     113m
+  part-0021                   my-first-pod                                                       100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     24h
+  part-0021                   nginx-785467575f-j8l56                                             100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0021                   simple-nginx-7bbf484b6b-s582r                                      100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     64m
+  part-0023                   nginx-deployment-pv-69cb77dd74-24cbr                               100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     20h
+  part-0025                   crash-loop                                                         100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     3h46m
+  part-0025                   liveness-exec                                                      100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     24h
+  part-0025                   my-first-pod                                                       100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     3h43m
+  part-0025                   nginx-liveness-pod123                                              100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     24h
+  part-0026                   simple-nginx-7bbf484b6b-5j6q2                                      100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     72m
+  part-0030                   nginx-deployment-6f78bbd49f-xvkb5                                  100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0030                   nginx-storage-pod                                                  100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     20h
+  part-0031                   myfirstpod                                                         100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     24h
+  part-0031                   nginx-56d9b98b88-bk6f8                                             100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0032                   simple-nginx-7bbf484b6b-cghmp                                      100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     53m
+  part-0035                   nginx-liveness-pod                                                 100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     24h
+  part-0035                   nginx2-6474d9f7df-v6488                                            100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0035                   simple-nginx-7bbf484b6b-j52v9                                      100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     72m
+  registry                    docker-registry-69599f7c6f-k6n8t                                   0 (0%)        0 (0%)      0 (0%)           0 (0%)         2d16h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                   Requests      Limits
+  --------                   --------      ------
+  cpu                        3400m (86%)   18085m (461%)
+  memory                     3479Mi (26%)  12559Mi (96%)
+  ephemeral-storage          0 (0%)        0 (0%)
+  attachable-volumes-gce-pd  0             0
+Events:                      
+
+
+Name:               shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-75pmh
+Roles:              
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=n1-standard-4
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=asia-southeast1
+                    failure-domain.beta.kubernetes.io/zone=asia-southeast1-a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-75pmh
+                    kubernetes.io/os=linux
+                    node.kubernetes.io/instance-type=n1-standard-4
+                    node.kubernetes.io/role=node
+                    topology.kubernetes.io/region=asia-southeast1
+                    topology.kubernetes.io/zone=asia-southeast1-a
+                    worker.garden.sapcloud.io/group=worker-mkr24
+                    worker.gardener.cloud/pool=worker-mkr24
+Annotations:        node.alpha.kubernetes.io/ttl: 0
+                    projectcalico.org/IPv4Address: 10.250.0.5/32
+                    projectcalico.org/IPv4IPIPTunnelAddr: 100.96.3.1
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Wed, 04 Mar 2020 03:58:24 +0000
+Taints:             
+Unschedulable:      false
+Lease:
+  HolderIdentity:  shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-75pmh
+  AcquireTime:     
+  RenewTime:       Wed, 04 Mar 2020 07:19:18 +0000
+Conditions:
+  Type                          Status  LastHeartbeatTime                 LastTransitionTime                Reason                          Message
+  ----                          ------  -----------------                 ------------------                ------                          -------
+  KernelDeadlock                False   Wed, 04 Mar 2020 07:19:17 +0000   Wed, 04 Mar 2020 03:59:24 +0000   KernelHasNoDeadlock             kernel has no deadlock
+  ReadonlyFilesystem            False   Wed, 04 Mar 2020 07:19:17 +0000   Wed, 04 Mar 2020 03:59:24 +0000   FilesystemIsNotReadOnly         Filesystem is not read-only
+  CorruptDockerOverlay2         False   Wed, 04 Mar 2020 07:19:17 +0000   Wed, 04 Mar 2020 03:59:24 +0000   NoCorruptDockerOverlay2         docker overlay2 is functioning properly
+  FrequentUnregisterNetDevice   False   Wed, 04 Mar 2020 07:19:17 +0000   Wed, 04 Mar 2020 03:59:24 +0000   NoFrequentUnregisterNetDevice   node is functioning properly
+  FrequentKubeletRestart        False   Wed, 04 Mar 2020 07:19:17 +0000   Wed, 04 Mar 2020 03:59:24 +0000   NoFrequentKubeletRestart        kubelet is functioning properly
+  FrequentDockerRestart         False   Wed, 04 Mar 2020 07:19:17 +0000   Wed, 04 Mar 2020 03:59:24 +0000   NoFrequentDockerRestart         docker is functioning properly
+  FrequentContainerdRestart     False   Wed, 04 Mar 2020 07:19:17 +0000   Wed, 04 Mar 2020 03:59:24 +0000   NoFrequentContainerdRestart     containerd is functioning properly
+  NetworkUnavailable            False   Wed, 04 Mar 2020 03:58:54 +0000   Wed, 04 Mar 2020 03:58:54 +0000   CalicoIsUp                      Calico is running on this node
+  MemoryPressure                False   Wed, 04 Mar 2020 07:19:22 +0000   Wed, 04 Mar 2020 03:58:24 +0000   KubeletHasSufficientMemory      kubelet has sufficient memory available
+  DiskPressure                  False   Wed, 04 Mar 2020 07:19:22 +0000   Wed, 04 Mar 2020 03:58:24 +0000   KubeletHasNoDiskPressure        kubelet has no disk pressure
+  PIDPressure                   False   Wed, 04 Mar 2020 07:19:22 +0000   Wed, 04 Mar 2020 03:58:24 +0000   KubeletHasSufficientPID         kubelet has sufficient PID available
+  Ready                         True    Wed, 04 Mar 2020 07:19:22 +0000   Wed, 04 Mar 2020 03:58:46 +0000   KubeletReady                    kubelet is posting ready status
+Addresses:
+  InternalIP:   10.250.0.5
+  ExternalIP:   
+  InternalDNS:  shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-75pmh.c.sap-pi-coo-acdc-dev.internal
+  Hostname:     shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-75pmh.c.sap-pi-coo-acdc-dev.internal
+Capacity:
+  attachable-volumes-gce-pd:  127
+  cpu:                        4
+  ephemeral-storage:          48375392Ki
+  hugepages-1Gi:              0
+  hugepages-2Mi:              0
+  memory:                     15393584Ki
+  pods:                       110
+Allocatable:
+  attachable-volumes-gce-pd:  127
+  cpu:                        3920m
+  ephemeral-storage:          47059581301
+  hugepages-1Gi:              0
+  hugepages-2Mi:              0
+  memory:                     13296432Ki
+  pods:                       110
+System Info:
+  Machine ID:                 bcc46096ce4a7ba25799378e58e94506
+  System UUID:                bcc46096-ce4a-7ba2-5799-378e58e94506
+  Boot ID:                    1ead9edc-47ba-4762-9c14-248e5090ce7e
+  Kernel Version:             4.19.86-coreos
+  OS Image:                   Container Linux by CoreOS 2303.3.0 (Rhyolite)
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  docker://18.6.3
+  Kubelet Version:            v1.17.3
+  Kube-Proxy Version:         v1.17.3
+PodCIDR:                      100.96.3.0/24
+PodCIDRs:                     100.96.3.0/24
+ProviderID:                   gce://sap-pi-coo-acdc-dev/asia-southeast1-a/shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-75pmh
+Non-terminated Pods:          (40 in total)
+  Namespace                   Name                                       CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                   ----                                       ------------  ----------  ---------------  -------------  ---
+  default                     ds-one-fv7wz                               0 (0%)        0 (0%)      0 (0%)           0 (0%)         175m
+  kube-system                 calico-node-ghjfj                          100m (2%)     500m (12%)  100Mi (0%)       700Mi (5%)     3h21m
+  kube-system                 kube-proxy-vn9cr                           20m (0%)      0 (0%)      64Mi (0%)        0 (0%)         3h21m
+  kube-system                 node-exporter-8ssq9                        5m (0%)       25m (0%)    10Mi (0%)        100Mi (0%)     3h21m
+  kube-system                 node-problem-detector-6pgq4                20m (0%)      200m (5%)   20Mi (0%)        100Mi (0%)     3h21m
+  part-0002                   mynginx-b9dbf47b6-gw96k                    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     86m
+  part-0002                   simple-nginx-84cd876f88-8gj99              100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     93m
+  part-0002                   yournginx-86585bc97d-sqxdp                 100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     86m
+  part-0004                   nginx-https-deployment-6cf7454dd9-nlhbx    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     61m
+  part-0005                   nginx-https-deployment-6cf7454dd9-5bbwr    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     119m
+  part-0005                   nginx-https-deployment-6cf7454dd9-88ddw    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     119m
+  part-0007                   nginx-deployment-pvc-76b95df86d-2vqf2      100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     124m
+  part-0007                   nginx-deployment-pvc-76b95df86d-dzl4p      100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     124m
+  part-0007                   nginx-deployment-pvc-76b95df86d-k5qsj      100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     124m
+  part-0007                   nginx-https-deployment-6cf7454dd9-5cw92    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     78m
+  part-0011                   mynginx-b9dbf47b6-v7zcl                    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     78m
+  part-0011                   yournginx-86585bc97d-rxlrh                 100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     78m
+  part-0012                   pvc-pod                                    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     149m
+  part-0012                   simple-nginx-7bbf484b6b-drghx              100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     91m
+  part-0013                   excercisepodname                           100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     62m
+  part-0013                   nginx-56d9b98b88-j9lfr                     100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     52m
+  part-0019                   nginx-deployment-pvc-76b95df86d-b4xbm      100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     132m
+  part-0019                   nginx-deployment-pvc-76b95df86d-jbqfr      100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     132m
+  part-0019                   nginx-deployment-pvc-76b95df86d-jr47m      100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     132m
+  part-0019                   nginx-https-deployment-6cf7454dd9-fjd2p    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     113m
+  part-0021                   nginx-deployment-69cb77dd74-42rwc          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0021                   nginx-deployment-69cb77dd74-bsrhp          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0021                   nginx-deployment-69cb77dd74-p5jjz          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0021                   nginx-https-deployment-6cf7454dd9-6rfwz    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     111m
+  part-0023                   nginx-https-deployment-6cf7454dd9-k88g6    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     132m
+  part-0023                   nginx-https-deployment-6cf7454dd9-lghc4    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     132m
+  part-0023                   nginx-https-deployment-6cf7454dd9-qlrg9    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     132m
+  part-0023                   simple-nginx-7bbf484b6b-748rc              100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     71m
+  part-0026                   nginx-https-deployment-6cf7454dd9-pqzls    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     122m
+  part-0026                   nginx-https-deployment-6cf7454dd9-rsqrv    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     122m
+  part-0028                   simple-nginx-7bbf484b6b-bh8zj              100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     80m
+  part-0030                   nginx-https-deployment-6cf7454dd9-s7zzj    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     72m
+  part-0035                   nginx-https-deployment-6cf7454dd9-kdhhx    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     125m
+  part-0035                   nginx-https-deployment-6cf7454dd9-lr84z    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     125m
+  part-0035                   nginx-https-deployment-6cf7454dd9-xhhbm    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     125m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                   Requests      Limits
+  --------                   --------      ------
+  cpu                        3645m (92%)   18225m (464%)
+  memory                     3694Mi (28%)  11400Mi (87%)
+  ephemeral-storage          0 (0%)        0 (0%)
+  attachable-volumes-gce-pd  0             0
+Events:                      
+
+
+Name:               shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-n98ms
+Roles:              
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=n1-standard-4
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=asia-southeast1
+                    failure-domain.beta.kubernetes.io/zone=asia-southeast1-a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-n98ms
+                    kubernetes.io/os=linux
+                    node.kubernetes.io/instance-type=n1-standard-4
+                    node.kubernetes.io/role=node
+                    topology.kubernetes.io/region=asia-southeast1
+                    topology.kubernetes.io/zone=asia-southeast1-a
+                    worker.garden.sapcloud.io/group=worker-mkr24
+                    worker.gardener.cloud/pool=worker-mkr24
+Annotations:        node.alpha.kubernetes.io/ttl: 0
+                    projectcalico.org/IPv4Address: 10.250.0.6/32
+                    projectcalico.org/IPv4IPIPTunnelAddr: 100.96.4.1
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Wed, 04 Mar 2020 06:47:04 +0000
+Taints:             
+Unschedulable:      false
+Lease:
+  HolderIdentity:  shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-n98ms
+  AcquireTime:     
+  RenewTime:       Wed, 04 Mar 2020 07:19:20 +0000
+Conditions:
+  Type                          Status  LastHeartbeatTime                 LastTransitionTime                Reason                          Message
+  ----                          ------  -----------------                 ------------------                ------                          -------
+  CorruptDockerOverlay2         False   Wed, 04 Mar 2020 07:18:27 +0000   Wed, 04 Mar 2020 06:48:08 +0000   NoCorruptDockerOverlay2         docker overlay2 is functioning properly
+  FrequentUnregisterNetDevice   False   Wed, 04 Mar 2020 07:18:27 +0000   Wed, 04 Mar 2020 06:48:08 +0000   NoFrequentUnregisterNetDevice   node is functioning properly
+  KernelDeadlock                False   Wed, 04 Mar 2020 07:18:27 +0000   Wed, 04 Mar 2020 06:48:08 +0000   KernelHasNoDeadlock             kernel has no deadlock
+  ReadonlyFilesystem            False   Wed, 04 Mar 2020 07:18:27 +0000   Wed, 04 Mar 2020 06:48:08 +0000   FilesystemIsNotReadOnly         Filesystem is not read-only
+  FrequentKubeletRestart        False   Wed, 04 Mar 2020 07:18:27 +0000   Wed, 04 Mar 2020 06:48:08 +0000   NoFrequentKubeletRestart        kubelet is functioning properly
+  FrequentDockerRestart         False   Wed, 04 Mar 2020 07:18:27 +0000   Wed, 04 Mar 2020 06:48:08 +0000   NoFrequentDockerRestart         docker is functioning properly
+  FrequentContainerdRestart     False   Wed, 04 Mar 2020 07:18:27 +0000   Wed, 04 Mar 2020 06:48:08 +0000   NoFrequentContainerdRestart     containerd is functioning properly
+  NetworkUnavailable            False   Wed, 04 Mar 2020 06:47:40 +0000   Wed, 04 Mar 2020 06:47:40 +0000   CalicoIsUp                      Calico is running on this node
+  MemoryPressure                False   Wed, 04 Mar 2020 07:19:25 +0000   Wed, 04 Mar 2020 06:47:04 +0000   KubeletHasSufficientMemory      kubelet has sufficient memory available
+  DiskPressure                  False   Wed, 04 Mar 2020 07:19:25 +0000   Wed, 04 Mar 2020 06:47:04 +0000   KubeletHasNoDiskPressure        kubelet has no disk pressure
+  PIDPressure                   False   Wed, 04 Mar 2020 07:19:25 +0000   Wed, 04 Mar 2020 06:47:04 +0000   KubeletHasSufficientPID         kubelet has sufficient PID available
+  Ready                         True    Wed, 04 Mar 2020 07:19:25 +0000   Wed, 04 Mar 2020 06:47:26 +0000   KubeletReady                    kubelet is posting ready status
+Addresses:
+  InternalIP:   10.250.0.6
+  ExternalIP:   
+  InternalDNS:  shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-n98ms.c.sap-pi-coo-acdc-dev.internal
+  Hostname:     shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-n98ms.c.sap-pi-coo-acdc-dev.internal
+Capacity:
+  attachable-volumes-gce-pd:  127
+  cpu:                        4
+  ephemeral-storage:          48375392Ki
+  hugepages-1Gi:              0
+  hugepages-2Mi:              0
+  memory:                     15393600Ki
+  pods:                       110
+Allocatable:
+  attachable-volumes-gce-pd:  127
+  cpu:                        3920m
+  ephemeral-storage:          47059581301
+  hugepages-1Gi:              0
+  hugepages-2Mi:              0
+  memory:                     13296448Ki
+  pods:                       110
+System Info:
+  Machine ID:                 33ecf238683098b27359e0bee97bce24
+  System UUID:                33ecf238-6830-98b2-7359-e0bee97bce24
+  Boot ID:                    9110d661-89c9-4da4-9216-db911cf8df15
+  Kernel Version:             4.19.86-coreos
+  OS Image:                   Container Linux by CoreOS 2303.3.0 (Rhyolite)
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  docker://18.6.3
+  Kubelet Version:            v1.17.3
+  Kube-Proxy Version:         v1.17.3
+PodCIDR:                      100.96.4.0/24
+PodCIDRs:                     100.96.4.0/24
+ProviderID:                   gce://sap-pi-coo-acdc-dev/asia-southeast1-a/shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-n98ms
+Non-terminated Pods:          (8 in total)
+  Namespace                   Name                           CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                   ----                           ------------  ----------  ---------------  -------------  ---
+  default                     ds-one-z7xrn                   0 (0%)        0 (0%)      0 (0%)           0 (0%)         32m
+  kube-system                 calico-node-cb9ss              100m (2%)     500m (12%)  100Mi (0%)       700Mi (5%)     32m
+  kube-system                 kube-proxy-xbtqg               20m (0%)      0 (0%)      64Mi (0%)        0 (0%)         32m
+  kube-system                 node-exporter-tzs7d            5m (0%)       25m (0%)    10Mi (0%)        100Mi (0%)     32m
+  kube-system                 node-problem-detector-cjqkh    20m (0%)      200m (5%)   20Mi (0%)        100Mi (0%)     32m
+  part-0003                   dns-test                       100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     29m
+  part-0026                   web-0                          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     21m
+  part-0026                   web-1                          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     20m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                   Requests    Limits
+  --------                   --------    ------
+  cpu                        445m (11%)  2225m (56%)
+  memory                     494Mi (3%)  1800Mi (13%)
+  ephemeral-storage          0 (0%)      0 (0%)
+  attachable-volumes-gce-pd  0           0
+Events:                      
+^[[A
+
+Name:               shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-nl749
+Roles:              
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=n1-standard-4
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=asia-southeast1
+                    failure-domain.beta.kubernetes.io/zone=asia-southeast1-a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-nl749
+                    kubernetes.io/os=linux
+                    node.kubernetes.io/instance-type=n1-standard-4
+                    node.kubernetes.io/role=node
+                    topology.kubernetes.io/region=asia-southeast1
+                    topology.kubernetes.io/zone=asia-southeast1-a
+                    worker.garden.sapcloud.io/group=worker-mkr24
+                    worker.gardener.cloud/pool=worker-mkr24
+Annotations:        node.alpha.kubernetes.io/ttl: 0
+                    projectcalico.org/IPv4Address: 10.250.0.3/32
+                    projectcalico.org/IPv4IPIPTunnelAddr: 100.96.1.1
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Tue, 03 Mar 2020 07:03:32 +0000
+Taints:             
+Unschedulable:      false
+Lease:
+  HolderIdentity:  shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-nl749
+  AcquireTime:     
+  RenewTime:       Wed, 04 Mar 2020 07:19:28 +0000
+Conditions:
+  Type                          Status  LastHeartbeatTime                 LastTransitionTime                Reason                          Message
+  ----                          ------  -----------------                 ------------------                ------                          -------
+  KernelDeadlock                False   Wed, 04 Mar 2020 07:19:23 +0000   Tue, 03 Mar 2020 07:04:27 +0000   KernelHasNoDeadlock             kernel has no deadlock
+  ReadonlyFilesystem            False   Wed, 04 Mar 2020 07:19:23 +0000   Tue, 03 Mar 2020 07:04:27 +0000   FilesystemIsNotReadOnly         Filesystem is not read-only
+  FrequentUnregisterNetDevice   False   Wed, 04 Mar 2020 07:19:23 +0000   Tue, 03 Mar 2020 07:04:27 +0000   NoFrequentUnregisterNetDevice   node is functioning properly
+  CorruptDockerOverlay2         False   Wed, 04 Mar 2020 07:19:23 +0000   Tue, 03 Mar 2020 07:04:27 +0000   NoCorruptDockerOverlay2         docker overlay2 is functioning properly
+  FrequentKubeletRestart        False   Wed, 04 Mar 2020 07:19:23 +0000   Tue, 03 Mar 2020 07:04:27 +0000   NoFrequentKubeletRestart        kubelet is functioning properly
+  FrequentDockerRestart         False   Wed, 04 Mar 2020 07:19:23 +0000   Tue, 03 Mar 2020 07:04:27 +0000   NoFrequentDockerRestart         docker is functioning properly
+  FrequentContainerdRestart     False   Wed, 04 Mar 2020 07:19:23 +0000   Tue, 03 Mar 2020 07:04:27 +0000   NoFrequentContainerdRestart     containerd is functioning properly
+  NetworkUnavailable            False   Tue, 03 Mar 2020 07:04:13 +0000   Tue, 03 Mar 2020 07:04:13 +0000   CalicoIsUp                      Calico is running on this node
+  MemoryPressure                False   Wed, 04 Mar 2020 07:19:24 +0000   Tue, 03 Mar 2020 07:03:32 +0000   KubeletHasSufficientMemory      kubelet has sufficient memory available
+  DiskPressure                  False   Wed, 04 Mar 2020 07:19:24 +0000   Tue, 03 Mar 2020 07:03:32 +0000   KubeletHasNoDiskPressure        kubelet has no disk pressure
+  PIDPressure                   False   Wed, 04 Mar 2020 07:19:24 +0000   Tue, 03 Mar 2020 07:03:32 +0000   KubeletHasSufficientPID         kubelet has sufficient PID available
+  Ready                         True    Wed, 04 Mar 2020 07:19:24 +0000   Tue, 03 Mar 2020 07:04:05 +0000   KubeletReady                    kubelet is posting ready status
+Addresses:
+  InternalIP:   10.250.0.3
+  ExternalIP:   
+  InternalDNS:  shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-nl749.c.sap-pi-coo-acdc-dev.internal
+  Hostname:     shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-nl749.c.sap-pi-coo-acdc-dev.internal
+Capacity:
+  attachable-volumes-gce-pd:  127
+  cpu:                        4
+  ephemeral-storage:          48375392Ki
+  hugepages-1Gi:              0
+  hugepages-2Mi:              0
+  memory:                     15393600Ki
+  pods:                       110
+Allocatable:
+  attachable-volumes-gce-pd:  127
+  cpu:                        3920m
+  ephemeral-storage:          47059581301
+  hugepages-1Gi:              0
+  hugepages-2Mi:              0
+  memory:                     13296448Ki
+  pods:                       110
+System Info:
+  Machine ID:                 0d38bed8b8bd832239ecec5b052562cc
+  System UUID:                0d38bed8-b8bd-8322-39ec-ec5b052562cc
+  Boot ID:                    579dace0-d1da-494f-a2db-2d2e5ee0b0f9
+  Kernel Version:             4.19.86-coreos
+  OS Image:                   Container Linux by CoreOS 2303.3.0 (Rhyolite)
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  docker://18.6.3
+  Kubelet Version:            v1.17.3
+  Kube-Proxy Version:         v1.17.3
+PodCIDR:                      100.96.1.0/24
+PodCIDRs:                     100.96.1.0/24
+ProviderID:                   gce://sap-pi-coo-acdc-dev/asia-southeast1-a/shoot--k8s-train--blrcw10-worker-mkr24-z1-5fcc6c64fb-nl749
+Non-terminated Pods:          (39 in total)
+  Namespace                   Name                                       CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                   ----                                       ------------  ----------  ---------------  -------------  ---
+  default                     ds-one-pxgnp                               0 (0%)        0 (0%)      0 (0%)           0 (0%)         148m
+  kube-system                 calico-node-mbkl2                          100m (2%)     500m (12%)  100Mi (0%)       700Mi (5%)     24h
+  kube-system                 kube-proxy-6zxn7                           20m (0%)      0 (0%)      64Mi (0%)        0 (0%)         24h
+  kube-system                 node-exporter-5q4sx                        5m (0%)       25m (0%)    10Mi (0%)        100Mi (0%)     24h
+  kube-system                 node-problem-detector-wvkzn                20m (0%)      200m (5%)   20Mi (0%)        100Mi (0%)     24h
+  part-0003                   web-1                                      100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     33m
+  part-0004                   nginx-deployment-6f78bbd49f-j984l          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0005                   nginx-https-deployment-6cf7454dd9-bsn7m    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     119m
+  part-0007                   nginx-https-deployment-6cf7454dd9-rch4g    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     78m
+  part-0007                   nginx-liveness-pod                         100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     24h
+  part-0011                   nginx-deployment-6f78bbd49f-st8t9          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0011                   nginx-deployment-6f78bbd49f-xl6wx          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0012                   rms-dep-6dcf847bb9-trrxv                   100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0012                   rms-pod                                    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     23h
+  part-0013                   mbr-pod2                                   200m (5%)     1 (25%)     200Mi (1%)       600Mi (4%)     21h
+  part-0018                   nginx-liveness-pod                         100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     79m
+  part-0018                   simple-nginx-7bbf484b6b-lc8g4              100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     68m
+  part-0019                   nginx-https-deployment-6cf7454dd9-8w2pt    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     113m
+  part-0019                   nginx-liveness-pod                         100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     24h
+  part-0019                   simple-nginx-7bbf484b6b-prk42              100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     51m
+  part-0021                   my-second-pod                              100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     24h
+  part-0021                   nginx-785467575f-mnwss                     100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0021                   nginx-785467575f-x9rft                     100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0021                   nginx-https-deployment-6cf7454dd9-tqhkv    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     111m
+  part-0023                   nginx-deployment-pv-69cb77dd74-hh7m4       100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     20h
+  part-0025                   app-failure                                100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     3h40m
+  part-0025                   nginx-day3-pod                             100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     3h57m
+  part-0025                   nginx-deployment-69cb77dd74-8qf99          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     3h45m
+  part-0025                   nginx-deployment-6f78bbd49f-49dwg          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     3h45m
+  part-0025                   nginx-service-demo-586fbf4d69-zrqhm        100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     21h
+  part-0025                   nginx-service-ex4-cbbbfc98-w47v6           100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     21h
+  part-0026                   nginx-https-deployment-6cf7454dd9-krtwl    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     122m
+  part-0030                   nginx-deployment-6f78bbd49f-fnpfj          100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0030                   nginx-https-deployment-6cf7454dd9-pnssv    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     72m
+  part-0030                   nginx-liveness-pod                         100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     23h
+  part-0031                   nginx-56d9b98b88-mrdgr                     100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0031                   simple-nginx-7bbf484b6b-69t4j              100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     70m
+  part-0035                   nginx2-6474d9f7df-jmcwj                    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+  part-0035                   nginx2-6474d9f7df-lkfnz                    100m (2%)     500m (12%)  100Mi (0%)       300Mi (2%)     22h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                   Requests      Limits
+  --------                   --------      ------
+  cpu                        3645m (92%)   18225m (464%)
+  memory                     3694Mi (28%)  11400Mi (87%)
+  ephemeral-storage          0 (0%)        0 (0%)
+  attachable-volumes-gce-pd  0             0
+Events:                      
+
+
+
+browser: > http://localhost:8001/
 {
-   "name":"Git_Topics",
-   "url":"http://example.com",
-   "description":"Setup_and_config",
-   "longDescription":"",
-   "image":"",
-   "children":[
-      {
-         "name":"Setup_and_config",
-         "free":true,
-         "description":"Setup_and_config",
-         "longDescription":"",
-         "image":"",
-         "url":"http://www.tableausoftware.com/products/desktop",
-         "children":[
-            {
-               "name":"git",
-               "description":"Web-based 'cloud' applications for authoring data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"config",
-               "description":"Powerful tool for data analytics and visualisation",
-               "longDescription":"",
-               "image":"",
-               "url":"http://www.tableausoftware.com/products/desktop"
-            },
-            {
-               "name":"help",
-               "description":"Powerful tool for data analytics and visualisation",
-               "longDescription":"",
-               "image":"",
-               "url":"http://www.tableausoftware.com/products/desktop"
-            },
-            {
-               "name":"bugreport",
-               "description":"Powerful tool for data analytics and visualisation",
-               "longDescription":"",
-               "image":"",
-               "url":"http://www.tableausoftware.com/products/desktop"
-            }
-         ]
-      },
-      {
-         "name":"Azure funadmental Concepts",
-         "description":"Code-based data visualisation creation",
-         "longDescription":"",
-         "image":"",
-         "free":true,
-         "children":[
-            {
-               "name":"Cloud Models",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Benefits and considerations",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Cloud services",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            }
-         ]
-      },
-      {
-         "name":"Getting_and_creating_projects",
-         "description":"create and clone projects",
-         "longDescription":"",
-         "url":"http://example.com",
-         "image":"",
-         "free":true,
-         "children":[
-            {
-               "name":"Init",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Clone",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            }
-         ]
-      },
-      {
-         "name":"Basic Snapshoting",
-         "description":"Code-based data visualisation creation",
-         "longDescription":"",
-         "url":"http://example.com",
-         "image":"",
-         "free":true,
-         "children":[
-            {
-               "name":"add",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"status",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"diff",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"commit",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Notes",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"restore",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"reset",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"rm",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"mv",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            }
-         ]
-      },
-      {
-         "name":"Branching_and_merging",
-         "description":"Code-based data visualisation creation",
-         "longDescription":"",
-         "url":"http://example.com",
-         "image":"",
-         "free":true,
-         "children":[
-            {
-               "name":"Virtual Network fundamentals",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":""
-            },
-            {
-               "name":"Virtual Network Settings",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":""
-            },
-            {
-               "name":"VPN Gateway Fundamentals",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":""
-            },
-            {
-               "name":"Express Route fundamentals",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":""
-            }
-         ]
-      },
-      {
-         "name":"Sharing_and_updating_projects",
-         "description":"Code-based data visualisation creation",
-         "longDescription":"",
-         "url":"http://example.com",
-         "image":"",
-         "free":true,
-         "children":[
-            {
-               "name":"AZ Storage A/c Fundamentals",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Disk Storage fundamentals",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Blob Storage Fundamentals",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Prometheus Architecuture",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Azure File Fundamentals",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Understand Blob Access Tiers",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            }
-         ]
-      },
-      {
-         "name":"Inspection_and_comparision",
-         "description":"Code-based data visualisation creation",
-         "longDescription":"",
-         "url":"http://example.com",
-         "image":"",
-         "free":true,
-         "children":[
-            {
-               "name":"AZ Cosmos DB",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"AZ SQL DB",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"CreateSQL DB",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"AZ DB for my SQL",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"AZ DB for Postgres SQL",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"AZ SQL Managed Instance",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Explore Big data & Analytics",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            }
-         ]
-      },
-      {
-         "name":"Patching",
-         "description":"Code-based data visualisation creation",
-         "longDescription":"",
-         "url":"http://example.com",
-         "image":"",
-         "free":true,
-         "children":[
-            {
-               "name":"Identify Product options",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Analyze decision Criteria",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Use of IOT HUB",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Use of IOT central",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"use Azure Sphere",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            }
-         ]
-      },
-      {
-         "name":"Debugging",
-         "description":"Code-based data visualisation creation",
-         "longDescription":"",
-         "url":"http://example.com",
-         "image":"",
-         "free":true,
-         "children":[
-            {
-               "name":"Introduction",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"use Machine Learning for Decision Support systems",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Use cognitive services for Data Analysis",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"use Bot service for Interactive Chat experience",
-               "description":"Non-JavaScript languages for producing web-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            }
-         ]
-      },
-      {
-         "name":"Guides",
-         "longDescription":"",
-         "image":"",
-         "url":"http://example.com",
-         "free":true,
-         "children":[
-            {
-               "name":"Azure functions",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Azure Logi Apps",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            }
-         ]
-      },
-      {
-         "name":"Email",
-         "description":"Code-based data visualisation creation",
-         "longDescription":"",
-         "url":"http://example.com",
-         "image":"",
-         "free":true,
-         "children":[
-            {
-               "name":"Azure Devops to Manage Application Development Lifecycle",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Github to contribute to Manage testing Environment",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Azure devtest Labs to Manage Testing Environment",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            }
-         ]
-      },
-      {
-         "name":"ExternalSystems",
-         "description":"Code-based data visualisation creation",
-         "longDescription":"",
-         "url":"http://example.com",
-         "image":"",
-         "free":true,
-         "children":[
-            {
-               "name":"Azure portal to visually understand and manage cloud Environment",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Azure powershell for one-off administrative Taks",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Azure cli for one-off administrative Taks",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Azure Mobile app to manage Azure on the go",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"ARM templates to deply entrire cloud infrastructure",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            }
-         ]
-      },
-      {
-         "name":"Administration",
-         "description":"Code-based data visualisation creation",
-         "longDescription":"",
-         "url":"http://example.com",
-         "image":"",
-         "free":true,
-         "children":[
-            {
-               "name":"Azure Advisor",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Azure Monitor",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Azure Service Health",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            }
-         ]
-      },
-      {
-         "name":"ServerAdmin",
-         "description":"Code-based data visualisation creation",
-         "longDescription":"",
-         "url":"http://example.com",
-         "image":"",
-         "free":true,
-         "children":[
-            {
-               "name":"Protect against seucurity Threats by using Azure security Center",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Azure Sentinel",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Azure Key vault",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Azure Dedicated Host",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "image":"",
-               "longDescription":"",
-               "url":"http://example.com",
-               "free":true
-            }
-         ]
-      },
-      {
-         "name":"Plumbing_commands",
-         "description":"Code-based data visualisation creation",
-         "longDescription":"",
-         "url":"http://example.com",
-         "image":"",
-         "free":true,
-         "children":[
-            {
-               "name":"Azure Firewall",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Azure DDos protection",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            },
-            {
-               "name":"Network Security Solution",
-               "description":"The language behind most (all?) browser-based data visualisations",
-               "longDescription":"",
-               "url":"http://example.com",
-               "image":"",
-               "free":true
-            }
-         ]
-      }
-   ]
+  "kind": "Status",
+  "apiVersion": "v1",
+  "metadata": {
+    
+  },
+  "status": "Failure",
+  "message": "forbidden: User \"part-0013\" cannot get path \"/\"",
+  "reason": "Forbidden",
+  "details": {
+    
+  },
+  "code": 403
 }
+
+
+
+Pod
+------
+A Pod is the basic execution unit of a Kubernetes application–the smallest and simplest unit in the Kubernetes object model that you create or deploy. A Pod represents processes running on your Cluster
+
+Pods that run a single container. The “one-container-per-Pod” model is the most common Kubernetes use case; in this case, you can think of a Pod as a wrapper around a single container, and Kubernetes manages the Pods rather than the containers directly.
+
+Pods that run multiple containers that need to work together. A Pod might encapsulate an application composed of multiple co-located containers that are tightly coupled and need to share resources. 
+
+
+create a yml file to create pod
+
+------------------------------------
+apiVersion: v1
+kind: Pod
+metadata:
+  name: excercise2-podname1
+spec:
+  containers:
+  - name: nginx
+    image: nginx:mainline
+    ports:
+    - containerPort: 80
+      name: http-port
+    livenessProbe:
+      httpGet:
+        path: /
+        port: http-port
+      initialDelaySeconds: 3
+      periodSeconds: 30
+-----------------------------
+> kubectl apply -f excercise2_pod1.yaml --dry-run
+pod/excercise2-podname1 created (dry run)
+
+
+>kubectl apply -f excercise2_pod1.yaml
+pod/excercise2-podname1 created
+
+
+Verify if pod is running
+> kubectl get pods
+NAME                     READY   STATUS             RESTARTS   AGE
+excercise1-podname1      1/1     Running            0          95m
+excercise2-podname1      1/1     Running            0          73s
+excercisepodname         1/1     Running            0          96m
+mbr-pod                  1/2     CrashLoopBackOff   272        22h
+mbr-pod2                 1/2     CrashLoopBackOff   259        21h
+nginx-56d9b98b88-4lb2h   1/1     Running            0          86m
+nginx-56d9b98b88-65pbg   1/1     Running            0          86m
+nginx-56d9b98b88-j9lfr   1/1     Running            0          86m
+
+
+Get the logs of specific pod or container
+> kubectl get pods --all-namespaces
+NAMESPACE     NAME                                                              READY   STATUS                  RESTARTS   AGE
+default       ds-one-ch5k4                                                      1/1     Running                 0          18m
+default       ds-one-fv7wz                                                      1/1     Running                 0          3h32m
+default       ds-one-lkrtt                                                      1/1     Running                 0          3h32m
+default       ds-one-pxgnp                                                      1/1     Running                 0          3h4m
+default       ds-one-vdsdk                                                      1/1     Running                 0          3h32m
+default       ds-one-wp7gk                                                      1/1     Running                 0          98s
+default       ds-one-z7xrn                                                      1/1     Running                 0          68m
+default       nginx-demo-676df54686-fzwsv                                       1/1     Running                 0          40h
+kube-system   addons-nginx-ingress-controller-5796c65bf8-4qfhd                  1/1     Running                 0          2d1h
+kube-system   addons-nginx-ingress-nginx-ingress-k8s-backend-7444ff98ff-rng4w   1/1     Running                 0          2d1h
+kube-system   blackbox-exporter-58cf74dd57-p7p7w                                1/1     Running                 0          7d23h
+kube-system   calico-kube-controllers-6f864659cf-km6fq                          1/1     Running                 0          7d23h
+kube-system   calico-node-2ztd2                                                 1/1     Running                 0          18m
+kube-system   calico-node-cb9ss                                                 1/1     Running                 1          68m
+kube-system   calico-node-ghjfj                                                 1/1     Running                 0          3h57m
+kube-system   calico-node-lsc68                                                 1/1     Running                 0          2m
+kube-system   calico-node-mbkl2                                                 1/1     Running                 0          24h
+kube-system   calico-node-mrgq8                                                 1/1     Running                 0          23h
+kube-system   calico-node-tk9rj                                                 1/1     Running                 0          7d23h
+kube-system   calico-typha-deploy-6c5dc7856f-mkbkn                              1/1     Running                 0          7d23h
+kube-system   calico-typha-horizontal-autoscaler-6455dc88c9-dlm8v               1/1     Running                 0          7d23h
+kube-system   calico-typha-vertical-autoscaler-7b9954b9df-9vmxg                 1/1     Running                 2          7d23h
+kube-system   coredns-db5c59c87-xbjd4                                           1/1     Running                 0          7d23h
+kube-system   coredns-db5c59c87-ztzql                                           1/1     Running                 0          7d23h
+kube-system   kube-proxy-6pmrj                                                  1/1     Running                 0          18m
+kube-system   kube-proxy-6zxn7                                                  1/1     Running                 0          24h
+kube-system   kube-proxy-bln9p                                                  1/1     Running                 0          23h
+kube-system   kube-proxy-gtklm                                                  1/1     Running                 0          7d23h
+kube-system   kube-proxy-h7h8m                                                  1/1     Running                 0          2m
+kube-system   kube-proxy-vn9cr                                                  1/1     Running                 0          3h57m
+kube-system   kube-proxy-xbtqg                                                  1/1     Running                 0          68m
+kube-system   metrics-server-f55f65899-wv4xr                                    1/1     Running                 0          7d23h
+kube-system   node-exporter-5q4sx                                               1/1     Running                 0          24h
+kube-system   node-exporter-62j5h                                               1/1     Running                 0          18m
+kube-system   node-exporter-8ssq9                                               1/1     Running                 0          3h57m
+kube-system   node-exporter-nqrs8                                               1/1     Running                 0          2m
+kube-system   node-exporter-rsqjq                                               1/1     Running                 0          7d23h
+kube-system   node-exporter-tbxp7                                               1/1     Running                 0          23h
+kube-system   node-exporter-tzs7d                                               1/1     Running                 0          68m
+kube-system   node-problem-detector-6pgq4                                       1/1     Running                 0          3h57m
+kube-system   node-problem-detector-bs7hw                                       1/1     Running                 0          23h
+kube-system   node-problem-detector-cjqkh                                       1/1     Running                 0          68m
+kube-system   node-problem-detector-gz467                                       1/1     Running                 0          18m
+kube-system   node-problem-detector-ktg9w                                       1/1     Running                 0          7d23h
+kube-system   node-problem-detector-rbt84                                       1/1     Running                 0          2m
+kube-system   node-problem-detector-wvkzn                                       1/1     Running                 0          24h
+kube-system   vpn-shoot-54845d758f-9q9hr                                        1/1     Running                 0          7d23h
+part-0002     mynginx-b9dbf47b6-gw96k                                           1/1     Running                 0          123m
+part-0002     simple-nginx-84cd876f88-8gj99                                     1/1     Running                 0          130m
+part-0002     yournginx-86585bc97d-sqxdp                                        1/1     Running                 0          122m
+part-0003     dns-test                                                          1/1     Running                 0          65m
+part-0003     test-configmap                                                    0/1     Completed               0          3h15m
+part-0003     web-0                                                             1/1     Running                 0          68m
+part-0003     web-1                                                             1/1     Running                 0          70m
+part-0004     nginx-deployment-6f78bbd49f-hjvxz                                 1/1     Running                 0          22h
+part-0004     nginx-deployment-6f78bbd49f-j984l                                 1/1     Running                 0          22h
+part-0004     nginx-deployment-6f78bbd49f-lkhhl                                 1/1     Running                 0          22h
+part-0004     nginx-https-deployment-6cf7454dd9-nlf7w                           0/1     ContainerCreating       0          97m
+part-0004     nginx-https-deployment-6cf7454dd9-nlhbx                           0/1     ContainerCreating       0          97m
+part-0004     nginx-https-deployment-6cf7454dd9-pp8fm                           0/1     ContainerCreating       0          97m
+part-0004     nginx-liveness-pod                                                1/1     Running                 0          24h
+part-0004     nginx-liveness-pod-new                                            1/1     Running                 0          21h
+part-0005     nginx-https-deployment-6cf7454dd9-5bbwr                           0/1     ContainerCreating       0          155m
+part-0005     nginx-https-deployment-6cf7454dd9-88ddw                           0/1     ContainerCreating       0          155m
+part-0005     nginx-https-deployment-6cf7454dd9-bsn7m                           0/1     ContainerCreating       0          155m
+part-0005     nginx-storage-pod                                                 1/1     Running                 69         19h
+part-0005     simple-nginx-7bbf484b6b-j42pc                                     1/1     Running                 0          94m
+part-0007     nginx-deployment-pvc-76b95df86d-2vqf2                             1/1     Running                 0          160m
+part-0007     nginx-deployment-pvc-76b95df86d-dzl4p                             1/1     Running                 0          160m
+part-0007     nginx-deployment-pvc-76b95df86d-k5qsj                             1/1     Running                 0          160m
+part-0007     nginx-https-deployment-6cf7454dd9-5cw92                           1/1     Running                 0          114m
+part-0007     nginx-https-deployment-6cf7454dd9-fsj9s                           1/1     Running                 0          114m
+part-0007     nginx-https-deployment-6cf7454dd9-rch4g                           1/1     Running                 0          114m
+part-0007     nginx-liveness-pod                                                1/1     Running                 0          24h
+part-0007     simple-nginx-7bbf484b6b-thlfx                                     1/1     Running                 0          90m
+part-0011     mynginx-b9dbf47b6-v7zcl                                           1/1     Running                 0          115m
+part-0011     nginx-demo-676df54686-6mctw                                       1/1     Running                 0          22h
+part-0011     nginx-deployment-6f78bbd49f-gcxkv                                 1/1     Running                 0          23h
+part-0011     nginx-deployment-6f78bbd49f-st8t9                                 1/1     Running                 0          23h
+part-0011     nginx-deployment-6f78bbd49f-xl6wx                                 1/1     Running                 0          23h
+part-0011     yournginx-86585bc97d-rxlrh                                        1/1     Running                 0          115m
+part-0012     nginx-https-deployment-6cf7454dd9-9ppgg                           0/1     Pending                 0          146m
+part-0012     nginx-https-deployment-6cf7454dd9-k5ts8                           0/1     Pending                 0          146m
+part-0012     nginx-https-deployment-6cf7454dd9-td8qg                           0/1     Pending                 0          146m
+part-0012     pvc-pod                                                           0/1     CrashLoopBackOff        41         3h6m
+part-0012     rms-dep-6dcf847bb9-5d6pc                                          1/1     Running                 0          22h
+part-0012     rms-dep-6dcf847bb9-cmmpt                                          1/1     Running                 0          22h
+part-0012     rms-dep-6dcf847bb9-nvcsv                                          1/1     Running                 0          22h
+part-0012     rms-dep-6dcf847bb9-tb7vt                                          1/1     Running                 0          22h
+part-0012     rms-dep-6dcf847bb9-trrxv                                          1/1     Running                 0          22h
+part-0012     rms-pod                                                           1/1     Running                 0          24h
+part-0012     rmsdepf-649b795f9d-mqnzg                                          1/1     Running                 0          23h
+part-0012     rmsdepf-649b795f9d-rkdgv                                          1/1     Running                 0          23h
+part-0012     rmsdepf-649b795f9d-vzl48                                          1/1     Running                 0          23h
+part-0012     rmsdepf-649b795f9d-z22ls                                          1/1     Running                 0          23h
+part-0012     simple-nginx-7bbf484b6b-drghx                                     1/1     Running                 0          127m
+part-0013     excercise1-podname1                                               1/1     Running                 0          98m
+part-0013     excercise2-podname1                                               1/1     Running                 0          3m55s
+part-0013     excercisepodname                                                  1/1     Running                 0          99m
+part-0013     mbr-pod                                                           1/2     CrashLoopBackOff        272        23h
+part-0013     mbr-pod2                                                          1/2     CrashLoopBackOff        259        21h
+part-0013     nginx-56d9b98b88-4lb2h                                            1/1     Running                 0          89m
+part-0013     nginx-56d9b98b88-65pbg                                            1/1     Running                 0          89m
+part-0013     nginx-56d9b98b88-j9lfr                                            1/1     Running                 0          89m
+part-0018     nginx-deployment-6f78bbd49f-bjqx5                                 1/1     Running                 0          113m
+part-0018     nginx-https-deployment-6cf7454dd9-22x9n                           0/1     Pending                 0          147m
+part-0018     nginx-https-deployment-6cf7454dd9-kg5sm                           0/1     Pending                 0          147m
+part-0018     nginx-https-deployment-6cf7454dd9-p69df                           0/1     Pending                 0          147m
+part-0018     nginx-liveness-pod                                                1/1     Running                 0          116m
+part-0018     simple-nginx-7bbf484b6b-lc8g4                                     1/1     Running                 0          104m
+part-0019     nginx-785467575f-qck2p                                            1/1     Running                 0          22h
+part-0019     nginx-deployment-pvc-76b95df86d-b4xbm                             1/1     Running                 0          168m
+part-0019     nginx-deployment-pvc-76b95df86d-jbqfr                             1/1     Running                 0          168m
+part-0019     nginx-deployment-pvc-76b95df86d-jr47m                             1/1     Running                 0          168m
+part-0019     nginx-https-deployment-6cf7454dd9-8w2pt                           1/1     Running                 0          150m
+part-0019     nginx-https-deployment-6cf7454dd9-fjd2p                           1/1     Running                 0          150m
+part-0019     nginx-https-deployment-6cf7454dd9-x2q2z                           1/1     Running                 0          150m
+part-0019     nginx-liveness-pod                                                1/1     Running                 0          24h
+part-0019     nginx2-6474d9f7df-jn85f                                           1/1     Running                 0          22h
+part-0019     simple-nginx-7bbf484b6b-prk42                                     1/1     Running                 0          87m
+part-0021     my-first-pod                                                      1/1     Running                 0          25h
+part-0021     my-second-pod                                                     1/1     Running                 0          24h
+part-0021     nginx-785467575f-j8l56                                            1/1     Running                 0          23h
+part-0021     nginx-785467575f-mnwss                                            1/1     Running                 0          23h
+part-0021     nginx-785467575f-x9rft                                            1/1     Running                 0          23h
+part-0021     nginx-deployment-69cb77dd74-42rwc                                 0/1     ContainerCreating       0          23h
+part-0021     nginx-deployment-69cb77dd74-bsrhp                                 0/1     ContainerCreating       0          23h
+part-0021     nginx-deployment-69cb77dd74-p5jjz                                 0/1     ContainerCreating       0          23h
+part-0021     nginx-https-deployment-6cf7454dd9-6rfwz                           0/1     ContainerCreating       0          148m
+part-0021     nginx-https-deployment-6cf7454dd9-j529t                           0/1     ContainerCreating       0          148m
+part-0021     nginx-https-deployment-6cf7454dd9-tqhkv                           0/1     ContainerCreating       0          148m
+part-0021     simple-nginx-7bbf484b6b-s582r                                     1/1     Running                 0          101m
+part-0021     web-0                                                             1/1     Running                 0          62s
+part-0021     web-1                                                             1/1     Running                 0          27s
+part-0023     dns-test                                                          1/1     Running                 0          2m4s
+part-0023     nginx-deployment-6f78bbd49f-5gbm9                                 1/1     Running                 0          23h
+part-0023     nginx-deployment-6f78bbd49f-t7gxr                                 1/1     Running                 0          23h
+part-0023     nginx-deployment-6f78bbd49f-w2qqt                                 1/1     Running                 0          23h
+part-0023     nginx-deployment-pv-69cb77dd74-24cbr                              0/1     ContainerCreating       0          20h
+part-0023     nginx-deployment-pv-69cb77dd74-hh7m4                              0/1     ContainerCreating       0          20h
+part-0023     nginx-deployment-pv-69cb77dd74-z4j7l                              0/1     ContainerCreating       0          20h
+part-0023     nginx-https-deployment-6cf7454dd9-k88g6                           0/1     ContainerCreating       0          168m
+part-0023     nginx-https-deployment-6cf7454dd9-lghc4                           0/1     ContainerCreating       0          168m
+part-0023     nginx-https-deployment-6cf7454dd9-qlrg9                           0/1     ContainerCreating       0          168m
+part-0023     nginx-storage-pod                                                 0/1     ContainerCreating       0          20h
+part-0023     simple-nginx-7bbf484b6b-748rc                                     1/1     Running                 0          108m
+part-0023     web-0                                                             1/1     Running                 0          4m19s
+part-0023     web-1                                                             1/1     Running                 0          3m50s
+part-0025     app-failure                                                       1/1     Running                 0          4h17m
+part-0025     crash-loop                                                        0/1     CrashLoopBackOff        55         4h23m
+part-0025     liveness-exec                                                     0/1     CrashLoopBackOff        419        25h
+part-0025     my-first-pod                                                      1/1     Running                 0          4h20m
+part-0025     nginx-day3-pod                                                    1/1     Running                 0          4h33m
+part-0025     nginx-demo-676df54686-6cdmw                                       1/1     Running                 0          22h
+part-0025     nginx-deployment-69cb77dd74-8qf99                                 0/1     ContainerCreating       0          4h21m
+part-0025     nginx-deployment-6f78bbd49f-49dwg                                 1/1     Running                 0          4h22m
+part-0025     nginx-deployment-6f78bbd49f-d5rkh                                 1/1     Running                 0          4h21m
+part-0025     nginx-deployment-6f78bbd49f-xjjz4                                 1/1     Running                 0          4h21m
+part-0025     nginx-liveness-pod123                                             1/1     Running                 0          24h
+part-0025     nginx-service-demo-586fbf4d69-zrqhm                               0/1     ImagePullBackOff        0          21h
+part-0025     nginx-service-ex4-cbbbfc98-w47v6                                  1/1     Running                 0          21h
+part-0025     non-root-pod                                                      0/1     ImagePullBackOff        0          4h20m
+part-0025     regular-pod                                                       0/1     ImagePullBackOff        0          4h20m
+part-0026     dns-test                                                          0/1     Error                   0          53m
+part-0026     nginx-https-deployment-6cf7454dd9-krtwl                           1/1     Running                 0          159m
+part-0026     nginx-https-deployment-6cf7454dd9-pqzls                           1/1     Running                 0          159m
+part-0026     nginx-https-deployment-6cf7454dd9-rsqrv                           1/1     Running                 0          159m
+part-0026     simple-nginx-7bbf484b6b-5j6q2                                     1/1     Running                 0          109m
+part-0026     test-configmap                                                    0/1     Completed               0          179m
+part-0026     web-0                                                             1/1     Running                 0          57m
+part-0026     web-01-0                                                          0/1     Init:CrashLoopBackOff   7          13m
+part-0026     web-1                                                             1/1     Running                 0          57m
+part-0026     web01-0                                                           1/1     Running                 0          9m27s
+part-0026     web01-1                                                           1/1     Running                 0          9m11s
+part-0028     simple-nginx-7bbf484b6b-bh8zj                                     1/1     Running                 0          117m
+part-0030     nginx-deployment-6f78bbd49f-crg44                                 1/1     Running                 0          22h
+part-0030     nginx-deployment-6f78bbd49f-fnpfj                                 1/1     Running                 0          22h
+part-0030     nginx-deployment-6f78bbd49f-xvkb5                                 1/1     Running                 0          22h
+part-0030     nginx-https-deployment-6cf7454dd9-8qrz6                           0/1     ContainerCreating       0          108m
+part-0030     nginx-https-deployment-6cf7454dd9-pnssv                           0/1     ContainerCreating       0          108m
+part-0030     nginx-https-deployment-6cf7454dd9-s7zzj                           0/1     ContainerCreating       0          108m
+part-0030     nginx-liveness-pod                                                1/1     Running                 0          24h
+part-0030     nginx-storage-pod                                                 1/1     Running                 75         20h
+part-0031     myfirstpod                                                        1/1     Running                 0          24h
+part-0031     nginx-56d9b98b88-bk6f8                                            1/1     Running                 0          22h
+part-0031     nginx-56d9b98b88-mrdgr                                            1/1     Running                 0          22h
+part-0031     nginx-56d9b98b88-xtjrq                                            1/1     Running                 0          22h
+part-0031     simple-nginx-7bbf484b6b-69t4j                                     1/1     Running                 0          107m
+part-0032     dns-test                                                          1/1     Running                 0          5m32s
+part-0032     web-0                                                             1/1     Running                 0          18m
+part-0032     web-1                                                             1/1     Running                 0          19m
+part-0034     date-1583307840-274mg                                             0/1     DeadlineExceeded        0          10m
+part-0034     date-1583307840-2t6d7                                             0/1     DeadlineExceeded        0          11m
+part-0034     date-1583307840-2ww97                                             0/1     DeadlineExceeded        0          11m
+part-0034     date-1583307840-5tdmn                                             0/1     DeadlineExceeded        0          11m
+part-0034     date-1583307840-mnnrh                                             0/1     DeadlineExceeded        0          6m23s
+part-0034     date-1583307840-mptv7                                             0/1     DeadlineExceeded        0          11m
+part-0034     date-1583307840-t6crx                                             0/1     DeadlineExceeded        0          9m3s
+part-0034     date-1583307960-46ldq                                             0/1     DeadlineExceeded        0          9m12s
+part-0034     date-1583307960-86tj2                                             0/1     DeadlineExceeded        0          9m32s
+part-0034     date-1583307960-88xgh                                             0/1     DeadlineExceeded        0          8m12s
+part-0034     date-1583307960-9mf2x                                             0/1     DeadlineExceeded        0          4m12s
+part-0034     date-1583307960-f6pbx                                             0/1     DeadlineExceeded        0          8m52s
+part-0034     date-1583307960-gs5tn                                             0/1     DeadlineExceeded        0          6m52s
+part-0034     date-1583307960-w9j7v                                             0/1     DeadlineExceeded        0          9m43s
+part-0034     date-1583308080-6rms7                                             0/1     DeadlineExceeded        0          7m11s
+part-0034     date-1583308080-cnttv                                             0/1     DeadlineExceeded        0          6m51s
+part-0034     date-1583308080-cqpgt                                             0/1     DeadlineExceeded        0          7m31s
+part-0034     date-1583308080-d2xd7                                             0/1     DeadlineExceeded        0          6m11s
+part-0034     date-1583308080-klk6h                                             0/1     DeadlineExceeded        0          4m51s
+part-0034     date-1583308080-q8klj                                             0/1     DeadlineExceeded        0          7m43s
+part-0034     date-1583308080-zmqxz                                             0/1     DeadlineExceeded        0          2m11s
+part-0034     date-1583308200-4h67c                                             0/1     DeadlineExceeded        0          4m9s
+part-0034     date-1583308200-6hjs4                                             0/1     DeadlineExceeded        0          2m49s
+part-0034     date-1583308200-bkwm4                                             0/1     DeadlineExceeded        0          5m9s
+part-0034     date-1583308200-bssx9                                             0/1     ContainerCreating       0          9s
+part-0034     date-1583308200-rhvhp                                             0/1     DeadlineExceeded        0          4m49s
+part-0034     date-1583308200-zbb69                                             0/1     DeadlineExceeded        0          5m30s
+part-0034     date-1583308200-zfs7l                                             0/1     DeadlineExceeded        0          5m43s
+part-0034     date-1583308320-5ncsz                                             0/1     DeadlineExceeded        0          3m31s
+part-0034     date-1583308320-7cjf2                                             0/1     DeadlineExceeded        0          3m42s
+part-0034     date-1583308320-bj9lb                                             0/1     DeadlineExceeded        0          3m10s
+part-0034     date-1583308320-jd9c4                                             0/1     DeadlineExceeded        0          2m50s
+part-0034     date-1583308320-jfb6m                                             0/1     DeadlineExceeded        0          50s
+part-0034     date-1583308320-tvwlc                                             0/1     DeadlineExceeded        0          2m10s
+part-0034     date-1583308440-44k7h                                             0/1     DeadlineExceeded        0          51s
+part-0034     date-1583308440-5c6lp                                             0/1     DeadlineExceeded        0          90s
+part-0034     date-1583308440-655pk                                             0/1     DeadlineExceeded        0          11s
+part-0034     date-1583308440-rdd5v                                             0/1     DeadlineExceeded        0          102s
+part-0035     nginx-https-deployment-6cf7454dd9-kdhhx                           1/1     Running                 0          161m
+part-0035     nginx-https-deployment-6cf7454dd9-lr84z                           1/1     Running                 0          161m
+part-0035     nginx-https-deployment-6cf7454dd9-xhhbm                           1/1     Running                 0          161m
+part-0035     nginx-liveness-pod                                                1/1     Running                 0          25h
+part-0035     nginx2-6474d9f7df-jmcwj                                           1/1     Running                 0          23h
+part-0035     nginx2-6474d9f7df-lkfnz                                           1/1     Running                 0          23h
+part-0035     nginx2-6474d9f7df-v6488                                           1/1     Running                 0          23h
+part-0035     simple-nginx-7bbf484b6b-j52v9                                     1/1     Running                 0          108m
+registry      docker-registry-69599f7c6f-k6n8t                                  1/1     Running                 0          2d16h
+
+
+> kubectl get pods mbr-pod -n part-0013 -o jsonpath='{.spec.containers[*].name}'
+nginx nginx2
+
+
+Get the logs of container
+kubectl get pods mbr-pod -n part-0013 -o jsonpath='{.spec.containers[*].name}'
+nginx nginx2vagrant@ubuntu1804:~/exercise$ kubectl logs mbr-pod
+error: a container name must be specified for pod mbr-pod, choose one of: [nginx nginx2]
+vagrant@ubuntu1804:~/exercise$ kubectl logs mbr-pod -c nginx
+10.250.0.4 - - [04/Mar/2020:00:00:10 +0000] "GET / HTTP/1.1" 200 612 "-" "kube-probe/1.17" "-"
+10.250.0.4 - - [04/Mar/2020:00:00:40 +0000] "GET / HTTP/1.1" 200 612 "-" "kube-probe/1.17" "-"
+10.250.0.4 - - [04/Mar/2020:00:01:10 +0000] "GET / HTTP/1.1" 200 612 "-" "kube-probe/1.17" "-"
+
+
+exec into your pod
+
+>kubectl exec -ti mbr-pod bash
+
+kubectl exec -ti mbr-pod bash
+Defaulting container name to nginx.
+Use 'kubectl describe pod/mbr-pod -n part-0013' to see all of the containers in this pod.
+root@mbr-pod:/# ls
+bin   dev  home  lib64      mnt  proc  run    srv  tmp  var
+boot  etc  lib       media   opt  root  sbin  sys  usr
+
+kubectl get clusterrolebinding
+NAME                                                                      AGE
+addons-nginx-ingress                                                      2d1h
+calico-kube-controllers                                                   7d23h
+calico-node                                                               7d23h
+cluster-admin                                                             7d23h
+extensions.gardener.cloud:extension-shoot-cert-service:shoot              7d23h
+extensions.gardener.cloud:extension-shoot-dns-service:shoot-dns-service   7d23h
+extensions.gardener.cloud:provider-gcp:machine-controller-manager         7d23h
+garden.sapcloud.io:monitoring:kube-state-metrics                          7d23h
+garden.sapcloud.io:monitoring:prometheus                                  7d23h
+garden.sapcloud.io:psp:privileged                                         7d23h
+garden.sapcloud.io:psp:unprivileged                                       7d23h
+metrics-server:system:auth-delegator                                      7d23h
+node-problem-detector                                                     7d23h
+node-problem-detector-psp                                                 7d23h
+system:apiserver:kubelet                                                  7d23h
+system:basic-user                                                         7d23h
+system:certificates.k8s.io:certificatesigningrequests:nodeclient          7d23h
+system:cluster-autoscaler-shoot                                           7d23h
+system:controller:attachdetach-controller                                 7d23h
+system:controller:certificate-controller                                  7d23h
+system:controller:cloud-node-controller                                   7d23h
+system:controller:clusterrole-aggregation-controller                      7d23h
+system:controller:cronjob-controller                                      7d23h
+system:controller:daemon-set-controller                                   7d23h
+system:controller:deployment-controller                                   7d23h
+system:controller:disruption-controller                                   7d23h
+system:controller:endpoint-controller                                     7d23h
+system:controller:expand-controller                                       7d23h
+system:controller:generic-garbage-collector                               7d23h
+system:controller:horizontal-pod-autoscaler                               7d23h
+system:controller:job-controller                                          7d23h
+system:controller:namespace-controller                                    7d23h
+system:controller:node-controller                                         7d23h
+system:controller:persistent-volume-binder                                7d23h
+system:controller:pod-garbage-collector                                   7d23h
+system:controller:pv-protection-controller                                7d23h
+system:controller:pvc-protection-controller                               7d23h
+system:controller:replicaset-controller                                   7d23h
+system:controller:replication-controller                                  7d23h
+system:controller:resourcequota-controller                                7d23h
+system:controller:route-controller                                        7d23h
+system:controller:service-account-controller                              7d23h
+system:controller:service-controller                                      7d23h
+system:controller:statefulset-controller                                  7d23h
+system:controller:ttl-controller                                          7d23h
+system:coredns                                                            7d23h
+system:discovery                                                          7d23h
+system:gardener.cloud:vpn-seed                                            7d23h
+system:kube-controller-manager                                            7d23h
+system:kube-dns                                                           7d23h
+system:kube-scheduler                                                     7d23h
+system:metrics-server                                                     7d23h
+system:node                                                               7d23h
+system:node-bootstrapper                                                  7d23h
+system:node-proxier                                                       7d23h
+system:public-info-viewer                                                 7d23h
+system:volume-scheduler                                                   7d23h
+training:cluster-view                                                     7d18h
+typha-cpha                                                                7d23h
+typha-cpva                                                                7d23h
+
+
+
+
+
+
+
+
+Lables & Selectors and Deployments
+
+Labels:Labels are key/value pairs that are attached to Kubernetes objects, such as pods (this is usually done indirectly via deployments). Labels are intended to be used to specify identifying attributes of objects that are meaningful and relevant to users
+
+Selectoors:Labels do not provide uniqueness. In general, we can say many objects can carry the same labels. Labels selector are core grouping primitive in Kubernetes. They are used by the users to select a set of objects. 
+
+Deployments:Deployment ensures that the desired number of Pods are running and available at all times. The Deployment automatically replaces Pods that fail or are evicted from their nodes.
+
+
+
+kubectl get rolebindings,clusterrolebindings \
+  --all-namespaces  \
+  -o custom-columns='KIND:kind,NAMESPACE:metadata.namespace,NAME:metadata.name,SERVICE_ACCOUNTS:subjects[?(@.kind=="ServiceAccount")].name'
+
+
+
+
+> kubectl create deployment nginx-test --image=nginx:1.12.2
+deployment.apps/nginx-test created
+

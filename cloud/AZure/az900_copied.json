@@ -21,6 +21,13 @@
                "image":"",
                "free":true
             },
+			{
+               "name":"Azure",
+               "description":"Powerful tool for data analytics and visualisation",
+               "longDescription":"<pre>git config --global user.email 'your_email@example.com' <br>git config --global user.name 'username or ID' </pre>",
+               "image":"./../images/git_config.gif",
+               "url":"http://www.tableausoftware.com/products/desktop"
+            },
             {
                "name":"AzureServices",
                "description":"Powerful tool for data analytics and visualisation",
