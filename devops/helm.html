@@ -28,25 +28,25 @@
                     if (lineoutput[x].startsWith("~~~") && codestart == false) {
                         codestart = true;
                         //mainContent = mainContent + "<hr><code style=background-color:lightgrey;><p>";
-                        mainContent = mainContent + "<code style=background-color:lightgrey;><p>";
+                        mainContent = mainContent + "<hr><code style=background-color:lightgrey;><p>";
                     } else if (lineoutput[x].startsWith("~~~") && codestart == true) {
                         codestart = false;
-                        mainContent = mainContent + "</p></code>";
+                        mainContent = mainContent + "</p></code><hr>";
                         //mainContent = mainContent + "</p></code><hr>"
                     } else if (lineoutput[x].startsWith(">>")) {
                         mainContent = mainContent + "<code style=background-color:lightgrey;>" + lineoutput[x].replace(/>>/g, "") + "</code><br>";
                     } else if (lineoutput[x].startsWith(">")) {
-                        mainContent = mainContent + lineoutput[x].replace(/>/g, "") + "<br>";
+                        mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br>";
                     } else if (lineoutput[x].startsWith("@")) {
                         mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</h3><br>";
                         indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</a></li>";
                     } else if (lineoutput[x].startsWith(" ") && codestart == false) {
                         //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
-                        mainContent = mainContent + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";
+                        mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";
                         //indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/\s/g, "_") + ">" + lineoutput[x].replace(/\s/g, "_") + "</a></li>";
                     } else if (codestart == true) {
                         //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
-                        mainContent = mainContent + "<font style=background-color:lightgrey> " + lineoutput[x].replace(/ /g, "&nbsp") + "</font><br>";
+                        mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + "<font style=background-color:lightgrey> " + lineoutput[x].replace(/ /g, "&nbsp") + "</font><br>";
                         //indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/\s/g, "_") + ">" + lineoutput[x].replace(/\s/g, "_") + "</a></li>";
                     } else {
                         mainContent = mainContent + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";
