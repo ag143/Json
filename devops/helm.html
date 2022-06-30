@@ -25,7 +25,7 @@
                 //console.log("started---->"+dataobject);
                 lineoutput = dataobject.split("\n");
                 for (var x = 0; x < lineoutput.length; x++) {
-                    if (lineoutput[x].startsWith("=~~~")) {
+                    if (lineoutput[x].startsWith("~~~") && codestart == false) {
                         codestart = true;
                         //mainContent = mainContent + "<hr><code style=background-color:lightgrey;><p>";
                         mainContent = mainContent + "<code style=background-color:lightgrey;><p>";
