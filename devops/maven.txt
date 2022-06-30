@@ -4,7 +4,7 @@ Maven contains a wide set of commands which you can execute. Maven commands are 
 Common Maven Commands
 if a Maven command is shown on multiple lines in the table low, it is to be considered a single command line when typed into a windows command line or linux shell.
 
-## Maven Command	Description
+@ Maven Command	Description
 
 - **mvn --version**	
 > Prints out the version of Maven you are running.
@@ -48,7 +48,7 @@ if a Maven command is shown on multiple lines in the table low, it is to be cons
  > Prints out the classpath needed to run your project (application) based on the dependencies configured in the pom.xml file.
 Keep in mind, that when you execute the clean goal of Maven, the target directory is removed, meaning you lose all compiled classes from previous builds. That means, that Maven will have to build all of your project again from scratch, rather than being able to just compile the classes that were changed since last build. This slows your build time down. However, sometimes it can be nice to have a clean, fresh build, e.g. before releasing your product to the world - mostly for your own "feeling" of knowing everything was built from scratch and working.
 
-### Maven Command Structure
+@# Maven Command Structure
 > A Maven command consists of two elements:
 
 - mvn
@@ -65,7 +65,7 @@ Here is another Maven command example:
 
 You might wonder how you see the difference between a build life cycle, build phase and build goal. I will get back to that later.
 
-### Build Life Cycles, Phases and Goals
+@# Build Life Cycles, Phases and Goals
 As mentioned in the introduction in the section about Build life cycles, build phases and build goals, Maven contains three major build life cycles:
 
 > - clean
@@ -92,7 +92,7 @@ Buid goals are assigned to one or more buid phases. When the build phases are ex
 
 > The most commonly used build phases in the default build life cycle are:
 
-## Build Phase	Description
+@ Build Phase	Description
 - **validate**	
  > Validates that the project is correct and all necessary information is available. This also makes sure the dependencies are downloaded.
 - **compile**	
@@ -106,7 +106,7 @@ Buid goals are assigned to one or more buid phases. When the build phases are ex
 - **deploy**	
   > Copies the final package to the remote repository for sharing with other developers and projects.
 
-### Executing one of these build phases is done by simply adding the build phase after the mvn command, like this:
+@# Executing one of these build phases is done by simply adding the build phase after the mvn command, like this:
 
 **mvn compile**
 > This example Maven command executes the compile build phase of the default build life cycle. This Maven command also executes all earlier build phases in the default build life cycle, meaning the validate build phase.
