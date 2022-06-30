@@ -27,10 +27,10 @@
                 for (var x = 0; x < lineoutput.length; x++) {
                     if (lineoutput[x].startsWith("=~~~")) {
                         codestart = true;
-						mainContent = mainContent + "<code style=background-color:lightgrey;><p>";
+						mainContent = mainContent + "<hr><code style=background-color:lightgrey;><p>";
                     } else if (lineoutput[x].startsWith("~~~") && codestart == true ) {
                         codestart = false;
-						mainContent = mainContent + "</p></code>"
+						mainContent = mainContent + "</p></code><hr>"
                     } else if (lineoutput[x].startsWith(">>")) {
                         mainContent = mainContent + "<code style=background-color:lightgrey;>"+lineoutput[x].replace(/>>/g, "")  + "</code><br>";
                     } else if (lineoutput[x].startsWith(">")) {
