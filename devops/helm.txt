@@ -6,7 +6,7 @@
 
 Here is the basic directory structure of a chart:
 
->...
+@~~~
 package-name/
   charts/
   templates/
@@ -15,7 +15,7 @@ package-name/
   README.md
   requirements.yaml
   values.yaml
-...
+~~~
 
 These directories and files have the following functions:
 
@@ -49,11 +49,11 @@ These directories and files have the following functions:
 @ Chart Configuration
 > A chart usually comes with default configuration values in its values.yaml file. Some applications may be fully deployable with default values, but you’ll typically need to override some of the configuration to meet your needs.
 
->...
+>~~~
 service:
   type: ClusterIP
   port: 3306
-...
+~~~
 
 >> helm create chart-name
 > to create chart of our own, if not available 
@@ -88,29 +88,29 @@ https://www.baeldung.com/wp-content/uploads/2019/03/Helm-3-Architecture.jpg
 @creating chart
 >> helm create hello-world
 
->...
+>~~~
 hello-world /
   Chart.yaml
   values.yaml
   templates /
   charts /
   .helmignore
-...
+~~~
 
 
 @Creating Template
->...
+>~~~
 hello-world /
   templates /
     deployment.yaml
     service.yaml
     ingress.yaml
-    ......
-...
+    ~~~~~~
+~~~
 
 @deployment.yaml
 
->...
+>~~~
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -140,11 +140,11 @@ spec:
             - name: http
               containerPort: 8080
               protocol: TCP
-...
+~~~
 
 
 @service.yaml
->...
+>~~~
 apiVersion: v1
 kind: Service
 metadata:
@@ -164,12 +164,12 @@ spec:
   selector:
     app.kubernetes.io/name: {{ include "hello-world.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
-...
+~~~
 
 
 
 @values.yaml
->...
+>~~~
 replicaCount: 1
 image:
   repository: "hello-world"
@@ -178,20 +178,20 @@ image:
 service:
   type: NodePort
   port: 80
-...
+~~~
 
 @Helm Lint
 
 >Firstly, this is a simple command that takes the path to a chart and runs a battery of tests to ensure that the chart is well-formed:
 
->...
+>~~~
 helm lint ./hello-world
 ==> Linting ./hello-world
 1 chart(s) linted, no failures
-...
+~~~
 
 @ Helm Template
->...
+>~~~
 helm template ./hello-world
 ---
 # Source: hello-world/templates/service.yaml
@@ -246,12 +246,12 @@ spec:
             - name: http
               containerPort: 8080
               protocol: TCP
-...
+~~~
 
 
 @ Helm Install
 
->...
+>~~~
 helm install --name hello-world ./hello-world
 NAME:   hello-world
 LAST DEPLOYED: Mon Feb 25 15:29:59 2019
@@ -270,22 +270,22 @@ hello-world  1        0        0           0          1s
 ==> v1/Pod(related)
 NAME                          READY  STATUS   RESTARTS  AGE
 hello-world-7758b9cdf8-cs798  0/1    Pending  0         0s
-...
+~~~
 
 
 @Helm Get
->...
+>~~~
 helm ls --all
 NAME            REVISION        UPDATED                         STATUS          CHART               APP VERSION NAMESPACE
 hello-world     1               Mon Feb 25 15:29:59 2019        DEPLOYED        hello-world-0.1.0   1.0         default
-...
+~~~
 
 
 >There are several sub-commands available for this command to get the extended information. These include All, Hooks, Manifest, Notes, and Values.
 
 @Helm Upgrade
 
->...
+>~~~
 helm upgrade hello-world ./hello-world
 Release "hello-world" has been upgraded. Happy Helming!
 LAST DEPLOYED: Mon Feb 25 15:36:04 2019
@@ -305,36 +305,36 @@ hello-world  1        1        1           1          6m5s
 NAME                          READY  STATUS   RESTARTS  AGE
 hello-world-7758b9cdf8-cs798  1/1    Running  0         6m4s
 
-...
+~~~
 
 
 @Helm Rollback
 
->...
+>~~~
 helm rollback hello-world 1
 Rollback was a success! Happy Helming!
-...
+~~~
 
 @Helm Uninstall
->...
+>~~~
 helm uninstall hello-world
 release "hello-world" deleted
-...
+~~~
 
 @Helm Package
->...
+>~~~
 helm package ./hello-world
 Successfully packaged chart and saved it to: \hello-world\hello-world-0.1.0.tgz
-...
+~~~
 
 
 @helm repo
 >We can create a git repository and use that to function as our chart repository. The only requirement is that it should have an index.yaml file.
 
 >We can create index.yaml for our chart repo:
->...
+>~~~
 helm repo index my-repo/ --url https://<username>.github.io/my-repo
-...
+~~~
 
 @helm search
 >helm search repo <KEYWORD>
@@ -364,7 +364,7 @@ helm repo index my-repo/ --url https://<username>.github.io/my-repo
 > equalent to sudo apt-get update
 
 @ reuse existing charts
->...
+>~~~
 user@debian:~$ helm install my-release bitnami/wordpress
 NAME: my-release
 LAST DEPLOYED: Wed Jun 30 17:26:36 2021
@@ -395,7 +395,7 @@ To access your WordPress site from outside the cluster follow the steps below:
 
   echo Username: user
   echo Password: $(kubectl get secret --namespace default my-release-wordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode)
-...
+~~~
 
 
 @list installed helm charts
@@ -409,10 +409,10 @@ To access your WordPress site from outside the cluster follow the steps below:
 >> helm install --set wordpressBlogName="Helm Tutorials" --set wordpressEmail="john@example.com" my-release-3 bitnami/wordpress
 
 @ “values.yaml” file where we specify all
->...
+>~~~
 wordpressBlogName: Helm Tutorials 
 wordpressEmail: john@example.com
-...
+~~~
 
 >>helm install --values values.yaml my-release-4 bitnami/wordpress
 
