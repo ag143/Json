@@ -5,14 +5,8 @@
     </head>
     <body>
         <div style="background-color: grey; text-align: center;">
-<<<<<<< HEAD
-            
-			<label>MainTopic</label>
-			<select id="MainTopic" text="MainTopic" value="MainTopic">
-=======
             <label>MainTopic</label>
             <select id="MainTopic" text="MainTopic" value="MainTopic">
->>>>>>> 24cb274c88efd0345cbd5d6ab1c4605279a459ae
                 <option value="devops">devops</option>
                 <option value="cloud">cloud</option>
                 <option value="programing">programing</option>
@@ -20,49 +14,15 @@
                 <option value="Softwaretesting">Softwaretesting</option>
                 <option value="faq">faq</option>
             </select>
-<<<<<<< HEAD
-			<label>SubTopic</label>
-			<select id="SubTopic">
-                <option value="devops">git</option>
-				<option value="devops">github</option>
-				<option value="devops">gitlab</option>
-=======
             <label>SubTopic</label>
             <select id="SubTopic">
-                <option value="devops">git</option>
-                <option value="devops">github</option>
-                <option value="devops">gitlab</option>
->>>>>>> 24cb274c88efd0345cbd5d6ab1c4605279a459ae
-                <option value="cloud">OS</option>
-                <option value="programing">shellcommands</option>
-                <option value="Security">maven</option>
-                <option value="Softwaretesting">aws</option>
-<<<<<<< HEAD
-				<option value="Softwaretesting">Azure</option>
-				<option value="Softwaretesting">GCP</option>
-				<option value="Softwaretesting">Openstack</option>
-                <option value="faq">java</option>
-				<option value="faq">javascript</option>
-				<option value="faq">groovy</option>
-				<option value="faq">go</option>
-				<option value="faq">python</option>
-				<option value="faq">checkmarx</option>
-				<option value="faq">cryptography</option>
-				<option value="faq">fortify</option>
-				<option value="faq">sonar</option>
-				<option value="faq">vault</option>
-				<option value="faq">whitesource</option>
-				<option value="faq">softwaretesting</option>
-				<option value="faq">Loadrunner</option>
-				<option value="faq">Jmeter</option>
-            </select>
-			<button id="Reload">Reload</button>
-        </div>
-		<button onclick="togglediv('Index')" style="background-color: Transparent; border: black;"><h3 id="header"></h3></button>
-		<div style="text-align:center">
-		<label>Url</label><input type="text" id="phone" width="50" value="https://ag143.github.io/Json/"><br><br>
-		</div>
-=======
+                <option value="git">git</option>
+                <option value="github">github</option>
+                <option value="gitlab">gitlab</option>
+                <option value="OS">OS</option>
+                <option value="shellcommands">shellcommands</option>
+                <option value="maven">maven</option>
+                <option value="aws">aws</option>
                 <option value="Softwaretesting">Azure</option>
                 <option value="Softwaretesting">GCP</option>
                 <option value="Softwaretesting">Openstack</option>
@@ -81,14 +41,35 @@
                 <option value="faq">Loadrunner</option>
                 <option value="faq">Jmeter</option>
             </select>
-            <button id="Reload">Reload</button>
         </div>
         <button onclick="togglediv('Index')" style="background-color: Transparent; border: black;"><h3 id="header"></h3></button>
         <div style="text-align: center;">
-            <label>Url</label><input type="text" id="phone" width="50" value="https://ag143.github.io/Json/" /><br />
+            <center>
+                <table border="1">
+                    <tr>
+                        <td>
+                            <label> Load type</label>
+                        </td>
+
+                        <td><input type="radio" id="Basic" name="fav_language" value="Basic" /> <label for="Basic">Basic</label></td>
+
+                        <td><input type="radio" id="FAQ" name="fav_language" value="FAQ" /> <label for="FAQ">FAQ</label></td>
+
+                        <td><input type="radio" id="Detailed" name="fav_language" value="Detailed" /> <label for="Detailed">Detailed</label><br /></td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Load Url</label></td>
+                        <td colspan="2">
+                            <input type="text" id="url" size="50" value="https://ag143.github.io/Json/" readonly />
+                            <td><button id="Reload">Reload</button></td>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+            <br />
             <br />
         </div>
->>>>>>> 24cb274c88efd0345cbd5d6ab1c4605279a459ae
         <div style="width: 100%;">
             <div id="Index" style="float: left; width: 25%; border-right: 1px solid; border-radius: 5px; overflow: scroll; height: 100%;"></div>
             <div id="Main" style="float: left; width: 70%; margin-left: 10px; border-radius: 5px; overflow: scroll; height: 100%;"></div>
@@ -107,6 +88,9 @@
                 var codestart = false;
                 var pageTitle = "";
                 var pageHeader = "";
+                var MainTopic = document.getElementById("MainTopic").value;
+                var subTopic = document.getElementById("SubTopic").value;
+                document.getElementById("url").value = document.getElementById("url").value + MainTopic + "/" + subTopic + ".html";
                 //console.log("started---->"+dataobject);
                 lineoutput = dataobject.split("\n");
                 for (var x = 0; x < lineoutput.length; x++) {
