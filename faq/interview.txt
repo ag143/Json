@@ -1,0 +1,420 @@
+---> Helm basics
+===> Helm 
+
+@Helm
+> Helm is a package manager for Kubernetes that allows developers and operators to more easily package, configure, and deploy applications and services onto Kubernetes clusters.
+
+@Charts
+> Helm packages are called charts, and they consist of a few YAML configuration files and some templates that are rendered into Kubernetes manifest files.
+
+Here is the basic directory structure of a chart:
+
+~~~
+package-name/
+  charts/
+  templates/
+  Chart.yaml
+  LICENSE
+  README.md
+  requirements.yaml
+  values.yaml
+~~~
+
+These directories and files have the following functions:
+
+@charts:
+> Manually managed chart dependencies can be placed in this directory, though it is typically better to use requirements.yaml to dynamically link dependencies.
+@templates/:
+> This directory contains template files that are combined with configuration values (from values.yaml and the command line) and rendered into Kubernetes manifests. The templates use the Go programming language’s template format.
+@Chart.yaml:
+> A YAML file with metadata about the chart, such as chart name and version, maintainer information, a relevant website, and search keywords.
+@LICENSE:
+> A plaintext license for the chart.
+@README.md: 
+>A readme file with information for users of the chart.
+@requirements.yaml:
+> A YAML file that lists the chart’s dependencies.
+@values.yaml: 
+>A YAML file of default configuration values for the chart.
+@.helmignore:
+> This is where we can define patterns to ignore when packaging (similar in concept to .gitignore)
+
+@Chart Repositories
+> A Helm chart repo is a simple HTTP site that serves an index.yaml file and .tar.gz packaged charts. The helm command has subcommands available to help package charts and create the required index.yaml file. These files can be served by any web server, object storage service, or a static site host such as GitHub Pages.
+
+> Helm comes preconfigured with a default chart repository, referred to as stable. This repo points to a Google Storage bucket at https://kubernetes-charts.storage.googleapis.com. The source for the stable repo can be found in the helm/charts Git repository on GitHub.
+
+> Alternate repos can be added with the helm repo add command. Some popular alternate repositories are:
+
+>> The official incubator repo that contains charts that are not yet ready for stable. Instructions for using incubator can be found on the official Helm charts GitHub page.
+>> Bitnami Helm Charts which provide some charts that aren’t covered in the official stable repo.
+
+@ Chart Configuration
+> A chart usually comes with default configuration values in its values.yaml file. Some applications may be fully deployable with default values, but you’ll typically need to override some of the configuration to meet your needs.
+
+~~~
+service:
+  type: ClusterIP
+  port: 3306
+~~~
+
+>> helm create chart-name
+> to create chart of our own, if not available 
+
+> Although these terms are fairly common these days, particularly amongst those working with cloud technologies, let's go through them quickly for those unaware:
+
+@ Container:
+> Container refers to operating system-level virtualization. Multiple containers run within an operating system in isolated user spaces. Programs running within a container have access only to resources assigned to the container.
+@Docker:
+> Docker is a popular program to create and run containers. It comes with Docker Daemon, which is the main program managing containers. Docker Daemon offers access to its features through Docker Engine API, used by Docker Command-Line Interface (CLI). Please refer to this article for a more detailed description of Docker.
+@Kubernetes:
+> Kubernetes is a popular container orchestration program. Although it's designed to work with different containers, Docker is most often used. It offers a wide selection of features, including deployment automation, scaling, and operations across a cluster of hosts. There is excellent coverage of Kubernetes in this article for further reference.
+
+Helm Architecture
+https://www.baeldung.com/wp-content/uploads/2019/03/Helm-2-Architecture.jpg
+> Helm 3 has moved onto a completely client-only architecture,
+https://www.baeldung.com/wp-content/uploads/2019/03/Helm-3-Architecture.jpg
+
+@Tiller Server: 
+>Helm manages the Kubernetes application through Tiller Server installed within a Kubernetes cluster. Tiller interacts with the Kubernetes API server to install, upgrade, query, and remove Kubernetes resources.
+@Helm Client:
+> Helm provides a command-line interface for users to work with Helm Charts. It is responsible for interacting with the Tiller server to perform various operations like install, upgrade and rollback charts.
+
+@Helm Charts, Releases, and Repositories
+
+>A chart is a collection of files organized in a specific directory structure
+>The configuration information related to a chart is managed in the configuration
+>Finally, a running instance of a chart with a specific config is called a release
+> Helm 3 also introduced the concept of library charts. Basically, library charts enable support for common charts that we can use to define chart primitives or definitions. This can help to share snippets of code that we can re-use across charts.
+
+@Installation
+@creating chart
+>> helm create hello-world
+
+~~~
+hello-world /
+  Chart.yaml
+  values.yaml
+  templates /
+  charts /
+  .helmignore
+~~~
+
+
+@Creating Template
+~~~
+hello-world /
+  templates /
+    deployment.yaml
+    service.yaml
+    ingress.yaml
+~~~
+
+@deployment.yaml
+
+~~~
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "hello-world.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "hello-world.name" . }}
+    helm.sh/chart: {{ include "hello-world.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "hello-world.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "hello-world.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+~~~
+
+
+@service.yaml
+~~~
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "hello-world.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "hello-world.name" . }}
+    helm.sh/chart: {{ include "hello-world.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: {{ include "hello-world.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+~~~
+
+
+
+@values.yaml
+~~~
+replicaCount: 1
+image:
+  repository: "hello-world"
+  tag: "1.0"
+  pullPolicy: IfNotPresent
+service:
+  type: NodePort
+  port: 80
+~~~
+
+@Helm Lint
+
+>Firstly, this is a simple command that takes the path to a chart and runs a battery of tests to ensure that the chart is well-formed:
+
+~~~
+helm lint ./hello-world
+==> Linting ./hello-world
+1 chart(s) linted, no failures
+~~~
+
+@ Helm Template
+~~~
+helm template ./hello-world
+---
+# Source: hello-world/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: release-name-hello-world
+  labels:
+    app.kubernetes.io/name: hello-world
+    helm.sh/chart: hello-world-0.1.0
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/managed-by: Tiller
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: hello-world
+    app.kubernetes.io/instance: release-name
+
+---
+# Source: hello-world/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: release-name-hello-world
+  labels:
+    app.kubernetes.io/name: hello-world
+    helm.sh/chart: hello-world-0.1.0
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/managed-by: Tiller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: hello-world
+      app.kubernetes.io/instance: release-name
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: hello-world
+        app.kubernetes.io/instance: release-name
+    spec:
+      containers:
+        - name: hello-world
+          image: "hello-world:1.0"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+~~~
+
+
+@ Helm Install
+
+~~~
+helm install --name hello-world ./hello-world
+NAME:   hello-world
+LAST DEPLOYED: Mon Feb 25 15:29:59 2019
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Service
+NAME         TYPE      CLUSTER-IP     EXTERNAL-IP  PORT(S)       AGE
+hello-world  NodePort  10.110.63.169  <none>       80:30439/TCP  1s
+
+==> v1/Deployment
+NAME         DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+hello-world  1        0        0           0          1s
+
+==> v1/Pod(related)
+NAME                          READY  STATUS   RESTARTS  AGE
+hello-world-7758b9cdf8-cs798  0/1    Pending  0         0s
+~~~
+
+
+@Helm Get
+~~~
+helm ls --all
+NAME            REVISION        UPDATED                         STATUS          CHART               APP VERSION NAMESPACE
+hello-world     1               Mon Feb 25 15:29:59 2019        DEPLOYED        hello-world-0.1.0   1.0         default
+~~~
+
+
+>There are several sub-commands available for this command to get the extended information. These include All, Hooks, Manifest, Notes, and Values.
+
+@Helm Upgrade
+
+~~~
+helm upgrade hello-world ./hello-world
+Release "hello-world" has been upgraded. Happy Helming!
+LAST DEPLOYED: Mon Feb 25 15:36:04 2019
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Service
+NAME         TYPE      CLUSTER-IP     EXTERNAL-IP  PORT(S)       AGE
+hello-world  NodePort  10.110.63.169  <none>       80:30439/TCP  6m5s
+
+==> v1/Deployment
+NAME         DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+hello-world  1        1        1           1          6m5s
+
+==> v1/Pod(related)
+NAME                          READY  STATUS   RESTARTS  AGE
+hello-world-7758b9cdf8-cs798  1/1    Running  0         6m4s
+
+~~~
+
+
+@Helm Rollback
+
+~~~
+helm rollback hello-world 1
+Rollback was a success! Happy Helming!
+~~~
+
+@Helm Uninstall
+~~~
+helm uninstall hello-world
+release "hello-world" deleted
+~~~
+
+@Helm Package
+~~~
+helm package ./hello-world
+Successfully packaged chart and saved it to: \hello-world\hello-world-0.1.0.tgz
+~~~
+
+
+@helm repo
+>We can create a git repository and use that to function as our chart repository. The only requirement is that it should have an index.yaml file.
+
+>We can create index.yaml for our chart repo:
+~~~
+helm repo index my-repo/ --url https://<username>.github.io/my-repo
+~~~
+
+@helm search
+>helm search repo <KEYWORD>
+
+
+
+
+
+
+@ help
+>> helm --help
+
+@ repository related actions
+>> helm repo --help
+
+@ Subcommand level help
+>> helm repo update --help
+
+@ searching helm charts in artifacthub.io
+>> helm search hub wordpress
+
+@ Deploying a Helm Chart
+>> helm repo add bitnami https://charts.bitnami.com/bitnami
+
+@ updated installed helm charts
+>> helm repo update
+> equalent to sudo apt-get update
+
+@ reuse existing charts
+~~~
+user@debian:~$ helm install my-release bitnami/wordpress
+NAME: my-release
+LAST DEPLOYED: Wed Jun 30 17:26:36 2021
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+NOTES:
+** Please be patient while the chart is being deployed **
+
+Your WordPress site can be accessed through the following DNS name from within your cluster:
+
+    my-release-wordpress.default.svc.cluster.local (port 80)
+
+To access your WordPress site from outside the cluster follow the steps below:
+
+1. Get the WordPress URL by running these commands:
+
+  NOTE: It may take a few minutes for the LoadBalancer IP to be available.
+        Watch the status with: 'kubectl get svc --namespace default -w my-release-wordpress'
+
+   export SERVICE_IP=$(kubectl get svc --namespace default my-release-wordpress --template "{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}")
+   echo "WordPress URL: http://$SERVICE_IP/"
+   echo "WordPress Admin URL: http://$SERVICE_IP/admin"
+
+2. Open a browser and access WordPress using the obtained URL.
+
+3. Login with the following credentials below to see your blog:
+
+  echo Username: user
+  echo Password: $(kubectl get secret --namespace default my-release-wordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode)
+~~~
+
+
+@list installed helm charts
+>> helm list
+
+@uninstall helm charts
+>> helm uninstall my-release
+
+@Specifying our custom parameters
+>> helm install --set wordpressBlogName="Helm Tutorials" my-release-2 bitnami/wordpress
+>> helm install --set wordpressBlogName="Helm Tutorials" --set wordpressEmail="john@example.com" my-release-3 bitnami/wordpress
+
+@ “values.yaml” file where we specify all
+~~~
+wordpressBlogName: Helm Tutorials 
+wordpressEmail: john@example.com
+~~~
+
+>>helm install --values values.yaml my-release-4 bitnami/wordpress
+
