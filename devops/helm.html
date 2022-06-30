@@ -1,11 +1,11 @@
 <html>
     <head>
-        <title>helm Basics</title>
+        <title id="title">helm Basics</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
     <body>
         <button onclick="togglediv('Index')" style="background-color: Transparent; border: none;">Helm</button>
-        <code>code</code>
+        <h4 id="header"></h4>
         <div style="width: 100%;">
             <div id="Index" style="float: left; width: 25%; border-right: 1px solid; border-radius: 5px; overflow: scroll; height: 100%;"></div>
             <div id="Main" style="float: left; width: 70%; margin-left: 10px; border-radius: 5px; overflow: scroll; height: 100%;"></div>
@@ -22,10 +22,17 @@
                 var mainContent = "";
                 var counter = 0;
                 var codestart = false;
+                var pageTitle = "";
+                var pageHeader = "";
                 //console.log("started---->"+dataobject);
                 lineoutput = dataobject.split("\n");
                 for (var x = 0; x < lineoutput.length; x++) {
-                    if (lineoutput[x].startsWith("~~~") && codestart == false) {
+                    if (lineoutput[x].startsWith("--->")) {
+                        pageTitle = lineoutput[x].replace(/--->/g, "");
+                        pageHeader = lineoutput[x].replace(/--->/g, "");
+                    } else if (lineoutput[x].startsWith("***>")) {
+                        //pageTitle =lineoutput[x].replace(/\***>/g, "")
+                    } else if (lineoutput[x].startsWith("~~~") && codestart == false) {
                         codestart = true;
                         //mainContent = mainContent + "<hr><code style=background-color:lightgrey;><p>";
                         mainContent = mainContent + "<hr><code style=background-color:lightgrey;><p>";
@@ -54,9 +61,10 @@
                     //console.log("output-->"+lineoutput[x]);
                     //mainContent = mainContent + lineoutput[x]+"<br>";
                 }
-
                 document.getElementById("Index").innerHTML = indexContent;
                 document.getElementById("Main").innerHTML = mainContent;
+                document.getElementById("title").innerHTML = pageTitle;
+                document.getElementById("header").innerHTML = pageHeader;
             },
         });
     </script>
