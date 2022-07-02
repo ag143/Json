@@ -6,7 +6,7 @@
     <body>
         <div id="headbanner" style="background-color: grey; text-align: center;">
             <label>MainTopic</label>
-            <select onchange="mainTopic()" id="MainTopicid" text="MainTopic" value="MainTopic">
+            <select onchange="mainTopicfunction()" id="MainTopicid" text="MainTopic" value="MainTopic">
                 <option value="devops">devops</option>
                 <option value="cloud">cloud</option>
                 <option value="programing">programing</option>
@@ -15,9 +15,10 @@
                 <option value="faq">faq</option>
             </select>
             <label>SubTopic</label>
-            <select onchange="subTopic()" id="SubTopic">
-                <option value="git">git</option>
-                <option value="github">github</option>
+            <select onchange="subTopicfunction()" id="SubTopic">
+                <option value="helm">helm</option>
+				<option value="git">git</option>
+				<option value="github">github</option>
                 <option value="gitlab">gitlab</option>
                 <option value="OS">OS</option>
                 <option value="shellcommands">shellcommands</option>
@@ -63,7 +64,7 @@
                             <input type="text" id="url" size="50" value="https://ag143.github.io/Json/" readonly />
                         </td>
 
-                        <td><button id="Reload">Reload</button></td>
+                        <td><button id="Reload" onclick="reloadpage()">Reload</button></td>
                     </tr>
                 </table>
             </center>
@@ -76,9 +77,11 @@
         </div>
     </body>
     <script>
+	var mainTopic="";
+    var subTopic = "";
 	var host = 'https://ag143.github.io/Json';
         $.ajax({
-            url: "https://ag143.github.io/Json/devops/helm.txt",
+            url: host+"/"+ document.getElementById("MainTopicid").value+"/"+document.getElementById("SubTopic").value+ ".txt",
             async: false,
             success: function (data) {
 				
@@ -90,8 +93,8 @@
                 var codestart = false;
                 var pageTitle = "";
                 var pageHeader = "";
-                var mainTopic = document.getElementById("MainTopicid").value;
-                var subTopic = document.getElementById("SubTopic").value;
+                mainTopic = document.getElementById("MainTopicid").value;
+                subTopic = document.getElementById("SubTopic").value;
                 document.getElementById("url").value = document.getElementById("url").value + mainTopic + "/" + subTopic + ".html";
                 //console.log("started---->"+dataobject);
                 lineoutput = dataobject.split("\n");
@@ -151,11 +154,21 @@
                 //document.getElementById("headbanner").style.text-align='center';
             }
         }
-		function mainTopic() {
+		function mainTopicfunction() {
             document.getElementById("url").value=host+"/"+ document.getElementById("MainTopicid").value+"/"+document.getElementById("SubTopic").value+ ".html";
 		}
-		function subTopic() {
+		function subTopicfunction() {
             document.getElementById("url").value=host+"/"+ document.getElementById("MainTopicid").value+"/"+document.getElementById("SubTopic").value+ ".html";
         }
+		function reloadpage()
+		{
+		console.log("hello");
+		location.reload();
+		}
+		function successfulreload()
+		{
+		console.log("hello");
+		location.reload();
+		}
     </script>
 </html>
