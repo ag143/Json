@@ -1,12 +1,12 @@
 ---> Helm basics
 ===> Helm 
-? what is helm?
+> what is helm?
 @Helm
->? Helm is a package manager for Kubernetes that allows developers and operators to more easily package, configure, and deploy applications and services onto Kubernetes clusters.
+>Helm is a package manager for Kubernetes that allows developers and operators to more easily package, configure, and deploy applications and services onto Kubernetes clusters.
 
 @Charts
-?what is helm charts?
->? Helm packages are called charts, and they consist of a few YAML configuration files and some templates that are rendered into Kubernetes manifest files.
+>what is helm charts?
+> Helm packages are called charts, and they consist of a few YAML configuration files and some templates that are rendered into Kubernetes manifest files.
 
 Here is the basic directory structure of a chart:
 
