@@ -1,3 +1,6 @@
+---> Maven basics
+===> Maven 
+
 # Maven Basics
 Maven contains a wide set of commands which you can execute. Maven commands are a mix of build life cycles, build phases and build goals, and can thus be a bit confusing. Therefore I will describe the common Maven commands in this tutorial, as well as explain which build life cycles, build phases and build goals they are executing.
 

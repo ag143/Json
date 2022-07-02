@@ -1,3 +1,6 @@
+---> Git basics
+===> Git 
+
 @0 - Introduction
      
 Git is a version-control system for tracking changes in computer files and coordinating work on those files among multiple people. Git is a Distributed Version Control System. So Git does not necessarily rely on a central server to store all the versions of a project’s files.
