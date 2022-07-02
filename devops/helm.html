@@ -64,7 +64,7 @@
                             <input type="text" id="url" size="50" value="https://ag143.github.io/Json/" readonly />
                         </td>
 
-                        <td><button id="Reload" onclick="reloadpage()">Reload</button></td>
+                        <td><button id="Reload" onclick="successfulreload()">Reload</button></td>
                     </tr>
                 </table>
             </center>
@@ -160,15 +160,67 @@
 		function subTopicfunction() {
             document.getElementById("url").value=host+"/"+ document.getElementById("MainTopicid").value+"/"+document.getElementById("SubTopic").value+ ".html";
         }
-		function reloadpage()
-		{
-		console.log("hello");
-		location.reload();
-		}
+		
 		function successfulreload()
 		{
-		console.log("hello");
-		location.reload();
+		$.ajax({
+            url: host+"/"+ document.getElementById("MainTopicid").value+"/"+document.getElementById("SubTopic").value+ ".txt",
+            async: false,
+            success: function (data) {
+				
+                var dataobject = data;
+                var output1 = "";
+                var indexContent = "";
+                var mainContent = "";
+                var counter = 0;
+                var codestart = false;
+                var pageTitle = "";
+                var pageHeader = "";
+                mainTopic = document.getElementById("MainTopicid").value;
+                subTopic = document.getElementById("SubTopic").value;
+                document.getElementById("url").value = document.getElementById("url").value + mainTopic + "/" + subTopic + ".html";
+                //console.log("started---->"+dataobject);
+                lineoutput = dataobject.split("\n");
+                for (var x = 0; x < lineoutput.length; x++) {
+                    if (lineoutput[x].startsWith("--->")) {
+                        pageTitle = lineoutput[x].replace(/--->/g, "");
+                    } else if (lineoutput[x].startsWith("===>")) {
+                        pageHeader = lineoutput[x].replace(/===>/g, "");
+                    } else if (lineoutput[x].startsWith("~~~") && codestart == false) {
+                        codestart = true;
+                        //mainContent = mainContent + "<hr><code style=background-color:lightgrey;><p>";
+                        mainContent = mainContent + "<hr><code style=background-color:lightgrey;><p>";
+                    } else if (lineoutput[x].startsWith("~~~") && codestart == true) {
+                        codestart = false;
+                        mainContent = mainContent + "</p></code><hr>";
+                        //mainContent = mainContent + "</p></code><hr>"
+                    } else if (lineoutput[x].startsWith(">>")) {
+                        mainContent = mainContent + "<code style=background-color:lightgrey;>" + lineoutput[x].replace(/>>/g, "") + "</code><br>";
+                    } else if (lineoutput[x].startsWith(">")) {
+                        mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br>";
+                    } else if (lineoutput[x].startsWith("@")) {
+                        mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</h3><br>";
+                        indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</a></li>";
+                    } else if (lineoutput[x].startsWith(" ") && codestart == false) {
+                        //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
+                        mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";
+                        //indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/\s/g, "_") + ">" + lineoutput[x].replace(/\s/g, "_") + "</a></li>";
+                    } else if (codestart == true) {
+                        //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
+                        mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + "<font style=background-color:lightgrey> " + lineoutput[x].replace(/ /g, "&nbsp") + "</font><br>";
+                        //indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/\s/g, "_") + ">" + lineoutput[x].replace(/\s/g, "_") + "</a></li>";
+                    } else {
+                        mainContent = mainContent + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";
+                    }
+                    //console.log("output-->"+lineoutput[x]);
+                    //mainContent = mainContent + lineoutput[x]+"<br>";
+                }
+                document.getElementById("Index").innerHTML = indexContent;
+                document.getElementById("Main").innerHTML = mainContent;
+                document.getElementById("title").innerHTML = pageTitle;
+                document.getElementById("header").innerHTML = pageHeader;
+            },
+        });
 		}
     </script>
 </html>
