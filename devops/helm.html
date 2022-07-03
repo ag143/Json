@@ -24,7 +24,7 @@
                 <option value="shellcommands">shellcommands</option>
                 <option value="maven">maven</option>
                 <option value="aws">aws</option>
-                <option value="Azure">Azure</option>
+                <option value="Azure">Azure.txt</option>
                 <option value="GCP">GCP</option>
                 <option value="Openstack">Openstack</option>
                 <option value="java">java</option>
@@ -46,7 +46,7 @@
         <div style="text-align: center;">
             <center>
                 <table id="TableSelector" border="1">
-                    <tr><td>hi
+                    <tr><td>
                         <td>
                             <label> Load type</label>
                         
@@ -57,7 +57,7 @@
                         <input type="radio" id="FAQ" name="display_type" value="FAQ" onclick=displayselected() />
 						<label for="FAQ">FAQ</label>
                         <input type="radio" id="Detailed" name="display_type" value="Detailed" checked="checked" onclick=displayselected() /> <label for="Detailed">Detailed</label><br /></td>
-						<td>hi
+						<td>
                     </tr>
 
                     <tr>
@@ -83,7 +83,7 @@
     var subTopic = "";
 	var displaytype = "";
 	var host = 'https://ag143.github.io/Json';
-        $.ajax({
+       $.ajax({
             url: host+"/"+ document.getElementById("MainTopicid").value+"/"+document.getElementById("SubTopic").value+ ".txt",
             async: false,
             success: function (data) {
@@ -96,6 +96,7 @@
                 var codestart = false;
                 var pageTitle = "";
                 var pageHeader = "";
+				displaytype = document.querySelector("input[name='display_type']:checked").value;
                 mainTopic = document.getElementById("MainTopicid").value;
                 subTopic = document.getElementById("SubTopic").value;
                 document.getElementById("url").value = document.getElementById("url").value + mainTopic + "/" + subTopic + ".html";
@@ -106,31 +107,50 @@
                         pageTitle = lineoutput[x].replace(/--->/g, "");
                     } else if (lineoutput[x].startsWith("===>")) {
                         pageHeader = lineoutput[x].replace(/===>/g, "");
-                    } else if (lineoutput[x].startsWith("~~~") && codestart == false) {
+                    } else if (lineoutput[x].startsWith("~~~") && codestart == false && displaytype == "Detailed") {
                         codestart = true;
                         //mainContent = mainContent + "<hr><code style=background-color:lightgrey;><p>";
                         mainContent = mainContent + "<hr><code style=background-color:lightgrey;><p>";
-                    } else if (lineoutput[x].startsWith("~~~") && codestart == true) {
+                    } else if (lineoutput[x].startsWith("~~~") && codestart == true && displaytype == "Detailed") {
                         codestart = false;
                         mainContent = mainContent + "</p></code><hr>";
                         //mainContent = mainContent + "</p></code><hr>"
-                    } else if (lineoutput[x].startsWith(">>")) {
+                    } else if (lineoutput[x].startsWith(">>")&& displaytype == "Detailed") {
                         mainContent = mainContent + "<code style=background-color:lightgrey;>" + lineoutput[x].replace(/>>/g, "") + "</code><br>";
-                    } else if (lineoutput[x].startsWith(">")) {
+                    } else if (lineoutput[x].startsWith(">-")  && codestart == false && displaytype == "FAQ"  ) {
+                        mainContent = mainContent + "<code>" + lineoutput[x].replace(/\>-/g, "").replace(/\?/g, "") + "</code><br>";
+                    }
+					else if (lineoutput[x].startsWith(">-")  && codestart == false && displaytype == "Basic"  ) {
+                        mainContent = mainContent + "<code>" + lineoutput[x].replace(/\>-/g, "").replace(/\?/g, "") + "</code><br>";
+                    }
+					else if (lineoutput[x].startsWith(">-")  && codestart == false && displaytype == "Detailed"  ) {
+                        mainContent = mainContent + "<code>" + lineoutput[x].replace(/\>-/g, "").replace(/\?/g, "") + "</code><br>";
+                    }
+					else if (lineoutput[x].startsWith(">?")  && codestart == false && displaytype == "Basic"  ) {
+                        ;
+                    }
+					else if (lineoutput[x].startsWith(">?")  && codestart == false && displaytype == "FAQ"  ) {
+                        mainContent = mainContent + "<code>" + lineoutput[x].replace(/\>/g, "").replace(/\?/g, "") + "</code><br>";
+                    }
+					else if (lineoutput[x].startsWith(">?")  && codestart == false && displaytype == "Detailed"  ) {
+                        ;
+                    } else if (lineoutput[x].startsWith("?") && codestart == false && displaytype == "FAQ" ) {
+                        mainContent = mainContent + "<code style=background-color:lightgrey;>" + lineoutput[x].replace(/\?/g, "") + "</code><br>";
+                    } else if (lineoutput[x].startsWith(">") || lineoutput[x].startsWith(">?") && displaytype == "Basic" && codestart == false) {
                         mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br>";
-                    } else if (lineoutput[x].startsWith("@")) {
-                        mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</h3><br>";
+                    } else if (lineoutput[x].startsWith("@") && codestart == false && displaytype == "Detailed") {
+                        mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "") + "</h3><br>";
                         indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</a></li>";
-                    } else if (lineoutput[x].startsWith(" ") && codestart == false) {
+                    } else if (lineoutput[x].startsWith(" ") && codestart == false && displaytype == "Detailed") {
                         //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
                         mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";
                         //indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/\s/g, "_") + ">" + lineoutput[x].replace(/\s/g, "_") + "</a></li>";
-                    } else if (codestart == true) {
+                    } else if (codestart == true && displaytype == "Detailed" ) {
                         //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
                         mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + "<font style=background-color:lightgrey> " + lineoutput[x].replace(/ /g, "&nbsp") + "</font><br>";
                         //indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/\s/g, "_") + ">" + lineoutput[x].replace(/\s/g, "_") + "</a></li>";
                     } else {
-                        mainContent = mainContent + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";
+                        ;//mainContent = mainContent + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";
                     }
                     //console.log("output-->"+lineoutput[x]);
                     //mainContent = mainContent + lineoutput[x]+"<br>";
@@ -139,9 +159,6 @@
                 document.getElementById("Main").innerHTML = mainContent;
                 document.getElementById("title").innerHTML = pageTitle;
                 document.getElementById("header").innerHTML = pageHeader;
-				/*document.querySelectorAll("input[name='display_type']").forEach((input) => {
-						input.addEventListener('change', displayselected);
-					});*/
             },
         });
         function togglediv(id) {
@@ -208,14 +225,34 @@
                         //mainContent = mainContent + "</p></code><hr>"
                     } else if (lineoutput[x].startsWith(">>")&& displaytype == "Detailed") {
                         mainContent = mainContent + "<code style=background-color:lightgrey;>" + lineoutput[x].replace(/>>/g, "") + "</code><br>";
-                    } else if (lineoutput[x].startsWith(">?")  && codestart == false && displaytype == "FAQ"  ) {
-                        mainContent = mainContent + "<code>" + lineoutput[x].replace(/\>\?/g, "") + "</code><br>";
+                    } else if (lineoutput[x].startsWith(">-")  && codestart == false && displaytype == "FAQ"  ) {
+                        mainContent = mainContent + "<code>" + lineoutput[x].replace(/\>-/g, "").replace(/\?/g, "") + "</code><br>";
+                    }
+					else if (lineoutput[x].startsWith(">-")  && codestart == false && displaytype == "Basic"  ) {
+                        mainContent = mainContent + "<code>" + lineoutput[x].replace(/\>-/g, "").replace(/\?/g, "") + "</code><br>";
+                    }
+					else if (lineoutput[x].startsWith(">-")  && codestart == false && displaytype == "Detailed"  ) {
+                        mainContent = mainContent + "<code>" + lineoutput[x].replace(/\>-/g, "").replace(/\?/g, "") + "</code><br>";
+                    }
+					else if (lineoutput[x].startsWith(">?")  && codestart == false && displaytype == "Basic"  ) {
+                        ;
+                    }
+					else if (lineoutput[x].startsWith(">?")  && codestart == false && displaytype == "FAQ"  ) {
+                        mainContent = mainContent + "<code>" + lineoutput[x].replace(/\>/g, "").replace(/\?/g, "") + "</code><br>";
+                    }
+					else if (lineoutput[x].startsWith(">?")  && codestart == false && displaytype == "Detailed"  ) {
+                        ;
                     } else if (lineoutput[x].startsWith("?") && codestart == false && displaytype == "FAQ" ) {
                         mainContent = mainContent + "<code style=background-color:lightgrey;>" + lineoutput[x].replace(/\?/g, "") + "</code><br>";
-                    } else if (lineoutput[x].startsWith(">") || lineoutput[x].startsWith(">?") && displaytype == "Basic" && codestart == false) {
+                    }
+
+					else if (lineoutput[x].startsWith(">?")  && displaytype == "Basic" && codestart == false) {
+                        mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>?/g, "") + "<br>";
+					}
+					else if (lineoutput[x].startsWith(">")  && displaytype == "Detailed" && codestart == false) {
                         mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br>";
-                    } else if (lineoutput[x].startsWith("@") && codestart == false ) {
-                        mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</h3><br>";
+                    }					else if (lineoutput[x].startsWith("@")  && displaytype == "Detailed")  {
+                        mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "") + "</h3><br>";
                         indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</a></li>";
                     } else if (lineoutput[x].startsWith(" ") && codestart == false && displaytype == "Detailed") {
                         //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
