@@ -78,7 +78,11 @@
             <div id="Main" style="float: left; width: 70%; margin-left: 10px; border-radius: 5px; overflow: scroll; height: 100%;"></div>
         </div>
     </body>
+	<script src="aes.js"></script>
     <script>
+	var encrypted = CryptoJS.AES.encrypt("Message", "Secret Passphrase");
+alert(encrypted.toString());
+var decrypted = CryptoJS.AES.decrypt(encrypted, "Secret Passphrase");
 	var mainTopic="";
     var subTopic = "";
 	var displaytype = "";
