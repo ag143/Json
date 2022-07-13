@@ -1,3 +1,5 @@
+---> Python basics
+===> Python
 # Reference:
 - https://www.geeksforgeeks.org/python-programming-examples/
 - https://www.geeksforgeeks.org/python-exercises-practice-questions-and-solutions/?ref=lbp
