@@ -1,29 +1,290 @@
-Reference:https://www.geeksforgeeks.org/python-programming-examples/
-https://www.geeksforgeeks.org/python-exercises-practice-questions-and-solutions/?ref=lbp
+# Reference:
+- https://www.geeksforgeeks.org/python-programming-examples/
+- https://www.geeksforgeeks.org/python-exercises-practice-questions-and-solutions/?ref=lbp
+- https://www.w3schools.com/python/python_examples.asp
 
-Introduction
-input_output
-Operators
-DataTypes
-ControlFlow
-Functions
-OOP
-ExceptionHandling
-FIle_handling
-Regex
-Collections
-Advance
-Numpy
-pandas
-DJango
-Json
-CSV
-MYSQL
-MongoDB
-OpenCV
-Selenium
-Tkinter
-Kivy
-Visualization
+@Syntax
+~~~
+#This is a comment.
+"""This is a
+multiline docstring."""
+print("Hello, World!")
+~~~
+@variables
+~~~
+x = 5
+y = "John"
+print(x)
+print(y)
+
+a = "Python"
+b = "is"
+c = "awesome"
+print(a, b, c)
 
 
+p = "Python "
+q = "is "
+r = "awesome"
+print(p + q + r)
+
+~~~
+@Numbers
+~~~
+x = 1
+y = 2.8
+z = 1j
+
+print(type(x))
+print(type(y))
+print(type(z))
+
+a = 1
+b = 35656222554887711
+c = -3255522
+
+print(type(a))
+print(type(b))
+print(type(c))
+
+p = 1.10
+q = 1.0
+r = -35.59
+
+print(type(p))
+print(type(q))
+print(type(r))
+
+t = 35e3
+u = 12E4
+v = -87.7e100
+
+print(type(t))
+print(type(u))
+print(type(v))
+
+d = 3+5j
+e = 5j
+f = -5j
+
+print(type(d))
+print(type(e))
+print(type(f))
+~~~
+
+@Casting
+~~~
+x = int(1)
+y = int(2.8)
+z = int("3")
+print(x)
+print(y)
+print(z)
+
+
+a = float(1)
+b = float(2.8)
+c = float("3")
+d = float("4.2")
+print(a)
+print(b)
+print(c)
+print(d)
+
+
+p = str("s1")
+q = str(2)
+r = str(3.0)
+print(p)
+print(q)
+print(r)
+
+~~~
+
+@Strings
+~~~
+a = " Hello, World! "
+print(a.strip())
+
+b = "Hello, World!"
+print(b[2:5])
+
+print(len(a))
+
+print(a.lower())
+
+print(a.upper())
+
+print(a.replace("H", "J"))
+
+p = "Hello, World!"
+q = p.split(",")
+print(q)
+~~~
+
+@Operators
+~~~
+x = 5
+y = 3
+
+print(x + y)
+
+print(x - y)
+
+print(x * y)
+
+print(x / y)
+
+print(x % y)
+
+print(x)
+
+~~~
+
+@Lists
+~~~
+thislist = ["apple", "banana", "cherry"]
+print(thislist)
+
+print(thislist[1])
+
+thislist[1] = "blackcurrant"
+
+print(thislist)
+
+for x in thislist:
+  print(x)
+
+if "apple" in thislist:
+  print("Yes, 'apple' is in the fruits list")
+  
+print(len(thislist))
+
+thislist.append("orange")
+
+print(thislist)
+
+thislist.insert(1, "orange")
+print(thislist)
+
+thislist.remove("banana")
+print(thislist)
+
+thislist.pop()
+print(thislist)
+
+del thislist[0]
+print(thislist)
+
+thislist.clear()
+print(thislist)
+
+thislist = list(("apple", "banana", "cherry"))
+print(thislist)
+
+~~~
+
+@Tuples
+~~~
+
+~~~
+
+@Sets
+~~~
+
+~~~
+
+@Dictionaries
+~~~
+
+~~~
+
+@if-else
+~~~
+
+~~~
+
+@while-loop
+~~~
+
+~~~
+
+@for-loop
+~~~
+
+~~~
+
+@functions
+~~~
+
+~~~
+
+@lambda
+~~~
+
+~~~
+
+@Arrays
+~~~
+
+~~~
+
+@classes and objects
+~~~
+
+~~~
+
+@Iterators
+~~~
+
+~~~
+
+@Modules
+~~~
+
+~~~
+
+@Dates
+~~~
+
+~~~
+
+@Math
+~~~
+
+~~~
+
+@Json
+~~~
+
+~~~
+
+@Regex
+~~~
+
+~~~
+
+@PIP
+~~~
+
+~~~
+
+@TryExcept
+~~~
+
+~~~
+
+@Filehandling
+~~~
+
+~~~
+
+@Mysql
+~~~
+
+~~~
+
+@MongoDB
+~~~
+
+~~~
