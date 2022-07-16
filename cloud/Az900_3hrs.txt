@@ -1,0 +1,111 @@
+@☁️ Introduction
+@⌨️ (00:07:21) Exam Guide Walkthrough
+
+@☁️ Cloud Concepts
+@⌨️ (00:13:51) What is Cloud Computing
+@⌨️ (00:17:15) Common Cloud Services
+@⌨️ (00:18:35) What is Microsoft and Azure
+@⌨️ (00:19:52) Benefits of Cloud Computing
+@⌨️ (00:21:25) Types of Cloud Computing
+@⌨️ (00:23:39) Types of Cloud Computing Responsibilities
+@⌨️ (00:25:16) Cloud Deployment Models
+@⌨️ (00:29:57) Total Cost of Ownership
+@⌨️ (00:32:06) CAPEX vs OPEX
+@⌨️ (00:34:08) Cloud Architecture Terminologies
+@⌨️ (00:35:08) High Avaliablity
+@⌨️ (00:36:49) High Scalability
+@⌨️ (00:37:46) High Elasticity
+@⌨️ (00:39:35) Fault Tolerance
+@⌨️ (00:39:39) High Durability
+
+@☁️ Evolution of Compute
+@⌨️ (00:40:26) Dedicated Servces
+@⌨️ (00:42:13) Virtual Machines
+@⌨️ (00:43:38) Containers
+@⌨️ (00:44:52) Functions
+@
+@☁️ Global Infrastructure
+@⌨️ (00:46:19) Regions and Geographies
+@⌨️ (00:49:05) Paired Regions
+@⌨️ (00:50:34) Region Types and Service Availability
+@⌨️ (00:52:55) Special Regions
+@⌨️ (00:54:14) Availability Zones
+@⌨️ (00:56:20) AZ Supported Regions
+@⌨️ (00:57:51) Avaliablity Sets Fault and Update Domains
+@
+@☁️ Getting Started
+@⌨️ (01:02:08) Creating an Azure Account
+@⌨️ (01:06:16) Azure Portal Layout
+@
+@☁️ Technology Overview
+@⌨️ (01:06:57) Computing Services
+@⌨️ (01:10:21) Storage Services
+@⌨️ (01:14:02) Database Services
+@⌨️ (01:16:38) Application Integration
+@⌨️ (01:19:01) Developer and Mobile Tools
+@⌨️ (01:20:36) Azure DevOps Services
+@⌨️ (01:22:32) Azure Resource Manager ARM
+@⌨️ (01:23:51) Azure Quickstart Templates
+@⌨️ (01:25:02) vNets and Subnets
+@⌨️ (01:27:46) Cloud Native Networking Services
+@⌨️ (01:29:48) Enterprise Hybrid Networking Services
+@⌨️ (01:31:26) Azure Traffic Manager
+@⌨️ (01:32:34) Azure DNS
+@⌨️ (01:33:32) Azure Load Balancer
+@⌨️ (01:34:56) Scale Sets
+@⌨️ (01:36:00) IoT Services
+@⌨️ (01:38:21) Big Data and Analytics Services
+@⌨️ (01:40:11) AI ML Services Introduction
+@⌨️ (01:42:21) AI ML Services
+@⌨️ (01:44:00) Serverless Services
+@
+@☁️ Management Tools
+@⌨️ (01:46:07) Azure Portal
+@⌨️ (01:48:00) PowerShell
+@⌨️ (01:50:00) VIsual Studio Code
+@⌨️ (01:51:52) Cloud Shell
+@⌨️ (01:52:43) Azure CLI
+@
+@☁️ Follow Alongs
+@⌨️ (01:54:03) Create a Resource Group
+@⌨️ (01:55:55) Create a vNet
+@⌨️ (01:58:26) Launching a Server
+@⌨️ (02:04:16) Creating a Azure Function
+@⌨️ (02:08:44) Storing files in Blob Storage
+@⌨️ (02:12:08) Exploring Azure Cloud Shell
+@
+@☁️ Security
+@⌨️ (02:13:52) Azure Trust Center
+@⌨️ (02:15:48) Compliance Programs
+@⌨️ (02:19:25) Azure Active Directory
+@⌨️ (02:21:14) MFA
+@⌨️ (02:22:50) Azure Security Center
+@⌨️ (02:23:31) Key Vault
+@⌨️ (02:25:55) Azure DDoS Protection
+@⌨️ (02:28:26) Azure Firewall
+@⌨️ (02:30:12) Azure Information Protection
+@⌨️ (02:31:02) Application Gateway
+@⌨️ (02:32:22) Advanced Threat Protection ATP
+@⌨️ (02:33:40) Microsoft Security Development Lifecycle SDL
+@⌨️ (02:35:02) Azure Policies
+@⌨️ (02:35:44) Role Based Access Control RBAC
+@⌨️ (02:39:17) Lock resources
+@⌨️ (02:40:07) Management Groups
+@⌨️ (02:40:58) Azure Monitor
+@⌨️ (02:41:52) Service Health
+@⌨️ (02:42:39) Azure Advisor
+
+@☁️ Billing and Pricing
+@⌨️ (02:43:38) Service Level Agreements
+@⌨️ (02:46:12) Service Credits
+@⌨️ (02:47:40) Composite SLAs
+@⌨️ (02:49:50) TCO Calculator
+@⌨️ (02:52:34) Azure Marketplace
+@⌨️ (02:54:21) Azure Support
+@⌨️ (03:00:02) Azure Licensing
+@⌨️ (03:02:03) Azure Subscriptions
+@⌨️ (03:04:15) Pricing Calculator
+@⌨️ (03:06:41) Azure Cost Management
+
+@☁️ Summary
+@⌨️ (03:07:19) Booking Your Exam
