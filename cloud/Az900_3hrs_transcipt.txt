@@ -1,3 +1,5 @@
+---> Azure Fundamentals Transcript 
+===> Azure Fundamentals
 @☁️ Introduction
 >Hey, this is Andrew Brown from exam Pro. And welcome to my az 900 course, also known as
 0:05
