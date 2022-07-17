@@ -1,0 +1,275 @@
+<html>
+    <head>
+        <title id="title"></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="headbanner" style="background-color: grey; text-align: center;">
+            <label>MainTopic</label>
+            <select onchange="mainTopicfunction()" id="MainTopicid" text="MainTopic" value="MainTopic">
+                <option value="cloud">cloud</option>
+				<option value="devops">devops</option>
+                <option value="programming">programming</option>
+                <option value="Security">Security</option>
+                <option value="Softwaretesting">Softwaretesting</option>
+                <option value="faq">faq</option>
+            </select>
+            <label>SubTopic</label>
+            <select onchange="subTopicfunction()" id="SubTopic">
+				<option value="Az900_3hrs_transcipt">Az900_3hrs_transcipt.txt</option>
+                <option value="helm">helm</option>
+                <option value="git">git</option>
+                <option value="github">github</option>
+                <option value="gitlab">gitlab</option>
+                <option value="OS">OS</option>
+                <option value="shellcommands">shellcommands</option>
+                <option value="maven">maven</option>
+                <option value="aws">aws</option>
+                
+				<option value="aws_3hrs_notes">aws_3hrs_notes.txt</option>
+				<option value="Az900_3hrs">Az900_3hrs.txt</option>
+				<option value="AWS_3hrs_Transcript">AWS_3hrs_Transcript.txt</option>
+				<option value="Azure">Azure.txt</option>
+                <option value="GCP">GCP</option>
+                <option value="Openstack">Openstack</option>
+                <option value="java">java</option>
+                <option value="javascript">javascript</option>
+                <option value="groovy">groovy</option>
+                <option value="go">go</option>
+                <option value="python">python</option>
+                <option value="checkmarx">checkmarx</option>
+                <option value="cryptography">cryptography</option>
+                <option value="fortify">fortify</option>
+                <option value="sonar">sonar</option>
+                <option value="whitesource">whitesource</option>
+                <option value="softwaretesting">softwaretesting</option>
+                <option value="Loadrunner">Loadrunner</option>
+                <option value="Jmeter">Jmeter</option>
+            </select>
+        </div>
+        <button onclick="togglediv('Index')" style="background-color: Transparent; border: black;"><h3 id="header"></h3></button>
+        <div style="text-align: center;">
+            <center>
+                <table id="TableSelector" style="border: None;">
+                    <tr>
+                        <td></td>
+                        <td>
+                            <label> Load type</label>
+
+                            <input type="radio" id="Basic" name="display_type" value="Basic" checked="checked" onclick="displayselected()" />
+                            <label for="Basic">Basic</label>
+
+                            <input type="radio" id="FAQ" name="display_type" value="FAQ" onclick="displayselected()" />
+                            <label for="FAQ">FAQ</label>
+                            <input type="radio" id="Detailed" name="display_type" value="Detailed" onclick="displayselected()" /> <label for="Detailed">Detailed</label><br />
+                        </td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Load Url</label></td>
+                        <td colspan="2">
+                            <input type="text" id="url" size="50" value="https://ag143.github.io/Json/" readonly />
+                        </td>
+
+                        <td><button id="Reload" onclick="successfulreload()">Reload</button></td>
+                    </tr>
+                </table>
+            </center>
+            <br />
+            <br />
+        </div>
+        <div style="width: 100%;">
+            <div id="Index" style="float: left; width: 25%; border-right: 1px solid; border-radius: 5px; overflow: scroll; height: 100%;"></div>
+            <div id="Main" style="float: left; width: 70%; margin-left: 10px; border-radius: 5px; overflow: scroll; height: 100%;"></div>
+        </div>
+    </body>
+    <script src="aes.js"></script>
+    <script>
+        var mainTopic = "";
+        var subTopic = "";
+        var displaytype = "";
+        var host = "https://ag143.github.io/Json";
+        $.ajax({
+            url: host + "/" + document.getElementById("MainTopicid").value + "/" + document.getElementById("SubTopic").value + ".txt",
+            async: false,
+            success: function (data) {
+                var dataobject = data;
+                var output1 = "";
+                var indexContent = "";
+                var mainContent = "";
+                var counter = 0;
+                var codestart = false;
+                var pageTitle = "";
+                var pageHeader = "";
+                displaytype = document.querySelector("input[name='display_type']:checked").value;
+                mainTopic = document.getElementById("MainTopicid").value;
+                subTopic = document.getElementById("SubTopic").value;
+                document.getElementById("url").value = document.getElementById("url").value + mainTopic + "/" + subTopic + ".html";
+                //console.log("started---->"+dataobject);
+                lineoutput = dataobject.split("\n");
+                for (var x = 0; x < lineoutput.length; x++) {
+                    if (lineoutput[x].startsWith("--->")) {
+                        pageTitle = lineoutput[x].replace(/--->/g, "");
+                    } else if (lineoutput[x].startsWith("===>")) {
+                        pageHeader = lineoutput[x].replace(/===>/g, "");
+                    } else if (lineoutput[x].startsWith("~~~") && codestart == false && displaytype == "Detailed") {
+                        codestart = true;
+                        //mainContent = mainContent + "<hr><code style=background-color:lightgrey;><p>";
+                        mainContent = mainContent + "<hr><code style=background-color:lightgrey;><p>";
+                    } else if (lineoutput[x].startsWith("~~~") && codestart == true && displaytype == "Detailed") {
+                        codestart = false;
+                        mainContent = mainContent + "</p></code><hr>";
+                        //mainContent = mainContent + "</p></code><hr>"
+                    } else if (lineoutput[x].startsWith(">>") && displaytype == "Detailed") {
+                        mainContent = mainContent + "<code style=background-color:lightgrey;>" + lineoutput[x].replace(/>>/g, "") + "</code><br>";
+                    } else if (lineoutput[x].startsWith(">-") && codestart == false && displaytype == "FAQ") {
+                        mainContent = mainContent + "<code>" + lineoutput[x].replace(/\>-/g, "").replace(/\?/g, "") + "</code><br><br>";
+                    } else if (lineoutput[x].startsWith(">-") && codestart == false && displaytype == "Basic") {
+                        mainContent = mainContent + "<code>" + lineoutput[x].replace(/\>-/g, "").replace(/\?/g, "") + "</code><br><br>";
+                    } else if (lineoutput[x].startsWith(">-") && codestart == false && displaytype == "Detailed") {
+                        mainContent = mainContent + "<code>" + lineoutput[x].replace(/\>-/g, "").replace(/\?/g, "") + "</code><br>";
+                    } else if (lineoutput[x].startsWith(">?") && codestart == false && displaytype == "Basic") {
+                    } else if (lineoutput[x].startsWith(">?") && codestart == false && displaytype == "FAQ") {
+                        mainContent = "<br>" + mainContent + "<code>" + lineoutput[x].replace(/\>/g, "").replace(/\?/g, "") + "?</code><br><br>";
+                    } else if (lineoutput[x].startsWith(">?") && codestart == false && displaytype == "Detailed") {
+                    } else if (lineoutput[x].startsWith("?") && codestart == false && displaytype == "FAQ") {
+                        mainContent = mainContent + "<code style=background-color:lightgrey;>" + lineoutput[x].replace(/\?/g, "") + "</code><br>";
+                    } else if (lineoutput[x].startsWith(">?") && displaytype == "Basic" && codestart == false) {
+                        mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>?/g, "") + "<br>";
+                    } else if (lineoutput[x].startsWith(">") && displaytype == "Detailed" && codestart == false) {
+                        mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br>";
+                    } else if (lineoutput[x].startsWith("@") && displaytype == "Detailed") {
+                        mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "") + "</h3><br>";
+                        indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</a></li>";
+                    } else if (lineoutput[x].startsWith(" ") && codestart == false && displaytype == "Detailed") {
+                        //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
+                        mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";
+                        //indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/\s/g, "_") + ">" + lineoutput[x].replace(/\s/g, "_") + "</a></li>";
+                    } else if (codestart == true) {
+                        //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
+                        mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + "<font style=background-color:lightgrey> " + lineoutput[x].replace(/ /g, "&nbsp") + "</font><br>";
+                        //indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/\s/g, "_") + ">" + lineoutput[x].replace(/\s/g, "_") + "</a></li>";
+                    } else {
+                        //mainContent = mainContent + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";
+                    }
+                    //console.log("output-->"+lineoutput[x]);
+                    //mainContent = mainContent + lineoutput[x]+"<br>";
+                }
+                document.getElementById("Index").innerHTML = indexContent;
+                document.getElementById("Main").innerHTML = mainContent;
+                document.getElementById("title").innerHTML = pageTitle;
+                document.getElementById("header").innerHTML = pageHeader;
+            },
+        });
+        function togglediv(id) {
+            var div = document.getElementById(id);
+            //div.style.display = div.style.display == "none" ? "block" : "none";
+            if (div.style.display !== "none") {
+                div.style.display = "none";
+                document.getElementById("Main").style.width = "90%";
+                document.getElementById("TableSelector").style.display = "none";
+                document.getElementById("headbanner").style.display = "none";
+            } else {
+                div.style.display = "block";
+                document.getElementById("Main").style.width = "70%";
+                document.getElementById("TableSelector").style.display = "block";
+                document.getElementById("headbanner").style.display = "block";
+                //document.getElementById("headbanner").style.text-align='center';
+            }
+        }
+        function mainTopicfunction() {
+            document.getElementById("url").value = host + "/" + document.getElementById("MainTopicid").value + "/" + document.getElementById("SubTopic").value + ".html";
+        }
+        function subTopicfunction() {
+            document.getElementById("url").value = host + "/" + document.getElementById("MainTopicid").value + "/" + document.getElementById("SubTopic").value + ".html";
+        }
+        function displayselected() {
+            displaytype = document.querySelector("input[name='display_type']:checked").value;
+            console.log("hello" + displaytype);
+        }
+        function successfulreload() {
+            $.ajax({
+                url: host + "/" + document.getElementById("MainTopicid").value + "/" + document.getElementById("SubTopic").value + ".txt",
+                async: false,
+                success: function (data) {
+                    var dataobject = data;
+                    var output1 = "";
+                    var indexContent = "";
+                    var mainContent = "";
+                    var counter = 0;
+                    var codestart = false;
+                    var pageTitle = "";
+                    var pageHeader = "";
+                    displaytype = document.querySelector("input[name='display_type']:checked").value;
+                    mainTopic = document.getElementById("MainTopicid").value;
+                    subTopic = document.getElementById("SubTopic").value;
+                    document.getElementById("url").value = document.getElementById("url").value + mainTopic + "/" + subTopic + ".html";
+                    //console.log("started---->"+dataobject);
+                    lineoutput = dataobject.split("\n");
+                    for (var x = 0; x < lineoutput.length; x++) {
+                        if (lineoutput[x].startsWith("--->")) {
+                            pageTitle = lineoutput[x].replace(/--->/g, "");
+                        } else if (lineoutput[x].startsWith("===>")) {
+                            pageHeader = lineoutput[x].replace(/===>/g, "");
+                        } else if (lineoutput[x].startsWith("~~~") && codestart == false && displaytype == "Detailed") {
+                            codestart = true;
+                            //mainContent = mainContent + "<hr><code style=background-color:lightgrey;><p>";
+                            mainContent = mainContent + "<hr><code style=background-color:lightgrey;><p>";
+                        } else if (lineoutput[x].startsWith("~~~") && codestart == true && displaytype == "Detailed") {
+                            codestart = false;
+                            mainContent = mainContent + "</p></code><hr>";
+                            //mainContent = mainContent + "</p></code><hr>"
+                        } else if (lineoutput[x].startsWith(">>") && displaytype == "Detailed") {
+                            mainContent = mainContent + "<code style=background-color:lightgrey;>" + lineoutput[x].replace(/>>/g, "") + "</code><br>";
+                        } else if (lineoutput[x].startsWith(">-") && codestart == false && displaytype == "FAQ") {
+                            mainContent = mainContent + "<code>" + lineoutput[x].replace(/\>-/g, "").replace(/\?/g, "") + "</code><br><br>";
+                        } else if (lineoutput[x].startsWith(">-") && codestart == false && displaytype == "Basic") {
+                            mainContent = mainContent + "<code>" + lineoutput[x].replace(/\>-/g, "").replace(/\?/g, "") + "</code><br><br>";
+                        } else if (lineoutput[x].startsWith(">-") && codestart == false && displaytype == "Detailed") {
+                            mainContent = mainContent + "<code>" + lineoutput[x].replace(/\>-/g, "").replace(/\?/g, "") + "</code><br>";
+                        } else if (lineoutput[x].startsWith(">?") && codestart == false && displaytype == "Basic") {
+                        } else if (lineoutput[x].startsWith(">?") && codestart == false && displaytype == "FAQ") {
+                            mainContent = "<br>" + mainContent + "<code>" + lineoutput[x].replace(/\>/g, "").replace(/\?/g, "") + "?</code><br><br>";
+                        } else if (lineoutput[x].startsWith(">?") && codestart == false && displaytype == "Detailed") {
+                        } else if (lineoutput[x].startsWith("?") && codestart == false && displaytype == "FAQ") {
+                            mainContent = mainContent + "<code style=background-color:lightgrey;>" + lineoutput[x].replace(/\?/g, "") + "</code><br>";
+                        } else if (lineoutput[x].startsWith(">?") && displaytype == "Basic" && codestart == false) {
+                            mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>?/g, "") + "<br>";
+                        } else if (lineoutput[x].startsWith(">") && displaytype == "Detailed" && codestart == false) {
+                            mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br>";
+                        } else if (lineoutput[x].startsWith("@") && displaytype == "Detailed") {
+                            mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "") + "</h3><br>";
+                            indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</a></li>";
+                        } else if (lineoutput[x].startsWith(" ") && codestart == false && displaytype == "Detailed") {
+                            //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
+                            mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";
+                            //indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/\s/g, "_") + ">" + lineoutput[x].replace(/\s/g, "_") + "</a></li>";
+                        } else if (codestart == true) {
+                            //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
+                            mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + "<font style=background-color:lightgrey> " + lineoutput[x].replace(/ /g, "&nbsp") + "</font><br>";
+                            //indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/\s/g, "_") + ">" + lineoutput[x].replace(/\s/g, "_") + "</a></li>";
+                        } else {
+                            //mainContent = mainContent + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";
+                        }
+                        //console.log("output-->"+lineoutput[x]);
+                        //mainContent = mainContent + lineoutput[x]+"<br>";
+                    }
+                    document.getElementById("Index").innerHTML = indexContent;
+                    document.getElementById("Main").innerHTML = mainContent;
+                    document.getElementById("title").innerHTML = pageTitle;
+                    document.getElementById("header").innerHTML = pageHeader;
+                },
+            });
+        }
+		
+		//checking encrypted with aes
+        var message = "Helm is a package manager for Kubernetes that allows developers and operators to more easily package, configure, and deploy applications and services onto Kubernetes clusters.";
+        console.log(message);
+        var key = "abc123XYZ";
+        var encrypted = CryptoJS.AES.encrypt(message, key);
+        console.log(encrypted.toString());
+        var decrypted = CryptoJS.AES.decrypt(encrypted, key);
+        console.log(decrypted.toString(CryptoJS.enc.Utf8));
+    </script>
+</html>
