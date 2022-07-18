@@ -1,8 +1,8 @@
 ---> Azure Fundamentals Transcript 
 ===> Azure Fundamentals
 @☁️ Introduction
->Hey, this is Andrew Brown from exam Pro. And welcome to my az 900 course, also known as
 @⌨️ (00:07:21) Exam Guide Walkthrough
+>Hey, this is Andrew Brown from exam Pro. And welcome to my az 900 course, also known as
 >the Azure fundamentals certification for the Azure platform. So if you're new to cloud and you don't know anything, and you want to get into it, this is the course for you.
 >Because we're going to show you how to set up your account. Look over the core services and more. And as always, I'd love to hear your feedback. So if you're on Twitter or
 >LinkedIn, definitely tell me how the course is. And if you do pass, be sure to hashtag Azure Azure certified on Twitter, and I'll definitely reach out to you. I hope you pass
@@ -107,8 +107,8 @@
 >retake. So what happens if you paid for it? And like you missed it? Or how many retakes Did you get or how long the exam hours are? So there's a lot of information here. So if
 >you just want to scroll through it, but yeah, here, like, they don't say on the exam that it's 60 minutes, they just say, oh, for general, fundamental exams are 60 minutes. So we just
 >have to assume that is what that's the time you get on the az 900. But yeah, just check out that page. And check this out if it interests you. But you don't really have to, because
-@☁️ Cloud Concepts
 >we cover everything in the course that you need to know. But I just wanted those resources. I wanted to make you aware of those resources, just in case.
+@☁️ Cloud Concepts
 @⌨️ (00:13:51) What is Cloud Computing
 > Hey, this is Andrew Brown from exam Pro. And we're starting at the beginning of our journey asking the most fundamental question, which is what is cloud computing. So looking into the dictionary, cloud computing
 >is described as the practice of using a network of remote servers hosted on the internet to store manage and process data rather than a local server or personal computer. So when
@@ -133,9 +133,9 @@
 >the very least, you are getting very, very cheap servers. But there are definitely some limitations. So now coming down to cloud hosting, Cloud Hosting gives us the best of both worlds.
 >So we have multiple physical machines that act as one system, which it could be described
 >as the cloud. And that system is abstracted away into multiple cloud services. So you
->get the you get flexibility, scalability, it's very secure. It's very cost effective. And it's highly configurable. So that is where we're at. And so that is generally what cloud
+>get the you get flexibility, scalability, it's very secure. It's very cost effective. And it's highly configurable. So that is where we're at. And so that is generally what cloud computing, Cloud Hosting is.
 @⌨️ (00:17:15) Common Cloud Services
->computing, Cloud Hosting is. Hey, this is Andrew Brown from exam Pro. And we are looking
+> Hey, this is Andrew Brown from exam Pro. And we are looking
 >at common cloud services. So a cloud provider can have hundreds of cloud services are grouped
 >into various types of services. And the four most common types of cloud services for infrastructure
 >is a service. And we'll talk about what that is later on, would be compute. So this is
@@ -158,9 +158,9 @@
 >service. And so it's called Microsoft Azure, or we commonly refer to it as just Azure.
 >And so here is the logo for it. If you're wondering, what is the name behind the service,
 >it means bright blue color of the cloudless sky. So sure, that's great. And so you'll
->hear me say cloud service provider frequently it was throughout this course and it is abbreviated to CSP, but that's what Azure is. It is a cloud service provider. So there you go. Hey,
+>hear me say cloud service provider frequently it was throughout this course and it is abbreviated to CSP, but that's what Azure is. It is a cloud service provider. So there you go. 
 @⌨️ (00:19:52) Benefits of Cloud Computing
->this is Andrew Brown from exam pro and we are looking at the benefits Cloud computing. So what are the benefits? Well, we have a big list here for you starting with cost effectiveness.
+>Hey, this is Andrew Brown from exam pro and we are looking at the benefits Cloud computing. So what are the benefits? Well, we have a big list here for you starting with cost effectiveness.
 >So you pay for what you consume, there is no upfront costs, you pay as you go, also abbreviated as P A YG. And you're sharing the cost with 1000s of customers. So that's
 >how you're getting that. That Low, low cost. Another benefit is that you can go global,
 >so launch workloads anywhere in the world, just choose your region, and you are now in
@@ -284,11 +284,11 @@
 >Brown from exam Pro. And we are looking at cloud architecture terminologies and these are very important to help you conceptualize the advantages of the cloud. And so we're
 >going to go through these terms and then we're going to go through them again in more detail in further slides. So at the top of our list, we have availability and this is your ability
 >to ensure a service remains available. And this this is generally known as high height
-@⌨️ (00:35:08) High Avaliablity
 >being highly available or high availability abbreviated to h a, that's a term you should know. Then we have scalability so your ability to grow rapidly or unimpeded. Then you have
 >a lasticity. So this is your ability to shrink and grow to meet the demand. You have full
 >tolerance. This is your ability to prevent a failure, then you have disaster recovery. This is your ability to to recover, recover from a failure. And this is known generally
 >as high being highly durable or high durability. D are. So there you go,
+@⌨️ (00:35:08) High Avaliablity
 > Hey, this is Andrew
 >Brown from exam Pro. And we are looking at the concept of high availability. So this is your ability for your service to remain available by ensuring there is no single point
 >of failure, or ensure a certain level of performance. So here I have a technical architectural diagram
@@ -331,18 +331,15 @@
 >cold transactional data from Microsoft SQL Server 2016 to Microsoft Azure, not something
 
 >we're going to cover, but it's generally the same concept that skill sets do. So there you go, that's high elasticity.
+@⌨️ (00:39:35) Fault Tolerance
 @⌨️ (00:39:39) High Durability
 > Hey, this is Andrew Brown from exam Pro. And we're looking
-@⌨️ (00:39:35) Fault Tolerance
-
 >at the concept of high durability. So this is your ability to recover from a disaster and to prevent the loss of data. So this could be solutions that recover from a disaster
 >is known as disaster recovery d r, and so I'm just going to ask you a bunch of questions
 >to help you think about how to be highly durable. So one question would be like, do you have
 >a backup? So do you have a backup in place? How fast can you restore your backup? Does your backup still work? How do you ensure current live data is not corrupt. So that
 >is the concept of high durability, there's a variety of services to implement it. So it's not just a single service. But there you go, that is the full list of cloud architecture,
-@☁️ Evolution of Compute
-
->terminologies. 
+@☁️ Evolution of Compute terminologies. 
 @⌨️ (00:40:26) Dedicated Servces
 >Hey, this is Andrew Brown from exam Pro, and we are looking at the evolution
 >of computing. And this is going to really help you to understand the different layers of compute. And so we're going to start from on the left hand side to dedicated and work
@@ -393,8 +390,8 @@
 >might experience a cold start where you're waiting for a server to start before your code will execute. There's definitely ways around that. So there you go, that is the
 >evolution of compute. 
 @☁️ Global Infrastructure
->Hey, this is Andrew Brown from exam Pro. And we are looking at
 @⌨️ (00:46:19) Regions and Geographies
+>Hey, this is Andrew Brown from exam Pro. And we are looking at
 >regions and geographies for Azure. So a region is a grouping of multiple data centers. And
 >for Azure, they call their data centers, availability zones, as your has 58 regions available across
 >140 countries. One thing Azure likes to promote is that they have the most regions out of
@@ -897,9 +894,8 @@
 >Ruby. Then you have blob storage. So this is serverless. object storage, just upload your files, don't think about the underlying file systems resizing, basically unlimited
 >space, and you can upload pretty darn large files. Then you have Logic Apps allows you to build serverless workflows composed of Azure Functions, building a, I would say this
 >is you building a state machine for serverless compute, then you have event bridge, which seems a bit similar, but it's not it uses pub sub messaging systems to allow you to
->react to events and trigger other Azure cloud services such as Azure Functions. So there
+>react to events and trigger other Azure cloud services such as Azure Functions. So there you go, that is serverless services.
 @☁️ Management Tools
->you go, that is serverless services.
 @⌨️ (01:46:07) Azure Portal
 > Hey, this is Andrew Brown from exam Pro. And we
 >are looking at the Azure portal. So the Azure portal is a web based unified console that
@@ -934,9 +930,9 @@
 >PowerShell, I'm on my Windows computer right now. And this is natively installed on my,
 >my windows 10 computer, and I can type in commands here. And so this is just give me a list of all my, my my directories in in this current folder. But I just also want
 >to show you that we have PowerShell here in the Azure portal. So I'm using the Cloud Shell
+>up here, and I've chosen to use PowerShell. And you can see it's pretty much the same experience with some extra things that make it easier to work on cloud. So that's it
 @⌨️ (01:50:00) VIsual Studio Code
->up here, and I've chosen to use PowerShell. And you can see it's pretty much the same experience with some extra things that make it easier to work on cloud. So that's it Hey,
->this is Andrew Brown from exam Pro. And we're looking at Visual Studio code. So Visual Studio code is a free source code editor, meaning it at its code made by Microsoft, for Windows,
+>Hey, this is Andrew Brown from exam Pro. And we're looking at Visual Studio code. So Visual Studio code is a free source code editor, meaning it at its code made by Microsoft, for Windows,
 >Linux and Mac OS. And you can even run it in the cloud. If you're wondering what it looks like this is the editor. And this is not to be confused with Visual Studio. So
 >Visual Studio is an ID, and is also for programming. But it has a lot of functionality built in here is Visual Studio Code open source? Well, they say that it is but I don't know to what
 >degree I don't know if it's 100% open source. But this is the most popular text editor or
@@ -1053,8 +1049,9 @@
 >Azure is that it takes time for it to propagate. So what we'll have to do is just hit refresh,
 >and now it's gone. So just be aware that sometimes the consistency in terms of what you see in
 >the UI is a bit delayed. And so if you remember clicking Delete, and it says that it deleted
+>it, just have a bit of patience there and hit refresh and just double check to make sure that's the case. So there you go.
 @⌨️ (02:04:16) Creating a Azure Function
->it, just have a bit of patience there and hit refresh and just double check to make sure that's the case. So there you go. Okay, great. So now that we've done that, let's
+> Okay, great. So now that we've done that, let's
 >actually go learn how to do a different kind of compute, which is serverless functions.
 >So if we want to launch your own serverless function, by the way, if you're not at the screen, just click on Microsoft Azure here at the top. And we're going to go to our search
 >and we're going to type in functions. And so on the left hand side, I want you to click
@@ -1286,8 +1283,8 @@
 >a visual down below, you have the internet, you have your application gateway, and you can optionally attach your your wife to it. And as traffic flows through, you can create
 >some rules. So let's say you had a server that served up all your JavaScript assets,
 >and a server that served up all your images, you could make a rule that saying when the path matches this, only send it to this server and when the path matches that, only send
-@⌨️ (02:32:22) Advanced Threat Protection ATP
 >it to that server. Okay, so there's, there you go, that's Azure application gateway.
+@⌨️ (02:32:22) Advanced Threat Protection ATP
 >Hey, this is Andrew Brown from exam Pro. And we are looking at Azure Advanced Threat Protection,
 >also known as ATP. And so before we talk about the service, let's talk about what is IDs
 >and IPS. I know there's a lot of acronyms being thrown at you today. So IDs stands for
@@ -1389,8 +1386,8 @@
 >most impact can occur and leaving, tell you how much money you can save if you follow its recommendations of the new app security. And so here, it has 21 recommendations, if
 >we click into it, it would tell you what kind of things that you could improve in your system to improve your security. So there you go, that's Azure AD. 
 @☁️ Billing and Pricing
->Hey, this is Andrew Brown
 @⌨️ (02:43:38) Service Level Agreements
+>Hey, this is Andrew Brown
 >from exam Pro. And we are looking at SLA s for Azure. So SLA stands for service level
 >agreement. And this describes Asher's commitment for uptime and connectivity. That, that means
 >like if you have a web server, Azure is going to say, yeah, we guarantee 99.9% of the time
@@ -1586,9 +1583,9 @@
 >And so this service allows you to perform cost analysis. So you can visualize the spending of your Azure cloud resources. But you can also create a budget under the service. So
 >when you set a budget, you're going to, you're going to define a threshold and you're going to be alerted when you're approaching or you've exceeded that threshold. And so just to give
 >you a visual representation there that is for the cost analysis. So you can see you get beautiful graphs, and you can drill down and filter that stuff out to really understand
+>how you're spending stuff on Azure. So definitely check it out. And there you go.
 @☁️ Summary
 @⌨️ (03:07:19) Booking Your Exam
->how you're spending stuff on Azure. So definitely check it out. And there you go. 
 >Hey, this is Andrew Brown. From exam Pro, I'm going to show you how to book your exam for the az 900. So what I want you to do is type in Pearson VUE Azure, or Pearson, Vue Microsoft
 >into Google, and you should make your way to this page. And then what you're going to want to do is on the right hand side, go ahead there and click login, then it's gonna ask
 >what certification you want to type in the az 900. And so there is the certification
