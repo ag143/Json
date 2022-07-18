@@ -213,10 +213,10 @@
 >have to assume that is what that's the time you get on the az 900. But yeah, just check out that page. And check this out if it interests you. But you don't really have to, because
 13:45
 @☁️ Cloud Concepts
+
+>we cover everything in the course that you need to know. But I just wanted those resources. I wanted to make you aware of those resources, just in case.
 @⌨️ (00:13:51) What is Cloud Computing
->we cover everything in the course that you need to know. But I just wanted those resources. I wanted to make you aware of those resources, just in case. Hey, this is Andrew Brown from
-13:56
->exam Pro. And we're starting at the beginning of our journey asking the most fundamental question, which is what is cloud computing. So looking into the dictionary, cloud computing
+> Hey, this is Andrew Brown from exam Pro. And we're starting at the beginning of our journey asking the most fundamental question, which is what is cloud computing. So looking into the dictionary, cloud computing
 14:05
 >is described as the practice of using a network of remote servers hosted on the internet to store manage and process data rather than a local server or personal computer. So when
 14:15
@@ -287,8 +287,9 @@
 18:23
 >categories. So when I say cloud computing, I could be referring to compute network storage and databases. But you can also say cloud storage, cloud Compute Cloud databases, cloud
 18:32
-@⌨️ (00:18:35) What is Microsoft and Azure
->networking, and people will know what you mean. Hey, this is Andrew Brown from exam
+>networking, and people will know what you mean.
+@⌨️ (00:18:35) What is Microsoft and Azure 
+>Hey, this is Andrew Brown from exam
 18:40
 >Pro, and we are looking at what is Microsoft. So you've probably seen this logo before.
 18:45
@@ -335,9 +336,10 @@
 21:16
 >to you. And I mean, the last one, there is cases of interruption, but generally, fewer
 21:22
->interruptions than you would have on prem. So there you go. Hey, this is Andrew Brown
-21:30
+>interruptions than you would have on prem. So there you go.
 @⌨️ (00:21:25) Types of Cloud Computing
+> Hey, this is Andrew Brown
+21:30
 >from exam Pro. And we are looking at the different types of cloud computing. And we have this nice pyramid on left hand side to help us understand how each type builds off the other.
 21:40
 >Starting at the top of our pyramid, we have Software as a Service, also known as SAS. And this is a product that is run and managed by the service provider, you don't worry about
@@ -368,9 +370,10 @@
 23:31
 >or even Oracle Cloud. And so this is really intended for administrators. So that is the
 23:37
->three types of cloud computing. And there you go, Hey, this is Andrew Brown from exam
-23:45
+>three types of cloud computing. And there you go,
 @⌨️ (00:23:39) Types of Cloud Computing Responsibilities
+>Hey, this is Andrew Brown from exam
+23:45
 >Pro. And we're looking at the types of cloud computing responsibilities. So we saw the three categories there. But we don't really understand what it is that we're responsible
 23:54
 >for what is the cloud service provider responsible for? So let's lay out our categories. And
@@ -395,8 +398,9 @@
 25:01
 >servers, it's the same as for storage, it's the same and for networking, it's the same. So you can see that on premise, you're responsible for everything. And the farther we move up
 25:13
+>the types of cloud computing, the less responsibility you have, 
 @⌨️ (00:25:16) Cloud Deployment Models
->the types of cloud computing, the less responsibility you have, hey, this is Andrew Brown from exam
+>hey, this is Andrew Brown from exam
 25:22
 >Pro. And we were looking at Azure as deployment models. And the first model we're going to talk about is public cloud. And that's where everything is built on the cloud service provider,
 25:31
@@ -466,8 +470,10 @@
 29:41
 >treated like they're on the same network. So cross cloud is becoming very popular with extremely large organizations where they they have a very unique requirements, but I definitely
 29:51
+
+>want you to know what that is, because it just gets left out. And it's definitely something that is part of the industry. So there you go. 
 @⌨️ (00:29:57) Total Cost of Ownership
->want you to know what that is, because it just gets left out. And it's definitely something that is part of the industry. So there you go. Hey, this is Andrew Brown from exam Pro.
+>Hey, this is Andrew Brown from exam Pro.
 30:03
 >And we're looking at the concept of total cost of ownership to CEO. So what is the difference between on premise so having your own data centers, and then using Azure, and you'll
 30:12
@@ -499,8 +505,9 @@
 31:53
 >of money, okay, 75% of what you generally would spend. And so now all this stuff on the left hand side is now Azure is responsibility, you don't take care of those anymore, Azure
 32:02
+>is going to take care of it for you. So that's total cost of ownership. 
 @⌨️ (00:32:06) CAPEX vs OPEX
->is going to take care of it for you. So that's total cost of ownership. Hey, this is Andrew
+>Hey, this is Andrew
 32:11
 >Brown from exam Pro, and we're looking at Capital versus operational expenditure. So on the left hand side, we have capex, so capital expenditures. On the right hand side, we have
 32:19
@@ -532,8 +539,9 @@
 33:54
 >expenses, you can try a product or service without investing equipment. So we have flexibility of investment. And we also from the previous slide, we saw that we have a huge reduction
 34:05
+>cost. So there's two reasons, really good reasons to use the cloud.
 @⌨️ (00:34:08) Cloud Architecture Terminologies
->cost. So there's two reasons, really good reasons to use the cloud. Hey, this is Andrew
+> Hey, this is Andrew
 34:13
 >Brown from exam Pro. And we are looking at cloud architecture terminologies and these are very important to help you conceptualize the advantages of the cloud. And so we're
 34:22
@@ -548,7 +556,8 @@
 34:51
 >tolerance. This is your ability to prevent a failure, then you have disaster recovery. This is your ability to to recover, recover from a failure. And this is known generally
 35:01
->as high being highly durable or high durability. D are. So there you go, Hey, this is Andrew
+>as high being highly durable or high durability. D are. So there you go,
+> Hey, this is Andrew
 35:13
 >Brown from exam Pro. And we are looking at the concept of high availability. So this is your ability for your service to remain available by ensuring there is no single point
 35:22
@@ -579,9 +588,11 @@
 >a data center or server becomes unavailable, so unhealthy, the load balancer will route the traffic to only available data centers, with servers. So there you go, that is high
 36:48
 
->availability. Hey, this is Andrew Brown from exam Pro. And we're looking at the concept
-36:56
+>availability. 
 @⌨️ (00:36:49) High Scalability
+>Hey, this is Andrew Brown from exam Pro. And we're looking at the concept
+36:56
+
 >of high scalability. And this is your ability to increase your capacity based on the increasing demand of traffic memory and computing power. If you are a growing company, you're going
 37:05
 >to have to scale up, you're gonna have to get bigger and better servers. But the there are different types of scaling. And the first type is vertical scaling. This is the most
@@ -592,9 +603,11 @@
 37:31
 >servers, because we saw with the high availability, we have a load balancer, we can distribute traffic to multiple servers, and three servers can equal the same thing as one big server.
 37:41
->So horizontal scaling is when we add more servers of the same size. Hey, this is Andrew
-37:51
+>So horizontal scaling is when we add more servers of the same size. 
 @⌨️ (00:37:46) High Elasticity
+>Hey, this is Andrew
+37:51
+
 >Brown from exam Pro. And we're looking at the concept of high elasticity. And this is your ability to automatically increase or decrease your capacity based on the current
 38:03
 >demand of traffic memory and computing power. So this sounds a lot like high scalability, but the key difference is that it's automatic. And you can decrease the demand, not just
@@ -619,8 +632,10 @@
 39:23
 >cold transactional data from Microsoft SQL Server 2016 to Microsoft Azure, not something
 39:28
+
+>we're going to cover, but it's generally the same concept that skill sets do. So there you go, that's high elasticity.
 @⌨️ (00:39:39) High Durability
->we're going to cover, but it's generally the same concept that skill sets do. So there you go, that's high elasticity. Hey, this is Andrew Brown from exam Pro. And we're looking
+> Hey, this is Andrew Brown from exam Pro. And we're looking
 39:45
 @⌨️ (00:39:35) Fault Tolerance
 
@@ -635,8 +650,10 @@
 >is the concept of high durability, there's a variety of services to implement it. So it's not just a single service. But there you go, that is the full list of cloud architecture,
 40:25
 @☁️ Evolution of Compute
+
+>terminologies. 
 @⌨️ (00:40:26) Dedicated Servces
->terminologies. Hey, this is Andrew Brown from exam Pro, and we are looking at the evolution
+>Hey, this is Andrew Brown from exam Pro, and we are looking at the evolution
 40:33
 >of computing. And this is going to really help you to understand the different layers of compute. And so we're going to start from on the left hand side to dedicated and work
 40:42
@@ -683,9 +700,10 @@
 43:25
 >with you. So you can run, you could run, if you had three apps, you could run them as three virtual machines. So you're not have that issue. But if they're on the same VM,
 43:32
->you still have that issue. So there you go, that is virtual machines. And we'll move on to containers. Hey, this is Andrew Brown from exam Pro. And we are looking at the concept
-43:44
+>you still have that issue. So there you go, that is virtual machines. And we'll move on to containers. 
 @⌨️ (00:43:38) Containers
+>Hey, this is Andrew Brown from exam Pro. And we are looking at the concept
+43:44
 >of containers. And so this takes it a step further, where we have virtual machines, and we're running multiple containers. So we're even, we're further subdividing the way that
 43:53
 >we run our applications. And the technology that is used to run containers within a VM
@@ -725,9 +743,10 @@
 46:11
 >might experience a cold start where you're waiting for a server to start before your code will execute. There's definitely ways around that. So there you go, that is the
 46:17
->evolution of compute. Hey, this is Andrew Brown from exam Pro. And we are looking at
-46:27
+>evolution of compute. 
 @☁️ Global Infrastructure
+>Hey, this is Andrew Brown from exam Pro. And we are looking at
+46:27
 @⌨️ (00:46:19) Regions and Geographies
 >regions and geographies for Azure. So a region is a grouping of multiple data centers. And
 46:34
@@ -788,9 +807,10 @@
 50:15
 >for North America. And when we say North America, we're really talking about the United States. Its East us region paired with the West us region. And then for Germany, you have Germany
 50:25
->Central, and German, Germany, north east. So it gives you an idea how far away they are 300 miles, that's quite a distance. But there you go. Hey, this is Andrew Brown from
-50:39
+>Central, and German, Germany, north east. So it gives you an idea how far away they are 300 miles, that's quite a distance. But there you go. 
 @⌨️ (00:50:34) Region Types and Service Availability
+>Hey, this is Andrew Brown from
+50:39
 >exam Pro. And we are looking at region types and service availability for Azure. And what
 50:45
 >I want you to know about a service availability regarding regions is that not all cloud services
@@ -846,8 +866,10 @@
 54:04
 >to operate these regions, you'd probably be assistant of these countries. And you'd also be an employee of the government. So it's not going to be for citizens to use. But there
 54:12
+
+>you go. 
 @⌨️ (00:54:14) Availability Zones
->you go. Hey, this is Andrew Brown from exam Pro. And we are looking at availability zones
+>Hey, this is Andrew Brown from exam Pro. And we are looking at availability zones
 54:22
 >for Azure. And so availability zones, abbreviated to short for AZ and you'll hear me using that
 54:29
@@ -877,9 +899,10 @@
 56:10
 >zone, and then we choose which one we want to launch it into. So if we, if we choose to, it's going to go into availability zone two, that doesn't mean we're gonna launch
 56:16
->two instances, it just means availability zone two. So there you go. Hey, this is Andrew
-56:25
+>two instances, it just means availability zone two. So there you go.
 @⌨️ (00:56:20) AZ Supported Regions
+> Hey, this is Andrew
+56:25
 >Brown from exam Pro. And we're looking at AZ supported regions for Azure. And so not every region has support for availability zones, and we touched on this in the region
 56:34
 >section, but we'll touch on it here again. So we know that there are regions called alternate or others and these do not have availability zones whatsoever, then you have recommended
@@ -900,8 +923,9 @@
 57:40
 >And so that would be an example for Brazil, South where it's just there are there is a
 57:45
+>single az, but it's described as not having AZ so you just don't choose it in the interface. So there you go. 
 @⌨️ (00:57:51) Avaliablity Sets Fault and Update Domains
->single az, but it's described as not having AZ so you just don't choose it in the interface. So there you go. Hey, this is Andrew Brown from exam Pro. And we were looking at fault
+>Hey, this is Andrew Brown from exam Pro. And we were looking at fault
 57:58
 >and update domains. So an availability zone in an Azure region is a combination of a fault
 58:05
@@ -963,10 +987,11 @@
 1:01:54
 >will will be will be scheduled for updates, but they won't all be updated at the same time. So if you're saying this, you'll say spread it across five machines. And that's
 1:02:02
->all there really is to it. So I just wanted to show you where that was, when you actually launch it for a virtual machine. Hey, this is Andrew Brown from exam Pro. And we are
-1:02:14
+>all there really is to it. So I just wanted to show you where that was, when you actually launch it for a virtual machine. 
 @☁️ Getting Started
 @⌨️ (01:02:08) Creating an Azure Account
+>Hey, this is Andrew Brown from exam Pro. And we are
+1:02:14
 >looking at creating ourselves our own Azure account so that we can get some hands on experience with Azure. So what I've done here is I've gone to Azure dot Microsoft COMM And that's
 1:02:23
 >what I want you to do as well. And then when you're here, just look for a free account, they have it everywhere. So they have it here and they have it here. And I bet you could
@@ -1027,9 +1052,10 @@
 1:06:05
 >converted my currency, it's a bit higher. And so it might be different for for you.
 1:06:11
->But there you go, that's all we had to do to create an account. And now we can actually start learning other things in Azure. Hey, this is Andrew Brown from exam Pro. And I
-1:06:21
+>But there you go, that's all we had to do to create an account. And now we can actually start learning other things in Azure. 
 @⌨️ (01:06:16) Azure Portal Layout
+>Hey, this is Andrew Brown from exam Pro. And I
+1:06:21
 >just wanted to quickly show you that you can change the experience of your Azure Portal, if you just go all the way up here and click the cog, you can switch the default view from
 1:06:29
 >home or dashboard, you can change the flyout here, so it's docked, which is a lot easier
@@ -1038,9 +1064,10 @@
 1:06:45
 >old school, but very easy on the eyes. So just wanted to make that aware to you. Because
 1:06:51
+>you may feel that you want to change your experience right off the bat. So there you go. 
 @☁️ Technology Overview
 @⌨️ (01:06:57) Computing Services
->you may feel that you want to change your experience right off the bat. So there you go. Hey, this is Andrew Brown from exam Pro. And we are looking at Azure computing services
+>Hey, this is Andrew Brown from exam Pro. And we are looking at Azure computing services
 1:07:06
 >starting with Azure virtual machines. So virtual machine is going to be the most common type of compute whenever you're launching a server, I would just think of a virtual machine. And
 1:07:16
@@ -1156,9 +1183,10 @@
 1:13:48
 >allows you to store all structured and unstructured data at any scale when you're working with big data from multiple different sources, and used to be in one place, that is the service
 1:13:58
->for you. And so that is the Azure storage services. Hey, this is Andrew Brown from exam
-1:14:07
+>for you. And so that is the Azure storage services.
 @⌨️ (01:14:02) Database Services
+>Hey, this is Andrew Brown from exam
+1:14:07
 >Pro. And we are looking at Azure database services during the top of our list is Azure Cosmos dB. This is a fully managed no SQL database. It's designed for scale with guarantee
 1:14:16
 >of 99.999% availability, as your loves talking about this database. It's their flagship database
@@ -1199,8 +1227,9 @@
 1:16:27
 >such, so why column no SQL database, a no SQL store that hosts unstructured data, independent
 1:16:32
+>of any schema. So there you go, that's the Azure database services. 
 @⌨️ (01:16:38) Application Integration
->of any schema. So there you go, that's the Azure database services. Hey, this is Andrew
+>Hey, this is Andrew
 1:16:42
 >Brown from exam Pro. And we are looking at application integration services on Azure. Now, I didn't have room on the slide for this. But just to tell you what application integration
 1:16:51
@@ -1234,8 +1263,9 @@
 1:18:43
 >our storage service sections. And I had said that I don't really consider this a storage service, I consider it an application integration service. And this is a messaging queue. So
 1:18:52
+>it's a data store for queuing and reliably delivering messages between applications. So there you go. That is the application integration services on Azure.
 @⌨️ (01:19:01) Developer and Mobile Tools
->it's a data store for queuing and reliably delivering messages between applications. So there you go. That is the application integration services on Azure. Hey, this is Andrew Brown
+> Hey, this is Andrew Brown
 1:19:06
 >from exam Pro. And we were looking at developer and mobile tools that are commonly used with
 1:19:11
@@ -1261,8 +1291,9 @@
 1:20:27
 >and scalable native mobile apps and dotnet, and Azure. And yeah, so that is the developer
 1:20:33
+>and mobile tools for Azure. 
 @⌨️ (01:20:36) Azure DevOps Services
->and mobile tools for Azure. Hey, this is Andrew Brown from exam Pro. And we're looking at
+>Hey, this is Andrew Brown from exam Pro. And we're looking at
 1:20:42
 >Azure DevOps Services. So Azure DevOps is really just an umbrella service for a bunch
 1:20:48
@@ -1292,8 +1323,9 @@
 1:22:24
 >is just an easy way to create dev test environments for your developers. And that is the Azure
 1:22:29
+>DevOps Services. 
 @⌨️ (01:22:32) Azure Resource Manager ARM
->DevOps Services. Hey, this is Andrew Brown from exam Pro, and we are looking at Azure
+>Hey, this is Andrew Brown from exam Pro, and we are looking at Azure
 1:22:39
 >Resource Manager. And just to understand the service, we understand what infrastructure as code is, so also abbreviated as IAC. This is the process of managing and provisioning
 1:22:48
@@ -1311,8 +1343,9 @@
 1:23:38
 >and clicking and doing a bunch of stuff, you just define all the stuff you want to do in JSON. This is a very short version of it, there's definitely a lot more configuration
 1:23:45
->that would be required. But here, this would be a very easy way to set up a virtual machine using code. Hey, this is Andrew Brown from exam Pro, and we are looking at Azure quickstart
+>that would be required. But here, this would be a very easy way to set up a virtual machine using code. 
 @⌨️ (01:23:51) Azure Quickstart Templates
+>Hey, this is Andrew Brown from exam Pro, and we are looking at Azure quickstart
 1:23:58
 >templates. So Azure quickstart templates is a library of pre made ARM templates provided
 1:24:04
@@ -1330,8 +1363,9 @@
 1:24:50
 >CD containerized app. with Docker enterprise Jenkins, you could use that script. And if
 1:24:55
->you wanted a web app that was running Linux with Postgres, you could use that script so it's just a quick way Getting Started. Hey, this is Andrew Brown from exam Pro. And we
+>you wanted a web app that was running Linux with Postgres, you could use that script so it's just a quick way Getting Started. 
 @⌨️ (01:25:02) vNets and Subnets
+>Hey, this is Andrew Brown from exam Pro. And we
 1:25:08
 >are looking at Azure virtual networks, also known as V net and the concept of subnets.
 1:25:13
@@ -1371,8 +1405,9 @@
 1:27:34
 >things like your database, you don't want that to be in a public subnet, but a web app,
 1:27:39
+>which generally has traffic coming from it from the internet. That's okay. All right. And that's all we need to know here. 
 @⌨️ (01:27:46) Cloud Native Networking Services
->which generally has traffic coming from it from the internet. That's okay. All right. And that's all we need to know here. Hey, this is Andrew Brown from exam Pro. And we're
+>Hey, this is Andrew Brown from exam Pro. And we're
 1:27:52
 >looking at the cloud native networking services. Now, these networking services aren't super,
 1:27:57
@@ -1431,9 +1466,10 @@
 1:31:14
 >connection between Azure virtual network and your local network. So it's just a way of
 1:31:19
->connecting with Azure. So there you go, that is the networking services. Hey, this is Andrew
-1:31:30
+>connecting with Azure. So there you go, that is the networking services.
 @⌨️ (01:31:26) Azure Traffic Manager
+> Hey, this is Andrew
+1:31:30
 >Brown from exam Pro, and we are looking at Azure Traffic Manager. So this service operates
 1:31:35
 >at the DNS layer to quickly and efficiently direct incoming DNS requests based on the routing method of your choice. So what you do is you'd choose a routing method. So we
@@ -1449,10 +1485,10 @@
 >at the DNS level, like that's a great one. And just a visual example here. Imagine we had exam pro.co. And we had a production server and a beta server. And we only want a 20%
 1:32:20
 >of our users to see the beta server. So we could use I guess we use weighted there and
-
 1:32:27
+>we'd say 80%, on prod, 20%. There. And that's how that would work. So there you go, that's Azure Traffic Manager. 
 @⌨️ (01:32:34) Azure DNS
->we'd say 80%, on prod, 20%. There. And that's how that would work. So there you go, that's Azure Traffic Manager. Hey, this is Andrew Brown from exam Pro. And we're looking at
+>Hey, this is Andrew Brown from exam Pro. And we're looking at
 1:32:40
 >Azure DNS, I told you, we would come back to this one, because we're on the networking slides, I just did not describe this in detail. So as your DNS allows you to host your domain
 1:32:51
@@ -1466,8 +1502,9 @@
 1:33:20
 >domain. So it only gives you the ability to manage DNS records, some other cloud providers, they allow you to purchase and manage but only as your DNS does not at this time, maybe
 1:33:31
+>in the future. 
 @⌨️ (01:33:32) Azure Load Balancer
->in the future. Hey, this is Andrew Brown from exam Pro. And we are looking at Azure load
+>Hey, this is Andrew Brown from exam Pro. And we are looking at Azure load
 1:33:40
 >balancer, we had only mentioned this briefly in the networking services slide. And so we'll
 1:33:45
@@ -1485,9 +1522,10 @@
 1:34:35
 >can create both a public load balancer, so that's incoming traffic from the internet to public facing servers of servers that have a public IP address with internal or an easier
 1:34:46
->way described would be a private load balancer, so incoming internal network traffic to private facing servers, so private IP addresses, so there you go. Hey, this is Andrew Brown from
-1:35:01
+>way described would be a private load balancer, so incoming internal network traffic to private facing servers, so private IP addresses, so there you go. 
 @⌨️ (01:34:56) Scale Sets
+>Hey, this is Andrew Brown from
+1:35:01
 >exam Pro, and we are looking at scale sets. And so this allows you to group identical
 1:35:08
 >virtual machines and automatically increase or decrease the amount of servers based on
@@ -1504,8 +1542,9 @@
 1:35:44
 >servers. And so what happens is the skill set decides, okay, we're gonna have to add one or two more servers. And when that CPU usage goes below 80%, but it says, okay, we
 1:35:55
->don't need those servers anymore. Get rid of them. Okay. So that is scale sets. Hey,
+>don't need those servers anymore. Get rid of them. Okay. So that is scale sets. 
 @⌨️ (01:36:00) IoT Services
+>Hey,
 1:36:04
 >this is Andrew Brown from exam Pro, and we are looking at IoT services on Azure. And so before we get into it, what is IoT? So IoT stands for Internet of Things. So a network
 1:36:15
@@ -1541,8 +1580,9 @@
 1:38:14
 >manage device updates, and assess device health. Alright, so there you go. That's your IoT
 1:38:19
+>services.
 @⌨️ (01:38:21) Big Data and Analytics Services
->services. Hey, this is Andrew Brown from exam Pro. And we are looking at big data and analytics
+> Hey, this is Andrew Brown from exam Pro. And we are looking at big data and analytics
 1:38:28
 >services on Azure. So before we jump into it, let's talk about what is big data. So it is a term used to describe massive volumes of structured and unstructured data that is
 1:38:38
@@ -1568,8 +1608,9 @@
 1:39:55
 >lakes were when we looked at storage services, but we'll describe them here just in a little bit. different way, a data lake is a storage repository that holds a vast amount of raw
 1:40:03
+>data in its native format until it is needed. So there you go, that is the big data and analytics services, we need to know. 
 @⌨️ (01:40:11) AI ML Services Introduction
->data in its native format until it is needed. So there you go, that is the big data and analytics services, we need to know. Hey, this is Andrew Brown from exam Pro. And we
+>Hey, this is Andrew Brown from exam Pro. And we
 1:40:16
 >are looking at artificial intelligence and machine learning services on Azure. So a great way of describing that is to always have this graphic here where we have this kind of like
 1:40:26
@@ -1599,8 +1640,9 @@
 1:42:05
 >you're wondering if you could easily migrate from classic to the other one, it's not easy to migrate. So basically, you definitely always want to start with Azure Machine Learning
 1:42:13
+>Services. No reason you'd want to use Azure Machine Learning Studio, unless you're using it for legacy reasons. 
 @⌨️ (01:42:21) AI ML Services
->Services. No reason you'd want to use Azure Machine Learning Studio, unless you're using it for legacy reasons. Hey, this is Andrew Brown from exam Pro. And we're still looking
+>Hey, this is Andrew Brown from exam Pro. And we're still looking
 1:42:28
 >at AI and ml services, specifically just AI services, because Azure has a lot of them,
 1:42:33
@@ -1626,8 +1668,9 @@
 1:43:49
 >and such as handwriting shapes, and document layouts. So there you go, they have a lot of services, and they haven't even made time to make all icons for them. That's how many
 1:43:57
+>they have.
 @⌨️ (01:44:00) Serverless Services
->they have. Hey, this is Andrew Brown from exam Pro. And we are looking at serverless
+> Hey, this is Andrew Brown from exam Pro. And we are looking at serverless
 1:44:06
 >services on Azure. So what is serverless This is one of the underlying servers or servers
 1:44:11
@@ -1658,8 +1701,9 @@
 >react to events and trigger other Azure cloud services such as Azure Functions. So there
 1:46:02
 @☁️ Management Tools
+>you go, that is serverless services.
 @⌨️ (01:46:07) Azure Portal
->you go, that is serverless services. Hey, this is Andrew Brown from exam Pro. And we
+> Hey, this is Andrew Brown from exam Pro. And we
 1:46:12
 >are looking at the Azure portal. So the Azure portal is a web based unified console that
 1:46:17
@@ -1689,9 +1733,10 @@
 1:47:46
 >them as well. So whatever I'm looking for, if it's monitor, we can go there. And that's
 1:47:52
->pretty much it. This is the portal. So it's just the browser when you're logged in, you can interact with any cloud resources. Hey, this is Andrew Brown from exam Pro. And we
-1:48:05
+>pretty much it. This is the portal. So it's just the browser when you're logged in, you can interact with any cloud resources. 
 @⌨️ (01:48:00) PowerShell
+>Hey, this is Andrew Brown from exam Pro. And we
+1:48:05
 >are looking at PowerShell for Azure. So first of all, what is PowerShell. So PowerShell is a task automation and configuration management tool. But an easier way to think of it, it's
 1:48:16
 >just it's a command line shell it's also a scripting language. And so when I say a command line shell, I mean this thing, this blue thing. And so if you have a Windows machine, you
@@ -1751,8 +1796,9 @@
 1:51:43
 >editor, I strongly recommend downloading this. And I just wanted to make make you familiar
 1:51:48
+>with this editor here. 
 @⌨️ (01:51:52) Cloud Shell
->with this editor here. Hey, this is Andrew Brown from exam Pro. And we're looking at
+>Hey, this is Andrew Brown from exam Pro. And we're looking at
 1:51:58
 >Azure Cloud Shell. So Azure Cloud Shell is an interactive authenticated browser accessible
 1:52:04
@@ -1764,9 +1810,10 @@
 1:52:29
 >PowerShell or it will depends on what you choose, but it will open it up down below. And then you'll be able to use PowerShell right away and also the CLR right away, which
 1:52:40
->we'll talk about next is the Azure Salesforce. Hey, this is Andrew Brown from exam Pro. And
-1:52:48
+>we'll talk about next is the Azure Salesforce. 
 @⌨️ (01:52:43) Azure CLI
+>Hey, this is Andrew Brown from exam Pro. And
+1:52:48
 >we are looking at Azure see ally. So what is the CLR will CL eyes stands for command
 1:52:53
 >line interface. And it processes commands to a computer program in the form of lines
@@ -1789,9 +1836,10 @@
 1:53:51
 >resources. And there's tons and tons of ci commands for Azure. So you basically anything
 1:53:57
->you're looking at pretty much can be created with the CLR programmatically. Hey, this is
+>you're looking at pretty much can be created with the CLR programmatically. 
 @☁️ Follow Alongs
 @⌨️ (01:54:03) Create a Resource Group
+>Hey, this is
 1:54:07
 >Andrew Brown from exam Pro, and I'm going to show you how to create resource groups. And the reason why we are going to make one is because without one, we're not going to
 1:54:13
@@ -1821,8 +1869,9 @@
 1:55:45
 >So that's all there really is to it. Nothing super exciting there. I'm just going to click Microsoft Azure at the top here to get back to my dashboard. And I'll see you in the next
 1:55:53
+>follow along. 
 @⌨️ (01:55:55) Create a vNet
->follow along. Hey, this is Andrew Brown from exam Pro. And we're going to look at making
+>Hey, this is Andrew Brown from exam Pro. And we're going to look at making
 1:56:01
 >our own virtual network. So we made a resource group, but we also need a virtual network or V net. So we actually have some network to launch our resources within. So what I
 1:56:11
@@ -1854,8 +1903,9 @@
 1:58:13
 >Nothing we need to know at this level, we just need that virtual network so we can launch resources in. So now that we have resource groups and virtual networks, we can start
 1:58:21
->launching resources. So there you go, I'll see you in the next follow along. Hey, this
+>launching resources. So there you go, I'll see you in the next follow along. 
 @⌨️ (01:58:26) Launching a Server
+>Hey, this
 1:58:30
 >is Andrew Brown from exam Pro. And I'm going to show you how to launch your own server on Azure. And so a server would be considered some kind of computing service. And the one
 1:58:39
@@ -2012,8 +2062,9 @@
 2:08:34
 >And there you go. So that's, that's all there is there to it for serverless compute, go back to Microsoft Azure here, back to the dashboard. And we'll see you in the next follow
 2:08:42
+>along. 
 @⌨️ (02:08:44) Storing files in Blob Storage
->along. Hey, this is Andrew Brown. And in this video, I'm going to show you how to set up
+>Hey, this is Andrew Brown. And in this video, I'm going to show you how to set up
 2:08:51
 >blob storage. And so if you remember through the actual course, Blob Storage is like serverless
 2:08:57
@@ -2061,8 +2112,9 @@
 2:11:59
 >delete. And there you go. So just go back to Microsoft Azure there and back on your
 2:12:05
+>desktop, and I'll see you in the next follow along. 
 @⌨️ (02:12:08) Exploring Azure Cloud Shell
->desktop, and I'll see you in the next follow along. Hey, this is Andrew Brown from exam
+>Hey, this is Andrew Brown from exam
 2:12:13
 >Pro. And I'm going to show you how to use Cloud Shell. So if you want to, it actually
 2:12:18
@@ -2082,11 +2134,11 @@
 2:13:36
 >here, AZ account list. And there we go. So we got some account information back there.
 2:13:42
->So that's all I wanted to show you for PowerShell, we can go ahead here and I think we can just power it off, or that would restart it, we just hit X. And there you go. That's it. Hey,
+>So that's all I wanted to show you for PowerShell, we can go ahead here and I think we can just power it off, or that would restart it, we just hit X. And there you go. That's it. 
 @☁️ Security
 @⌨️ (02:13:52) Azure Trust Center
 2:13:56
->this is Andrew Brown from exam Pro. And we are looking at the Azure Trust Center. So all it is it's a public facing website portal providing easy access to privacy, security
+>Hey,this is Andrew Brown from exam Pro. And we are looking at the Azure Trust Center. So all it is it's a public facing website portal providing easy access to privacy, security
 2:14:06
 >and regulatory compliance information. So there it is, that is the portal. If you type
 2:14:12
@@ -2172,9 +2224,10 @@
 >used by government entities in the UK. And the last one is FIPS. And we will be talking about FIPS. Again, in this course here. So this is the US and Canadian government standard
 2:19:16
 >that specifies the security requirements for cryptographic modules that protect sensitive
-@⌨️ (02:19:25) Azure Active Directory
 2:19:22
->information. So there you go, that's compliance programs. Hey, this is Andrew Brown from exam
+>information. So there you go, that's compliance programs. 
+@⌨️ (02:19:25) Azure Active Directory
+>Hey, this is Andrew Brown from exam
 2:19:31
 >Pro, and we are looking at Azure Active Directory. So Azure Active Directory, abbreviated to
 2:19:36
@@ -2202,8 +2255,9 @@
 2:20:59
 >and then premium to you have identity production and identity governance. But if I didn't make it clear, active directory is what you use to help your employee sign in and access resources.
 2:21:09
->That is what it does, it controls access to resources. So there you go. Hey, this is Andrew
+>That is what it does, it controls access to resources. So there you go. 
 @⌨️ (02:21:14) MFA
+>Hey, this is Andrew
 2:21:19
 >Brown from exam Pro. And we are looking at multi factor authentication. So what is MFA?
 2:21:26
@@ -2227,8 +2281,9 @@
 2:22:38
 >give you a random number that expires, like every, I don't know, 10 seconds, you have to enter that in with your username and password or as a second step, and then you gain access
 2:22:48
->to Azure Portal. Hey, this is Andrew Brown from exam Pro. And we are looking at Azure
+>to Azure Portal. 
 @⌨️ (02:22:50) Azure Security Center
+>Hey, this is Andrew Brown from exam Pro. And we are looking at Azure
 2:22:58
 >Security Center. So Azure Security Center is a unified infrastructure security management
 2:23:03
@@ -2238,8 +2293,9 @@
 2:23:17
 >And it's gonna tell you, if you are compliant with particular policies, they'll tell you
 2:23:22
->about your security, hygiene, all sorts of security stuff, so you have a good visual about your security within Azure. So there you go. Hey, this is Andrew Brown from exam
+>about your security, hygiene, all sorts of security stuff, so you have a good visual about your security within Azure. So there you go. 
 @⌨️ (02:23:31) Key Vault
+>Hey, this is Andrew Brown from exam
 2:23:37
 >Pro, and we're looking at Key Vault. So Azure Key Vault helps you safeguard cryptographic
 2:23:43
@@ -2275,8 +2331,9 @@
 2:25:39
 >they're generally going to be FIPS 140, hyphen, three compliant, so a single customer on a dedicated HSM, it's better to be FIPS 140, hyphen, three compliant. But what FIPS 140
 2:25:51
+>hyphen two is pretty good for most people. So there you go. 
 @⌨️ (02:25:55) Azure DDoS Protection
->hyphen two is pretty good for most people. So there you go. Hey, this is Andrew Brown
+>Hey, this is Andrew Brown
 2:26:01
 >from exam Pro. And we were looking at Azure DDoS protection. So before we talk about DDoS
 2:26:07
@@ -2314,8 +2371,9 @@
 2:28:10
 >a team that you can talk to. And they'd have a guarantee of application cost protection. So SLA, so if, if they couldn't prevent the attack, and if you lost the cost of money,
 2:28:20
+>they're going to give you credits or help you out. Okay, so that is DDoS protection for Azure.
 @⌨️ (02:28:26) Azure Firewall
->they're going to give you credits or help you out. Okay, so that is DDoS protection for Azure. Hey, this is Andrew Brown from exam Pro. And we are looking at Azure firewall,
+>Hey, this is Andrew Brown from exam Pro. And we are looking at Azure firewall,
 2:28:35
 >which is a managed cloud based network security service that protects your Azure virtual network
 2:28:41
@@ -2343,8 +2401,9 @@
 2:29:59
 >There's no additional costs for a firewall deployed in an availability zone. There's
 2:30:04
+>an additional cost for inbound and outbound data transfers associated with ACS, which is, is, is typical. So there you go, 
 @⌨️ (02:30:12) Azure Information Protection
->an additional cost for inbound and outbound data transfers associated with ACS, which is, is, is typical. So there you go, Hey, this is Andrew Brown from exam Pro. And we're
+>Hey, this is Andrew Brown from exam Pro. And we're
 2:30:19
 >looking at Azure Information Protection, also known as AIP. And what this does is it protects
 2:30:24
@@ -2356,8 +2415,9 @@
 2:30:49
 >the access controls the privacy controls of your data. And this is really important if you are a larger Corporation. And this kind of stuff really matters to you. So that is
 2:30:57
+>Azure Information Protection, just think of that button that you click, and then you have those security controls. 
 @⌨️ (02:31:02) Application Gateway
->Azure Information Protection, just think of that button that you click, and then you have those security controls. Hey, this is Andrew Brown from exam Pro. And we're looking at
+>Hey, this is Andrew Brown from exam Pro. And we're looking at
 2:31:10
 >Azure application gateway. So I believe we talked about application gateway earlier. And it is a load balancer. And specifically, it's an application load balancer. So it operates
 2:31:20
@@ -2400,8 +2460,9 @@
 2:33:33
 >identities and malicious insight actions directed at your organization. So there you go, that's
 2:33:40
+>what it does. 
 @⌨️ (02:33:40) Microsoft Security Development Lifecycle SDL
->what it does. Hey, this is Andrew Brown from exam Pro. And we were looking at the Microsoft
+>Hey, this is Andrew Brown from exam Pro. And we were looking at the Microsoft
 2:33:48
 >Security development lifecycle, also known as STL. Or some people might call it an STL.
 2:33:55
@@ -2433,9 +2494,10 @@
 >by comparing the properties of those resources to business rules. And these business rules described in JSON format are known as policy definitions. So if it's not clear, just yet,
 2:35:34
 >do not worry, we're going to be looking at policy definitions very soon. But just understand what Azure policies do. They're used to create, assign, manage policies and enforce and control
-@⌨️ (02:35:44) Role Based Access Control RBAC
 2:35:43
->properties of your resources. Hey, this is Andrew Brown from exam Pro. And we are looking
+>properties of your resources. 
+@⌨️ (02:35:44) Role Based Access Control RBAC
+>Hey, this is Andrew Brown from exam Pro. And we are looking
 2:35:52
 >at Azure role based access controls our b a c, so this is a service in particular, but
 2:35:59
@@ -2491,9 +2553,10 @@
 2:39:07
 >only grant. So their job is to give access to other resources, but they can't do anything
 2:39:13
->themselves. So there you go, that is role based access controls. Hey, this is Andrew
-2:39:23
+>themselves. So there you go, that is role based access controls. 
 @⌨️ (02:39:17) Lock resources
+>Hey, this is Andrew
+2:39:23
 >Brown from exam Pro. And we are looking at Lock resources. So as an image, you may need to lock a subscription resource group or resource to prevent other users from accidentally letting
 2:39:34
 >other users delete or modify critical resources. So in the Azure portal, you can set the following
@@ -2504,10 +2567,10 @@
 2:39:53
 >and modify resource but they cannot delete the resource. Then you have read only and
 2:39:58
->in the Azure portal, it's going to be read hyphen only. And this is so that authorized users can read a resource, but they can't delete or update a resource. Hey, this is
+>in the Azure portal, it's going to be read hyphen only. And this is so that authorized users can read a resource, but they can't delete or update a resource. 
 2:40:13
 @⌨️ (02:40:07) Management Groups
->Andrew Brown from exam Pro. And let's look at Azure Management Group. So Azure Management groups is a way of managing multiple, multiple subscriptions. And when you hear the word
+>Hey, this is Andrew Brown from exam Pro. And let's look at Azure Management Group. So Azure Management groups is a way of managing multiple, multiple subscriptions. And when you hear the word
 2:40:22
 >subscriptions in Azure just think accounts, because that's an easier way to think about it into a hierarchical structure. So each directory is given a single top level management
 2:40:31
@@ -2519,8 +2582,9 @@
 2:40:52
 >you have those individual subscriptions. Again, just things like an account. So that is Azure
 2:40:58
+>Management groups. 
 @⌨️ (02:40:58) Azure Monitor
->Management groups. Hey, this is Andrew Brown from exam Pro, and we are looking at Azure
+>Hey, this is Andrew Brown from exam Pro, and we are looking at Azure
 2:41:07
 >monitor. So Azure monitor is a comprehensive solution for collecting, analyzing and acting on elementary dental telemetry from your cloud and on premise environment. So if you were
 2:41:19
@@ -2532,8 +2596,9 @@
 2:41:40
 >So with Azure monitor, you can create a Visual Dashboard, as we can see here, you can create smart alerts, you can create automated actions, and you can collect logs, so that you have
 2:41:50
+>log monitoring. So there you go.
 @⌨️ (02:41:52) Service Health
->log monitoring. So there you go. Hey, this is Andrew Brown from exam Pro. And we're looking
+> Hey, this is Andrew Brown from exam Pro. And we're looking
 2:42:01
 >at Azure service health. So this is about information about current upcoming issues such as service impacting events, planned maintenance, and other changes that may affect
 2:42:10
@@ -2543,10 +2608,10 @@
 2:42:26
 >about the health of the individual cloud resources, such as your VM. So if you're ever wondering
 2:42:31
->the state of your health, you can use Azure service health and if you noticed, it was an option under Azure monitor. So if you're looking for it, that's where you go to find
+>the state of your health, you can use Azure service health and if you noticed, it was an option under Azure monitor. So if you're looking for it, that's where you go to find it. 
 2:42:39
 @⌨️ (02:42:39) Azure Advisor
->it. Hey, this is Andrew Brown from exam Pro, and we're looking at Azure advisor. So average
+>Hey, this is Andrew Brown from exam Pro, and we're looking at Azure advisor. So average
 2:42:48
 >Azure advisor is a personalized cloud consultant that helps you follow best practices to optimize your Azure deployments. The ad, the advisor, dashboard displays personalized recommendations
 2:42:58
@@ -2558,8 +2623,9 @@
 2:43:21
 >most impact can occur and leaving, tell you how much money you can save if you follow its recommendations of the new app security. And so here, it has 21 recommendations, if
 2:43:31
->we click into it, it would tell you what kind of things that you could improve in your system to improve your security. So there you go, that's Azure AD. Hey, this is Andrew Brown
+>we click into it, it would tell you what kind of things that you could improve in your system to improve your security. So there you go, that's Azure AD. 
 @☁️ Billing and Pricing
+>Hey, this is Andrew Brown
 @⌨️ (02:43:38) Service Level Agreements
 2:43:44
 >from exam Pro. And we are looking at SLA s for Azure. So SLA stands for service level
@@ -2598,8 +2664,9 @@
 2:45:54
 >tons of information about their SLA s. And then our performance targets are down here. So we have this for availability, this is for read availability. So they have a lot
 2:46:04
->of information. And as I said, it's for basically any service, anything you want, just click into it. And they have all that SLA information. So there you go. Hey, this is Andrew Brown
+>of information. And as I said, it's for basically any service, anything you want, just click into it. And they have all that SLA information. So there you go. 
 @⌨️ (02:46:12) Service Credits
+>Hey, this is Andrew Brown
 2:46:18
 >from exam Pro, and we are looking at service credits for Azure. So a service credit is
 2:46:23
@@ -2621,8 +2688,9 @@
 2:47:29
 >take a guess that if let's say the uptime was under 95%. And they're going to give you a service credit of 100%. Maybe it's 100% of your resources given back to you. So if
 2:47:37
+>you spend $100, you get that $100 back. So there you go.
 @⌨️ (02:47:40) Composite SLAs
->you spend $100, you get that $100 back. So there you go. Hey, this is Andrew Brown from
+> Hey, this is Andrew Brown from
 2:47:46
 >exam Pro. And we are looking at composite SLA. So we had said earlier that different
 2:47:51
@@ -2660,8 +2728,9 @@
 2:49:39
 >the the outcome would be an SLA of 99.95%. And so that's an improvement over 99.94% so
 2:49:48
->that is called composite SLA isn't there you go. Hey, this is Andrew Brown from exam pro
+>that is called composite SLA isn't there you go. 
 @⌨️ (02:49:50) TCO Calculator
+>Hey, this is Andrew Brown from exam pro
 2:49:57
 >and we are looking at the TCS calculator for Azure. So if you remember, earlier in the course, we talked about the total cost of ownership. That's what TC O stands for. It's
 2:50:06
@@ -2735,9 +2804,10 @@
 >then that would start the process of creating a virtual machine and you go through that and you'd subscribe to whatever the underlying costs would be. But you can see there's just
 2:54:14
 >tons of stuff in here. So and you can sort by price, sort by operating system. So there
-@⌨️ (02:54:21) Azure Support
 2:54:22
->you go. Hey, this is Andrew Brown from exam Pro. And we are looking at Azure support plans.
+>you go. 
+@⌨️ (02:54:21) Azure Support
+>Hey, this is Andrew Brown from exam Pro. And we are looking at Azure support plans.
 2:54:30
 >And so we have four support plans. We have basic developer standard and professional direct. Technically, we have five we count enterprise, I don't think it's going to be
 2:54:38
@@ -2848,10 +2918,10 @@
 3:01:48
 >make your way here, what I wanted to show you is that they actually have this nice little calculator down below. So if you do have licenses, and you're bringing them over and you want
 3:01:55
->to run workloads on Azure, you can fill this stuff out, and it'll give you an idea of what you might save. So I just wanted to make you aware of that. So there you go. Hey, this
+>to run workloads on Azure, you can fill this stuff out, and it'll give you an idea of what you might save. So I just wanted to make you aware of that. So there you go.
 @⌨️ (03:02:03) Azure Subscriptions
 3:02:08
->is Andrew Brown from exam Pro. And we are looking at Azure subscription. So an Azure subscription, I would describe as the equivalent of saying my Azure account. I don't know why
+> Hey, this is Andrew Brown from exam Pro. And we are looking at Azure subscription. So an Azure subscription, I would describe as the equivalent of saying my Azure account. I don't know why
 3:02:19
 >they use the term subscription, because to me, it's just confusing. But I always try to reinforce that it's just your account. And there are four tiers of Azure subscriptions.
 3:02:28
@@ -2883,8 +2953,10 @@
 3:04:06
 >process there. So you definitely have to be in school to get that but it is a very nice
 3:04:12
+
+>option to have. So there you go, that is the Azure subscription models.
 @⌨️ (03:04:15) Pricing Calculator
->option to have. So there you go, that is the Azure subscription models. Hey, this is Andrew
+> Hey, this is Andrew
 3:04:21
 >Brown from exam Pro. And we are looking at Azure pricing calculator. So configure it estimate the costs of Azure products, you don't have to sign in to use this tool. And
 3:04:30
@@ -2922,8 +2994,9 @@
 3:06:28
 >they'll show you like purchase options. But really, this just means like go sign up for an Azure account. But I just wanted to show you what that looks like in just so that you
 3:06:36
->know that you can go explore any cost, and try to calculate something before you use it. Hey, this is Andrew Brown from exam Pro. And we are looking at Azure cost management.
+>know that you can go explore any cost, and try to calculate something before you use it. 
 @⌨️ (03:06:41) Azure Cost Management
+>Hey, this is Andrew Brown from exam Pro. And we are looking at Azure cost management.
 3:06:49
 >And so this service allows you to perform cost analysis. So you can visualize the spending of your Azure cloud resources. But you can also create a budget under the service. So
 3:06:58
@@ -2933,9 +3006,9 @@
 3:07:14
 @☁️ Summary
 @⌨️ (03:07:19) Booking Your Exam
->how you're spending stuff on Azure. So definitely check it out. And there you go. Hey, this
+>how you're spending stuff on Azure. So definitely check it out. And there you go. 
 3:07:24
->is Andrew Brown. From exam Pro, I'm going to show you how to book your exam for the az 900. So what I want you to do is type in Pearson VUE Azure, or Pearson, Vue Microsoft
+>Hey, this is Andrew Brown. From exam Pro, I'm going to show you how to book your exam for the az 900. So what I want you to do is type in Pearson VUE Azure, or Pearson, Vue Microsoft
 3:07:35
 >into Google, and you should make your way to this page. And then what you're going to want to do is on the right hand side, go ahead there and click login, then it's gonna ask
 3:07:43
