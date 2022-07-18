@@ -883,6 +883,7 @@
 >and identify people and emotions in images, ink, recognizer recognize digital ink content,
 >and such as handwriting shapes, and document layouts. So there you go, they have a lot of services, and they haven't even made time to make all icons for them. That's how many
 >they have.
+@⌨️ (01:44:00) Serverless Services
 > Hey, this is Andrew Brown from exam Pro. And we are looking at serverless
 >services on Azure. So what is serverless This is one of the underlying servers or servers
 >infrastructure and OS is taken care of by the cloud service provider, it will generally be highly available scalable and cost effective. So serverless is event driven at scale. So
@@ -1043,6 +1044,7 @@
 >machine, we have some CPUs and networks on disk. So there's some activity here. If we
 >wanted to gain access to it, there should be a Connect button here, we're not going to be able to gain access to it, because we just didn't set it up in a way. That was the
 >case, we have a few options down the left hand side such as the disks that are actually attached to it, and maybe the size here. So if maybe if we wanted to resize, change it
+
 >to a larger size, we could go ahead and do that. But there's nothing really exciting here to do, I just wanted to show you how to launch your own virtual machine. And now
 >that we have our own virtual machine launch, I'm gonna go back to overview, we're going to go ahead and delete that because this is now costing us money. It's not costing us
 >a lot of money. But again, we're done here. So we'll just go ahead and delete, we're going to say yes to delete. And now it says it's still in the virtual machine. And so we're
@@ -1410,6 +1412,7 @@
 >go to database, and we choose Cosmos dB, and we just expand our information here, we get
 >tons of information about their SLA s. And then our performance targets are down here. So we have this for availability, this is for read availability. So they have a lot
 >of information. And as I said, it's for basically any service, anything you want, just click into it. And they have all that SLA information. So there you go. 
+@⌨️ (02:46:12) Service Credits
 >Hey, this is Andrew Brown
 >from exam Pro, and we are looking at service credits for Azure. So a service credit is
 >when a custom customer would get a discount on their Azure bill as competent as compensation
@@ -1422,6 +1425,7 @@
 >means is maybe it's the cost of what you spent. But anyway, I'm not exactly sure. But I would
 >take a guess that if let's say the uptime was under 95%. And they're going to give you a service credit of 100%. Maybe it's 100% of your resources given back to you. So if
 >you spend $100, you get that $100 back. So there you go.
+@⌨️ (02:47:40) Composite SLAs
 > Hey, this is Andrew Brown from
 >exam Pro. And we are looking at composite SLA. So we had said earlier that different
 >services have different SLA s. And the problem with that is that when you have different
