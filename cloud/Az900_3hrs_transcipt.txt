@@ -2,1327 +2,701 @@
 ===> Azure Fundamentals
 @☁️ Introduction
 >Hey, this is Andrew Brown from exam Pro. And welcome to my az 900 course, also known as
-0:05
 @⌨️ (00:07:21) Exam Guide Walkthrough
 >the Azure fundamentals certification for the Azure platform. So if you're new to cloud and you don't know anything, and you want to get into it, this is the course for you.
-0:13
 >Because we're going to show you how to set up your account. Look over the core services and more. And as always, I'd love to hear your feedback. So if you're on Twitter or
-0:21
 >LinkedIn, definitely tell me how the course is. And if you do pass, be sure to hashtag Azure Azure certified on Twitter, and I'll definitely reach out to you. I hope you pass
-0:30
 >and I'll see you soon. Hey, this is Andrew Brown from exam Pro. And we're looking at
-0:41
 >what is the az 900. So the Azure fundamentals is the entry level cloud certification for
-0:46
 >Microsoft Azure. This certification is generally referred to by its course code, which is the az 900. The az 900, is about knowing the Azure core services, the fundamentals of cloud computing
-0:57
 >and having a bit of hands on experience working with the Azure portal. And if you look in the top right corner, that is what the certification badge looks like once you earn it for the
-1:06
 >Azure fundamentals. And then just talking about certifications in general for Azure. If you want to have a roadmap as to what you do after this certification, as your breaks
-1:15
 >up their certifications, the role based certifications as fundamental associate expert and specialty.
-1:22
 >So in the fundamentals, we have the az 900. For the associate, we have the administrator, the developer, the AI engineer, the data scientists, the data engineer, if you notice, for data
-1:31
 >engineer, you're gonna see there's two course codes under it dp 200, dp 201, because some,
-1:37
 >some certifications require you to pass two different exams. So if you want to become a data engineer, you have to pass those two exams, that the expert level or sorry, we
-1:47
 >sell the security in associate with the expert level, we have the solution architect expert, where you have two exams, you have to pass. Then there's the DevOps engineer, expert.
-1:55
 >And then for specialties, we have Azure for SAP workloads, and IoT developer. So these
-2:01
 >are all the Azure certifications that are role based, Azure or Microsoft used to have
-2:06
 >everything that was very service or technology specific. But things have changed to roles,
-2:12
 >which makes things a lot easier for people that are hiring, because people that are hiring will look and say, Oh, you have the data engineer certification, you must know how to do data
-2:22
 >engineering. So that is really simplifying things. You can take any of these in any order that you like. So if you want to go to the expert level right away, you absolutely can.
-2:31
 >But it's not generally recommended. It's you should start with fundamentals associate go to expert, but you know, whatever you think is best for you. That's what you have to decide.
-2:40
 >So here's the az 900, for what's commonly obtained by sales and management to help inform VPS or CEOs reasons for their company to utilize Microsoft Azure. And among developers, it's
-2:53
 >to show they have familiar knowledge with cloud concepts. So anyone that's like, if you've had a program background, but just don't have cloud experience, it's just a great
-2:59
 >way to tack on the cloud skill there at az 900 focuses on building security and business
-3:06
 >centric concepts, which makes sense because if it's designed for sales and management, it's going to be things that are going to help them convince to adopt it such as, like
-3:15
 >using the TCL calculator, and, and informing decisions like that, like knowing SLA s and
-3:20
 >things like that to drive business decisions. So what value does the az 900 hold? Well, if you're developer, it's not going to be that useful on your resume, people aren't
-3:29
 >going to be trying to hire you just because you have it, you really gonna have to move on to the associate or expert track. But that doesn't mean you shouldn't get this one. If
-3:38
 >you are a developer, and you already have cloud knowledge, and another cloud provider, say you have AWS skills, you already have an associate level. And you just want to show
-3:46
 >that you can work cross cloud grabbing this certification just shows that Oh, yeah, okay, I poked around the Azure portal. So you'll have that transferable knowledge. So that
-3:55
 >would be a good case to get it as a developer. Or if you don't have any cloud certifications, and you want to make Azure the cloud provider you want to use then that makes sense to go
-4:04
 >get. The main reason I tell people always get a fundamental certification is because
-4:11
 >it helps them build confidence before you take a harder certification. It also gets you familiar with the exam experience, whether you do it in person or online, because that
-4:20
 >can be extremely stressful. Okay, so now you're convinced that you want to go get the az 900.
-4:25
 >So you're going to be asking me, well, how much time do I have to put in to gain the certification? Well, if you're developer, say, you know, a junior to mid developer,
-4:34
 >and you've been working in industry for a few years, but you don't have cloud experience, I'm going to say that you're going to have to spend about eight hours of study if you're
-4:40
 >a bootcamp grad. So you don't really have any real world industry experience. But you
-4:47
 >want to try to tack on cloud as early as possible to help your resume and stand amongst the crowd. You're probably gonna be spending 15 hours of study if you are in sales or management,
-4:56
 >so you just do not have a technical background, but you're trying to understand Why you should adopt Azure or cloud for your business, you're looking at 20 hours of study. And the way
-5:06
 >I recommend it is you want to put one to three hours a day for seven days. And I mean, every single day, you don't want to spread this stuff out. Now, next question is where do
-5:15
 >you take this exam. And the way it works with most cloud service providers as they are partnered
-5:20
 >with a, a, a company that is also partnered with a bunch of test centers around the world,
-5:30
 >and the one that Azure is partnered with is called Pearson VUE. But the great thing about Pearson VUE is that you can either go in person to a test center, so you'd use their Pearson
-5:40
 >Pearson VUE website, and it would tell you test centers nearby. Or you can take it from the convenience of your own home. So if you have a web camera, and you have a very sparse
-5:50
 >room so that you don't have a bunch of things in the background, and they can trust that you're in a secure location, the lets you take it from your home office. And that's
-5:58
 >what we call the proctored exam. And the reason we call that a proctored exam is because a proctor is a supervisor or person who monitors students during an examination. So you have
-6:08
 >those, both options available to you, if I had to choose one or the other, I would strongly recommend going in person because online, things can just go wrong, and you don't want
-6:18
 >to have that problem. But you know, it just depends on you. Okay. And the last thing is,
-6:23
 >what does it take to pass the exam. So there are three components here. The first is to watch the video lectures and memorize key information. The second thing is to do hands
-6:32
 >on labs and follow along with your own Azure account. And I will show you how to set up your own account in here. But when we get to the sections, definitely you should do
-6:41
 >it, just don't watch it, because that's going to make a huge difference to help you pass. And the last is to do paid online practice exams that simulate the real exam, you can
-6:50
 >pass the exam without using paid practice exams at the foundation level, which is this
-6:56
 >certification. It's much harder the associate and expert level. So you're going to have to go get a paid solution, if you are going to go get paid practice exams, please do me
-7:05
 >the favor and use hours because it supports us able to produce this content. So don't
-7:11
 >go and use one of those other paid providers that do not provide free content. Because for us, if we made enough money, we'd make everything free. And that's the whole point.
-7:19
 >So there you go. So now let's take a look at the exam guide and break down what it is
-7:28
 >that we're going to need to do to pass the exam and how we're going to have to study.
-7:34
 >So the first thing is the content outline. And this is basically the general domains, we're going to have to focus our time on the first being cloud concepts, this is worth
-7:42
 >15 to 25% of the exam, then you have Azure core services, this is worth 30 to 35% of
-7:48
 >the exam, then you have security, privacy, compliance, and trust, this is 25 to 3% of
-7:53
 >the exam, and then you have pricing and support, which is 20 to 25% of the exam, you'll notice
-7:59
 >that there are ranges here. So the thing is, is that it's not a guarantee that exactly 25% of the questions are going to be of that sort. So just be aware of that. Then onto
-8:11
 >grading. In order to pass this exam, you have to score 700 out of 1000. So generally you
-8:17
 >what you're trying to get is around 70% to pass I say around because you could get exactly
-8:23
 >700. And you could fail because Azure uses a scaled scoring meaning that the raw score
-8:28
 >that you get doesn't necessarily reflect the final score. So you're going to want to score a bit higher than 70%. So you want to aim for 75% or higher. The type of questions you'll
-8:40
 >see on the exam, we'll talk about here in a moment. But there are between 40 to 60 questions.
-8:46
 >So that means you have you have the chance of getting 12 to 18 questions wrong. I put an asterisk here, because people who have actually taken exam has reported only been
-8:54
 >presented with 30 questions. And I even reached out to Azure support to clarify that to say,
-9:01
 >what is the real number and their official answer was 40 to 60. But I know that when people are taking the exam, they're there, their experience is different. There's not
-9:10
 >much I can do about it. It's just that's what it is. It's going to be a bit fluid in terms of what your experience is going to be. But let's just go with this and say there's 40
-9:18
 >to 60 questions. In terms of the format of the questions, you're going to see multiple choice, you're going to see multiple answer, you're going to see maybe drag and drop, and
-9:26
 >then you might see a hot area hot areas usually just means like a couple drop downs where you have to answer two things at once. And the duration of the exam is 60 minutes. So
-9:36
 >that means you get one minute per question roughly around that time, but the exam time is 60 minutes, but the seat time is 90 minutes. So see time refers to the amount of time that
-9:46
 >you should allocate for the actual exam so that you have time that includes reviewing
-9:52
 >instructions before you start your exam reading accepting the NDA completing the actual exam
-9:57
 >itself, which is the exam time 60 minutes And then provide feedback at the end of the exam, which is generally optional. And the last thing is, how long is this certification
-10:08
 >going to be valid for, it's going to be valid for 24 months. So that means you're going to be able to hold on this for two years before you have to get recertified. So there you
-10:16
 >go. So now I just wanted to quickly show you the exam guide, they don't call their exam guide, literally exam guide, it's the Microsoft Azure fundamentals skills measured. And so
-10:26
 >this gives you pretty much the information for the breakdowns in terms of what stuff you might need to learn. But that doesn't mean necessarily everything that is listed
-10:33
 >in here is actually on the exam. But let's just quickly go through it. So you have an idea. So the first is the cloud concepts domain. And in here, we need to know, cloud terms
-10:44
 >such as availability, scalability, elasticity, fault tolerance, disaster recovery, agility, haven't seen that on the exam before, but they haven't listed there, then we have to
-10:53
 >describe the economics of scale capex versus OPEX consumption based models, then you have
-10:59
 >to describe the different types of cloud cloud models such as infrastructure as a service
-11:06
 >platform as a service Software as a Service, then we have to describe public private and
-11:11
 >hybrid cloud models. So there's that there, then you have to know a bunch of different
-11:16
 >core services for Azure. So these ones I would call them global infrastructure, they mostly have to do with networking, then you have all your core services here. And then more
-11:25
 >core services or extended services, I suppose then management tools, then you have your
-11:30
 >security, privacy, compliance and trust. So more networking components around security,
-11:36
 >but these don't really show up in the exam that much, but I've covered them anyway, just in case than Azure identities. So that's creating accounts giving access to people, the big
-11:44
 >one there is really Azure Active Directory, that other security tools. So this is just
-11:49
 >knowing about things like the Security Center, which is a security tool, or just security
-11:56
 >services. within Azure, then we have governance. So this is going to be like policies, role
-12:02
 >based access, just general access that has to do but kind of with Azure identities up
-12:08
 >here. Then monitoring tools, then we have compliance data protection standards, this is generally just pointing to websites under the Trust Center is just a website that lists
-12:16
 >compliance information that we have described pricing SLA is lifecycle. So understanding
-12:23
 >the subscriptions, so you know, free versus student versus enterprise, then here are just
-12:29
 >a bunch of pricing. So like they have a pricing calculator and a TCL calculator and understanding the support plans, and then understand the SLA s and then there's lifecycle stuff like
-12:39
 >understanding general availability. So yeah, there you go. That's the that's exam guide
-12:44
 >outline. I mean, it has stuff down here below about changes, that doesn't really matter.
-12:52
 >But yeah, that is the exam guide outline. If you want more information about the actual,
-12:59
 >like the actual exam policies, this page is really good for that I got this from the Azure support team. So it says exam policies and FAQs. So this would be about like retiring
-13:10
 >and certifications, or like how to book your exam or they would have information here about
-13:17
 >retake. So what happens if you paid for it? And like you missed it? Or how many retakes Did you get or how long the exam hours are? So there's a lot of information here. So if
-13:28
 >you just want to scroll through it, but yeah, here, like, they don't say on the exam that it's 60 minutes, they just say, oh, for general, fundamental exams are 60 minutes. So we just
-13:36
 >have to assume that is what that's the time you get on the az 900. But yeah, just check out that page. And check this out if it interests you. But you don't really have to, because
-13:45
 @☁️ Cloud Concepts
-
 >we cover everything in the course that you need to know. But I just wanted those resources. I wanted to make you aware of those resources, just in case.
 @⌨️ (00:13:51) What is Cloud Computing
 > Hey, this is Andrew Brown from exam Pro. And we're starting at the beginning of our journey asking the most fundamental question, which is what is cloud computing. So looking into the dictionary, cloud computing
-14:05
 >is described as the practice of using a network of remote servers hosted on the internet to store manage and process data rather than a local server or personal computer. So when
-14:15
 >we're talking about local, we describe this as being on premise. So being your own office or your own data center. And so this is where you own the servers, you hire the IT people,
-14:26
 >you pay the rent or the real estate, you take all the risk. Whereas with a cloud provider,
-14:31
 >if you're utilizing them, it's someone else who owns the servers, someone else who hires the IT people someone else who pays or rents the real estate, and you are only left with
-14:42
 >being responsible for configuring your cloud services and code, and someone else takes care of the rest. Sounds great, doesn't it? So now what I want to do is just give you
-14:51
 >a quick overview of how servers have evolved, and what we describe as cloud computing from
-14:57
 >a technical perspective, and we'll probably dive deeper into this later in the course.
-15:02
 >But we're just going to get a good overview here to understand from a business perspective. So way back in the day, what we had was dedicated servers, if you wanted a server to run your
-15:13
 >web app or your technology, what you had to do is you had to go buy a single, dedicated
-15:19
 >physical machine. And that was for one specific business, and dedicated servers are still used today. But there's some downsides with them. They're very expensive. They're high
-15:28
 >maintenance, however, you do get a great level of customer customization and you and you
-15:34
 >potentially can have better, better security, based on your use case, then came along was
-15:41
 >a virtual private servers. So we still had one physical machine, but we it was still
-15:47
 >dedicated to a single business, but we figured out how to take that physical machine and virtualize it into sub machines. So now we could fully utilize or better utilize that
-15:57
 >physical server with running multiple apps, we didn't have to buy four different servers for for four different apps, we could easily run for what a web apps into four virtual
-16:07
 >sub machines, then we had shared hosting. And so this made it a lot easier for anybody
-16:14
 >who's building websites or WordPress is, but the idea here is he had one physical machine, and it was shared by hundreds of businesses. So it wasn't a single business, sharing the
-16:22
 >class, it was multiple businesses. So this relies on most tenants under utilizing the resources, though. So if you had 100 people on a server, and one person use more of the
-16:34
 >server than the others, then you could all potentially suffer from that case, but at
-16:40
 >the very least, you are getting very, very cheap servers. But there are definitely some limitations. So now coming down to cloud hosting, Cloud Hosting gives us the best of both worlds.
-16:51
 >So we have multiple physical machines that act as one system, which it could be described
-16:56
 >as the cloud. And that system is abstracted away into multiple cloud services. So you
-17:02
 >get the you get flexibility, scalability, it's very secure. It's very cost effective. And it's highly configurable. So that is where we're at. And so that is generally what cloud
-17:13
 @⌨️ (00:17:15) Common Cloud Services
 >computing, Cloud Hosting is. Hey, this is Andrew Brown from exam Pro. And we are looking
-17:22
 >at common cloud services. So a cloud provider can have hundreds of cloud services are grouped
-17:29
 >into various types of services. And the four most common types of cloud services for infrastructure
-17:35
 >is a service. And we'll talk about what that is later on, would be compute. So this is
-17:41
 >where you have a virtual computer that can run applications, programs and cold code, then you have storage. So this is where you would have virtual hard drives that you could
-17:50
 >store files, then you'd have virtual networking, because you have these computers and stored.
-17:56
 >So you need to put them in some kind of virtual network. And then you have databases. So just
-18:02
 >imagine a database that is running in the cloud. Or if you're not familiar databases,
-18:07
 >just imagine that it's excel in the cloud, but it powers your web apps. And one thing I want you to know about the term cloud computing is that even though it says computing in the
-18:17
 >word, at this point, we just use it as a catch all term. So it could refer to all of these
-18:23
 >categories. So when I say cloud computing, I could be referring to compute network storage and databases. But you can also say cloud storage, cloud Compute Cloud databases, cloud
-18:32
 >networking, and people will know what you mean.
 @⌨️ (00:18:35) What is Microsoft and Azure 
 >Hey, this is Andrew Brown from exam
-18:40
 >Pro, and we are looking at what is Microsoft. So you've probably seen this logo before.
-18:45
 >And Microsoft is an American multinational Computer Technology Corporation, headquartered in Redmond, Washington. And Microsoft makes software phones, tablets, game consoles, cloud
-18:55
 >services, which is what we care about here today. And they even have a search engine.
-19:01
 >And we're not just limited to that list. They have tons of stuff. But Microsoft is best known for their operating operating system called Windows. And they've been around since
-19:10
 >the 1970s. So they've been around for quite a while in the tech sphere. So now that leads
-19:16
 >us to the question is what is Azure? So Azure is what Microsoft calls their cloud provider
-19:21
 >service. And so it's called Microsoft Azure, or we commonly refer to it as just Azure.
-19:27
 >And so here is the logo for it. If you're wondering, what is the name behind the service,
-19:33
 >it means bright blue color of the cloudless sky. So sure, that's great. And so you'll
-19:41
 >hear me say cloud service provider frequently it was throughout this course and it is abbreviated to CSP, but that's what Azure is. It is a cloud service provider. So there you go. Hey,
 @⌨️ (00:19:52) Benefits of Cloud Computing
-19:56
 >this is Andrew Brown from exam pro and we are looking at the benefits Cloud computing. So what are the benefits? Well, we have a big list here for you starting with cost effectiveness.
-20:05
 >So you pay for what you consume, there is no upfront costs, you pay as you go, also abbreviated as P A YG. And you're sharing the cost with 1000s of customers. So that's
-20:14
 >how you're getting that. That Low, low cost. Another benefit is that you can go global,
-20:20
 >so launch workloads anywhere in the world, just choose your region, and you are now in
-20:26
 >the global market. Another benefit is that the cloud is secure as a cloud providers take
-20:32
 >care of the physical security. And cloud services can be secured by default, or you have the ability to configure access down to the granular level. So you have a lot of security controls
-20:40
 >that you would have that you you would normally not have, or you'd have to build out on pram.
-20:46
 >Now, the cloud is also known for being reliable. So you can have data backups, disaster recovery,
-20:51
 >and data replication and fault tolerance. The cloud is also scalable, you can increase or decrease your resources and services based on the demand. The cloud is also elastic.
-21:02
 >So you can automate scaling during spikes. And, and a drop the demand when there is no
-21:08
 >longer the demand for that stuff. And it's also current, so the underlying hardware and manner software is patch upgraded and replaced by the cloud provider without interruption
-21:16
 >to you. And I mean, the last one, there is cases of interruption, but generally, fewer
-21:22
 >interruptions than you would have on prem. So there you go.
 @⌨️ (00:21:25) Types of Cloud Computing
 > Hey, this is Andrew Brown
-21:30
 >from exam Pro. And we are looking at the different types of cloud computing. And we have this nice pyramid on left hand side to help us understand how each type builds off the other.
-21:40
 >Starting at the top of our pyramid, we have Software as a Service, also known as SAS. And this is a product that is run and managed by the service provider, you don't worry about
-21:49
 >how the service is maintained. And it just works and remains available. So you might not be aware of this, but you probably already are using a SaaS product. So examples of that
-22:00
 >could be Salesforce, or Gmail, or office 365. So those are the those are things that would
-22:06
 >be considered SaaS, and these are really for customers. So it's just you wanting to use software, like general software on your computer, but in the cloud. The next category we have
-22:16
 >is Platform as a Service, abbreviated as past. And so here we focus on development and management
-22:23
 >of your app applications. And so you don't worry about provisioning, configuring or understanding the hardware or less. And this is really for people that are building apps, but they don't,
-22:32
 >but they don't think about any of the infrastructure underneath services like this would be Elastic Beanstalk on AWS Heroku, which is very popular amongst junior developers, which is a third
-22:42
 >party service for launching web apps. And then you have the Google App Engine. So those
-22:48
 >are three examples there. And these are really for developers. So platform service makes it easy for developers to build apps on the cloud without worrying about all the stuff
-22:57
 >underneath. At the bottom, we have Infrastructure as a Service IaaS. And this is the basic building
-23:04
 >blocks of cloud it. So provide access to networking features, computers, and data storage space,
-23:10
 >don't worry about the ABOUT IT staff, data centers, and hardware. And this is the true focus of our course here is focusing on this layer. But the thing is, again, on this pyramid
-23:20
 >is that I do emphasize your service can have platform as a service and software service on top of it. And so examples of infrastructure service would be a Microsoft, Azure, AWS,
-23:31
 >or even Oracle Cloud. And so this is really intended for administrators. So that is the
-23:37
 >three types of cloud computing. And there you go,
 @⌨️ (00:23:39) Types of Cloud Computing Responsibilities
 >Hey, this is Andrew Brown from exam
-23:45
 >Pro. And we're looking at the types of cloud computing responsibilities. So we saw the three categories there. But we don't really understand what it is that we're responsible
-23:54
 >for what is the cloud service provider responsible for? So let's lay out our categories. And
-23:59
 >we're going to include on premise into this because technically, on premise could be a
-24:04
 >private cloud and should be in the category here. So we have on premise infrastructure as a service platform as a service and software as a service. So when we're looking at applications,
-24:15
 >it's going to be the customer's responsibility for on prem infrastructure pass. But when
-24:20
 >we have Software as a Service, the cloud service provider is responsible for that, when looking at the data level is going to be the same for software as a service, the cloud service
-24:29
 >provider is going to be responsible, but for the rest, it's going to be the customer. And
-24:34
 >then on the next level for the runtime. It's going to be responsible on the cloud service
-24:40
 >drivers for the platform as a service and software as a service. For middleware, it's going to be the same for the O s, like the operating system that is running on the servers,
-24:49
 >it's going to be the same, then we get to virtualization. Now it's the virtualization
-24:54
 >is responsible with the cloud service provider and above and then from Storage, its or sorry,
-25:01
 >servers, it's the same as for storage, it's the same and for networking, it's the same. So you can see that on premise, you're responsible for everything. And the farther we move up
-25:13
 >the types of cloud computing, the less responsibility you have, 
 @⌨️ (00:25:16) Cloud Deployment Models
 >hey, this is Andrew Brown from exam
-25:22
 >Pro. And we were looking at Azure as deployment models. And the first model we're going to talk about is public cloud. And that's where everything is built on the cloud service provider,
-25:31
 >you're not using anything on prem, or in your own data centers, everything is running within Azure. And generally, this is known as cloud native. But for some reason, Azure calls that
-25:41
 >public clouds. So that's what we're going to use in the terminology here. And so here, I have an architectural diagram, where we have a network on Azure. And within that network,
-25:50
 >we have a virtual machine running and a database running. So that would be an example of public cloud, then we have private cloud. And this is where everything is built on the company's
-25:59
 >data centers, also known as on premise, because it's within the premises of the organization,
-26:07
 >like their physical location. And it could an organization organization could technically
-26:12
 >be operating their own cloud, but it'd be private cloud, and it could be running some open source cloud software that mimics what Azure would do, such as OpenStack. So it looks
-26:23
 >very similar. But you just put an OpenStack in there. And it's running a virtual machine
-26:29
 >or a server, and it's also running a database. And the last on our list here is hybrid. So
-26:35
 >with hybrid, you're using both on premise and the cloud service provider, and they're connected together. And so there's a lot of different networking services that you can
-26:44
 >use that will facilitate the connection between the two. In this case, we're using Express Route Express rose is a dedicated connection, it's like having a fiber optic line running
-26:54
 >from your on premise data center to the Azure network. So just one of the ways you can connect.
-26:59
 >And if we wanted to understand like the pros and cons, I have this nice little table here, we'll just quickly go through it. So if you're using public cloud, it's more cost effective
-27:09
 >security. It's, it's great controls are stronger by default. But some people might not find
-27:15
 >the cloud will meet all their security requirements because of government and regulatory, regulatory
-27:22
 >reasons, not because the cloud is not secure. But it's just those those policies for level
-27:27
 >of configuration, it's going to be limited based on what the cloud service provider exposes to you. So there's a lot of configuration there. It's just that if you're if you have
-27:35
 >your own servers, you obviously can do anything and everything with them. For technical knowledge, you don't need to have as much in depth knowledge of the underlying infrastructure, because
-27:43
 >you're not physically setting up servers, or that networking, everything else. Now, coming down to private cloud, private cloud is the most expensive option on our list.
-27:52
 >So you're going to be paying a lot of money there. For security, there is no guarantee
-27:58
 >that is 100% secure, because you just don't have the same kind of visibility that you would have with a cloud service provider. With all those dashboards, it's just so hard
-28:05
 >to build out all that software, but you could meet your security compliance requirements, depending on your situation. But this is becoming less and less as more governments and larger
-28:16
 >organizations move over to the cloud, you can configure infrastructure, exactly how you'd like because you literally have bought the hardware and do anything you want with
-28:25
 >it. And the technical knowledge, you'll have to have a serious amount of technical knowledge, you might even have a really hard time finding the resources to to maintain all that stuff.
-28:35
 >Then down below, we have the hybrid model. So this could be more cost effective based on what you offload to the cloud and also the cost of actually moving data back and
-28:44
 >forth. For security, you know, you have more to secure. But technically, some things are
-28:50
 >easier to secure on the cloud than it is in private. So maybe you have a boost and security,
-28:55
 >you're going to get the best of both worlds in terms of configuration. And for technical knowledge, you're going to need to know both the cloud and and like how to set things up
-29:04
 >on premise. So that's the most work there. And just one more deployment model here. I
-29:09
 >just wanted to talk about cross cloud. This isn't something that is listed on the actual exam, but it's something that you should understand and know. And so cross cloud is when you're
-29:17
 >using multiple cloud providers, sometimes we will refer this as multi cloud or hybrid cloud. And so I just have an example here. So there's a service called Azure arc. And
-29:27
 >what Azure arc does is it extends your control plane. So you can run a containers, Kubernetes
-29:32
 >containers on different platforms. And so you could have AWS on the left hand side with Eks and GCP Kubernetes engine and so you could be running virtual machines, and they're all
-29:41
 >treated like they're on the same network. So cross cloud is becoming very popular with extremely large organizations where they they have a very unique requirements, but I definitely
-29:51
-
 >want you to know what that is, because it just gets left out. And it's definitely something that is part of the industry. So there you go. 
 @⌨️ (00:29:57) Total Cost of Ownership
 >Hey, this is Andrew Brown from exam Pro.
-30:03
 >And we're looking at the concept of total cost of ownership to CEO. So what is the difference between on premise so having your own data centers, and then using Azure, and you'll
-30:12
 >notice above it, it says capex and OPEX, we're going to talk about that in the next slide. But for the time, or for the time being, we're gonna focus on the total cost of ownership.
-30:20
 >So to really make sense of this, I always use this graphic here. And if you're wondering
-30:26
 >what that is, those are icebergs, people sometimes think they look like teeth. And so just to make this drawing a little bit more clear, I've added some penguins and a whale, so there's
-30:33
 >no mistaking it. And the reason we're using this as a representation is because we have the top of the iceberg, which are the costs that we're generally concerned about. But
-30:41
 >then we have those hidden costs, those costs that we're not really thinking about that is underneath the water. And if you know icebergs, they can be really big underneath, you don't
-30:48
 >know. So on the left hand side, the cost that we generally think of is the software license
-30:54
 >fees. And then for the cloud service provider, we look at the subscription fees. And so when
-31:00
 >you're comparing these two, sometimes the subscription fees can cost more than the software license fee. So you think, well, we should really just use on pram because it's more
-31:10
 >cost effective. But when we take in the total cost of ownership, all the costs involved,
-31:15
 >we're gonna see a very different picture. On the left hand side, if you are on premise, you have to deal with the implementation, the configuration and the training, but you
-31:24
 >also have to deal with the physical security of your building, you have to pay for the hardware, you have to pay for the IT personnel, you have to deal with maintenance. Now on
-31:32
 >the right hand side on the cloud, you still have to do implementation, and configuration and training. But that's about it. So there's a big difference in terms of what you have
-31:42
 >to do. And you might ask, okay, well, what is the amount of savings? Well, generally, people find that when they move from on prem to the cloud, they save 75%. That's a lot
-31:53
 >of money, okay, 75% of what you generally would spend. And so now all this stuff on the left hand side is now Azure is responsibility, you don't take care of those anymore, Azure
-32:02
 >is going to take care of it for you. So that's total cost of ownership. 
 @⌨️ (00:32:06) CAPEX vs OPEX
 >Hey, this is Andrew
-32:11
 >Brown from exam Pro, and we're looking at Capital versus operational expenditure. So on the left hand side, we have capex, so capital expenditures. On the right hand side, we have
-32:19
 >operational expenditures OPEX. And so looking on the left hand side, capital expenditure
-32:24
 >is spending money upfront on physical infrastructure, so deducting the expenses from your tax bill
-32:30
 >over time, a lot of companies larger companies are used to dealing with capital expenses.
-32:35
 >And they know how to work their tax bill. And so that's why a lot of people are afraid to move on to the cloud, because they're used to this, this this way of operating. But let's
-32:44
 >talk about some of the things that would be considered a capital expense. So again, it's anything that's physical, and then you're buying it with money upfront. So computers,
-32:53
 >so that would be your server costs, if you were to buy hard drives of your storage costs, if you bought routers, cables and switches for your network, if you're purchasing things
-33:01
 >for backup and archive costs, if you had disaster recovery. So like an uninterruptible, power
-33:07
 >supply would be an example that you have your data center cost. So that's your rent, cooling, physical security, your technical personnel, so you're hiring people to do things for you.
-33:16
 >And so with capital expenses, you have to guess upfront what you plan to spend. Now
-33:21
 >let's look at operational expenditure. So operational expenditure is the costs associated when an on premises Center has shifted that cost to the service provider. So here, in
-33:31
 >this case, it's the cloud service provider, and the customer only has to be concerned with non physical costs. So what's examples of OPEX costs well, leasing software and customizing
-33:42
 >features, training employees in cloud services, paying for cloud support, billing based on
-33:48
 >the cloud metrics, so compute usage, and storage usage. And the advantage here is with operational
-33:54
 >expenses, you can try a product or service without investing equipment. So we have flexibility of investment. And we also from the previous slide, we saw that we have a huge reduction
-34:05
 >cost. So there's two reasons, really good reasons to use the cloud.
 @⌨️ (00:34:08) Cloud Architecture Terminologies
 > Hey, this is Andrew
-34:13
 >Brown from exam Pro. And we are looking at cloud architecture terminologies and these are very important to help you conceptualize the advantages of the cloud. And so we're
-34:22
 >going to go through these terms and then we're going to go through them again in more detail in further slides. So at the top of our list, we have availability and this is your ability
-34:30
 >to ensure a service remains available. And this this is generally known as high height
-34:36
 @⌨️ (00:35:08) High Avaliablity
 >being highly available or high availability abbreviated to h a, that's a term you should know. Then we have scalability so your ability to grow rapidly or unimpeded. Then you have
-34:45
 >a lasticity. So this is your ability to shrink and grow to meet the demand. You have full
-34:51
 >tolerance. This is your ability to prevent a failure, then you have disaster recovery. This is your ability to to recover, recover from a failure. And this is known generally
-35:01
 >as high being highly durable or high durability. D are. So there you go,
 > Hey, this is Andrew
-35:13
 >Brown from exam Pro. And we are looking at the concept of high availability. So this is your ability for your service to remain available by ensuring there is no single point
-35:22
 >of failure, or ensure a certain level of performance. So here I have a technical architectural diagram
-35:28
 >that is describing high availability. So, the idea behind this is that if you have a
-35:33
 >server, which runs your web application, if you were to run redundant versions of your server, if anything happened to a single server, traffic could always be routed to those other
-35:41
 >servers. And that way, your service would remain available. Now, having multiple servers
-35:47
 >is great. But even what's better is having multiple servers in multiple data centers because something could happen to a data center, it could become unavailable because of a networking
-35:55
 >issue. So by being able to route traffic, or that way, you're going to remain highly
-36:00
 >available. And and running a workload across multiple availability zones and availability
-36:06
 >zones is what Azure calls their data centers ensures that if one or two data center becomes
-36:12
 >unavailable, your service will remain available, very, very common to run at least three servers
-36:18
 >across three data centers. Now, how would you distribute the traffic or manage the traffic to all three, and that's where an Azure load balancer comes into play that green triangle
-36:28
 >with the arrows that is the representation of a load balancer. So load balancer allows
-36:34
 >you to evenly distribute traffic to multiple servers in one or more data center. And if
-36:39
 >a data center or server becomes unavailable, so unhealthy, the load balancer will route the traffic to only available data centers, with servers. So there you go, that is high
-36:48
 
 >availability. 
 @⌨️ (00:36:49) High Scalability
 >Hey, this is Andrew Brown from exam Pro. And we're looking at the concept
-36:56
 
 >of high scalability. And this is your ability to increase your capacity based on the increasing demand of traffic memory and computing power. If you are a growing company, you're going
-37:05
 >to have to scale up, you're gonna have to get bigger and better servers. But the there are different types of scaling. And the first type is vertical scaling. This is the most
-37:14
 >obvious one people are gonna think of, and it's called scaling up. And what we do is we just upgrade to bigger servers, we need bigger hard drives, faster computers, that's
-37:22
 >vertical scaling. But there's another kind of scaling called horizontal scaling and horizontal scaling is is described as scaling out. And what you're doing is you're just adding additional
-37:31
 >servers, because we saw with the high availability, we have a load balancer, we can distribute traffic to multiple servers, and three servers can equal the same thing as one big server.
-37:41
 >So horizontal scaling is when we add more servers of the same size. 
 @⌨️ (00:37:46) High Elasticity
 >Hey, this is Andrew
-37:51
-
 >Brown from exam Pro. And we're looking at the concept of high elasticity. And this is your ability to automatically increase or decrease your capacity based on the current
-38:03
 >demand of traffic memory and computing power. So this sounds a lot like high scalability, but the key difference is that it's automatic. And you can decrease the demand, not just
-38:13
 >increase it. And so the way we would do that is that we would have a virtual server, virtual
-38:18
 >machine or server, and if we needed more servers, we would add more servers. And if we need
-38:25
 >less servers, we'd remove less servers. And so this is going to be accomplished using horizontal scaling. So when we say we're scaling out, this means we're adding more servers
-38:33
 >of the same size, when we're scaling in this means we're removing more servers of the same size. And generally, you're not going to use vertical scaling for high elasticity, it's
-38:42
 >just extremely difficult to, to vertically scale. Because if you have if you have to
-38:49
 >increase, let's say, your storage drive, and then you decrease it, you could lose data. So it's not a good idea, or even feasible to do vertical scaling with high elasticity.
-39:00
 >Now, how would you accomplish being an elastic on Azure, while you use Azure as VM scale
-39:07
 >set, so scale sets automatically increase or decrease in the response to demand or based
-39:14
 >on a defined schedule, and we'll talk about those in greater detail later in this course. And then we have SQL Server, or server stretch database, these dynamically stretch warm and
-39:23
 >cold transactional data from Microsoft SQL Server 2016 to Microsoft Azure, not something
-39:28
 
 >we're going to cover, but it's generally the same concept that skill sets do. So there you go, that's high elasticity.
 @⌨️ (00:39:39) High Durability
 > Hey, this is Andrew Brown from exam Pro. And we're looking
-39:45
 @⌨️ (00:39:35) Fault Tolerance
 
 >at the concept of high durability. So this is your ability to recover from a disaster and to prevent the loss of data. So this could be solutions that recover from a disaster
-39:54
 >is known as disaster recovery d r, and so I'm just going to ask you a bunch of questions
-40:00
 >to help you think about how to be highly durable. So one question would be like, do you have
-40:05
 >a backup? So do you have a backup in place? How fast can you restore your backup? Does your backup still work? How do you ensure current live data is not corrupt. So that
-40:15
 >is the concept of high durability, there's a variety of services to implement it. So it's not just a single service. But there you go, that is the full list of cloud architecture,
-40:25
 @☁️ Evolution of Compute
 
 >terminologies. 
 @⌨️ (00:40:26) Dedicated Servces
 >Hey, this is Andrew Brown from exam Pro, and we are looking at the evolution
-40:33
 >of computing. And this is going to really help you to understand the different layers of compute. And so we're going to start from on the left hand side to dedicated and work
-40:42
 >our way all the way to functions. So what I want you to know is that when we're talking about dedicated This is a physical server, wholly utilized by a single customer. And
-40:52
 >so the idea is that this customer has purchased this dedicated piece of hardware. But the
-40:59
 >thing with this is that you have to guess your capacity. So when you buy it, it's like a capital cost or you're purchasing for for like the whole, like, you have to plan how
-41:09
 >you're going to fully utilize it. So you're gonna overpay, and you're gonna have underutilized servers. And the reason why is that when you first launch your app, it might be small,
-41:18
 >and then you're expected to grow into that space, but you're just not using that space until you grow into it. So it's considered wasted. If you want to upgrade beyond your
-41:27
 >capacity, this is going to be slow and expensive, you literally would have to buy a new server that's larger, and then move everything over, you're going to be limited by your operating
-41:34
 >system. So whatever operating system is installed, that's what you're going to have, you're going to have multiple apps, if you do install multiple apps onto a dedicated server, you might have
-41:44
 >conflicts in resource sharing. But generally, it's recommended to only have a single primary
-41:49
 >application on a dedicated server, you are going to have a guarantee of security, privacy and full utility of the underlying resources. Because that is what that's the whole purpose
-41:57
 >of having a dedicated server is sometimes dedicated servers where you have full control of everything is called bare metal. And that's basically mimics what it was like to have
-42:07
 >a server on premise or back in the day, and they still exist. So that is dedicated, we'll
-42:12
 @⌨️ (00:42:13) Virtual Machines
 >move on to VMs. So now we're moving on to virtual machines, also known as VMs. And so
-42:20
 >the idea here is that if you had a physical server, and you had the capability of running virtual machines, that's like running a machine within a machine. And so now you're able to
-42:28
 >run multiple applications on a single machine. The technology that's used to actually run
-42:33
 >VMs is known as hypervisor there, sir, there are some other kinds of the ones we need to know is hypervisor, so just know that that's the software that makes virtual machines work,
-42:44
 >you are now sharing the physical server with multiple customers, that is generally a good thing, because you are paying a fraction of the server costs, you have to buy that server
-42:51
 >outright, you are still gonna be overpaying for under underutilized. The under utilization
-42:57
 >of virtual machine, because it solves that issue of wasted space, because you have to choose a particular size of virtual machine, it's not going to be perfectly fit for your
-43:06
 >application, you are going to be limited by your guest operating system. So whatever OS that you've chosen, that's what you get. So that's, that's what you have there. If you
-43:16
 >want to run multiple apps on a single virtual machine, they can still result in conflict, resource sharing, but now customers that are isolated from you aren't going to conflict
-43:25
 >with you. So you can run, you could run, if you had three apps, you could run them as three virtual machines. So you're not have that issue. But if they're on the same VM,
-43:32
 >you still have that issue. So there you go, that is virtual machines. And we'll move on to containers. 
 @⌨️ (00:43:38) Containers
 >Hey, this is Andrew Brown from exam Pro. And we are looking at the concept
-43:44
 >of containers. And so this takes it a step further, where we have virtual machines, and we're running multiple containers. So we're even, we're further subdividing the way that
-43:53
 >we run our applications. And the technology that is used to run containers within a VM
-44:00
 >or on a physical server is called Docker, Docker daemon. If you're using Docker for cleaner education, that's the most common one. But that's going to let you run multiple
-44:09
 >containers, and you can maximize the utility of the available capacity. So this is extremely
-44:16
 >more cost effective, right? So that available space is is always there for you to launch
-44:22
 >more servers within or you can or you can expand the usage for your app to take up that
-44:27
 >available space, your containers share the same underlying OS. So the containers are more efficient than multiple VMs. But the great thing is, is that you can have different
-44:37
 >OSS. So the idea is that each container can technically be running a different OS. And
-44:44
 >so now you have a lot more flexibility. It doesn't seem like you could improve upon this further, but we will we move over to function. So now we're going to take a look at the evolution
-44:57
 @⌨️ (00:44:52) Functions
 >of computing for functions and I bet you didn't believe it. But we subdivided even further.
-45:03
 >And so we've taken our applications that were running containers, and we broke up the apps into little pieces of code called functions. And now we even have a more or better utility
-45:15
 >of our compute. So we have a Managed VM running manage containers. So we don't have to worry
-45:21
 >about the containers or configure them themselves, functions are usually taken care of this is known as serverless compute, because you don't set up anything, you just put your code online.
-45:30
 >And it just works, you might choose the memory and the duration that you need to utilize. And that's all you pay for. You're only responsible for your code, and data and nothing else.
-45:39
 >And it's extremely, extremely cost effective, right? Because you're just paying for that individual function to run and all that underutilized spaces is the problem of the cloud service
-45:51
 >provider, it's not your issue. The only downside is that there is a concept called cold starts
-45:57
 >meaning that when you launch a function, or serverless, or a serverless code, it generally
-46:03
 >has to provision a server, because the the, the cloud service provider doesn't want to be running servers, when they don't, they don't, they aren't being utilized. So you
-46:11
 >might experience a cold start where you're waiting for a server to start before your code will execute. There's definitely ways around that. So there you go, that is the
-46:17
 >evolution of compute. 
 @☁️ Global Infrastructure
 >Hey, this is Andrew Brown from exam Pro. And we are looking at
-46:27
 @⌨️ (00:46:19) Regions and Geographies
 >regions and geographies for Azure. So a region is a grouping of multiple data centers. And
-46:34
 >for Azure, they call their data centers, availability zones, as your has 58 regions available across
-46:42
 >140 countries. One thing Azure likes to promote is that they have the most regions out of
-46:48
 >all cloud service providers, then we have something what we call a geography. So geography
-46:53
 >is a discrete market of two or more regions that preserve data residency and compliance
-46:59
 >boundaries and the geographies that are available for Azure. We have the United States, then
-47:05
 >there's Azure Government, us, this is a geography that's only for the US government. So regular
-47:11
 >citizens cannot use it, then you have Canada, that's where I'm from Brazil, and Mexico.
-47:16
 >And I just want to emphasize that data residency and compliance boundaries for geography, and I just want to give you an example. So imagine, you live in Canada, and you and you work for
-47:26
 >Canadian company, you want to guarantee that the data will remain within Canada, for whatever government regular regulatory reasons. So then you'd want to use the Canada as your
-47:35
 >geography because that data would never leave Canadian soil. So that's the case there. And
-47:43
 >I just want to give you kind of a visual example. So on the left hand side, we have two regions, we have US East one. And we have the Europe, Norway, East region. And in those regions,
-47:54
 >I'm not showing it here, because I don't want to make it too complicated. But there would be availability zones, and we could launch resources. So we have some servers, virtual
-48:02
 >machines, those are the images you see within the regions. And generally, the way regions work in Azure is that when you go to launch a resource, you choose the region at that
-48:12
 >time of creation. So if you're launching virtual machine, it's going to give you an option to choose a region and you just choose from that list. So yeah, there you go. So I just
-48:21
 >made my way over to Azure. So I just typed in Azure global infrastructure, because I just wanted to show you the big map of all the regions. And where Azure is available
-48:32
 >all throughout the world. Because sometimes it's nice to look here. So we can see we have stuff down in Australia, we have regions in Africa, we have a region in South America,
-48:43
 >we have a lot in North America, we have a lot in Western Europe. And then we have some
-48:49
 >in Asia here. So we have Japan, China, all over the place. So you know, if you want to
-48:55
 >look a little bit more into that, there's a lot of good information here on the global infrastructure pages. But that's about it. I just wanted to show you that world map.
-49:09
 @⌨️ (00:49:05) Paired Regions
 >So now we're looking at paired regions. So each region is paired with a another region
-49:14
 >300 miles away. And the reason why Azure does this is so that if one region is being updated,
-49:22
 >then the other one is still available, meaning that if you're running if you're planning to make sure that you never have downtime, you can put your resources in that paired
-49:31
 >region, and you're gonna have higher availability. So some Azure services rely on paired regions
-49:37
 >for disaster recovery. So when you turn those services on, they're automatically going to launch in that paired region. One service, which would help you leverage your paired
-49:48
 >region would be a service called Azure wall. It's a feature of storage but it's called Azure geo redundant storage so replicate your data to a secondary region automatically,
-49:57
 >ensuring that the data is durable enough In the event of the primary region, is it recoverable.
-50:03
 >And just to give you an example of a paired region, so let's say we're talking about Canada, so with Canada, you'd have Canada Central, and then it's paired region is Canada, east,
-50:15
 >for North America. And when we say North America, we're really talking about the United States. Its East us region paired with the West us region. And then for Germany, you have Germany
-50:25
 >Central, and German, Germany, north east. So it gives you an idea how far away they are 300 miles, that's quite a distance. But there you go. 
 @⌨️ (00:50:34) Region Types and Service Availability
 >Hey, this is Andrew Brown from
-50:39
 >exam Pro. And we are looking at region types and service availability for Azure. And what
-50:45
 >I want you to know about a service availability regarding regions is that not all cloud services
-50:50
 >are available in every single region. And there's infrastructure reasons as to why and there's compliance reasons as to why. So Azure has two types of regions, they have recommended
-51:00
 >regions. These are regions that provide the broadest range of service capabilities. What that means is that the majority of services are going to be available in this region.
-51:10
 >And this recommended region is designed to support availability zones, then you have alternate regions. And these are regions that extends Azure footprint within a data residency
-51:21
 >boundary, where a recommended region also exists. But they're not designed to support availability zones. That doesn't mean you can't launch resources within them. It just
-51:30
 >means that when you go to launch a resource, you're not going to choose an availability zone. And these regions are labeled as other when you're in the Azure portal. Now let's
-51:38
 >talk about general availability. So general availability, abbreviated to ga is when a service is considered ready to be used publicly by everyone. So if you have a service or product,
-51:48
 >and it was in beta, and now you're ready to sell to people, that means that it's GA. But it's, but just because it's where you sell it, there's also the conversation around whether
-51:58
 >it's actually available to us. And that's going to be determined based on the category
-52:04
 >that the Azure cloud services in. And so Azure categorizes three different types of availability
-52:10
 >for services. And the first one is foundational. So a cloud service that is foundational is
-52:15
 >going to be available immediately in a recommended and alternate regions, when it goes ga or
-52:21
 >at least in fifth 12 months of the time that it was announced, then you have mainstream.
-52:27
 >So these are cloud services that will become immediately available in a recommender region
-52:32
 >or in 12 months when it goes GA. But for the alternate region, it may become available
-52:38
 >based on the customer demand. And then the last one is specialized. So Cloud services
-52:44
 >are in this category will become available in recommended or alternate regions based on customer demand. So hopefully that clears up service availability and region types.
-52:56
 @⌨️ (00:52:55) Special Regions
 >Hey, this is Andrew Brown from exam Pro. And we are looking at special regions for Azure.
-53:03
 >So Azure has specialized regions to meet compliance or legal reasons because they might not want they might want to work with specific governments have. And to meet those requirements. They
-53:14
 >basically give them their own region. And so the first on our list is the us and we have three regions that we know about. So we have the US Department of Defense Central,
-53:23
 >the US government, Virginia region, the US government of Iowa region, and then we have
-53:28
 >an additional three that we just don't know about it, because they're in secret locations. So maybe they're for area 51, we don't know. And so the reason why they have these special
-53:37
 >regions is that if you just want to do business with the government, they need these kind of regulations. Then on the other side, we have China and so they have a region in China
-53:46
 >east and China north. And these regions are available through a unique partnership between Microsoft and 21 via net. And so Microsoft does not directly maintain these data centers,
-53:57
 >but they worked with 21 v net to give you accessibility to these regions. And probably
-54:04
 >to operate these regions, you'd probably be assistant of these countries. And you'd also be an employee of the government. So it's not going to be for citizens to use. But there
-54:12
 
 >you go. 
 @⌨️ (00:54:14) Availability Zones
 >Hey, this is Andrew Brown from exam Pro. And we are looking at availability zones
-54:22
 >for Azure. And so availability zones, abbreviated to short for AZ and you'll hear me using that
-54:29
 >revision a lot in this course. And you should learn to remember that as well, is a physical location made up of one or more data center. And so a data center is a secured building
-54:39
 >that contains hundreds of 1000s of computers if you want a little visual, here is the inside
-54:45
 >of a data center. And there's a technician working on a rack of servers and there's a dog in the data center. You should definitely never have a dog in your data center. You'll
-54:54
 >probably hear me refer to available availability zones as a data center because it's the easiest way to think of it but It actually can be more than one data center. Now, a region will
-55:04
 >generally contain three availability zones, I say generally here because there are cases where there are less than three. But there's actually very specific reasons as to having
-55:12
 >exactly three availability zones, data centers within a region will be isolated from each
-55:17
 >other. So there'll be in different buildings, but they will be close enough to provide low latency. And that low latency would probably be in the sub milliseconds. I don't know what
-55:25
 >it is for Azure. But that's generally how it'd be designed. Because you want it to feel like you're, it's on the same network. It's common practice to run workloads in at least
-55:35
 >three azs. And that's why I was saying that earlier, that's important to ensure services remain available. In the case, one or two data centers fail fail. And this is called
-55:44
 >high availability. And we'll definitely cover this concept again, in this course, just to give you a bit of a visual, on the left hand side, what we have is a region called US East
-55:53
 >one. And we have multiple availability zones. Azure just labeled them one, two, and three.
-56:00
 >And so when you go to launch a resource, if you look on the right hand side, you choose your region. So we are choosing us, East us, then we were saying we're going to use availability
-56:10
 >zone, and then we choose which one we want to launch it into. So if we, if we choose to, it's going to go into availability zone two, that doesn't mean we're gonna launch
-56:16
 >two instances, it just means availability zone two. So there you go.
 @⌨️ (00:56:20) AZ Supported Regions
 > Hey, this is Andrew
-56:25
 >Brown from exam Pro. And we're looking at AZ supported regions for Azure. And so not every region has support for availability zones, and we touched on this in the region
-56:34
 >section, but we'll touch on it here again. So we know that there are regions called alternate or others and these do not have availability zones whatsoever, then you have recommended
-56:45
 >regions, and these are supposed to have three azs. The reason why they might not have them is because it's a newer region. And Azure is promising to add more regions within 12
-56:55
 >months or whatever time period that they say. But generally, what you want to do is when you have cloud resources, you want to launch them where they have at least three AZ so
-57:05
 >which regions actually have three Z's. And that is central us, East us, West us to West
-57:12
 >Europe, France, Central, north, Northern Europe, Southeast Asia. So that is where you generally
-57:20
 >want to run your workloads. Now, what does it look like when you tried to go launch a
-57:25
 >resource, and they and you choose a region that doesn't have an availability zone? What's that gonna look like what's gonna look like this, so you're going to availability zones
-57:34
 >going to be blanked out. And you'll have to choose no infrastructure redundancy required.
-57:40
 >And so that would be an example for Brazil, South where it's just there are there is a
-57:45
 >single az, but it's described as not having AZ so you just don't choose it in the interface. So there you go. 
 @⌨️ (00:57:51) Avaliablity Sets Fault and Update Domains
 >Hey, this is Andrew Brown from exam Pro. And we were looking at fault
-57:58
 >and update domains. So an availability zone in an Azure region is a combination of a fault
-58:05
 >domain and an update domain. So a fault domain is a logical grouping of hardware to avoid
-58:10
 >a single point of failure within an AZ. So basically, it's a group of virtual machines that share a common power source and network switch. The reason why as your does is, is
-58:21
 >that so if part of the data center fails, then other servers will be taken down with
-58:26
 >its let's say, there's a fire within the data center and one particular region, it won't affect other hardware that is running, then you have update domains. And so update domains
-58:35
 >is when Azure needs to apply updates to the underlying hardware and software. But the thing is, is that because Azure is updating them, it takes these machines offline. So
-58:44
 >the idea is that if you run your workloads in another, like another domain, in the update
-58:51
 >domain, neither domain will be updated the exact same time. And that way, you won't have downtime because of updates. And so the way fault domains and update domains work is that
-59:02
 >you use availability sets. So availability sets is a logical grouping that you can use in Azure to ensure that your VMs you place in the availability set are in different fault
-59:11
 >update domains to avoid downtime. And just to really help with that visual here, what
-59:17
 >I'm going to do is just show you this here. So each virtual machine and availability set is assigned a fault domain and update domain. And so what you're looking at here is, you
-59:26
 >see those gray boxes, those are racks. In your data center, a rack is just like it's
-59:32
 >like a closet for servers and all those servers sit on top of each other. And so each of those
-59:38
 >servers in that is where your virtual machine might be deployed. So if you are deployed,
-59:46
 >if you have a server and it's deployed in full domain zero and fault domain one, it could be any of the, the servers on that rack, but then up to domains, you just might have
-59:56
 >very particular servers in that rack that are Those update domains. So hopefully that
-1:00:02
 >makes that a bit clear and a little bit confusing. But just remember the concept behind fault domains and update domains. And just to give you a visual of what it would look like in
-1:00:10
 >the Azure portal, if you go ahead and create a availability set, you name it. So here I call it production. And you would choose the fault domains, and you would choose the update
-1:00:18
 >domains. And so I believe that what you're doing there is that you're choosing the amount of domains that you want your, your virtual machines to be distributed across. And I keep
-1:00:29
 >on saying virtual machine, that's your server, okay. So if you say, two fault domains, that
-1:00:35
 >means that when you launch two servers, and you put them into that availability set, they're gonna be cross to fault, two different fault domains. And if you launch five servers, and
-1:00:46
 >your update domains is at five, that means it's going to be across five different servers that are isolated from each other. So hopefully, that makes sense. But that's fault and update
-1:00:53
 >domains. So I quickly just wanted to show you the default and update domains that are in Azure here. So the idea is, if you're launching a virtual machine, and you want to control
-1:01:05
 >the availability set, what you can do is you can go to down to here, where we have availability
-1:01:11
 >options, we're going to drop it down and choose availability set. And then we don't have an availability set. So I'm going to go ahead and create one, if I just click there. And
-1:01:20
 >so when we create a set, we'd say, you know, production set. And so we have these two,
-1:01:27
 >these two dialogues here. And so what what it is, is when you say there's three fault
-1:01:34
 >domains, that means that if you were to launch three VMs, and you put them all into this availability set, it'll be spread across three different racks, so that if a rack goes out
-1:01:44
 >to other racks are operational, and so your service will remain available. And then down below, it's the same thing on a rack, there might be multiple machines, and certain machines,
-1:01:54
 >will will be will be scheduled for updates, but they won't all be updated at the same time. So if you're saying this, you'll say spread it across five machines. And that's
-1:02:02
 >all there really is to it. So I just wanted to show you where that was, when you actually launch it for a virtual machine. 
 @☁️ Getting Started
 @⌨️ (01:02:08) Creating an Azure Account
 >Hey, this is Andrew Brown from exam Pro. And we are
-1:02:14
 >looking at creating ourselves our own Azure account so that we can get some hands on experience with Azure. So what I've done here is I've gone to Azure dot Microsoft COMM And that's
-1:02:23
 >what I want you to do as well. And then when you're here, just look for a free account, they have it everywhere. So they have it here and they have it here. And I bet you could
-1:02:30
 >even get it through sign in. Well, what I'm going to do is just click free account here in the top right corner. And then when I'm here, we're going to have another start free
-1:02:38
 >button. So we'll go ahead and click that. And so now we have to login with our Microsoft
-1:02:44
 >account. Or if you don't have one, we'll create one, I'm gonna create a new one. And I created an email just for this tutorial here. It's called Azure exam pro Co. And I'm going to
-1:02:56
 >need to set a password. So I'm just going to go off screen and generate myself a password.
-1:03:02
 >Great. So I just generated myself out a very strong password, I'm just going to paste that in there. And I'm going to proceed forward. And so the next thing it's going to ask is
-1:03:12
 >just going to send me an email to my email there. And I'm going to have to enter a verification
-1:03:18
 >code. So I'll be back here in a moment to show you that code. Okay, so I went ahead and checked my email, and immediately I received the verification code. So mine is 6599, yours
-1:03:29
 >is going to be different. So I'm just going to go ahead and enter mine in here. So it was 6599. And I'm good, I don't need any tips or offers, and then we'll proceed to next.
-1:03:44
 >And so now, before we proceed, we have to complete this challenge here. So let's give
-1:03:49
 >it a go. So we have x and five, w w w Q. All right. And so after waiting a little bit,
-1:04:04
 >for this page to load, we have some information. So we have to fill in our about you. So our
-1:04:09
 >country, your first name, last name, email, phone number, identity verification by phone
-1:04:14
 >identity verification by card. Oh, wow, they have a lot of steps here. And so we will make
-1:04:20
 >our way through here. So now I'm just going to go ahead and fill in this information. And I'll see you here in a moment. So I just filled in the About Us section here. And so
-1:04:31
 >what I'm gonna do is I'm going to just proceed to next. And so now it's going to ask me to verify my identity by phone. So I want a text message. So I'm gonna click the text me button.
-1:04:40
 >And so I'm just going to check my phone for that verification code. And so I received the text message for the verification code, I'm just going to go ahead and enter that
-1:04:48
 >in. So mine happens to be 351033. Your codes going to be different from my code. I'm going
-1:04:54
 >to go ahead and verify that code. Alright, and so it looks like it's going to ask us
-1:04:59
 >to identify our verification by card. So we're just waiting for something to load here. And
-1:05:05
 >so what we're gonna have to do is we're gonna have to enter in credit card information. So we'll just go ahead here and fill that in. So I have gone ahead and filled in my
-1:05:14
 >credit card information, I'm just gonna proceed to next. Great. And so now that it's been
-1:05:20
 >verified, I can go ahead and just go ahead and click on the agreement. So I'm going to say I agree to the subscription. And the second one, I do not have to check box. That's if
-1:05:28
 >I want to get tips in offers. But the first one, I'll definitely check box because we have to, and we'll go ahead and sign up. Great. And so now we are here. And it looks like
-1:05:39
 >we are ready, I guess you could schedule a live demo, which seems very generous of Azure.
-1:05:45
 >But I'm just going to go ahead and proceed to the portal. And so here we are, we made
-1:05:51
 >it into Microsoft Azure. And what you're looking at right now is the portal, it's telling me I have $250 worth of credits. If you're wondering why it's higher than yours, or lower than
-1:06:00
 >yours, notice that it's in Canadian dollars. So I believe that it's 200 USD, when that's
-1:06:05
 >converted my currency, it's a bit higher. And so it might be different for for you.
-1:06:11
 >But there you go, that's all we had to do to create an account. And now we can actually start learning other things in Azure. 
 @⌨️ (01:06:16) Azure Portal Layout
 >Hey, this is Andrew Brown from exam Pro. And I
-1:06:21
 >just wanted to quickly show you that you can change the experience of your Azure Portal, if you just go all the way up here and click the cog, you can switch the default view from
-1:06:29
 >home or dashboard, you can change the flyout here, so it's docked, which is a lot easier
-1:06:35
 >when you're navigating stuff all the time. And if you're choose, if you want to change your theme, you can go to a dark mode here. Or even you can do a high contrast. So very
-1:06:45
 >old school, but very easy on the eyes. So just wanted to make that aware to you. Because
-1:06:51
 >you may feel that you want to change your experience right off the bat. So there you go. 
 @☁️ Technology Overview
 @⌨️ (01:06:57) Computing Services
 >Hey, this is Andrew Brown from exam Pro. And we are looking at Azure computing services
-1:07:06
 >starting with Azure virtual machines. So virtual machine is going to be the most common type of compute whenever you're launching a server, I would just think of a virtual machine. And
-1:07:16
 >your virtual machines could either be running Windows or the Linux operating system. Now the great thing with virtual machines is you get a lot of configuration. So you can choose
-1:07:23
 >your address, the amount of memory, the amount of CPU, you can attach storage to it. The
-1:07:29
 >thing here is that because it's a virtual machine, the the hardware shared with other customers, you can get dedicated, but generally, it's shared. And then you get a virtual computer.
-1:07:39
 >So it seems like you have like 100% of the resource, okay, then we have Azure Container
-1:07:46
 >instances. So this I would describe as Docker as a service, you can run containerized apps
-1:07:52
 >probably runs Docker in both windows containers, because I believe Windows has containers as well, but runs containerized apps on Azure without provisioning servers, or VMs. That
-1:08:01
 >makes that a lot easier for you. The next sounds very similar, which is called Azure
-1:08:06
 >Kubernetes service. So it's Kubernetes as a service, easy to deploy, manage, and scale containerized applications. So the idea here is that Kubernetes is just another way of
-1:08:18
 >working with containers. But it's using an open source library. Kubernetes has basically
-1:08:24
 >become the de facto for containers. And so we've seen all the cloud providers try to
-1:08:30
 >make their own service or orchestration service, but Kubernetes is kind of one out. So you'll see it on all platforms. The next one is Azure Service Fabric. This one can be a bit confusing,
-1:08:41
 >because it's described as many things. But I'm going to describe it here as a tier one enterprise container as a service, application or cloud service. So it's for distributed
-1:08:51
 >system platforms, it runs on on the Azure cloud or on premise. And the way they described
-1:08:57
 >is easy to package, deploy and manage scalable and reliable micro services. And anytime you
-1:09:02
 >hear the word microservices, think of also containers. So with Azure Container instances and Azure Kubernetes services, that's where you'd also run micro services, then we have
-1:09:11
 >Azure Functions. So this would be event driven serverless compute. Anytime we're talking about serverless compute, we're used to talking about serverless functions, which are little
-1:09:19
 >bytes of code that you can just upload. And it just works. You don't have to think about
-1:09:24
 >the servers or provision anything. And you only pay for the time that that code run. So serverless functions generally run for a very short duration. And as soon as they're
-1:09:33
 >done, those underlying servers are shutting off. And the last on our list here is Azure
-1:09:38
 >Batch. So you can plan schedule, execute your batch compute workloads across 100 plus jobs
-1:09:44
 >in parallel. When I say jobs here, it's just the code that you want to run. You can use
-1:09:50
 >spot VMs spot VMs might not be out at the time of this, but it will be in the future. But generally, it's known as low priority VMs. But the idea here is that there are virtual
-1:10:00
 >machines that are being underutilized. And so Azure is allowing you to rent them at a
-1:10:06
 >more cost effective costs. And so if you're doing a lot of scientific compute or other
-1:10:11
 >things, and it doesn't matter if these services get interrupted, and you want to use those low priority VMs, that is a great way to save. And that is the computing services. Hey, this
-1:10:26
 @⌨️ (01:10:21) Storage Services
 
 >is Angie brown from exam Pro. And we are looking at Azure storage services starting with Azure Blob Storage. So I would describe this as objects serverless storage. So have you ever
-1:10:36
 >heard of object storage or service storage, this is going to make sense to you. So you're able to store very large files and, and large amounts of unstructured files. And the idea
-1:10:44
 >here is that you pay for only what you store. It's basically unlimited storage, you don't
-1:10:50
 >have to resize the volumes, you don't have to worry about filesystem protocols, you just upload files. And that's why it's considered serverless storage, then we're gonna move
-1:10:58
 >on to Azure disk storage, this is the most common type of storage you'll encounter. So
-1:11:04
 >we can describe it as a virtual volume. So you're just choosing either an SSD, or HDD.
-1:11:09
 >So it's basically a hard drive in the cloud. It has encryption by default, and it's attached
-1:11:15
 >to virtual machines. So anytime you're spinning up a virtual machine, it's probably spinning
-1:11:20
 >up also as your disk storage attached to it. Then you have Azure file storage. So this
-1:11:27
 >is a shared volume that you can access and manage like a file server. So it's going to use protocols such as SMB, the reason you'd want this is that let's say you had multiple
-1:11:36
 >virtual machines, multiple servers, and you wanted them to all share the same hard drive,
-1:11:42
 >that's what you use it for. Or if you need to have users access it using those protocols.
-1:11:47
 >That's another way of doing that. Then you have as your queue storage, now I put an asterisk
-1:11:53
 >in front of it, because this is just a weirdly named service. Because this is really, for
-1:11:58
 >a messaging queue. This is actually for application integration by listed here, because they put the word storage on. So I just think it's poorly named. And even the way to describe
-1:12:08
 >it is is just makes you think it's storage. But it's a data store for queuing and reliably delivering messages between applications. So it's just been integrating two applications
-1:12:18
 >together, passing messages along. Another one that's confusing is Azure table storage,
-1:12:23
 >I would put this in the database categories. And it's a no SQL database. And specifically,
-1:12:29
 >it's a wide column no SQL database. As they describe, it's a no SQL store that hosts unstructured
-1:12:35
 >data independent from any schema. So just be aware of those two, they're just very poorly
-1:12:40
 >worded. Then you have Azure Data box, and also its upgraded version, the Azure Data
-1:12:46
 >box heavy This is a rugged briefcase, computer and storage designed to move terabytes or petabytes of data. So imagine, somebody shows up your door with this, this tower, that's
-1:12:58
 >a computer and you plug in your USB or whatever, whatever you want. And you transfer all your
-1:13:04
 >files locally on your on premise data center, and then they they ship it because it's faster to ship the data on a physical piece of device than it is to send it over the internet. That's
-1:13:13
 >what Azure Data box is. And then we have Azure archive storage. So this is long term cold
-1:13:20
 >storage for when you need to hold on to false for years, but you want the cheapest storage options. If you have lots of data. And it's not, it's not doing anything, you definitely
-1:13:28
 >want to be putting on the cheapest possible storage devices. Cheap meaning doesn't mean
-1:13:34
 >that they're not reliable just means that they're not active, the disk are not active, actively spinning, nobody's accessing the data on those hard drives. The last one is
-1:13:43
 >Azure, Azure Data Lake storage. And so this is a centralized repository repository that
-1:13:48
 >allows you to store all structured and unstructured data at any scale when you're working with big data from multiple different sources, and used to be in one place, that is the service
-1:13:58
 >for you. And so that is the Azure storage services.
 @⌨️ (01:14:02) Database Services
 >Hey, this is Andrew Brown from exam
-1:14:07
 >Pro. And we are looking at Azure database services during the top of our list is Azure Cosmos dB. This is a fully managed no SQL database. It's designed for scale with guarantee
-1:14:16
 >of 99.999% availability, as your loves talking about this database. It's their flagship database
-1:14:23
 >because it works at incredible scale and incredible performance. So whenever you're thinking about
-1:14:29
 >like, like super large databases, think of Azure Cosmos dB. Next on our list is as your
-1:14:36
 >SQL database even though it doesn't have its name. This is for the MS SQL engine. So if
-1:14:42
 >you're running Microsoft SQL, you're going to want to use this. It's fully managed with auto scale integrity, integrity, intelligence, robust security says a lot of great features
-1:14:51
 >built around this four MSL SQL databases. Now if you're not using MS SQL, and you're
-1:14:57
 >using something like MySQL, Postgres or MongoDB they Azure database. So it's fully managed and scalable. With high availability and security. Then you have SQL Server on VMs. Again, it
-1:15:08
 >doesn't have its name, but it's Microsoft SQL engine. Okay? Anytime it says SQL servers,
-1:15:16
 >just assume that it's the Microsoft flavor of SQL. And the idea for this one is that
-1:15:21
 >if you already have SQL servers running on premise, within your data center, and you
-1:15:26
 >want to move them on to Azure, this is where you use a lift and shift. So it takes those virtual machines and directly moves them onto the cloud, you don't get all the functionality
-1:15:36
 >that you would with Azure SQL Database. But it's the easiest way to get onto the cloud.
-1:15:41
 >Then you have Azure synopsis analytics, previously known as as your SQL Data Warehouse, it's
-1:15:47
 >because they added an analytics component to it. But it's a fully managed data warehouse
-1:15:52
 >with integrity, integral security at every low level skill at no extra cost, then you
-1:15:59
 >have Azure database migration service, so migrate your databases to the cloud with no application code changes. So there's that service, then you have Azure cache for Redis.
-1:16:10
 >So if you need an in memory cache, that is using the open source Redis, you can use that.
-1:16:16
 >And last on our list is Azure table storage. We mentioned this in the storage services. But to me, this is a database, it's not a storage service, even though it's named as
-1:16:27
 >such, so why column no SQL database, a no SQL store that hosts unstructured data, independent
-1:16:32
 >of any schema. So there you go, that's the Azure database services. 
 @⌨️ (01:16:38) Application Integration
 >Hey, this is Andrew
-1:16:42
 >Brown from exam Pro. And we are looking at application integration services on Azure. Now, I didn't have room on the slide for this. But just to tell you what application integration
-1:16:51
 >is, these are services that are designed to help apps or services talk to each other.
-1:16:57
 >So it's basically the glue of services. The first on our list here is Azure notifications
-1:17:02
 >hub. This is using publisher subscription technology underneath. And this is for sending push notifications to any platform from any back end. Next, we have Azure API apps. So
-1:17:13
 >this is essentially an API gateway. So you can quickly build a consume API's in the cloud.
-1:17:19
 >And then the those API's will have API endpoints, and you can route them to Azure services, or maybe functions or containers. But it's a way of building an API in the cloud. Then
-1:17:28
 >you have Azure Service Bus. And as the name implies, it is a service bus. So reliable Cloud Messaging as a service, ma s and simple hybrid integration. I know that's not very
-1:17:39
 >clear. That is the language that Microsoft uses to describe it. But just what you need to know is that it is a service bus, then you have Azure Stream Analytics. So this is
-1:17:49
 >serverless, real time analytics. Remember that world word real time and think of this
-1:17:54
 >service from the cloud to the edge. Then you have Azure Logic Apps. So you can schedule
-1:18:01
 >automate orchestrate tasks, business processes, and workflows, and integrates with enterprise, SAS and enterprise applications. Then you have Azure API Management. This can be confusing,
-1:18:13
 >because we have another service called Azure API apps, I don't know what we would generally call the service. They say it's a hybrid multi cloud management platform for API's, across
-1:18:23
 >all environments, whatever that means. But when I looked at it, what it does is you can
-1:18:28
 >put this in front of an existing API to add additional functionality. So if you have an
-1:18:33
 >API, you put it in front of it, and it's a basically a proxy to your API, and you get all this additional stuff. Then last on our list is Azure queue storage. We saw this in
-1:18:43
 >our storage service sections. And I had said that I don't really consider this a storage service, I consider it an application integration service. And this is a messaging queue. So
-1:18:52
 >it's a data store for queuing and reliably delivering messages between applications. So there you go. That is the application integration services on Azure.
 @⌨️ (01:19:01) Developer and Mobile Tools
 > Hey, this is Andrew Brown
-1:19:06
 >from exam Pro. And we were looking at developer and mobile tools that are commonly used with
-1:19:11
 >Azure. The first on the list is Azure signal, our service and this is a real time messaging
-1:19:17
 >service, not to be confused with azures notification service. This is for easily adding real time
-1:19:24
 >web functionality to applications. So if you ever heard of pusher, it's just like pusher. So that is the equivalent there. The next we have is Azure App Service. So easy to use
-1:19:34
 >service for deploying and scaling web applications with dotnet. No GS, Java, Python and PHP.
-1:19:40
 >I'm a bit sad, I don't see Ruby in there. But what are you going to do? So it's for
-1:19:46
 >developers want to focus on building your web apps, and not worry about the underlying infrastructure. So if you've ever used Heroku Think of it like that, but for Azure. Next
-1:19:56
 >you have Visual Studio And Visual Studio is a code editor. It's it's basically an ID and
-1:20:05
 >integrated development development environment designed for creating powerful, scalable applications for Azure. You might have heard of Visual Studio code, which is similar but different.
-1:20:17
 >But I just wanted to make mention of Visual Studio here. Then you have Xamarin. I think
-1:20:22
 >I'm pronouncing it right. And it's a mobile app framework. It's for creating powerful
-1:20:27
 >and scalable native mobile apps and dotnet, and Azure. And yeah, so that is the developer
-1:20:33
 >and mobile tools for Azure. 
 @⌨️ (01:20:36) Azure DevOps Services
 >Hey, this is Andrew Brown from exam Pro. And we're looking at
-1:20:42
 >Azure DevOps Services. So Azure DevOps is really just an umbrella service for a bunch
-1:20:48
 >of modern dev services. And we'll jump into them right away. First being Azure boards,
-1:20:54
 >if you've ever used a combat board, that is what Azure boards is. And if you've ever used GitHub projects, it literally is that because Azure, and GitHub are owned by the same company,
-1:21:05
 >Microsoft. And so they brought over that technology to Azure. So deliver value to your users faster using proven agile tools, to plan, track and discuss work across your teams. Then you have
-1:21:15
 >Azure pipelines. So build, test and deploy ci CD that works with any language, platform
-1:21:20
 >and Cloud Connect to GitHub or any other provider and deploy continuously. So if you need automatic
-1:21:26
 >deployments, that's what Azure pipelines is for, then you have Azure repos. And this is exactly like GitHub repos. So get unlimited code, cloud hosted private Git repos and collaborate
-1:21:38
 >to build better code with pull requests and advanced file management. I really mean, it's just like GitHub repos, because it's just that technology moved over to Azure. And you
-1:21:47
 >have as your test plan, so test and ship with confidence using manual and exploratory testing
-1:21:52
 >tools. So this is just a way of setting up tests. Have you ever used like, was it called Cypress or any other like, or any other testing tools, it's just built into Azure, it'll,
-1:22:01
 >it'll open up a browser and literally test your application and make sure it works as expected, then you have Azure artifacts, so create hosts and share packages with your
-1:22:10
 >team. So this is just package management, but specifically for ci CD pipelines, so ci
-1:22:16
 >CD pipelines, they have to set up the servers, and you have to have pre installed packages, that's just going to make it a lot easier for you. Last is Azure dev test labs. So this
-1:22:24
 >is just an easy way to create dev test environments for your developers. And that is the Azure
-1:22:29
 >DevOps Services. 
 @⌨️ (01:22:32) Azure Resource Manager ARM
 >Hey, this is Andrew Brown from exam Pro, and we are looking at Azure
