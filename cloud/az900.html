@@ -8,7 +8,7 @@
             <label>MainTopic</label>
             <select onchange="mainTopicfunction()" id="MainTopicid" text="MainTopic" value="MainTopic">
                 <option value="cloud">cloud</option>
-				<option value="devops">devops</option>
+                <option value="devops">devops</option>
                 <option value="programming">programming</option>
                 <option value="Security">Security</option>
                 <option value="Softwaretesting">Softwaretesting</option>
@@ -16,7 +16,7 @@
             </select>
             <label>SubTopic</label>
             <select onchange="subTopicfunction()" id="SubTopic">
-				<option value="Az900_3hrs_transcipt">Az900_3hrs_transcipt.txt</option>
+                <option value="Az900_3hrs_transcipt">Az900_3hrs_transcipt.txt</option>
                 <option value="helm">helm</option>
                 <option value="git">git</option>
                 <option value="github">github</option>
@@ -25,11 +25,10 @@
                 <option value="shellcommands">shellcommands</option>
                 <option value="maven">maven</option>
                 <option value="aws">aws</option>
-                
-				<option value="aws_3hrs_notes">aws_3hrs_notes.txt</option>
-				<option value="Az900_3hrs">Az900_3hrs.txt</option>
-				<option value="AWS_3hrs_Transcript">AWS_3hrs_Transcript.txt</option>
-				<option value="Azure">Azure.txt</option>
+                <option value="aws_3hrs_notes">aws_3hrs_notes.txt</option>
+                <option value="Az900_3hrs">Az900_3hrs.txt</option>
+                <option value="AWS_3hrs_Transcript">AWS_3hrs_Transcript.txt</option>
+                <option value="Azure">Azure.txt</option>
                 <option value="GCP">GCP</option>
                 <option value="Openstack">Openstack</option>
                 <option value="java">java</option>
@@ -47,31 +46,29 @@
                 <option value="Jmeter">Jmeter</option>
             </select>
         </div>
-        <button onclick="togglediv('Index')" style="background-color: Transparent; border: black;"><h3 id="header"></h3></button>
-		<div style="text-align: center;">
+        <button onclick="togglediv('Index')" style="background-color: Transparent; border: black;">
+            <h3 id="header"></h3>
+        </button>
+        <div style="text-align: center;">
             <center>
                 <table id="TableSelector" style="border: None;">
                     <tr>
                         <td></td>
                         <td>
                             <label> Load type</label>
-
                             <input type="radio" id="Basic" name="display_type" value="Basic" checked="checked" onclick="displayselected()" />
                             <label for="Basic">Basic</label>
-
                             <input type="radio" id="FAQ" name="display_type" value="FAQ" onclick="displayselected()" />
                             <label for="FAQ">FAQ</label>
                             <input type="radio" id="Detailed" name="display_type" value="Detailed" onclick="displayselected()" /> <label for="Detailed">Detailed</label><br />
                         </td>
                         <td></td>
                     </tr>
-
                     <tr>
                         <td><label>Load Url</label></td>
                         <td colspan="2">
                             <input type="text" id="url" size="50" value="https://ag143.github.io/Json/" readonly />
                         </td>
-
                         <td><button id="Reload" onclick="successfulreload()">Reload</button></td>
                     </tr>
                 </table>
@@ -79,8 +76,6 @@
             <br />
             <br />
         </div>
-        
-        
         <div style="width: 100%;">
             <div id="Index" style="float: left; width: 25%; border-right: 1px solid; border-radius: 5px; overflow: scroll; height: 100%;"></div>
             <div id="Main" style="float: left; width: 70%; margin-left: 10px; border-radius: 5px; overflow: scroll; height: 100%;"></div>
@@ -98,7 +93,7 @@
             success: function (data) {
                 var dataobject = data;
                 var output1 = "";
-                var indexContent = "<ul style=\"list-style: none;\">";
+                var indexContent = '<ul style="list-style: none;">';
                 var mainContent = "";
                 var counter = 0;
                 var codestart = false;
@@ -141,18 +136,17 @@
                         mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>?/g, "") + "<br>";
                     } else if (lineoutput[x].startsWith(">") && displaytype == "Basic" && codestart == false) {
                         mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br><br>";
-                    }else if (lineoutput[x].startsWith("##") && displaytype == "Basic") {
+                    } else if (lineoutput[x].startsWith("##") && displaytype == "Basic") {
                         mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/##/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/##/g, "") + "</h3><br>";
                         indexContent = indexContent + "<li>├<a style='text-decoration: none;' href=#" + lineoutput[x].replace(/##/g, "").replace(/\s/g, "_") + " >" + lineoutput[x].replace(/##/g, "─").replace(/\s/g, "_") + "</a></li>";
-                    }	else if (lineoutput[x].startsWith("#") && displaytype == "Basic") {
+                    } else if (lineoutput[x].startsWith("#") && displaytype == "Basic") {
                         mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/#/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/#/g, "") + "</h3><br>";
                         indexContent = indexContent + "<li>├<a style='text-decoration: none;' href=#" + lineoutput[x].replace(/#/g, "").replace(/\s/g, "_") + " >" + lineoutput[x].replace(/#/g, "").replace(/\s/g, "") + "</a></li>";
                     } else if (lineoutput[x].startsWith("Image: ") && codestart == false && displaytype == "Basic") {
                         //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
-                        mainContent = mainContent + "<img src=./Azure/images/timestamp/" + lineoutput[x].replace(/Image: /g, "") + " height=50% width=60%>"+""+"</img>";
+                        mainContent = mainContent + "<img src=./azure/images/timestamp/" + lineoutput[x].replace(/Image: /g, "") + " height=50% width=60%>" + "" + "</img>";
                         //indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/\s/g, "_") + ">" + lineoutput[x].replace(/\s/g, "_") + "</a></li>";
-                    }
-					else if (lineoutput[x].startsWith(" ") && codestart == false && displaytype == "Basic") {
+                    } else if (lineoutput[x].startsWith(" ") && codestart == false && displaytype == "Basic") {
                         //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
                         mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";
                         //indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/\s/g, "_") + ">" + lineoutput[x].replace(/\s/g, "_") + "</a></li>";
@@ -166,7 +160,7 @@
                     //console.log("output-->"+lineoutput[x]);
                     //mainContent = mainContent + lineoutput[x]+"<br>";
                 }
-				indexContent=indexContent+"</ul>";
+                indexContent = indexContent + "</ul>";
                 document.getElementById("Index").innerHTML = indexContent;
                 document.getElementById("Main").innerHTML = mainContent;
                 document.getElementById("title").innerHTML = pageTitle;
@@ -206,7 +200,7 @@
                 success: function (data) {
                     var dataobject = data;
                     var output1 = "";
-                    var indexContent = "<ul style=\"list-style: none;\">";
+                    var indexContent = '<ul style="list-style: none;">';
                     var mainContent = "";
                     var counter = 0;
                     var codestart = false;
@@ -249,17 +243,17 @@
                             mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>?/g, "") + "<br>";
                         } else if (lineoutput[x].startsWith(">") && displaytype == "Basic" && codestart == false) {
                             mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br>";
-                        }else if (lineoutput[x].startsWith("Image: ") && codestart == false && displaytype == "Basic") {
-                        //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
-                        mainContent = mainContent + "<img src=./images/timestamp/" + lineoutput[x].replace(/Image: /g, "") + " height=50% width=60%>"+""+"</img>";
-                        //indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/\s/g, "_") + ">" + lineoutput[x].replace(/\s/g, "_") + "</a></li>";
-                    }else if (lineoutput[x].startsWith("##") && displaytype == "Basic") {
-                        mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/##/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/##/g, "") + "</h3><br>";
-                        indexContent = indexContent + "<li>├<a style='text-decoration: none;' href=#" + lineoutput[x].replace(/##/g, "").replace(/\s/g, "_") + " >" + lineoutput[x].replace(/##/g, "─").replace(/\s/g, "_") + "</a></li>";
-                    }	else if (lineoutput[x].startsWith("#") && displaytype == "Basic") {
-                        mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/#/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/#/g, "") + "</h3><br>";
-                        indexContent = indexContent + "<li>├<a style='text-decoration: none;' href=#" + lineoutput[x].replace(/#/g, "").replace(/\s/g, "_") + " >" + lineoutput[x].replace(/#/g, "").replace(/\s/g, "") + "</a></li>";
-                    }else if (codestart == true) {
+                        } else if (lineoutput[x].startsWith("Image: ") && codestart == false && displaytype == "Basic") {
+                            //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
+                            mainContent = mainContent + "<img src=./azure/images/timestamp/" + lineoutput[x].replace(/Image: /g, "") + " height=50% width=60%>" + "" + "</img>";
+                            //indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/\s/g, "_") + ">" + lineoutput[x].replace(/\s/g, "_") + "</a></li>";
+                        } else if (lineoutput[x].startsWith("##") && displaytype == "Basic") {
+                            mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/##/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/##/g, "") + "</h3><br>";
+                            indexContent = indexContent + "<li>├<a style='text-decoration: none;' href=#" + lineoutput[x].replace(/##/g, "").replace(/\s/g, "_") + " >" + lineoutput[x].replace(/##/g, "─").replace(/\s/g, "_") + "</a></li>";
+                        } else if (lineoutput[x].startsWith("#") && displaytype == "Basic") {
+                            mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/#/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/#/g, "") + "</h3><br>";
+                            indexContent = indexContent + "<li>├<a style='text-decoration: none;' href=#" + lineoutput[x].replace(/#/g, "").replace(/\s/g, "_") + " >" + lineoutput[x].replace(/#/g, "").replace(/\s/g, "") + "</a></li>";
+                        } else if (codestart == true) {
                             //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
                             mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + "<font style=background-color:lightgrey> " + lineoutput[x].replace(/ /g, "&nbsp") + "</font><br>";
                             //indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/\s/g, "_") + ">" + lineoutput[x].replace(/\s/g, "_") + "</a></li>";
@@ -269,7 +263,7 @@
                         //console.log("output-->"+lineoutput[x]);
                         //mainContent = mainContent + lineoutput[x]+"<br>";
                     }
-					indexContent=indexContent+"</ul>";
+                    indexContent = indexContent + "</ul>";
                     document.getElementById("Index").innerHTML = indexContent;
                     document.getElementById("Main").innerHTML = mainContent;
                     document.getElementById("title").innerHTML = pageTitle;
@@ -277,8 +271,8 @@
                 },
             });
         }
-		
-		//checking encrypted with aes
+
+        //checking encrypted with aes
         var message = "Helm is a package manager for Kubernetes that allows developers and operators to more easily package, configure, and deploy applications and services onto Kubernetes clusters.";
         console.log(message);
         var key = "abc123XYZ";
