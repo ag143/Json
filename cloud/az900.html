@@ -98,7 +98,7 @@
             success: function (data) {
                 var dataobject = data;
                 var output1 = "";
-                var indexContent = "";
+                var indexContent = "<ul style=\"list-style: none;\">";
                 var mainContent = "";
                 var counter = 0;
                 var codestart = false;
@@ -141,12 +141,15 @@
                         mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>?/g, "") + "<br>";
                     } else if (lineoutput[x].startsWith(">") && displaytype == "Basic" && codestart == false) {
                         mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br><br>";
-                    } else if (lineoutput[x].startsWith("#") && displaytype == "Basic") {
-                        mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "") + "</h3><br>";
-                        indexContent = indexContent + "<li>├<a style='text-decoration: none;' href=#" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + " >" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</a></li>";
-                    } else if (lineoutput[x].startsWith("##") && displaytype == "Basic") {
-                        mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "") + "</h3><br>";
-                        indexContent = indexContent + "<li>├-<a style='text-decoration: none;' href=#" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + " >" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</a></li>";
+                    }else if (lineoutput[x].startsWith("##") && displaytype == "Basic") {
+                        mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/##/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/##/g, "") + "</h3><br>";
+                        indexContent = indexContent + "<li>├<a style='text-decoration: none;' href=#" + lineoutput[x].replace(/##/g, "─").replace(/\s/g, "_") + " >" + lineoutput[x].replace(/##/g, "─").replace(/\s/g, "_") + "</a></li>";
+                    }	else if (lineoutput[x].startsWith("#") && displaytype == "Basic") {
+                        mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/#/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/#/g, "") + "</h3><br>";
+                        indexContent = indexContent + "<li>├<a style='text-decoration: none;' href=#" + lineoutput[x].replace(/#/g, "").replace(/\s/g, "") + " >" + lineoutput[x].replace(/#/g, "").replace(/\s/g, "") + "</a></li>";
+                    }  else if (lineoutput[x].startsWith("##") && displaytype == "Basic") {
+                        mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/#/g, "─").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/#/g, "─") + "</h3><br>";
+                        indexContent = indexContent + "<li>├-<a style='text-decoration: none;' href=#" + lineoutput[x].replace(/#/g, "─").replace(/\s/g, "_") + " >" + lineoutput[x].replace(/#/g, "─").replace(/\s/g, "_") + "</a></li>";
                     } else if (lineoutput[x].startsWith(" ") && codestart == false && displaytype == "Basic") {
                         //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
                         mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";
@@ -161,6 +164,7 @@
                     //console.log("output-->"+lineoutput[x]);
                     //mainContent = mainContent + lineoutput[x]+"<br>";
                 }
+				indexContent=indexContent+"</ul>";
                 document.getElementById("Index").innerHTML = indexContent;
                 document.getElementById("Main").innerHTML = mainContent;
                 document.getElementById("title").innerHTML = pageTitle;
@@ -244,8 +248,8 @@
                         } else if (lineoutput[x].startsWith(">") && displaytype == "Basic" && codestart == false) {
                             mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br>";
                         } else if (lineoutput[x].startsWith("#") && displaytype == "Basic") {
-                            mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "") + "</h3><br>";
-                            indexContent = indexContent + "<li>├<a href=#" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</a></li>";
+                            mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/#/g, "─").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/#/g, "─") + "</h3><br>";
+                            indexContent = indexContent + "<li>├<a href=#" + lineoutput[x].replace(/#/g, "─").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/#/g, "─").replace(/\s/g, "_") + "</a></li>";
                         } else if (lineoutput[x].startsWith(" ") && codestart == false && displaytype == "Basic") {
                             //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
                             mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";
