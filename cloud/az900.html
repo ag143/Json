@@ -16,7 +16,7 @@
             </select>
             <label>SubTopic</label>
             <select onchange="subTopicfunction()" id="SubTopic">
-				<option value="Az900_3hrs_transcipt">AWS_3hrs_Transcript_modified.txt</option>
+				<option value="Az900_3hrs_transcipt">Az900_3hrs_transcipt.txt</option>
                 <option value="helm">helm</option>
                 <option value="git">git</option>
                 <option value="github">github</option>
@@ -93,7 +93,7 @@
         var displaytype = "";
         var host = "https://ag143.github.io/Json";
         $.ajax({
-            url: "https://ag143.github.io/Json/cloud/AWS_3hrs_Transcript_modified.txt",
+            url: "https://ag143.github.io/Json/cloud/Az900_3hrs_transcipt.txt",
             async: false,
             success: function (data) {
                 var dataobject = data;
@@ -143,7 +143,7 @@
                         mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br><br>";
                     } else if (lineoutput[x].startsWith("@") && displaytype == "Basic") {
                         mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "") + "</h3><br>";
-                        indexContent = indexContent + "<li><a style='text-decoration: none;' href=#" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + " >" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</a></li>";
+                        indexContent = indexContent + "<li>├<a style='text-decoration: none;' href=#" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + " >" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</a></li>";
                     } else if (lineoutput[x].startsWith(" ") && codestart == false && displaytype == "Basic") {
                         //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
                         mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";
@@ -192,7 +192,7 @@
         }
         function successfulreload() {
             $.ajax({
-                url: "https://ag143.github.io/Json/cloud/AWS_3hrs_Transcript_modified.txt",
+                url: "https://ag143.github.io/Json/cloud/Az900_3hrs_transcipt.txt",
                 async: false,
                 success: function (data) {
                     var dataobject = data;
@@ -242,7 +242,7 @@
                             mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br>";
                         } else if (lineoutput[x].startsWith("@") && displaytype == "Basic") {
                             mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "") + "</h3><br>";
-                            indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</a></li>";
+                            indexContent = indexContent + "<li>├<a href=#" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/@/g, "").replace(/\s/g, "_") + "</a></li>";
                         } else if (lineoutput[x].startsWith(" ") && codestart == false && displaytype == "Basic") {
                             //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
                             mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/ /g, "&nbsp") + "<br>";

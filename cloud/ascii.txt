@@ -1,0 +1,27 @@
+ASCII control characters
+00NULL(Null character)01SOH(Start of Header)02STX(Start of Text)03ETX(End of Text)04EOT(End of Trans.)05ENQ(Enquiry)06ACK(Acknowledgement)07BEL(Bell)08BS(Backspace)09HT(Horizontal Tab)10LF(Line feed)11VT(Vertical Tab)12FF(Form feed)13CR(Carriage return)14SO(Shift Out)15SI(Shift In)16DLE(Data link escape)17DC1(Device control 1)18DC2(Device control 2)19DC3(Device control 3)20DC4(Device control 4)21NAK(Negative acknowl.)22SYN(Synchronous idle)23ETB(End of trans. block)24CAN(Cancel)25EM(End of medium)26SUB(Substitute)27ESC(Escape)28FS(File separator)29GS(Group separator)30RS(Record separator)31US(Unit separator)127DEL(Delete)
+ASCII printable
+characters
+32space33!34"35#36$37%38&39'40(41)42*43+44,45-46.47/48049150251352453554655756857958:59;60<61=62>63?64@65A66B67C68D69E70F71G72H73I74J75K76L77M78N79O80P81Q82R83S84T85U86V87W88X89Y90Z91[92\93]94^95_96`97a98b99c100d101e102f103g104h105i106j107k108l109m110n111o112p113q114r115s116t117u118v119w120x121y122z123{124|125}126~
+Extended ASCII
+characters
+128Ç129ü130é131â132ä133à134å135ç136ê137ë138è139ï140î141ì142Ä143Å144É145æ146Æ147ô148ö149ò150û151ù152ÿ153Ö154Ü155ø156£157Ø158×159ƒ160á161í162ó163ú164ñ165Ñ166ª167º168¿169®170¬171½172¼173¡174«175»176░177▒178▓179│180┤181Á182Â183À184©185╣186║187╗188╝189¢190¥191┐192└193┴194┬195├196─197┼198ã199Ã200╚201╔202╩203╦204╠205═206╬207¤208ð209Ð210Ê211Ë212È213ı214Í215Î216Ï217┘218┌219█220▄221¦222Ì223▀224Ó225ß226Ô227Ò228õ229Õ230µ231þ232Þ233Ú234Û235Ù236ý237Ý238¯239´240≡241±242‗243¾244¶245§246÷247¸248°249¨250·251¹252³253²254■255nbsp
+
+frequently-used
+(spanish language)
+ñalt + 164Ñalt + 165@alt + 64¿alt + 168?alt + 63¡alt + 173!alt + 33:alt + 58/alt + 47\alt + 92
+vowels acute accent
+(spanish language)
+áalt + 160éalt + 130íalt + 161óalt + 162úalt + 163Áalt + 181Éalt + 144Íalt + 214Óalt + 224Úalt + 233
+vowels with
+diaresis
+äalt + 132ëalt + 137ïalt + 139öalt + 148üalt + 129Äalt + 142Ëalt + 211Ïalt + 216Öalt + 153Üalt + 154
+mathematical
+symbols
+½alt + 171¼alt + 172¾alt + 243¹alt + 251³alt + 252²alt + 253ƒalt + 159±alt + 241×alt + 158÷alt + 246
+commercial / trade
+symbols
+$alt + 36£alt + 156¥alt + 190¢alt + 189¤alt + 207®alt + 169©alt + 184ªalt + 166ºalt + 167°alt + 248
+quotes and
+parenthesis
+"alt + 34'alt + 39(alt + 40)alt + 41[alt + 91]alt + 93{alt + 123}alt + 125«alt + 174»alt + 175
