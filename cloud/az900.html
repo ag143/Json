@@ -136,7 +136,7 @@
                         mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>?/g, "") + "<br>";
                     } else if (lineoutput[x].startsWith(">") && displaytype == "Basic" && codestart == false) {
                         mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br><br>";
-                    }else if (lineoutput[x].startsWith("❓") && displaytype == "FAQ" && codestart == false) {
+                    }else if (lineoutput[x].startsWith("✪") && displaytype == "FAQ" && codestart == false) {
                         mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br><br>";
                     } else if (lineoutput[x].startsWith("##") && displaytype == "Basic") {
                         mainContent = mainContent + "<h3 id=" + lineoutput[x].replace(/##/g, "").replace(/\s/g, "_") + ">" + lineoutput[x].replace(/##/g, "") + "</h3><br>";
@@ -246,7 +246,9 @@
                             mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br>";
                         } else if (lineoutput[x].startsWith(">") && displaytype == "Detailed" && codestart == false) {
                             mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br>";
-                        } else if (lineoutput[x].startsWith("Image: ") && codestart == false && displaytype == "Detailed") {
+                        } else if (lineoutput[x].startsWith("✪") && displaytype == "FAQ" && codestart == false) {
+                        mainContent = mainContent + "&nbsp&nbsp&nbsp&nbsp&nbsp" + lineoutput[x].replace(/>/g, "") + "<br><br>";
+                    } else if (lineoutput[x].startsWith("Image: ") && codestart == false && displaytype == "Detailed") {
                             //mainContent = mainContent +  lineoutput[x].replace(/\s/g, "&nbsp")  + lineoutput[x].replace(/\s/g, "&nbsp") + "<br>";
                             mainContent = mainContent + "<img src=./azure/images/timestamp/" + lineoutput[x].replace(/Image: /g, "") + " height=50% width=60%>" + "" + "</img>";
                             //indexContent = indexContent + "<li><a href=#" + lineoutput[x].replace(/\s/g, "_") + ">" + lineoutput[x].replace(/\s/g, "_") + "</a></li>";
