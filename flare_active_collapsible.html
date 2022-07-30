@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - A Song of Ice and Fire: houses. Collapsible d3 tree</title>
+  
+  
+  
+  
+<style>
+html, body{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Lato',sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  height: 100%;
+  color: #fff;
+}
+
+.container{
+  width: 1024px;
+  max-width: 100%;
+  margin: auto;
+  display: block;
+  text-align: center;
+}
+
+/* TODO - fix image styles 
+.node image {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  border: 2px solid #fff;
+  box-shadow: 0 0 5px #ddd;
+  margin: 5px;
+} */
+
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: #c6b1b1;
+  stroke: #b20707;
+  stroke-width: 1.5px;
+} 
+
+.node text {
+  position: absolute;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <meta charset="utf-8">
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://cpettitt.github.io/project/dagre-d3/latest/dagre-d3.js"></script>
+
+<div class="container">
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  
+      <script id="rendered-js" >
+var diameter = 1024;
+
+var margin = { top: 20, right: 120, bottom: 20, left: 120 },
+width = 960 - margin.right - margin.left,
+height = 800 - margin.top - margin.bottom;
+
+var i = 0,
+duration = 500,
+root;
+
+var tree = d3.layout.tree().
+size([height, width]).
+nodeSize([32, 32]);
+
+var diagonal = d3.svg.diagonal().
+projection(function (d) {return [d.y, d.x];});
+
+var svg = d3.select("body").append("svg")
+//Setting canvas size
+.attr("width", width + margin.right + margin.left).
+attr("height", height + margin.top + margin.bottom).
+append("g")
+
+//Setting position of the root node
+.attr("transform", "translate(" + margin.left + "," + diameter / 2 + ")");
+
+//Retrieving JSON data
+d3.json("https://ag143.github.io/Json/flare.json", function (error, houses) {
+  root = houses;
+  root.x0 = height / 2;
+  root.y0 = 0;
+
+  root.children.forEach(collapse);
+  update(root);
+});
+
+d3.select(self.frameElement).style("height", "800px");
+
+function update(source) {
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root).reverse(),
+  links = tree.links(nodes);
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function (d) {d.y = d.depth * 180;});
+
+
+
+  // Update the nodes…
+  var node = svg.selectAll("g.node").
+  data(nodes, function (d) {return d.id || (d.id = ++i);});
+
+  // Enter any new nodes at the parent's previous position.
+  var nodeEnter = node.enter().append("g").
+  attr("class", "node").
+  attr("transform", function (d) {return "translate(" + source.y0 + "," + source.x0 + ")";}).
+  on("click", click);
+
+  nodeEnter.append("circle").
+  attr("r", 1e-6).
+  style("fill", function (d) {return d._children;});
+
+  // Append images
+  var images = nodeEnter.append("image").
+  attr("xlink:href", function (d) {return d.img;}).
+  attr("x", function (d) {return -15;}).
+  attr("y", function (d) {return -15;}).
+  attr("height", 30).
+  attr("width", 30);
+
+  nodeEnter.append("text").
+  attr("x", function (d) {return d.children || d._children ? -10 : 10;}).
+  attr("dy", ".35em").
+  attr("text-anchor", function (d) {return d.children || d._children ? "end" : "start";}).
+  text(function (d) {return d.name;}).
+  style("fill-opacity", 1e-6);
+
+  /*Set events on node interaction*/
+  var setEvents = images
+
+  //Transition on mouse hover - zoom in - zoom out  
+  .on('mouseenter', function () {
+    d3.select(this).
+    transition().
+    attr("x", function (d) {return -25;}).
+    attr("y", function (d) {return -25;}).
+    attr("height", 50).
+    attr("width", 50);
+    /*TODO bring image to front on hover*/
+    this.parentElement.appendChild(this);
+  }).
+
+  on('mouseleave', function () {
+    d3.select(this).
+    transition().
+    attr("x", function (d) {return -15;}).
+    attr("y", function (d) {return -15;}).
+    attr("height", 30).
+    attr("width", 30);
+  }).
+
+  on('click', function (d) {
+  });
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition().
+  duration(duration).
+  attr("transform", function (d) {return "translate(" + d.y + "," + d.x + ")";});
+
+  nodeUpdate.select("circle").
+  attr("r", 4.5).
+  style("fill", function (d) {return d._children ? "#ffd6d6" : "#b20707";});
+
+  nodeUpdate.select("text").
+  style("fill-opacity", 1);
+
+  // Transition exiting nodes to the parent's new position.
+  var nodeExit = node.exit().transition().
+  duration(duration).
+  attr("transform", function (d) {return "translate(" + source.y + "," + source.x + ")";}).
+  remove();
+
+  nodeExit.select("circle").
+  attr("r", 1e-6);
+
+  nodeExit.select("image").
+  attr("r", 1e-6);
+
+  nodeExit.select("text").
+  style("fill-opacity", 1e-6);
+
+  // Update the links…
+  var link = svg.selectAll("path.link").
+  data(links, function (d) {return d.target.id;});
+
+  // Enter any new links at the parent's previous position.
+  link.enter().insert("path", "g").
+  attr("class", "link").
+  attr("d", function (d) {
+    var o = { x: source.x0, y: source.y0 };
+    return diagonal({ source: o, target: o });
+  });
+
+  // Transition links to their new position.
+  link.transition().
+  duration(duration).
+  attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition().
+  duration(duration).
+  attr("d", function (d) {
+    var o = { x: source.x, y: source.y };
+    return diagonal({ source: o, target: o });
+  }).
+  remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function (d) {
+    d.x0 = d.x;
+    d.y0 = d.y;
+  });
+}
+
+// Toggle children on click.
+function click(d) {
+  if (d.children) {
+    d._children = d.children;
+    d.children = null;
+  } else {
+    d.children = d._children;
+    d._children = null;
+  }
+  //If the node has children, collapse unfolded sibling nodes
+  if (d.parent)
+  {
+    d.parent.children.forEach(function (element) {
+
+      if (d !== element) {
+        collapse(element);
+
+      }
+    });
+  }
+  update(d);
+}
+
+// Collapse all children of root's children before rendering
+function collapse(d) {
+  if (d.children) {
+    d._children = d.children;
+    d._children.forEach(collapse);
+    d.children = null;
+  }
+}
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
