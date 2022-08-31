@@ -1,0 +1,24 @@
+<html>
+<body>
+<script>
+   var res1 = "";
+   var res2 = "";
+   var obj = {
+      "name":"Elon musk",
+      "age":48,
+      "companies": [
+         "Tesla", "Spacex", "Neuralink"
+      ]
+   }
+   for (var i in obj.companies) {
+      res1 += obj.companies[i] + "</br>"
+   }
+   document.write("Before change: " +" "+res1);
+   obj.companies[0] = "SolarCity";
+   for (var i in obj.companies) {
+      res2 += obj.companies[i] + "</br>"
+   }
+   document.write("After change:" +" "+res2);
+</script>
+</body>
+</html>

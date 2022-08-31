@@ -1,0 +1,36 @@
+<html>
+<script>const array = ["A\\E", "A\\F", "B\\G\\I", "B\\G\\J", "C\\H"];
+const lineages = array.map(string => string.split("\\"));
+
+let nodes = {}
+
+function createParentChild(parentName, childName) {
+  const nodeNamed = name => {
+    if (nodes[name]) return nodes[name];
+    nodes[name] = { name, children: [], closed: false };
+    return nodes[name];
+  };
+  let parent = nodeNamed(parentName)
+  let child = nodeNamed(childName)
+  if (child.parent) {
+    // if this child already has a parent, we have an ill-formed input
+    // fix by undoing the existing parent relation, remove the child from its current parent
+    child.parent.children = child.parent.children.filter(c => c.name !== childName);
+  }
+  child.parent = parent
+  if (!parent.children.includes(child))
+    parent.children.push(child);
+}
+
+lineages.forEach(lineage => {
+   for (i=0; i<lineage.length-1; i++) {
+     createParentChild(lineage[i], lineage[i+1]);
+   }
+ })
+
+ let roots = Object.values(nodes).filter(node => !node.parent)
+ Object.values(nodes).forEach(node => delete node.parent)
+ 
+ console.log(roots)
+ </script>
+ </html>
