@@ -1,0 +1,918 @@
+<html>
+<head>
+</head>
+<body>
+<script src="./commonlibraries/d3.v3.min.js" charset="utf-8"></script>
+<div id="body">
+<style>
+#body {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+rect {
+  fill: none;
+  pointer-events: all;
+}
+
+pre {
+  font-size: 18px;
+}
+
+line {
+  stroke: #0E0;
+  stroke-width: 1.5px;
+}
+
+.string, .regexp {
+  color: #f39;
+}
+
+.keyword {
+  color: #00c;
+}
+
+.comment {
+  color: #777;
+  font-style: oblique;
+}
+
+.number {
+  color: #369;
+}
+
+.class, .special {
+  color: #1181B8;
+}
+
+a:link, a:visited {
+  color: steelblue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #666;
+}
+
+
+
+.node circle {
+  cursor: pointer;
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font-size: 12px;
+}
+
+path.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2.0px;
+}
+</style>
+<script>
+var json_data = {
+ "name": "Devops1",
+ "children": [
+   {
+    "name": "Operating System",
+    "free": true,
+    "description": "Interactive authoring tools",
+    "children": [
+     {
+      "name": "Linux",
+      "description": "Web-based 'cloud' applications for authoring data visualisations",
+      "free": true,
+      "children": [
+       {
+        "name": "Suse Linux",
+        "description": "An open-source platform for publishing charts on the web. Cloud-based or self-hosted.",
+        "url": "https://datawrapper.de/",
+        "free": true
+       },
+       {
+        "name": "Debian",
+        "description": "Spreadsheet in the cloud with charting",
+        "free": true
+       },
+       {
+        "name": "Fedora",
+        "description": "Cloud-based interactive tool for creating data visualisations",
+        "url": "https://plot.ly/",
+        "free": true
+       },
+       {
+        "name": "Ubuntu",
+        "description": "Open-source interactive tool for creating and exporting D3-like charts",
+        "url": "http://raw.densitydesign.org/",
+        "free": true
+       },
+	   {
+        "name": "Cent OS",
+        "description": "Open-source interactive tool for creating and exporting D3-like charts",
+        "url": "http://raw.densitydesign.org/",
+        "free": true
+       },
+	   {
+        "name": "RHEL",
+        "description": "Open-source interactive tool for creating and exporting D3-like charts",
+        "url": "http://raw.densitydesign.org/",
+        "free": true
+       }
+      ]
+     },
+     {
+      "name": "Unix",
+      "children": [
+       {
+        "name": "FREE BSD",
+        "description": "Powerful tool for data analytics and visualisation",
+        "url": "http://www.tableausoftware.com/products/desktop"
+       },
+       {
+        "name": "Open BSD",
+        "description": "Free version of Tableau Desktop where charts are public",
+        "url": "http://www.tableausoftware.com/products/public",
+        "free": true
+       },
+	   {
+        "name": "NET BSD",
+        "description": "Free version of Tableau Desktop where charts are public",
+        "url": "http://www.tableausoftware.com/products/public",
+        "free": true
+       }
+      ]
+     },
+	  {
+      "name": "Windows",
+	  "url": "https://plot.ly/"
+     }
+    ]
+   },
+   {
+    "name": "OS Concepts",
+    "description": "Code-based data visualisation creation",
+    "free": true,
+    "children": [
+     {
+      "name": "Startup management(intid)",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true,
+     },
+     {
+      "name": "service management (systemd)",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "I/O Management",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Virtualization",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Memory Storage",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "File systems",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Process Management",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Threads concurrency",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Sockets",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Posix basics",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Networking concepts",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     }
+    ]
+   },
+   {
+    "name": "Programing Language",
+    "description": "Code-based data visualisation creation",
+    "free": true,
+    "children": [
+     {
+      "name": "python",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true
+     },
+     {
+      "name": "Ruby",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     },
+	 {
+      "name": "Nodejs",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     },
+	 {
+      "name": "Go",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     },
+	 {
+      "name": "Rust",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     },
+	 {
+      "name": "C",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     },
+	 {
+      "name": "C++",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     }
+    ]
+   },
+    {
+    "name": "Infrascture as a code",
+    "description": "Code-based data visualisation creation",
+    "free": true,
+    "children": [
+     {
+      "name": "Containers",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true,
+      "children": [
+       
+       {
+	    "name": "docker",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "LXC",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   }
+      ]
+     },
+     {
+      "name": "Container Orchestration",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+      "children": [
+       {
+	    "name": "Ansible",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "chef",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "Salt",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "Puppet",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   }
+       
+      ]
+     },
+	 {
+      "name": "Configuration Management",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+      "children": [
+       
+        {
+	    "name": "Ansible",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "salt",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "chef",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "Puppet",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   }
+      ]
+     },
+	 {
+      "name": "Infrascture provisioning",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+      "children": [
+       {
+	    "name": "Terraform",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "cloudFormation",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "pulumi",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   }
+       
+      ]
+     }
+    ]
+   },
+    {
+    "name": "Monitor software and Infrascture",
+    "description": "Code-based data visualisation creation",
+    "free": true,
+    "children": [
+     {
+      "name": "Infrascture Monitoring",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true,
+      "children": [
+       {
+	    "name": "Promotheus",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "Nagios",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "Grafana",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "Zabbix",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "Monit",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "DataDog",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   }
+       
+      ]
+     },
+     {
+      "name": "Applcation Monitoring",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+      "children": [
+       {
+	    "name": "Jaeger",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "New Relic",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "App Dynamics",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "Instana",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "OpenTracing",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   }
+       
+      ]
+     },
+	 {
+      "name": "Logs Management",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+      "children": [
+       {
+	    "name": "Elastic Stack",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "GrayLog",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "splunk",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   },
+	   {
+	    "name": "paper Trial",
+		"description": "Non-JavaScript languages for producing web-based data visualisations",
+		"free": true,
+	   }
+       
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Termainal",
+    "description": "Code-based data visualisation creation",
+    "free": true,
+    "children": [
+     {
+      "name": "Terminal Multiplexers",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true,
+      "children": [
+	  {
+		"name": "Screen",
+		"description": "The language behind most (all?) browser-based data visualisations",
+		"free": true,
+       },
+	    {
+		"name": "tmux",
+		"description": "The language behind most (all?) browser-based data visualisations",
+		"free": true,
+       }
+      ]
+     },
+	 {
+      "name": "Learn Bash scripting",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true
+	 },
+	 {
+      "name": "VIm/NANO/POWERSHELL/Emacs",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true
+	 },
+     {
+      "name": "compiling apps from source(gcc, make & others)",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true
+	 },
+     {
+      "name": "System performance(nmon, iostat,sar,vmstat)",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true
+	 },
+     {
+      "name": "Others(strace,dtrace,systemtap,uname,df,history",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true
+	 },
+     {
+      "name": "Network(nmap,tcpdump,ping,mtr,traceroute,dig airman,airodump,dig,iptables,netstat",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true
+	 },
+     {
+      "name": "Process Monitoring(ps,top,htop,atop,isaf",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true
+	 },
+	 {
+      "name": "Text Manipulation Tools(awk,sed,grep,sort,uniq,cat,cut,echo,fmt,tr,nl,egrep,fgrep,wc",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true
+	 }
+    ]
+   },
+   {
+    "name": "Network,Security,protocols",
+    "description": "Code-based data visualisation creation",
+    "free": true,
+    "children": [
+     {
+      "name": "Emails",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true,
+      "children": [
+       
+	  {
+       "name": "SMTP",
+       "description": "The language behind most (all?) browser-based data visualisations",
+       "free": true
+	  },
+	  {
+       "name": "IMAPS",
+       "description": "The language behind most (all?) browser-based data visualisations",
+       "free": true
+	  },
+	  {
+       "name": "POP3S",
+       "description": "The language behind most (all?) browser-based data visualisations",
+       "free": true
+	  },
+	  {
+       "name": "White/Grey Listing",
+       "description": "The language behind most (all?) browser-based data visualisations",
+       "free": true
+	  }
+      ]
+     },
+     {
+      "name": "HTTP",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     },
+	 {
+      "name": "HTTPS",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     },
+	 {
+      "name": "FTP",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     },
+	 {
+      "name": "SSL/TLS",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     },
+	 {
+      "name": "SSH",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     },
+	 {
+      "name": "PORT FORWARDING",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     },
+	 {
+      "name": "DMARC",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     },
+	 {
+      "name": "SPF",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     },
+	 {
+      "name": "Domain Keys",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     },
+	 {
+      "name": "DNS",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     },
+	 {
+      "name": "OSI Model",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true
+     }
+    ]
+   },
+   {
+    "name": "webserver",
+    "description": "Code-based data visualisation creation",
+    "free": true,
+    "children": [
+     {
+      "name": "IIS",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true,
+     },
+     {
+      "name": "Nginx",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Apache",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Tomcat",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Caddy",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+    ]
+   },
+   {
+    "name": "CICD tool",
+    "description": "Code-based data visualisation creation",
+    "free": true,
+    "children": [
+     {
+      "name": "Gitlabci",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true,
+     },
+     {
+      "name": "Github Actions",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Jenkins",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Travisci",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Bamboo",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Teamcity",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Github Actions",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Azure Devops",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     },
+	 {
+      "name": "Circle CI",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     }
+    ]
+   },
+  
+   {
+    "name": "CloudProviders",
+    "description": "Code-based data visualisation creation",
+    "free": true,
+    "children": [
+     {
+      "name": "AWS",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true,
+     },
+     {
+      "name": "Google Cloud",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true,
+     },
+     {
+      "name": "Azure",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true,
+     },
+     {
+      "name": "Heroku",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true,
+     },
+     {
+      "name": "Alibaba CLoud",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true,
+     },
+     {
+      "name": "Digital Ocean",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true,
+     },
+     {
+      "name": "Lionode",
+      "description": "The language behind most (all?) browser-based data visualisations",
+      "free": true,
+     },
+     {
+      "name": "vultr",
+      "description": "Non-JavaScript languages for producing web-based data visualisations",
+      "free": true,
+     }
+    ]
+   },
+  
+   
+   
+  
+   
+ ]
+}
+
+var m = [20, 120, 20, 20],
+    w = 1280 - m[1] - m[3],
+    h = 800 - m[0] - m[2],
+    i = 0,
+    root;
+
+var tree = d3.layout.tree()
+    .size([h, w]);
+
+var diagonal = d3.svg.diagonal()
+    .projection(function(d) { return [d.y, d.x]; });
+
+var vis = d3.select("#body").append("svg:svg")
+    .attr("width", w + m[1] + m[3])
+    .attr("height", h + m[0] + m[2])
+  .append("svg:g")
+    .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+root = json_data;
+root.x0 = h / 2;
+root.y0 = 0;
+
+function toggleAll(d) {
+  if (d.children) {
+    d.children.forEach(toggleAll);
+    toggle(d);
+  }
+}
+
+  // Initialize the display to show a few nodes.
+  // root.children.forEach(toggleAll);
+  // toggle(root.children[1]);
+  // toggle(root.children[1].children[2]);
+  // toggle(root.children[9]);
+  // toggle(root.children[9].children[0]);
+
+ update(root);
+
+
+function update(source) {
+  var duration = d3.event && d3.event.altKey ? 5000 : 500;
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root).reverse();
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+  // Update the nodes…
+  var node = vis.selectAll("g.node")
+      .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter any new nodes at the parent's previous position.
+  var nodeEnter = node.enter().append("svg:g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+      .on("click", function(d) { toggle(d); update(d); });
+
+  nodeEnter.append("svg:circle")
+      .attr("r", 1e-6)
+      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+  nodeEnter.append('a')
+      .attr('xlink:href', function(d) {
+        return d.url;
+      })
+      .append("svg:text")
+      .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+      .attr("dy", ".35em")
+      .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+      .text(function(d) { return d.name; })
+      .style('fill', function(d) {
+        return d.free ? 'black' : '#999';
+      })
+      .style("fill-opacity", 1e-6);
+
+  nodeEnter.append("svg:title")
+    .text(function(d) {
+      return d.description;
+    });
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition()
+      .duration(duration)
+      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+  nodeUpdate.select("circle")
+      .attr("r", 6)
+      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+  nodeUpdate.select("text")
+      .style("fill-opacity", 1);
+
+  // Transition exiting nodes to the parent's new position.
+  var nodeExit = node.exit().transition()
+      .duration(duration)
+      .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+      .remove();
+
+  nodeExit.select("circle")
+      .attr("r", 1e-6);
+
+  nodeExit.select("text")
+      .style("fill-opacity", 1e-6);
+
+  // Update the links…
+  var link = vis.selectAll("path.link")
+      .data(tree.links(nodes), function(d) { return d.target.id; });
+
+  // Enter any new links at the parent's previous position.
+  link.enter().insert("svg:path", "g")
+      .attr("class", "link")
+      .attr("d", function(d) {
+        var o = {x: source.x0, y: source.y0};
+        return diagonal({source: o, target: o});
+      })
+    .transition()
+      .duration(duration)
+      .attr("d", diagonal);
+
+  // Transition links to their new position.
+  link.transition()
+      .duration(duration)
+      .attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition()
+      .duration(duration)
+      .attr("d", function(d) {
+        var o = {x: source.x, y: source.y};
+        return diagonal({source: o, target: o});
+      })
+      .remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function(d) {
+    d.x0 = d.x;
+    d.y0 = d.y;
+  });
+}
+
+// Toggle children.
+function toggle(d) {
+  if (d.children) {
+    d._children = d.children;
+    d.children = null;
+  } else {
+    d.children = d._children;
+    d._children = null;
+  }
+}
+</script>
+</div>
+</body>
+</html>
