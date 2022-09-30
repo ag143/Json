@@ -1,11 +1,12 @@
 # language
 ## Python
-## Ruby
-## Nodejs
+// ## Ruby
+// ## Nodejs
 ## Go
-## Rust
-## C
-## C++
+// ## Rust
+// ## C
+// ## C++
+// ## java
 # OS Concepts
 ## Process Management
 ## Therads & Concurrency
@@ -22,14 +23,14 @@
 ## Linux
 ### SUSE Linux
 ### Debian
-### Fedora
+// ### Fedora
 ### Ubuntu
 ### Centos
 ### RHEL
-## Unix
-### FreeBSD
-### OpenBSD
-### NetBSD
+// ## Unix
+// ### FreeBSD
+// ### OpenBSD
+// ### NetBSD
 ## Windows
 # Managingservers
 # Terminal
@@ -116,7 +117,7 @@
 # Infrastructrue as Code
 ## Containers
 ### Docker
-### LXC
+// ### LXC
 ## Configuration Management
 ### Ansible
 ### Chef
@@ -124,33 +125,34 @@
 ### Puppet
 ## Container Orchestration
 ### Kubernetes
-### Docker Swarm
-### Mesos
-### Nomad
+// ### Docker Swarm
+// ### Mesos
+// ### Nomad
 ## Infrastructure Provisioning
 ### Terraform
 ### CloudFormation
-### Pulumi
+// ### Pulumi
 ## Service Mesh
 ### Istio
 ### ENvoy
 ### Linkerd
 ### Consul
 # CICD Tools
+## Git
 ## Gitlabci
 ## GIthub actions
-## Bamboo
+// ## Bamboo
 ## Azure Devops
 ## Jenkins
-## Travisci
-## Team City
-## Circle CI
+// ## Travisci
+// ## Team City
+// ## Circle CI
 # Monitor
 ## Logs Management
 ### Elastic Stack
-### Graylog
+// ### Graylog
 ### Splunk
-### PaperTrail
+// ### PaperTrail
 ## Infrastructure Monitoring
 ### Promotheus
 ### Nagios
@@ -159,17 +161,17 @@
 ### Monit
 ### Datadog
 ## Application Monitoring
-### Jaeger
+// ### Jaeger
 ### New Relic
 ### AppDynamics
-### Instana
-### OpenTracing
+// ### Instana
+// ### OpenTracing
 # Cloud Providers
 ## AWS
 ## Google Cloud
 ## Azure
 ## Heroku
-## Alibaba Cloud
-## Digital Ocean
-## Linode
-## Vultr
+// ## Alibaba Cloud
+// ## Digital Ocean
+// ## Linode
+// ## Vultr
