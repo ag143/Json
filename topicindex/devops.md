@@ -1,12 +1,4 @@
-# language
-## Python
-// ## Ruby
-// ## Nodejs
-## Go
-// ## Rust
-// ## C
-// ## C++
-// ## java
+# Introduction
 # OS Concepts
 ## Process Management
 ## Therads & Concurrency
@@ -185,3 +177,12 @@ Its(a software) interface between the user and Hardware, which performs
 // ## Digital Ocean
 // ## Linode
 // ## Vultr
+# language
+## Python
+// ## Ruby
+// ## Nodejs
+## Go
+// ## Rust
+// ## C
+// ## C++
+// ## java
