@@ -8,6 +8,13 @@
 // ## C++
 // ## java
 # OS Concepts
+Its(a software) interface between the user and Hardware, which performs
+* Filemanagement
+* Memory Management
+* Process Management
+* handling input and ouput
+* Peripheral devices like harddisks,printers
+* refer [link](https://github.com/ag143/Json/blob/main/devops/OsConcepts.md) for more details
 ## Process Management
 ## Therads & Concurrency
 ## sockets
