@@ -37,6 +37,8 @@
 ## Text maniputlation Tools
 ### awk
 ### sed
+> replace or substitue a string
+> $sed 's/unix/linux/' geekfile.txt
 ### grep
 ### sort
 ### uniq
