@@ -39,6 +39,7 @@
 ### sed
 > replace or substitue a string
 > $sed 's/unix/linux/' geekfile.txt
+> checking the lenght of screen widthjaksdjflksdajflksaflkjasdfasdlkfjladsjflkasjdflkasjdfkljadsfjkadsjfkdajskjfkadslfjlaksdjfljadsklfjlkasjlkfjlkasdjflajslfjlkasdjfdasdkfjaklsdjflkjasdlkjfasdjdfkajsfkljasdklfjaskljfaskldjflkasdjfkalsjflasdjflajsdfkjasldfjsdjfjlk
 ### grep
 ### sort
 ### uniq
