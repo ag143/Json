@@ -38,7 +38,7 @@ Its(a software) interface between the user and Hardware, which performs
 ### sed
 > replace or substitue a string
 > $sed 's/unix/linux/' geekfile.txt
-> checking the lenght of screen widthjaksdjflksdajflksaflkjasdfasdlkfjladsjflkasjdflkasjdfkljadsfjkadsjfkdajskjfkadslfjlaksdjfljadsklfjlkasjlkfjlkasdjflajslfjlkasdjfdasdkfjaklsdjflkjasdlkjfasdjdfkajsfkljasdklfjaskljfaskldjflkasdjfkalsjflasdjflajsdfkjasldfjsdjfjlk
+>> checking the lenght of screen widthjaksdjflksdajflksaflkjasdfasdlkfjladsjflkasjdflkasjdfkljadsfjkadsjfkdajskjfkadslfjlaksdjfljadsklfjlkasjlkfjlkasdjflajslfjlkasdjfdasdkfjaklsdjflkjasdlkjfasdjdfkajsfkljasdklfjaskljfaskldjflkasdjfkalsjflasdjflajsdfkjasldfjsdjfjlk
 ### grep
 ### sort
 ### uniq
