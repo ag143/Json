@@ -1,0 +1,2 @@
+category,service,aws,azure,gcp
+compute,virtualserver,amazon EC2,Azure Virtual Machine,ComputeEngine
