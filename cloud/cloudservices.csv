@@ -1,2 +1,118 @@
 category,service,aws,azure,gcp
 compute,virtualserver,amazon EC2,Azure Virtual Machine,ComputeEngine
+Category,Service,aws,azure,gcp
+Compute,Shared Web hosting,aws,azure,gcp
+Compute,Virtual Server,aws,azure,gcp
+Compute,Bare Metal Server,aws,azure,gcp
+Compute,VMware,aws,azure,gcp
+Compute,Virtual Dedicated Host,aws,azure,gcp
+Compute,High Performance Computing,aws,azure,gcp
+Compute,Container Registration Service,aws,azure,gcp
+Compute,Container Management Service,aws,azure,gcp
+Compute,Serverless compute for containers,aws,azure,gcp
+Compute,Serverless container platform,aws,azure,gcp
+Compute,Micro Services App Development Platform,aws,azure,gcp
+Compute,Serverless app repository,aws,azure,gcp
+Compute,Virtual Private Servers,aws,azure,gcp
+Compute,Auto Scaling,aws,azure,gcp
+Compute,Batch Jobs,aws,azure,gcp
+Compute,App Development/ Deployment (Java /.Net /PHP /Python),aws,azure,gcp
+Compute,Event Driven Computing,aws,azure,gcp
+Storage,Object Storage,aws,azure,gcp
+Storage,Virtual Machine Disk Storage,aws,azure,gcp
+Storage,File Storage (SMB Compatible),aws,azure,gcp
+Storage,Long Term Cold Storage,aws,azure,gcp
+Storage,Hybrid Storage/Storage Gateway,aws,azure,gcp
+Database,Relational Database Management Service,aws,azure,gcp
+Database,Non Relational Database Management Service,aws,azure,gcp
+Database,Timeseries Database,aws,azure,gcp
+Database,Graph Database,aws,azure,gcp
+Database,In-Memory Data Store,aws,azure,gcp
+Database,Data Warehousing,aws,azure,gcp
+Migration Services,Database Migration Services,aws,azure,gcp
+Migration Services,Server Migration Services,aws,azure,gcp
+Migration Services,Small Scale Data Transfer Service,aws,azure,gcp
+Migration Services,Large Scale Data Transfer Solution (Petabyte Scale),aws,azure,gcp
+Migration Services,Large Scale Data Transfer Solution (Terabyte Scale),aws,azure,gcp
+Migration Services,Large Scale Data Transfer Solution (Exabyte Scale),aws,azure,gcp
+Application Discovery Services,Application Discovery Services,aws,azure,gcp
+Networking & Content Delivery,Virtual Networking,aws,azure,gcp
+Networking & Content Delivery,Virtual network connectivity,aws,azure,gcp
+Networking & Content Delivery,Network Gateway,aws,azure,gcp
+Networking & Content Delivery,Content Delivery Network,aws,azure,gcp
+Networking,Networking & Content Delivery,aws,azure,gcp
+Networking,Global Traffic Management,aws,azure,gcp
+Hybrid Cloud,Hybrid Cloud,aws,azure,gcp
+Networking & Content Delivery,Private Connectivity,aws,azure,gcp
+Networking & Content Delivery,Load Balancers,aws,azure,gcp
+Developer Tools,Cloud Software Development Kit,aws,azure,gcp
+Developer Tools,Cloud Software Development Kit,aws,azure,gcp
+Management Tools,Server Management Services,aws,azure,gcp
+Management Tools,Cloud Deployment Templates/ Infra as Code,aws,azure,gcp
+Management Tools,Logging & Monitoring,aws,azure,gcp
+Management Tools,Resource / Configuration Inventory,aws,azure,gcp
+Management Tools,Server Automation,aws,azure,gcp
+Management Tools,Server Automation,aws,azure,gcp
+Management Tools,Cloud Cost / Performance / Security Advisor,aws,azure,gcp
+Management Tools,Alerts and Remediation guidance Service,aws,azure,gcp
+Management Tools,Cloud Management Tools,aws,azure,gcp
+Management Tools,Automated Infra Management Services,aws,azure,gcp
+Disaster Recovery Services,Automated Disaster Recovery Services,aws,azure,gcp
+"Security & Identity, Compliance",Identity & Access Management,aws,azure,gcp
+"Security & Identity, Compliance",Cloud Security Assesment Service,aws,azure,gcp
+"Security & Identity, Compliance",Secured Socket Layer (SSL) Certificates,aws,azure,gcp
+"Security & Identity, Compliance",Hardware Based Security Module,aws,azure,gcp
+"Security & Identity, Compliance",Directory Services,aws,azure,gcp
+"Security & Identity, Compliance",Key Management Services,aws,azure,gcp
+"Security & Identity, Compliance",Consolidated Management of Multiple Cloud Accounts,aws,azure,gcp
+"Security & Identity, Compliance",DDos Protection Service,aws,azure,gcp
+"Security & Identity, Compliance",Web Application Firewall,aws,azure,gcp
+"Security & Identity, Compliance",Security & Compliance Service,aws,azure,gcp
+"Security & Identity, Compliance",Security & Compliance Service,aws,azure,gcp
+"Security & Identity, Compliance",Sensitive Data discovery and protection,aws,azure,gcp
+Big Data & Advanced Analytics,Big Data Query as a Service,aws,azure,gcp
+Big Data & Advanced Analytics,Big Data Managed Cluster as a Service,aws,azure,gcp
+Big Data & Advanced Analytics,Cloud Search,aws,azure,gcp
+Big Data & Advanced Analytics,Streaming Service,aws,azure,gcp
+Big Data & Advanced Analytics,Data Warehouse,aws,azure,gcp
+Big Data & Advanced Analytics,Business Intelligence & Data Visualization,aws,azure,gcp
+Big Data & Advanced Analytics,Cloud ETL,aws,azure,gcp
+Big Data & Advanced Analytics,Third party data exchange,aws,azure,gcp
+Big Data & Advanced Analytics,Data Analytics platform,aws,azure,gcp
+Artificial Intelligence / Machine Learning,Language Processing AI,aws,azure,gcp
+Artificial Intelligence,Speech Recognition AI,aws,azure,gcp
+Artificial Intelligence,Image Recognition AI,aws,azure,gcp
+Artificial Intelligence,Machine Learning,aws,azure,gcp
+Artificial Intelligence / Machine Learning,Machine Learning Frameworks,aws,azure,gcp
+Artificial Intelligence / Machine Learning,Business analysis,aws,azure,gcp
+Artificial Intelligence / Machine Learning,Machine Learning Inference,aws,azure,gcp
+Artificial Intelligence / Machine Learning,Intelligent Search / Search with ML,aws,azure,gcp
+Mobile Services,Mobile App Development Services,aws,azure,gcp
+Mobile Services,Web API Management Service,aws,azure,gcp
+Mobile Services,Web/Mobile Authentication Services,aws,azure,gcp
+Mobile Services,Consolidated Mgmt of Multiple Cloud Accounts,aws,azure,gcp
+Automated Cloud Management Service,Managed Cloud Services,aws,azure,gcp
+Mobile Services,Mobile App Testing Service,aws,azure,gcp
+Mobile Services,Mobile App Software Development Toolkit,aws,azure,gcp
+Mobile Services,Application Services,aws,azure,gcp
+Mobile Services,Mobile App Analytics,aws,azure,gcp
+Application Services,API Management Service,aws,azure,gcp
+Application Services,Media Transcoders,aws,azure,gcp
+Application Services,Queuing Services,aws,azure,gcp
+Application Services,Mobile Analytics,aws,azure,gcp
+Application Services,Email Services,aws,azure,gcp
+Application Services,Notification Services,aws,azure,gcp
+Application Services,Blockchain Services,aws,azure,gcp
+Application Services,Chatbot,aws,azure,gcp
+Business Productivity,Office Document Solutions,aws,azure,gcp
+Business Productivity,Desktop Application Streaming,aws,azure,gcp
+Business Productivity,Communications Service,aws,azure,gcp
+Software MarketPlace,Cloud Marketplace,aws,azure,gcp
+Internet of Things,IoT Platform,aws,azure,gcp
+Internet of Things,IoT Development Solutions,aws,azure,gcp
+Internet of Things,IoT Analysis,aws,azure,gcp
+Internet of Things,IoT Hardware,aws,azure,gcp
+Game Development,Game Development,aws,azure,gcp
+Robotics Development,Robotics Development,aws,azure,gcp
+Development & Testing,Development & Testing,aws,azure,gcp
+
