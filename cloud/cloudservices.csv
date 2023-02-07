@@ -1,115 +1,115 @@
 category,service,aws,azure,gcp
-compute,virtualserver,amazon EC2,Azure Virtual Machine,ComputeEngine
-Compute,Shared Web hosting,AWS Amplify,WebApps,Firebase
-Compute,Bare Metal Server,Amazon EC2 Bare metal Instance,Azure Bare Metal servers,Bare Metal solution
-Compute,VMware,VMC on AWS,Azure Vmware Solution,google cloud Vmware Engine
-Compute,Virtual Dedicated Host,aws,azure,gcp
-Compute,High Performance Computing,aws,azure,gcp
-Compute,Container Registration Service,Amazon ECR(Elastic Container Registry),Azure Container Registry,Artifact Registry
-Compute,Container Management Service,aws,azure,gcp
-Compute,Serverless compute for containers,aws,azure,gcp
-Compute,Serverless container platform,AWS App Runner,Azure Container Apps,Google Cloud Run
-Compute,Micro Services App Development Platform,aws,azure,gcp
-Compute,Serverless app repository,aws,azure,gcp
-Compute,Virtual Private Servers,aws,azure,gcp
-Compute,Auto Scaling,aws,azure,gcp
-Compute,Batch Jobs,AWS Batch,Azure Batch,Preemtible VMs
-Compute,App Development/ Deployment (Java /.Net /PHP /Python),aws,azure,gcp
-Compute,Event Driven Computing,aws,azure,gcp
-Storage,Object Storage,Amazon S3(Single Storage service),Azure Blob Storage,Cloud Storage
-Storage,Virtual Machine Disk Storage,aws,azure,gcp
-Storage,File Storage (SMB Compatible),aws,azure,gcp
-Storage,Long Term Cold Storage,aws,azure,gcp
-Storage,Hybrid Storage/Storage Gateway,aws,azure,gcp
-Database,Relational Database Management Service,aws,azure,gcp
-Database,Non Relational Database Management Service,aws,azure,gcp
-Database,Timeseries Database,aws,azure,gcp
-Database,Graph Database,aws,azure,gcp
-Database,In-Memory Data Store,aws,azure,gcp
-Database,Data Warehousing,Amazon Redshift,Azure Synapse Analytics,Big Query
-Migration Services,Database Migration Services,aws,azure,gcp
-Migration Services,Server Migration Services,aws,azure,gcp
-Migration Services,Small Scale Data Transfer Service,aws,azure,gcp
-Migration Services,Large Scale Data Transfer Solution (Petabyte Scale),aws,azure,gcp
-Migration Services,Large Scale Data Transfer Solution (Terabyte Scale),aws,azure,gcp
-Migration Services,Large Scale Data Transfer Solution (Exabyte Scale),aws,azure,gcp
-Application Discovery Services,Application Discovery Services,aws,azure,gcp
-Networking & Content Delivery,Virtual Networking,Amazon VPC,Azure Vnet,Virtual Private Cloud
-Networking & Content Delivery,Virtual network connectivity,aws,azure,gcp
-Networking & Content Delivery,Network Gateway,aws,azure,gcp
-Networking & Content Delivery,Content Delivery Network,aws,azure,gcp
-Networking,Networking & Content Delivery,Amazon Route 53,Azure DNS,Cloud DNS
-Networking,Global Traffic Management,aws,azure,gcp
-Hybrid Cloud,Hybrid Cloud,AWS Outposts,Azure Arc,Google Anthos
-Networking & Content Delivery,Private Connectivity,aws,azure,gcp
-Networking & Content Delivery,Load Balancers,Elastic Load Balancing,Azure Load Balancer,Cloud Load Balancing
-Developer Tools,Cloud Software Development Kit,aws,azure,gcp
-Developer Tools,Cloud Software Development Kit,aws,azure,gcp
-Management Tools,Server Management Services,aws,azure,gcp
-Management Tools,Cloud Deployment Templates/ Infra as Code,aws,azure,gcp
-Management Tools,Logging & Monitoring,aws,azure,gcp
-Management Tools,Resource / Configuration Inventory,aws,azure,gcp
-Management Tools,Server Automation,aws,azure,gcp
-Management Tools,Server Automation,aws,azure,gcp
-Management Tools,Cloud Cost / Performance / Security Advisor,aws,azure,gcp
-Management Tools,Alerts and Remediation guidance Service,aws,azure,gcp
-Management Tools,Cloud Management Tools,aws,azure,gcp
-Management Tools,Automated Infra Management Services,aws,azure,gcp
-Disaster Recovery Services,Automated Disaster Recovery Services,aws,azure,gcp
-"Security & Identity, Compliance",Identity & Access Management,aws,azure,gcp
-"Security & Identity, Compliance",Cloud Security Assesment Service,aws,azure,gcp
-"Security & Identity, Compliance",Secured Socket Layer (SSL) Certificates,aws,azure,gcp
-"Security & Identity, Compliance",Hardware Based Security Module,aws,azure,gcp
-"Security & Identity, Compliance",Directory Services,aws,azure,gcp
-"Security & Identity, Compliance",Key Management Services,AWS Key Management Service,Azure Keyvault,Cloud Key Management service
-"Security & Identity, Compliance",Consolidated Management of Multiple Cloud Accounts,aws,azure,gcp
-"Security & Identity, Compliance",DDos Protection Service,AWS Shield,Azure DDOs protection,Cloud Armor Beta
-"Security & Identity, Compliance",Web Application Firewall,aws,azure,gcp
-"Security & Identity, Compliance",Security & Compliance Service,AWS Artifact,Azure speciality and compliance,Cloud security command center
-"Security & Identity, Compliance",Security & Compliance Service,aws,azure,gcp
-"Security & Identity, Compliance",Sensitive Data discovery and protection,aws,azure,gcp
-Big Data & Advanced Analytics,Big Data Query as a Service,aws,azure,gcp
-Big Data & Advanced Analytics,Big Data Managed Cluster as a Service,Amazon EMR,Azure HD Insight,Cloud DataProc
-Big Data & Advanced Analytics,Cloud Search,aws,azure,gcp
-Big Data & Advanced Analytics,Streaming Service,aws,azure,gcp
-Big Data & Advanced Analytics,Data Warehouse,Amazon Redshift,Azure SQL Datawarehouse,Big Query
-Big Data & Advanced Analytics,Business Intelligence & Data Visualization,Amazon Quicksight,PowerBI,Google data studio
-Big Data & Advanced Analytics,Cloud ETL,aws,azure,gcp
-Big Data & Advanced Analytics,Third party data exchange,AWS Data exchange,Azure Data share,Analytics Hub
-Big Data & Advanced Analytics,Data Analytics platform,aws,azure,gcp
-Artificial Intelligence / Machine Learning,Language Processing AI,aws,azure,gcp
-Artificial Intelligence,Speech Recognition AI,aws,azure,gcp
-Artificial Intelligence,Image Recognition AI,aws,azure,gcp
-Artificial Intelligence,Machine Learning,aws,azure,gcp
-Artificial Intelligence / Machine Learning,Machine Learning Frameworks,aws,azure,gcp
-Artificial Intelligence / Machine Learning,Business analysis,aws,azure,gcp
-Artificial Intelligence / Machine Learning,Machine Learning Inference,aws,azure,gcp
-Artificial Intelligence / Machine Learning,Intelligent Search / Search with ML,Amazon Kendra,Azure Cognitive Search,Vertex mactching Engine
-Mobile Services,Mobile App Development Services,AWS Mobile Hub,Azure Mobile Apps,Cloud Mobile App
-Mobile Services,Web API Management Service,Amazon API Gateway,Azure API Management,Cloud Endpoints
-Mobile Services,Web/Mobile Authentication Services,Amazon Cognito,Azure Active Directory B2C,Firebase Authentication
-Mobile Services,Consolidated Mgmt of Multiple Cloud Accounts,aws,azure,gcp
-Automated Cloud Management Service,Managed Cloud Services,aws,azure,gcp
-Mobile Services,Mobile App Testing Service,AWS Device Farm,App Center Test,Cloud Test Lab
-Mobile Services,Mobile App Software Development Toolkit,AWS Mobile SDK,Azure Mobile SDK,Cloud tools for Android Studio
-Mobile Services,Application Services,aws,azure,gcp
-Mobile Services,Mobile App Analytics,Amazon Pinpoint,Visual Studio App Center,Firebase Analytics
-Application Services,API Management Service,aws,azure,gcp
-Application Services,Media Transcoders,aws,azure,gcp
-Application Services,Queuing Services,aws,azure,gcp
-Application Services,Mobile Analytics,aws,azure,gcp
-Application Services,Email Services,aws,azure,gcp
-Application Services,Notification Services,aws,azure,gcp
-Application Services,Blockchain Services,aws,azure,gcp
-Application Services,Chatbot,aws,azure,gcp
-Business Productivity,Office Document Solutions,aws,azure,gcp
-Business Productivity,Desktop Application Streaming,aws,azure,gcp
-Business Productivity,Communications Service,aws,azure,gcp
-Software MarketPlace,Cloud Marketplace,AWS MarketPlace,Azure marketplace,Marketplace
-Internet of Things,IoT Platform,aws,azure,gcp
-Internet of Things,IoT Development Solutions,aws,azure,gcp
-Internet of Things,IoT Analysis,aws,azure,gcp
-Internet of Things,IoT Hardware,aws,azure,gcp
-Game Development,Game Development,aws,azure,gcp
-Robotics Development,Robotics Development,aws,azure,gcp
-Development & Testing,Development & Testing,aws,azure,gcp
+compute,virtualserver,amazon_EC2,Azure_Virtual_Machine,ComputeEngine
+Compute,Shared_Web_hosting,AWS_Amplify,WebApps,Firebase
+Compute,Bare_Metal_Server,Amazon_EC2_Bare_metal_Instance,Azure_Bare_Metal_servers,Bare_Metal_solution
+Compute,VMware,VMC_on_AWS,Azure_Vmware_Solution,google_cloud_Vmware_Engine
+Compute,Virtual_Dedicated_Host,aws,azure,gcp
+Compute,High_Performance_Computing,aws,azure,gcp
+Compute,Container_Registration_Service,Amazon_ECR(Elastic_Container_Registry),Azure_Container_Registry,Artifact_Registry
+Compute,Container_Management_Service,aws,azure,gcp
+Compute,Serverless_compute_for_containers,aws,azure,gcp
+Compute,Serverless_container_platform,AWS_App_Runner,Azure_Container_Apps,Google_Cloud_Run
+Compute,Micro_Services_App_Development_Platform,aws,azure,gcp
+Compute,Serverless_app_repository,aws,azure,gcp
+Compute,Virtual_Private_Servers,aws,azure,gcp
+Compute,Auto_Scaling,aws,azure,gcp
+Compute,Batch_Jobs,AWS_Batch,Azure_Batch,Preemtible_VMs
+Compute,App_Development/_Deployment_(Java_/.Net_/PHP_/Python),aws,azure,gcp
+Compute,Event_Driven_Computing,aws,azure,gcp
+Storage,Object_Storage,Amazon_S3(Single_Storage_service),Azure_Blob_Storage,Cloud_Storage
+Storage,Virtual_Machine_Disk_Storage,aws,azure,gcp
+Storage,File_Storage_(SMB_Compatible),aws,azure,gcp
+Storage,Long_Term_Cold_Storage,aws,azure,gcp
+Storage,Hybrid_Storage/Storage_Gateway,aws,azure,gcp
+Database,Relational_Database_Management_Service,aws,azure,gcp
+Database,Non_Relational_Database_Management_Service,aws,azure,gcp
+Database,Timeseries_Database,aws,azure,gcp
+Database,Graph_Database,aws,azure,gcp
+Database,In-Memory_Data_Store,aws,azure,gcp
+Database,Data_Warehousing,Amazon_Redshift,Azure_Synapse_Analytics,Big_Query
+Migration_Services,Database_Migration_Services,aws,azure,gcp
+Migration_Services,Server_Migration_Services,aws,azure,gcp
+Migration_Services,Small_Scale_Data_Transfer_Service,aws,azure,gcp
+Migration_Services,Large_Scale_Data_Transfer_Solution_(Petabyte_Scale),aws,azure,gcp
+Migration_Services,Large_Scale_Data_Transfer_Solution_(Terabyte_Scale),aws,azure,gcp
+Migration_Services,Large_Scale_Data_Transfer_Solution_(Exabyte_Scale),aws,azure,gcp
+Application_Discovery_Services,Application_Discovery_Services,aws,azure,gcp
+Networking_&_Content_Delivery,Virtual_Networking,Amazon_VPC,Azure_Vnet,Virtual_Private_Cloud
+Networking_&_Content_Delivery,Virtual_network_connectivity,aws,azure,gcp
+Networking_&_Content_Delivery,Network_Gateway,aws,azure,gcp
+Networking_&_Content_Delivery,Content_Delivery_Network,aws,azure,gcp
+Networking,Networking_&_Content_Delivery,Amazon_Route_53,Azure_DNS,Cloud_DNS
+Networking,Global_Traffic_Management,aws,azure,gcp
+Hybrid_Cloud,Hybrid_Cloud,AWS_Outposts,Azure_Arc,Google_Anthos
+Networking_&_Content_Delivery,Private_Connectivity,aws,azure,gcp
+Networking_&_Content_Delivery,Load_Balancers,Elastic_Load_Balancing,Azure_Load_Balancer,Cloud_Load_Balancing
+Developer_Tools,Cloud_Software_Development_Kit,aws,azure,gcp
+Developer_Tools,Cloud_Software_Development_Kit,aws,azure,gcp
+Management_Tools,Server_Management_Services,aws,azure,gcp
+Management_Tools,Cloud_Deployment_Templates/_Infra_as_Code,aws,azure,gcp
+Management_Tools,Logging_&_Monitoring,aws,azure,gcp
+Management_Tools,Resource_/_Configuration_Inventory,aws,azure,gcp
+Management_Tools,Server_Automation,aws,azure,gcp
+Management_Tools,Server_Automation,aws,azure,gcp
+Management_Tools,Cloud_Cost_/_Performance_/_Security_Advisor,aws,azure,gcp
+Management_Tools,Alerts_and_Remediation_guidance_Service,aws,azure,gcp
+Management_Tools,Cloud_Management_Tools,aws,azure,gcp
+Management_Tools,Automated_Infra_Management_Services,aws,azure,gcp
+Disaster_Recovery_Services,Automated_Disaster_Recovery_Services,aws,azure,gcp
+"Security_&_Identity,_Compliance",Identity_&_Access_Management,aws,azure,gcp
+"Security_&_Identity,_Compliance",Cloud_Security_Assesment_Service,aws,azure,gcp
+"Security_&_Identity,_Compliance",Secured_Socket_Layer_(SSL)_Certificates,aws,azure,gcp
+"Security_&_Identity,_Compliance",Hardware_Based_Security_Module,aws,azure,gcp
+"Security_&_Identity,_Compliance",Directory_Services,aws,azure,gcp
+"Security_&_Identity,_Compliance",Key_Management_Services,AWS_Key_Management_Service,Azure_Keyvault,Cloud_Key_Management_service
+"Security_&_Identity,_Compliance",Consolidated_Management_of_Multiple_Cloud_Accounts,aws,azure,gcp
+"Security_&_Identity,_Compliance",DDos_Protection_Service,AWS_Shield,Azure_DDOs_protection,Cloud_Armor_Beta
+"Security_&_Identity,_Compliance",Web_Application_Firewall,aws,azure,gcp
+"Security_&_Identity,_Compliance",Security_&_Compliance_Service,AWS_Artifact,Azure_speciality_and_compliance,Cloud_security_command_center
+"Security_&_Identity,_Compliance",Security_&_Compliance_Service,aws,azure,gcp
+"Security_&_Identity,_Compliance",Sensitive_Data_discovery_and_protection,aws,azure,gcp
+Big_Data_&_Advanced_Analytics,Big_Data_Query_as_a_Service,aws,azure,gcp
+Big_Data_&_Advanced_Analytics,Big_Data_Managed_Cluster_as_a_Service,Amazon_EMR,Azure_HD_Insight,Cloud_DataProc
+Big_Data_&_Advanced_Analytics,Cloud_Search,aws,azure,gcp
+Big_Data_&_Advanced_Analytics,Streaming_Service,aws,azure,gcp
+Big_Data_&_Advanced_Analytics,Data_Warehouse,Amazon_Redshift,Azure_SQL_Datawarehouse,Big_Query
+Big_Data_&_Advanced_Analytics,Business_Intelligence_&_Data_Visualization,Amazon_Quicksight,PowerBI,Google_data_studio
+Big_Data_&_Advanced_Analytics,Cloud_ETL,aws,azure,gcp
+Big_Data_&_Advanced_Analytics,Third_party_data_exchange,AWS_Data_exchange,Azure_Data_share,Analytics_Hub
+Big_Data_&_Advanced_Analytics,Data_Analytics_platform,aws,azure,gcp
+Artificial_Intelligence_/_Machine_Learning,Language_Processing_AI,aws,azure,gcp
+Artificial_Intelligence,Speech_Recognition_AI,aws,azure,gcp
+Artificial_Intelligence,Image_Recognition_AI,aws,azure,gcp
+Artificial_Intelligence,Machine_Learning,aws,azure,gcp
+Artificial_Intelligence_/_Machine_Learning,Machine_Learning_Frameworks,aws,azure,gcp
+Artificial_Intelligence_/_Machine_Learning,Business_analysis,aws,azure,gcp
+Artificial_Intelligence_/_Machine_Learning,Machine_Learning_Inference,aws,azure,gcp
+Artificial_Intelligence_/_Machine_Learning,Intelligent_Search_/_Search_with_ML,Amazon_Kendra,Azure_Cognitive_Search,Vertex_mactching_Engine
+Mobile_Services,Mobile_App_Development_Services,AWS_Mobile_Hub,Azure_Mobile_Apps,Cloud_Mobile_App
+Mobile_Services,Web_API_Management_Service,Amazon_API_Gateway,Azure_API_Management,Cloud_Endpoints
+Mobile_Services,Web/Mobile_Authentication_Services,Amazon_Cognito,Azure_Active_Directory_B2C,Firebase_Authentication
+Mobile_Services,Consolidated_Mgmt_of_Multiple_Cloud_Accounts,aws,azure,gcp
+Automated_Cloud_Management_Service,Managed_Cloud_Services,aws,azure,gcp
+Mobile_Services,Mobile_App_Testing_Service,AWS_Device_Farm,App_Center_Test,Cloud_Test_Lab
+Mobile_Services,Mobile_App_Software_Development_Toolkit,AWS_Mobile_SDK,Azure_Mobile_SDK,Cloud_tools_for_Android_Studio
+Mobile_Services,Application_Services,aws,azure,gcp
+Mobile_Services,Mobile_App_Analytics,Amazon_Pinpoint,Visual_Studio_App_Center,Firebase_Analytics
+Application_Services,API_Management_Service,aws,azure,gcp
+Application_Services,Media_Transcoders,aws,azure,gcp
+Application_Services,Queuing_Services,aws,azure,gcp
+Application_Services,Mobile_Analytics,aws,azure,gcp
+Application_Services,Email_Services,aws,azure,gcp
+Application_Services,Notification_Services,aws,azure,gcp
+Application_Services,Blockchain_Services,aws,azure,gcp
+Application_Services,Chatbot,aws,azure,gcp
+Business_Productivity,Office_Document_Solutions,aws,azure,gcp
+Business_Productivity,Desktop_Application_Streaming,aws,azure,gcp
+Business_Productivity,Communications_Service,aws,azure,gcp
+Software_MarketPlace,Cloud_Marketplace,AWS_MarketPlace,Azure_marketplace,Marketplace
+Internet_of_Things,IoT_Platform,aws,azure,gcp
+Internet_of_Things,IoT_Development_Solutions,aws,azure,gcp
+Internet_of_Things,IoT_Analysis,aws,azure,gcp
+Internet_of_Things,IoT_Hardware,aws,azure,gcp
+Game_Development,Game_Development,aws,azure,gcp
+Robotics_Development,Robotics_Development,aws,azure,gcp
+Development_&_Testing,Development_&_Testing,aws,azure,gcp
