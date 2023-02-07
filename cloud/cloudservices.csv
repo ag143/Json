@@ -1,6 +1,5 @@
 category,service,aws,azure,gcp
 compute,virtualserver,amazon EC2,Azure Virtual Machine,ComputeEngine
-Category,Service,aws,azure,gcp
 Compute,Shared Web hosting,aws,azure,gcp
 Compute,Virtual Server,aws,azure,gcp
 Compute,Bare Metal Server,aws,azure,gcp
