@@ -21,7 +21,7 @@ var investment = 100000.00;
 var initialInvestment = investment;
 var isRSIchecked="false",isMACDChecked="false",isEMA1Checked="false",isEMA2Checked="false",isBuydone="false";
 var output1="";
-var awsservices = [],azureservices=[],gcpservices=[];
+var awsservices ,azureservices,gcpservices;
 	
  var f = new XMLHttpRequest();
     f.open("GET", "cloud.csv", false);
@@ -154,7 +154,7 @@ var awsservices = [],azureservices=[],gcpservices=[];
 					
 					
 					for (var y=0;y<o.length-1;y++){
-						output1= output1+"<tr><td>"+y+"<td>"+s[y]+"<td>"+d[y]+"<td>"+t[y]+"<td>"+o[y]+"<td>"+h[y]+"<td>"+l[y]+"<td>"+c[y];
+						output1= output1+"<tr><td>"+y+"<td>"+s[y]+"<td>"+d[y]+"<td>"+t[y][0]+"<td>"+o[y]+"<td>"+h[y]+"<td>"+l[y]+"<td>"+c[y];
 						if(option=="RSI")
 						 {
 						
