@@ -44,7 +44,7 @@ var awsservices ,azureservices,gcpservices;
 					d.push(details[1]);
 					
 					var AwsServiceValues = details[2];
-					awsservices = AwsServiceValues.split(";");
+					awsservices = AwsServiceValues.toString().split(";");
 					
 					for (var servicecount=0;servicecount<awsservices.length;servicecount++)
 					{
