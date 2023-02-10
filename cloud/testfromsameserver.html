@@ -12,7 +12,7 @@
 	<script>
 
 function scan(){
- var o = [], h = [], l = [], c=[], d=[], t=[][], s=[], RSIchange = [], RSIGain = [], RSILoss = [],RSIAvgGain = [], RSIAvgLoss = [], RSIRS =  [],RSIRSI =[],RSI14DAYTRIAL = [];
+ var o = [], h = [], l = [], c=[], d=[], t=[], s=[], RSIchange = [], RSIGain = [], RSILoss = [],RSIAvgGain = [], RSIAvgLoss = [], RSIRS =  [],RSIRSI =[],RSI14DAYTRIAL = [];
  var lineoutput,  details;
 var transactions=[],transactionStart=[],transactionEnd=[],transactionID=[], TransactionProfitOrLoss=[],TotalProfitAndLoss=0,transactionIterator=0;
 var EMA1=[],EMA2=[], PreviousEMA1=[],PreviousEMA2=[],MACD=[],SignalLine=[];
@@ -45,17 +45,20 @@ var awsservices = [],azureservices=[],gcpservices=[];
 					awsservices = details[2].split(";");
 					for (var servicecount=0;servicecount<awsservices.length;servicecount++)
 					{
-					t[x].push(awsservices[servicecount]);					
+					t[x]=[];
+					t[x][servicecount].push(awsservices[servicecount]);					
 					}
 					azureservices = details[3].split(";");
-					for (var servicecount=0;servicecount<azureservices.length;servicecount++)
+					for (var servicecount=0;servicecount<awsservices.length;servicecount++)
 					{
-					o[x].push(awsservices[servicecount]);					
+					o[x]=[];
+					o[x][servicecount].push(awsservices[servicecount]);					
 					}
 					gcpservices = details[4].split(";");
-					for (var servicecount=0;servicecount<gcpservices.length;servicecount++)
+					for (var servicecount=0;servicecount<awsservices.length;servicecount++)
 					{
-					h[x].push(awsservices[servicecount]);					
+					h[x]=[];
+					h[x][servicecount].push(awsservices[servicecount]);					
 					}
 					
 					l.push(details[5]);
