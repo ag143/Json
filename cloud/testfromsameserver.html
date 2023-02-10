@@ -42,7 +42,10 @@ var awsservices ,azureservices,gcpservices;
 				    details= lineoutput[x].split(",");
 					s.push(details[0]);
 					d.push(details[1]);
-					awsservices = details[2].split(";");
+					
+					var AwsServiceValues = details[2];
+					awsservices = AwsServiceValues.split(";");
+					
 					for (var servicecount=0;servicecount<awsservices.length;servicecount++)
 					{
 					t[x]=[];
