@@ -46,19 +46,19 @@ var awsservices = [],azureservices=[],gcpservices=[];
 					for (var servicecount=0;servicecount<awsservices.length;servicecount++)
 					{
 					t[x]=[];
-					t[x][servicecount].push(awsservices[servicecount]);					
+					t[x][servicecount].awsservices[servicecount];
 					}
 					azureservices = details[3].split(";");
-					for (var servicecount=0;servicecount<awsservices.length;servicecount++)
+					for (var servicecount=0;servicecount<azureservices.length;servicecount++)
 					{
 					o[x]=[];
-					o[x][servicecount].push(awsservices[servicecount]);					
+					o[x][servicecount].azureservices[servicecount];					
 					}
 					gcpservices = details[4].split(";");
-					for (var servicecount=0;servicecount<awsservices.length;servicecount++)
+					for (var servicecount=0;servicecount<gcpservices.length;servicecount++)
 					{
 					h[x]=[];
-					h[x][servicecount].push(awsservices[servicecount]);					
+					h[x][servicecount].gcpservices[servicecount];
 					}
 					
 					l.push(details[5]);
