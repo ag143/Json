@@ -51,7 +51,7 @@ var awsservices ,azureservices,gcpservices;
 					t[x]=[];
 					t[x][servicecount]=awsservices[servicecount];
 					}
-					azureservices = details[3].split(";");
+					azureservices = details[3].toString().split(";");
 					for (var servicecount=0;servicecount<azureservices.length;servicecount++)
 					{
 					o[x]=[];
