@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+	<h3><a href="#footer">Go to bottom</a> for Analysis Report</h3>
+	<br>
+	<button onClick=scan()>scan</button>
+	<pre id="fileDisplayArea" class="collapsible"><pre>
+	<footer id="footer"></footer>
+	<script>
+
+function scan(){
+ var o = [], h = [], l = [], c=[], d=[], t=[][], s=[], RSIchange = [], RSIGain = [], RSILoss = [],RSIAvgGain = [], RSIAvgLoss = [], RSIRS =  [],RSIRSI =[],RSI14DAYTRIAL = [];
+ var lineoutput,  details;
+var transactions=[],transactionStart=[],transactionEnd=[],transactionID=[], TransactionProfitOrLoss=[],TotalProfitAndLoss=0,transactionIterator=0;
+var EMA1=[],EMA2=[], PreviousEMA1=[],PreviousEMA2=[],MACD=[],SignalLine=[];
+var option = "";
+var investment = 100000.00;
+var initialInvestment = investment;
+var isRSIchecked="false",isMACDChecked="false",isEMA1Checked="false",isEMA2Checked="false",isBuydone="false";
+var output1="";
+var awsservices = [],azureservices=[],gcpservices=[];
+	
+ var f = new XMLHttpRequest();
+    f.open("GET", "cloud.csv", false);
+    f.onreadystatechange = function ()
+    {
+        if(f.readyState === 4)
+        {
+            if(f.status === 200 || f.status == 0)
+            {
+                var res= f.responseText;
+                alert(res);
+		    console.log(res);
+		 
+		   lineoutput = res.split("\n");
+					for (var x=0;x<lineoutput.length;x++)
+					{
+// 					console.log("output-->"+lineoutput[x]);
+				    details= lineoutput[x].split(",");
+					s.push(details[0]);
+					d.push(details[1]);
+					awsservices = details[2].split(";");
+					for (var servicecount=0;servicecount<awsservices.length;servicecount++)
+					{
+					t[x].push(awsservices[servicecount]);					
+					}
+					azureservices = details[3].split(";");
+					for (var servicecount=0;servicecount<azureservices.length;servicecount++)
+					{
+					o[x].push(awsservices[servicecount]);					
+					}
+					gcpservices = details[4].split(";");
+					for (var servicecount=0;servicecount<gcpservices.length;servicecount++)
+					{
+					h[x].push(awsservices[servicecount]);					
+					}
+					
+					l.push(details[5]);
+					c.push(details[6]);
+					}
+		    
+// 		    for (var y=0;y<s.length;y++)
+// 			  console.log("----->"+s[y]+","+d[y]+","+t[y]+","+o[y]+","+h[y]+","+l[y]+","+c[y]);
+
+		    option = "RSI";
+					nMovingAverage = 2;
+					nMovingAverage1 =12;
+					nMovingAverage2 =26;
+					
+					//initial configuration
+					for(var x=0;x<c.length;x++)
+					{
+					PreviousEMA1[x] = 0.0;
+					PreviousEMA2[x] = 0.0;
+					SignalLine [x]=0.0;
+					RSIchange[x]=0.0;
+					
+					
+
+					if(x>0)
+					RSIchange[x] = c[x]-c[x-1];
+					else
+					RSIchange[x] = 0.0;
+					
+					if(parseFloat(RSIchange[x]) > 0.0)
+					RSIGain[x] = RSIchange[x];
+					else 
+					RSIGain[x] = 0.0;
+					if(parseFloat(RSIchange[x]) < 0.0)
+					RSILoss[x] = RSIchange[x];
+					else
+					RSILoss[x] = 0.0;
+					
+					console.log("close:"+c[y]+"--->RSI change:"+RSIchange[x]+"--- >RSI GAIN:"+RSIGain[x]+"-- >RSI LOSS:"+RSILoss[x] );
+					if(x<14)
+					{
+					RSIAvgGain[x]=0.0;
+					RSIAvgLoss[x]=0.0;
+					RSIRS[x]=0.0;
+					}
+					RSIAvgLoss[x]=0.0;
+					RSIAvgGain[x]=0.0;
+					if(x==14)
+					  {
+						for(var y =0;y<14;y++){
+							RSIAvgGain[x]= parseFloat(RSIAvgGain[x]) + parseFloat(RSIGain[y]);
+							RSIAvgLoss[x]= parseFloat(RSIAvgLoss[x]) + parseFloat(RSILoss[y]);
+							}
+						RSIAvgGain[x] = parseFloat(RSIAvgGain[x])/14;
+						RSIAvgLoss[x] = parseFloat(RSIAvgLoss[x])/14;
+						if(RSIAvgLoss[x]<0)
+						RSIAvgLoss[x]= -RSIAvgLoss[x];
+						RSIRS[x]=parseFloat(RSIAvgGain[x])/parseFloat(RSIAvgLoss[x]);
+						RSIRSI[x]=100- 100/(1+RSIRS[x]);
+						console.log("RSI Indicator----------------------------------------------------------- >"+parseFloat(RSIRSI[x]));
+					  }
+					if(x>14)
+					  {
+						RSIAvgGain[x]= (parseFloat(RSIAvgGain[x-1])*13 +parseFloat(RSIGain[x]))/14;
+						RSIAvgLoss[x]= (parseFloat(RSIAvgLoss[x-1])*13 +parseFloat(RSILoss[x]))/14;
+						if(RSIAvgLoss[x]<0)
+						RSIAvgLoss[x]= -RSIAvgLoss[x];
+						RSIRS[x]=parseFloat(RSIAvgGain[x])/parseFloat(RSIAvgLoss[x]);
+						RSIRSI[x]=100- 100/(1+RSIRS[x]);
+						console.log("RSI Indicator------------------------------------------------------------------------------------------ >"+parseFloat(RSIRSI[x]));
+					  }
+					  
+					  
+					}
+		    
+		    PreviousEMA1= fEMA(c,nMovingAverage1,PreviousEMA1);
+					PreviousEMA2= fEMA(c,nMovingAverage2,PreviousEMA2);
+					
+					
+					for(var x=0;x<c.length ;x++)
+					{
+					console.log("PreviousEMA1["+x+"]"+"---- >"+PreviousEMA1[x]);
+					MACD[x]=PreviousEMA1[x]-PreviousEMA2[x];
+					
+					}
+					SignalLine = fEMA(MACD,12,SignalLine);
+					
+					output1  =output1 + "<table border=5>";
+					output1  =output1 + "<tr><th>slno<th>Category<th>Service<th>AWS<th>Azure<th>GCP<th>Low<th>close<th>"+nMovingAverage1+" days EMA <th>"+nMovingAverage2+" days EMA<th>MACD<th>SignalLine<th>RSI<th>BUY/SELL<th>Qty<th>price<th>total<th>profit/loss</tr>";
+					
+					
+					// Prerequisites
+					
+					
+					for (var y=0;y<o.length-1;y++){
+						output1= output1+"<tr><td>"+y+"<td>"+s[y]+"<td>"+d[y]+"<td>"+t[y]+"<td>"+o[y]+"<td>"+h[y]+"<td>"+l[y]+"<td>"+c[y];
+						if(option=="RSI")
+						 {
+						
+						
+						  output1= output1+"<td> "+parseFloat(PreviousEMA1[y]).toFixed(2);
+						  output1= output1+"<td> "+parseFloat(PreviousEMA2[y]).toFixed(2);
+						  output1= output1+"<td> "+parseFloat(MACD[y]).toFixed(2);
+						  output1= output1+"<td> "+parseFloat(SignalLine[y]).toFixed(2);
+						  output1= output1+"<td> "+parseFloat(RSIRSI[y]).toFixed(2);
+						  
+						  console.log(PreviousEMA1[y]-PreviousEMA2[y]);
+						  if(RSIRSI[y]<30 && investment>10000 && isBuydone=="false" && y>26){
+							isBuydone="true";
+						    output1= output1+"<td>BUY";
+							transactionIterator= transactionIterator+1;
+							
+							transactionID[transactionIterator]=transactionIterator;
+							
+							output1= output1+"<td>10";
+							
+							investment = investment - c[y]*10;
+							transactionStart[transactionIterator]=c[y]*10;
+							
+							}
+						else if(RSIRSI[y]>70 && investment>10000 && isBuydone=="true"){
+						    isBuydone="false";
+							output1= output1+"<td>SELL";
+							
+							output1= output1+"<td>10";
+							investment = investment + c[y]*10;
+							transactionEnd[transactionIterator]=c[y]*10;
+							
+							}
+						else
+							{
+							output1= output1+"<td>";
+							output1= output1+"<td>";
+							}
+						output1= output1+"<td>";
+						output1= output1+"<td>";
+						output1= output1+"<td>"+investment;
+						output1= output1+"</tr>";
+							
+							
+						 }
+						 
+						
+						}
+		
+					output1  =output1 + "</table>";
+					
+					
+					output1= output1 +"<br><br><br><br><br>";
+					
+					
+					output1= output1 +"<h1> Analysis Report</h1>";
+					
+					
+					output1= output1 +"<table border=5>";
+					
+					output1= output1 +"<tr><th>slno<th>Stock Bought<th>Stock Sold<th> Profit or Loss</tr>";
+					
+					
+					
+					for (var z=1;z<transactionIterator+1;z++){
+					
+					if(transactionStart[z]>transactionEnd[z])
+						TransactionProfitOrLoss[z] = (transactionEnd[z]- transactionStart[z]);
+					else
+						TransactionProfitOrLoss[z] = (transactionEnd[z]-transactionStart[z]);
+					
+					TotalProfitAndLoss=TotalProfitAndLoss+TransactionProfitOrLoss[z];
+					output1= output1 +"<tr>"+
+					"<td>"+z+
+					"<td>"+transactionStart[z]+
+					"<td>"+transactionEnd[z]+
+					"<td>"+TransactionProfitOrLoss[z]+
+					
+					"</tr>";
+					}
+					
+		   			 output1= output1+ "<tr>"+
+					"<td colspan=3><b>Total Profit or Loss</b><td>"+TotalProfitAndLoss+
+					 "</tr>";
+		    
+		    			output1= output1+ "<tr>"+
+					"<td><b>Initial Investment</b><td>"+initialInvestment+"<td><b>InvestmentLeft</b><td>"+investment
+					 "</tr>";
+					
+					output1= output1 +"</table>";
+					
+					
+					fileDisplayArea.innerHTML= output1;
+		    
+            }
+        }
+    }
+    f.send(null);
+	
+}
+		
+function fSMA(c,y,n){
+			var total =0.0; 
+			
+		      if(y>=n)
+		      for(var i=n;i>0;i--)
+		      total = parseFloat(total) + parseFloat(c[y-i]);
+		 
+		      return total/n;
+		
+		
+		    }
+			function fEMA(c,n,PreviousEMA){
+			  for(var x=0;x<c.length;x++)
+					{
+					if(x==n)
+					{
+					for(var y=n;y>0;y--)
+					{
+					PreviousEMA[n]=parseFloat(PreviousEMA[n])+parseFloat(c[y]);
+					
+					}
+					PreviousEMA[n]=PreviousEMA[n]/n;
+					}
+					if(x>n)
+					{
+					var k= 2/ (parseInt(n)+1);
+					PreviousEMA[x]=c[x]*k + PreviousEMA[x-1]*(1-k);
+					
+					}
+					}
+					return PreviousEMA;
+			}
+
+	</script>
+	<script>
+	</script>
+</body>
+</html>
