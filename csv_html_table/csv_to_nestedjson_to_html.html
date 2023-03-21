@@ -1,0 +1,54 @@
+<body>
+<script>
+var arr = [
+        { text: "text3", id: "3", parentId: "2" ,shortText:"",Icon:"",Links:""},
+        { text: "text2", id: "2", parentId: "1" ,shortText:"",Icon:"",Links:""},
+        { text: "text4", id: "4", parentId: "1" ,shortText:"",Icon:"",Links:""},
+		{ text: "text6", id: "6", parentId: "1" ,shortText:"",Icon:"",Links:""},
+        { text: "text1", id: "1", parentId:"" ,shortText:"",Icon:"",Links:""},
+        { text: "text5", id: "5", parentId:"" ,shortText:"",Icon:"",Links:""}
+    ],
+    data = arr.reduce(function (r, a) {
+        function getParent(s, b) {
+            return b.id === a.parentId ? b : (b.nodes && b.nodes.reduce(getParent, s));
+        }
+
+        var index = 0, node;
+        if ('parentId' in a) {
+            node = r.reduce(getParent, {});
+        }
+        if (node && Object.keys(node).length) {
+            node.nodes = node.nodes || [];
+            node.nodes.push(a);
+        } else {
+            while (index < r.length) {
+                if (r[index].parentId === a.id) {
+                    a.nodes = (a.nodes || []).concat(r.splice(index, 1));
+                } else {
+                    index++;
+                }
+            }
+            r.push(a);
+        }
+        return r;
+    }, []);
+
+//document.write('<pre>' + JSON.stringify(data, 0, 4) + '</pre>');
+read(data);
+function read(jsonData){
+for (var testobj in jsonData)
+{
+console.log("test----->"+jsonData[testobj].text);
+console.log("length"+jsonData.length);
+document.write('<div style="border:1px solid black;padding: 70px;">');
+document.write(jsonData[testobj].text);
+if (jsonData.length>1 )
+read(jsonData[testobj].nodes);
+document.write('</div>');
+
+
+}
+
+}
+</script>
+</body>
