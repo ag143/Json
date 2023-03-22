@@ -1,13 +1,7 @@
 <body>
 <script>
 var arr = [
-        { text: "text3", id: "3", parentId: "2" ,shortText:"",Icon:"",Links:""},
-        { text: "text2", id: "2", parentId: "1" ,shortText:"",Icon:"",Links:""},
-        { text: "text4", id: "4", parentId: "1" ,shortText:"",Icon:"",Links:""},
-		{ text: "text6", id: "6", parentId: "1" ,shortText:"",Icon:"",Links:""},
-        { text: "text1", id: "1", parentId:"" ,shortText:"",Icon:"",Links:""},
-        { text: "text5", id: "5", parentId:"" ,shortText:"",Icon:"",Links:""}
-    ],
+        { text: "text3", id: "3", parentId: "2" ,shortText:"",Icon:"",Links:""}, { text: "text2", id: "2", parentId: "1" ,shortText:"",Icon:"",Links:""}, { text: "text4", id: "4", parentId: "1" ,shortText:"",Icon:"",Links:""},		{ text: "text6", id: "6", parentId: "1" ,shortText:"",Icon:"",Links:""}, { text: "text1", id: "1", parentId:"" ,shortText:"",Icon:"",Links:""}, { text: "text5", id: "5", parentId:"" ,shortText:"",Icon:"",Links:""},{ text: "text6", id: "3", parentId:"" ,shortText:"",Icon:"",Links:""} ],
     data = arr.reduce(function (r, a) {
         function getParent(s, b) {
             return b.id === a.parentId ? b : (b.nodes && b.nodes.reduce(getParent, s));
