@@ -51,10 +51,12 @@ for (var testobj in jsonData)
 {
 console.log("test----->"+jsonData[testobj].text);
 console.log("length"+jsonData.length);
-var colorvar = Math.floor(Math.random()*16777215).toString(16);
-document.write('<div style="border:1px solid black;padding: 10px;border-spacing: 15px;margin:10px;max-width: 400px;min-height: 200px;background-color:#'+colorvar+'">');
+var colorSelector = ["aqua", "light-blue", "fuchsia", "grey", "light-green", "lime", "navy", "olive", "purple", "silver", "teal", "yellow","snow","gainsboro","gray79","plum1","pink1","orange1","wheat1"];
+const random = Math.floor(Math.random() * colorSelector.length);
+//var colorvar = Math.floor(Math.random()*16777215).toString(16);
+document.write('<div style="border:1px solid black;padding: 10px;border-spacing: 15px;margin:10px;max-width: 400px;min-height: 200px;background-color:'+colorSelector[random]+'">');
 document.write('<div style="border:0px solid">');
-document.write('<button id=btid'+jsonData[testobj].id+' style="float: right;border: none;background: none;">⊕ </button>');
+document.write('<button id=btid'+jsonData[testobj].id+' style="float: right;border: none;background: none;font-size: 25px;">⊕ </button>');
 
 document.write(jsonData[testobj].text);
 document.write('</div>');
