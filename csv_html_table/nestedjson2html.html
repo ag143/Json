@@ -2,50 +2,12 @@
 <script>
 var arr = [
         { text: "Company", id: "1", parentId:"" ,shortText:"",Icon:"",Links:""},
-		{ text: "Environment", id: "2", parentId: "1" ,shortText:"",Icon:"",Links:""},
+		{ text: "environment", id: "2", parentId: "1" ,shortText:"",Icon:"",Links:""},
+		{ text: "cluster", id: "3", parentId: "2" ,shortText:"",Icon:"",Links:""},
+		{ text: "component1", id: "4", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "Component2", id: "5", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "component3", id: "6", parentId: "3" ,shortText:"",Icon:"",Links:""},
 		
-		{ text: "Service", id: "3", parentId: "2" ,shortText:"",Icon:"",Links:""},
-		{ text: "Webservice", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service1", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service2", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service3", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service4", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service5", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service6", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service7", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
-		{ text: "service8", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
-		{ text: "service9", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
-		{ text: "service10", id: "4", parentId: "2" ,shortText:"",Icon:"",Links:""},
-		{ text: "service12", id: "4", parentId: "4" ,shortText:"",Icon:"",Links:""},
-		{ text: "service13", id: "4", parentId: "4" ,shortText:"",Icon:"",Links:""},
-		{ text: "service14", id: "5", parentId: "2" ,shortText:"",Icon:"",Links:""},
-		{ text: "service", id: "5.1", parentId: "5" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "5.2", parentId: "5" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "5.3", parentId: "5" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "5.3.1", parentId: "5.3" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "5.3.2", parentId: "5.3" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "5.3.3", parentId: "5.3" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "5.4", parentId: "5" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "5.4.1", parentId: "5.4" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "5.4.2", parentId: "5.4" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "5.4.3", parentId: "5.4" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "6", parentId: "1" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "7", parentId: "6" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "7", parentId: "7" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "7", parentId: "7" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "7", parentId: "7" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "7", parentId: "7" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "7", parentId: "7" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "7", parentId: "7" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "7", parentId: "7" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "7", parentId: "7" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "8", parentId: "6" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "8", parentId: "8" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "8", parentId: "8" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "8", parentId: "8" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "8", parentId: "8" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "5", parentId: "1" ,shortText:"",Icon:"",Links:""},
-		{ text: "Service", id: "2", parentId: "5" ,shortText:"",Icon:"",Links:""},
 		
     ],
     data = arr.reduce(function (r, a) {
@@ -73,24 +35,79 @@ var arr = [
         return r;
     }, []);
 
+ 
+
 //document.write('<pre>' + JSON.stringify(data, 0, 4) + '</pre>');
+
 read(data);
+registerbuttonEvents(data);
+function togglediv(dividlocal)
+{
+document.getElementById(dividlocal).style.display='none';
+console.log('button triggered');
+}
 function read(jsonData){
 for (var testobj in jsonData)
 {
 console.log("test----->"+jsonData[testobj].text);
 console.log("length"+jsonData.length);
-document.write('<div style="border:1px solid black;padding: 10px;border-spacing: 15px;margin:10px;">');
-document.write('<button type=\'button\' style="float: right;">⊕⊖ </button>');
+document.write('<div style="border:1px solid black;padding: 10px;border-spacing: 15px;margin:10px;max-width: 400px;min-height: 200px;">');
+document.write('<div style="border:0px solid">');
+document.write('<button id=btid'+jsonData[testobj].id+' style="float: right;border: none;background: none;">⊕ </button>');
 
 document.write(jsonData[testobj].text);
+document.write('</div>');
+document.write('<div id=divid'+jsonData[testobj].id+'>');
+
+document.getElementById('divid'+jsonData[testobj].id).onclick = togglediv('divid'+jsonData[testobj].id);
+
+
+var tempbutton = document.getElementById('divid'+jsonData[testobj].id);
+tempbutton.onclick = togglediv('divid'+jsonData[testobj].id);
+tempbutton.addEventListener('click', event => event.preventDefault(), true);
 if (jsonData.length>0 )
 read(jsonData[testobj].nodes);
 document.write('</div>');
+document.write('</div>');
+
 
 
 }
 
 }
+
+function registerbuttonEvents(jsonData)
+{
+for (var testobj in jsonData)
+{
+var tempbutton = document.getElementById('divid'+jsonData[testobj].id);
+document.body.addEventListener( 'click', function ( event ) {
+  if( event.target.id == 'btid'+jsonData[testobj].id ) {
+    //someFunc();
+	console.log("testing");
+	if(document.getElementById('divid'+jsonData[testobj].id).style.display == "none")
+	{
+	document.getElementById('divid'+jsonData[testobj].id).style.display = "block";
+	document.getElementById('btid'+jsonData[testobj].id).innerText="⊖";
+	}
+	else
+	{
+	document.getElementById('divid'+jsonData[testobj].id).style.display = "none";
+	document.getElementById('btid'+jsonData[testobj].id).innerText="⊕";
+	
+	}
+  };
+} );
+
+
+
+
+
+console.log("test listener----->"+jsonData[testobj].text);
+if (jsonData.length>0 )
+registerbuttonEvents(jsonData[testobj].nodes);
+}
+}
+
 </script>
 </body>
