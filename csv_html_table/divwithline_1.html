@@ -1,0 +1,52 @@
+
+<div>
+  <p>
+    Html based boxes should be clickable
+  </p>
+  <p>
+    SVG based line should be clickable
+  </p>
+</div>
+<div id="main" style="border-style: none">
+  <svg>
+    <line onClick="alert('line')" x1="200" y1="50" x2="400" y2="50" />
+  </svg>
+  <div style="display:flex;">
+    <div onClick="alert('one')" class="box">
+      One
+    </div>
+    <div onClick="alert('two')" style="margin-left:auto" class="box">
+      Two
+    </div>
+  </div>
+</div>
+<style>
+#main {
+  position: relative;
+  width: 600px;
+}
+
+svg {
+  border: 0px solid blue;
+  red;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  stroke: rgb(155, 155, 155);
+  stroke-width: 10;
+  pointer-events:none;
+}
+
+line{pointer-events:all;}
+
+#box-container {
+  display: flex;
+}
+
+.box {
+  width: 200px;
+  background-color: pink;
+  height: 100px;
+}
+</style>
