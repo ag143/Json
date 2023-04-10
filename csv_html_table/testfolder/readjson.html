@@ -18,7 +18,7 @@ function read(jsonobj){
 console.log(jsonobj.name);
 var colors = ["blue","green","aqua","orange","voilet","indigo"];
 var rand = Math.floor(Math.random()*colors.length);
-htmlbody = htmlbody + "<div style=\"border:solid;padding:1em;overflow:hidden;block-size: fit-content;width:fit-content;border-Color:"+colors[rand]+";margin:5px\">"+jsonobj.name;
+htmlbody = htmlbody + "<div style=\"border:solid;padding:1em;overflow:hidden;block-size: fit-content;width:fit-content;border-Color:"+colors[rand]+";margin:5px;display: flex;flex-direction: row;flex-wrap: wrap;gap: 10px;\">"+jsonobj.name;
 if(('children' in jsonobj)){
 if(jsonobj.children.length>0)
 for (var i=0;i<jsonobj.children.length;i++)
