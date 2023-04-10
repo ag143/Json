@@ -1,0 +1,37 @@
+<div id="div1" style="width: 200px; height: 200px; top:30; left:300; background:#777; position:absolute;background-color: transparent;border:solid;"></div>
+<div id="div2" style="width: 200px; height: 200px; top:30px; left:100px; background:#333; position:absolute;background-color: transparent;border:solid;">
+<button id=buttonid style="float: right;border: none;background: none;font-size: 25px;" onclick="myFunction()"> ⊖</button>
+   <div id="div3" style="width: 100px; height: 100px; top:60px; left:35px; background:#333; position:relative;background-color: transparent;border:solid;"></div>
+</div>
+<svg width="500" height="500" id=myDIV>
+   <line x1="300" y1="150" x2="330" y2="160" stroke="red"/>
+   <animate attributeName="x2" from="50" to="100" begin="1s" dur="2s" />
+   <animate attributeName="y2" from="50" to="100" begin="1s" dur="2s" />
+   </line>
+</svg>
+<script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  var y = document.getElementById("buttonid");
+  var innerdiv= document.getElementById("div3");
+  var outerdiv = document.getElementById("div2");
+  var div1 = document.getElementById("div1");
+  
+  if (x.style.display === "none") {
+    x.style.display = "block";
+	y.innerText="⊖";
+	innerdiv.style.display = "block";
+	outerdiv.style.width = "200px"
+	outerdiv.style.height = "200px"
+	div1.style.left = 350 + "px";
+  } else {
+    x.style.display = "none";
+	y.innerText="⊕";
+	innerdiv.style.display = "none";
+	outerdiv.style.width = "100px"
+	outerdiv.style.height = "100px";
+	div1.style.left = 250+"px";
+	div1.style.border = "solid red";
+  }
+}
+</script>

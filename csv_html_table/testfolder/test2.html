@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  
+ 
+  
+  <title>CodePen - SVG Line Between Divs</title>
+  
+  
+  
+  
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#line {
+  stroke-width: 2px;
+  stroke: black;
+}
+
+.point {
+  width: 10px;
+  height: 10px;
+  background: red;
+  position: absolute;
+}
+
+#one {
+  top: 20px;
+  left: 50px;
+}
+
+#two {
+  bottom: 200px;
+  right: 50px;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+  
+</head>
+
+<body translate="no">
+  <div id="one" class="point"></div>
+<div id="two" class="point"></div>
+<div id="three" class="point"></div>
+<svg id="svg">
+  <line id="line"/>
+</svg>
+ 
+
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+      <script id="rendered-js" >
+var line = $('#line');
+var div1 = $('#one');
+var div2 = $('#two');
+
+var x1 = div1.offset().left + div1.width() / 2;
+var y1 = div1.offset().top + div1.height() / 2;
+var x2 = div2.offset().left + div2.width() / 2;
+var y2 = div2.offset().top + div2.height() / 2;
+
+line.attr('x1', x1).attr('y1', y1).attr('x2', x2).attr('y2', y2);
+//# sourceURL=pen.js
+    </script>
+
+  
+</body>
+
+</html>

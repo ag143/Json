@@ -1,0 +1,118 @@
+<body>
+<script>
+var arr = [
+        { text: "Blackline", id: "1", parentId:"" ,shortText:"",Icon:"",Links:""},
+		{ text: "Service-Project:Production", id: "2", parentId: "1" ,shortText:"",Icon:"",Links:""},
+		
+		{ text: "USC1-PROD-POD1", id: "3", parentId: "2" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS-WEB", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS-STS", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS-MicroServices", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS-Managed Data Query", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS-Reporting", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS-ConnectorsLink", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS-ConnectorsBackend", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS-Customer ENdpoint Simulator", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS-API Gateway Auth", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS-API Gateway STS", id: "3", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS Legacy services", id: "3.1", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS DAI", id: "3.1", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS EXCEL Import", id: "3.1", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS DMP", id: "3.1", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS Memcached", id: "3.1", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS SMP", id: "3.1", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS Redis", id: "3.1", parentId: "3" ,shortText:"",Icon:"",Links:""},
+		{ text: "USC1-PRO-POD1-SQL", id: "4", parentId: "2" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS-SQL-Cluster1", id: "4", parentId: "4" ,shortText:"",Icon:"",Links:""},
+		{ text: "FCS-SQL-Cluster2", id: "4", parentId: "4" ,shortText:"",Icon:"",Links:""},
+		{ text: "USC1-Prod-Prod-ENV", id: "5", parentId: "2" ,shortText:"",Icon:"",Links:""},
+		{ text: "Mongo", id: "5.1", parentId: "5" ,shortText:"",Icon:"",Links:""},
+		{ text: "Sophos", id: "5.2", parentId: "5" ,shortText:"",Icon:"",Links:""},
+		{ text: "JAMS", id: "5.3", parentId: "5" ,shortText:"",Icon:"",Links:""},
+		{ text: "JAMS scheduler", id: "5.3.1", parentId: "5.3" ,shortText:"",Icon:"",Links:""},
+		{ text: "JAMS Agent", id: "5.3.2", parentId: "5.3" ,shortText:"",Icon:"",Links:""},
+		{ text: "JAMS SQL", id: "5.3.3", parentId: "5.3" ,shortText:"",Icon:"",Links:""},
+		{ text: "KAFKA", id: "5.4", parentId: "5" ,shortText:"",Icon:"",Links:""},
+		{ text: "KAFKA_Brokers", id: "5.4.1", parentId: "5.4" ,shortText:"",Icon:"",Links:""},
+		{ text: "KAFKA_ZOOKEEPER", id: "5.4.2", parentId: "5.4" ,shortText:"",Icon:"",Links:""},
+		{ text: "KAFKA_AVRO_REPO", id: "5.4.3", parentId: "5.4" ,shortText:"",Icon:"",Links:""},
+		{ text: "Service Project: prod-regcore-service", id: "6", parentId: "1" ,shortText:"",Icon:"",Links:""},
+		{ text: "Management", id: "7", parentId: "6" ,shortText:"",Icon:"",Links:""},
+		{ text: "ADControllers", id: "7", parentId: "7" ,shortText:"",Icon:"",Links:""},
+		{ text: "CommonValut", id: "7", parentId: "7" ,shortText:"",Icon:"",Links:""},
+		{ text: "Consul", id: "7", parentId: "7" ,shortText:"",Icon:"",Links:""},
+		{ text: "FOgLight_Agent_mgr", id: "7", parentId: "7" ,shortText:"",Icon:"",Links:""},
+		{ text: "SCOM Gateway", id: "7", parentId: "7" ,shortText:"",Icon:"",Links:""},
+		{ text: "NetAppCloudManager", id: "7", parentId: "7" ,shortText:"",Icon:"",Links:""},
+		{ text: "NetAppCloudOnTap", id: "7", parentId: "7" ,shortText:"",Icon:"",Links:""},
+		{ text: "LogStash", id: "7", parentId: "7" ,shortText:"",Icon:"",Links:""},
+		{ text: "Infosec", id: "8", parentId: "6" ,shortText:"",Icon:"",Links:""},
+		{ text: "Nexpose", id: "8", parentId: "8" ,shortText:"",Icon:"",Links:""},
+		{ text: "IDR", id: "8", parentId: "8" ,shortText:"",Icon:"",Links:""},
+		{ text: "NetworkTrap", id: "8", parentId: "8" ,shortText:"",Icon:"",Links:""},
+		{ text: "IDS", id: "8", parentId: "8" ,shortText:"",Icon:"",Links:""},
+		{ text: "Service Project: prod-shared-service", id: "5", parentId: "1" ,shortText:"",Icon:"",Links:""},
+		{ text: "Vault", id: "2", parentId: "5" ,shortText:"",Icon:"",Links:""},
+		
+    ],
+    data = arr.reduce(function (r, a) {
+        function getParent(s, b) {
+            return b.id === a.parentId ? b : (b.nodes && b.nodes.reduce(getParent, s));
+        }
+
+        var index = 0, node;
+        if ('parentId' in a) {
+            node = r.reduce(getParent, {});
+        }
+        if (node && Object.keys(node).length) {
+            node.nodes = node.nodes || [];
+            node.nodes.push(a);
+        } else {
+            while (index < r.length) {
+                if (r[index].parentId === a.id) {
+                    a.nodes = (a.nodes || []).concat(r.splice(index, 1));
+                } else {
+                    index++;
+                }
+            }
+            r.push(a);
+        }
+        return r;
+    }, []);
+
+//document.write('<pre>' + JSON.stringify(data, 0, 4) + '</pre>');
+
+read(data);
+function read(jsonData){
+for (var testobj in jsonData)
+{
+console.log("test----->"+jsonData[testobj].text);
+console.log("length"+jsonData.length);
+document.write('<div style="border:1px solid black;padding: 10px;border-spacing: 15px;margin:10px;">');
+document.write('<div style="border:1px solid">');
+
+
+document.write(jsonData[testobj].text);
+document.write('</div>');
+document.write('<div id='+jsonData[testobj].id+'>description section</div>');
+document.write('<button id=btid'+jsonData[testobj].id+' style="float: right;">⊖ </button>');
+document.getElementById('btid'+jsonData[testobj].id).addEventListener(event, function() {
+    var div = document.getElementById(jsonData[testobj].id);
+	if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+  });
+if (jsonData.length>0 )
+read(jsonData[testobj].nodes);
+document.write('</div>');
+document.write('</div>');
+
+
+}
+
+}
+</script>
+</body>
