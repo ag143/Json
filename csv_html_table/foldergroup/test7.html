@@ -1,0 +1,76 @@
+<body>
+
+    <div class="step">
+        <div class="stepNo">
+            <p>Step 1</p>
+        </div>
+        <div>
+            <p>Content</p>
+        </div>
+    </div>
+    <div class="connector"></div>
+    <div class="step">
+        <div class="stepNo">
+            <p>Step 2</p>
+        </div>
+        <div>
+            <p>Content</p>
+        </div>
+    </div>
+
+</body>
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    .step {
+        width: 90%;
+        margin: 0 auto;
+        border: 1px solid dimgrey;
+        background-color: #fff;
+        color: #000;
+    }
+
+    .step .stepNo {
+        background-color: #000;
+        color: #fff;
+        padding: 10px;
+    }
+
+    .step .stepNo p {
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    .step>div {
+        padding: 20px;
+    }
+
+    .step>div p {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .connector {
+        content: "";
+        width: 100%;
+        height: 75px;
+        background:
+            radial-gradient(4px 4px at center, #0052e7 50%, transparent 50%) 50% 0/100% 18px;
+        animation: change 3s linear infinite;
+    }
+
+    @keyframes change {
+        from {
+            background-position: 50% 0px;
+        }
+
+        to {
+            background-position: 50% 75px;
+        }
+    }
+</style>

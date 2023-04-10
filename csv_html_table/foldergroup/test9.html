@@ -1,0 +1,14 @@
+<script>
+function hideSVG() {
+  var style = document.getElementById("rect").style.display;
+  if (style === "none") document.getElementById("rect").style.display = "block";
+  else document.getElementById("rect").style.display = "none";
+}
+</script>
+<div class="container">
+  <p>Click the blue circle
+    <p />
+    <svg width="500" height="500">
+      <rect id=rect class="shape" width="100" height="100" />
+      <circle id=circ class="shape" cx="120" cy="120" r="60" style="fill:rgb(0,0,255)" onclick="hideSVG()" />
+</div>

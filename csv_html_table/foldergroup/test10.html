@@ -1,0 +1,30 @@
+<style>
+.layer{
+  position: absolute;
+  left: 0px;
+  top: 0px;  
+  width:100%;
+  visibility: hidden;
+}
+#controlLayer{
+  visibility: visible;
+}
+</style>
+<!-- <embed id="layer02" class="layer" src="layer02.svg"> -->
+<svg width="508" height="235.48" version="1.1" viewBox="0 0 508 235.48" xmlns="http://www.w3.org/2000/svg" id="layer02" class="layer"> 
+<rect x="193.1" y="30.167" width="138.47" height="171.17" fill="red" stroke-width=".79375"/>
+</svg>
+<!-- <embed id="controlLayer" class="layer" src="layer01.svg" > -->
+<svg width="508" height="235.48" version="1.1" viewBox="0 0 508 235.48" xmlns="http://www.w3.org/2000/svg" id="controlLayer" class="layer">
+<rect x="10" y="10" width="40" height="40" fill="blue" onclick="toggleLayer()"/>
+</svg>
+<script type="text/javascript">
+function toggleLayer(){
+    var svgLayer = document.getElementById("layer02");
+    if (window.getComputedStyle(svgLayer).visibility === "hidden") {
+        svgLayer.style.visibility='visible';
+    } else {
+        svgLayer.style.visibility='hidden';
+    }
+}
+</script>
