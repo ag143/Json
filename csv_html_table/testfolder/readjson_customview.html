@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <body>
@@ -9,7 +10,7 @@
 
 <div style="position:absolute;" ">
 <svg height=4000 width=4000 id="connectingLines">
-  <polyline points="20,20 20,40 60,40 80,120 120,140 200,180" style="fill:none;stroke:black;stroke-width:1;" />
+  <!--<polyline points="20,20 20,40 60,40 80,120 120,140 200,180" style="fill:none;stroke:black;stroke-width:1;" /> -->
   
   Sorry, your browser does not support inline SVG.
 </svg>
@@ -24,8 +25,28 @@ const txt = '{ "name": "flare", "children": [  {   "name": "analytics",   "child
 var sourceobj,targetobj;
 var htmlbody="";
 const obj = JSON.parse(txt);
-read(obj);
 
+
+function read(jsonobj){
+console.log(jsonobj.name);
+var colors = ["blue","green","aqua","orange","voilet","indigo","pink","purple","plum","orange","tomato"];
+var rand = Math.floor(Math.random()*colors.length);
+var leftvar = 
+htmlbody = htmlbody + "<div id="+jsonobj.name+" style=\"position:relative;border:dotted;padding:1em;overflow:hidden;block-size: fit-content;width:fit-content;border-Color:"+colors[rand]+";margin:5px;display: flex;flex-direction: row;flex-wrap: wrap;gap: 10px;\">"+jsonobj.name;
+if(('children' in jsonobj)){
+if(jsonobj.children.length>0)
+for (var i=0;i<jsonobj.children.length;i++)
+{
+var childobj= jsonobj.children[i];
+read(childobj);
+htmlbody=htmlbody+"</div>"
+}
+}
+
+}
+
+read(obj);
+document.getElementById("demo").innerHTML = htmlbody ;
 var polyline= document.createElement('polyline');
 var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 var svgNS = svg.namespaceURI;
@@ -38,8 +59,13 @@ var svgNS = svg.namespaceURI;
     svg.appendChild(rect);
 	
 	var polyline = document.createElementNS(svgNS,'polyline');
-
-polyline.setAttribute("points","3000,900 190,10 190,190 20,190 20,20 180,20 180,180 30,180");
+var source=document.getElementById('flare');
+console.log("source top:"+source.clientTop+" source left:"+source.clientLeft+" source height:"+source.clientHeight+" source width:"+source.clientWidth);
+var target=document.getElementById('ShortestPaths');
+console.log("target top:"+target.clientTop+" target left:"+target.clientLeft+" target height:"+target.clientHeight+" target width:"+target.clientWidth);
+console.log();
+//polyline.setAttribute("points", parseInt(source.clientLeft+(source.clientWidth)/2)+","+parseInt(source.clientTop+(source.clientHeight)/2)+" "+parseInt(target.clientLeft+(target.clientWidth)/2)+","+parseInt(target.clientTop+(target.clientHeight)/2));
+polyline.setAttribute("points", parseInt(source.getBoundingClientRect().x)+","+parseInt(source.getBoundingClientRect().y)+" "+parseInt(target.getBoundingClientRect().x)+","+parseInt(target.getBoundingClientRect().y));
 polyline.style.fill = "none";
 polyline.style.stroke = "black";
 polyline.style.stroke.width = '1px';
@@ -48,24 +74,9 @@ document.getElementById("connectingLines").appendChild(polyline);
 //document.getElementById("connectingLines").appendChild(svg);
 
 
-document.getElementById("demo").innerHTML = htmlbody ;
 
-function read(jsonobj){
-console.log(jsonobj.name);
-var colors = ["blue","green","aqua","orange","voilet","indigo","pink","purple","plum","orange","tomato"];
-var rand = Math.floor(Math.random()*colors.length);
-htmlbody = htmlbody + "<div style=\"position:relative;border:dotted;padding:1em;overflow:hidden;block-size: fit-content;width:fit-content;border-Color:"+colors[rand]+";margin:5px;display: flex;flex-direction: row;flex-wrap: wrap;gap: 10px;\">"+jsonobj.name;
-if(('children' in jsonobj)){
-if(jsonobj.children.length>0)
-for (var i=0;i<jsonobj.children.length;i++)
-{
-var childobj= jsonobj.children[i];
-read(childobj);
-htmlbody=htmlbody+"</div>"
-}
-}
 
-}
+
 
 </script>
 
