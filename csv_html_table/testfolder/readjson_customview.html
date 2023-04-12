@@ -59,13 +59,13 @@ var svgNS = svg.namespaceURI;
     svg.appendChild(rect);
 	
 	var polyline = document.createElementNS(svgNS,'polyline');
-var source=document.getElementById('flare');
-console.log("source top:"+source.clientTop+" source left:"+source.clientLeft+" source height:"+source.clientHeight+" source width:"+source.clientWidth);
-var target=document.getElementById('ShortestPaths');
-console.log("target top:"+target.clientTop+" target left:"+target.clientLeft+" target height:"+target.clientHeight+" target width:"+target.clientWidth);
-console.log();
+var parent=document.getElementById('flare');
+var source=document.getElementById('ShortestPaths');
+var target=document.getElementById('Easing');
+
+
 //polyline.setAttribute("points", parseInt(source.clientLeft+(source.clientWidth)/2)+","+parseInt(source.clientTop+(source.clientHeight)/2)+" "+parseInt(target.clientLeft+(target.clientWidth)/2)+","+parseInt(target.clientTop+(target.clientHeight)/2));
-polyline.setAttribute("points", parseInt(source.getBoundingClientRect().x)+","+parseInt(source.getBoundingClientRect().y)+" "+parseInt(target.getBoundingClientRect().x)+","+parseInt(target.getBoundingClientRect().y));
+polyline.setAttribute("points", parseInt(source.getBoundingClientRect().x)+","+parseInt(source.getBoundingClientRect().y)+" "+parseInt(parent.getBoundingClientRect().x)+","+parseInt(source.getBoundingClientRect().y)+" "+parseInt(parent.getBoundingClientRect().x)+","+parseInt(target.getBoundingClientRect().y)+" "+parseInt(target.getBoundingClientRect().x)+","+parseInt(target.getBoundingClientRect().y));
 polyline.style.fill = "none";
 polyline.style.stroke = "black";
 polyline.style.stroke.width = '1px';
