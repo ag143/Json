@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <body>
@@ -9,7 +8,7 @@
 </div>
 
 <div style="position:absolute;" ">
-<svg height=1000 width=1000 id="connectingLines">
+<svg height=5000 width=1000 id="connectingLines">
   <!--<polyline points="20,20 20,40 60,40 80,120 120,140 200,180" style="fill:none;stroke:black;stroke-width:1;" /> -->
   
   Sorry, your browser does not support inline SVG.
@@ -90,8 +89,52 @@ htmlbody=htmlbody+"</div>"
 
 }
 
+
+function drawConnectivity(parent1,source1,target1)
+{
+var parent=document.getElementById(parent1);
+var source=document.getElementById(source1);
+var target=document.getElementById(target1);
+var polyline = document.createElementNS(svgNS,'polyline');
+//polyline.setAttribute("points", parseInt(source.clientLeft+(source.clientWidth)/2)+","+parseInt(source.clientTop+(source.clientHeight)/2)+" "+parseInt(target.clientLeft+(target.clientWidth)/2)+","+parseInt(target.clientTop+(target.clientHeight)/2));
+polyline.setAttribute("points", parseInt(source.getBoundingClientRect().x)+","+parseInt(source.getBoundingClientRect().y)+
+							 " "+parseInt(source.getBoundingClientRect().x)+","+parseInt(source.getBoundingClientRect().y-20)+
+                             " "+parseInt(parent.getBoundingClientRect().x)+","+parseInt(source.getBoundingClientRect().y-20)+
+							 " "+parseInt(parent.getBoundingClientRect().x)+","+parseInt(target.getBoundingClientRect().y-20)+
+							 " "+parseInt(target.getBoundingClientRect().x)+","+parseInt(target.getBoundingClientRect().y-20)+
+							 " "+parseInt(target.getBoundingClientRect().x)+","+parseInt(target.getBoundingClientRect().y));
+
+polyline.style.stroke = "red";
+polyline.style.fill = "none";
+
+//polyline.style.webkitTransform = "animate 5s linear infinite";
+polyline.style.animationName = "border-dance";
+polyline.style.animationDelay = '1';
+polyline.style.animationTimingFunction = "linear";
+polyline.style.animationIterationCount="infinite";
+polyline.style.animationDirection="alternate";
+
+polyline.style.transition = polyline.style.webkitTransition = 'none';
+  // Set up the starting positions
+  polyline.style.strokeDasharray = length + ' ' + length;
+  polyline.style.strokeDashoffset = length;
+  // Trigger a layout so styles are calculated & the browser
+  // picks up the starting position before animating
+  polyline.getBoundingClientRect();
+  // Define our transition
+  polyline.style.transition = polyline.style.webkitTransition = 'stroke-dashoffset 3s ease-in-out';
+  // Go!
+  polyline.style.strokeDashoffset = '0';
+
+document.getElementById("connectingLines").appendChild(polyline);
+//polyline.beginElement();
+//document.getElementById("connectingLines").appendChild(svg);
+
+}
+
 read(obj);
 document.getElementById("demo").innerHTML = htmlbody ;
+
 var polyline= document.createElement('polyline');
 var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 var svgNS = svg.namespaceURI;
@@ -103,12 +146,16 @@ var svgNS = svg.namespaceURI;
     rect.setAttribute('fill','#95B3D7');
     svg.appendChild(rect);
 	
-	var polyline = document.createElementNS(svgNS,'polyline');
+	
+
+
+
+
+/*
 var parent=document.getElementById('flare');
 var source=document.getElementById('ShortestPaths');
 var target=document.getElementById('Easing');
-
-
+var polyline = document.createElementNS(svgNS,'polyline');
 //polyline.setAttribute("points", parseInt(source.clientLeft+(source.clientWidth)/2)+","+parseInt(source.clientTop+(source.clientHeight)/2)+" "+parseInt(target.clientLeft+(target.clientWidth)/2)+","+parseInt(target.clientTop+(target.clientHeight)/2));
 polyline.setAttribute("points", parseInt(source.getBoundingClientRect().x)+","+parseInt(source.getBoundingClientRect().y)+
 							 " "+parseInt(source.getBoundingClientRect().x)+","+parseInt(source.getBoundingClientRect().y-20)+
@@ -116,51 +163,36 @@ polyline.setAttribute("points", parseInt(source.getBoundingClientRect().x)+","+p
 							 " "+parseInt(parent.getBoundingClientRect().x)+","+parseInt(target.getBoundingClientRect().y-20)+
 							 " "+parseInt(target.getBoundingClientRect().x)+","+parseInt(target.getBoundingClientRect().y-20)+
 							 " "+parseInt(target.getBoundingClientRect().x)+","+parseInt(target.getBoundingClientRect().y));
-polyline.style.fill = "none";
+
 polyline.style.stroke = "red";
+polyline.style.fill = "none";
+
+//polyline.style.webkitTransform = "animate 5s linear infinite";
+polyline.style.animationName = "border-dance";
+polyline.style.animationDelay = '1';
+polyline.style.animationTimingFunction = "linear";
+polyline.style.animationIterationCount="infinite";
+
 
 
 
 document.getElementById("connectingLines").appendChild(polyline);
-//document.getElementById("connectingLines").appendChild(svg);
-
-
-
+*/
 
 
 
 
         var myDataSource = new kendo.data.HierarchicalDataSource({
             data: [{
-                id: 1, text: "Furniture", expanded: true, items: [
-                    { id: 2, text: "tables & chairs" },
-                    { id: 3, text: "sofas" },
-                    { id: 4, text: "occasional furniture" },
-                    { id: 5, text: "childrens furniture" },
-                    { id: 6, text: "beds" }
+                id: 1, text: "Sequence_MergeEdge", expanded: true, items: [
+                    { id: 2, text: "DataSet_Visualization" },
+                    { id: 3, text: "LinkDistance_Pause" },
+                    { id: 4, text: "Parallel_Easing" },
+                    { id: 5, text: "SpanningTree_Transition" },
+                    { id: 6, text: "Sequence_MergeEdge" }
                 ]
-            },
-                {
-                    id: 7, text: "Decor", expanded: true, items: [
-                       { id: 8, text: "bed linen" },
-                       { id: 9, text: "throws" },
-                       { id: 10, text: "curtains & blinds" },
-                       { id: 11, text: "rugs" },
-                       { id: 12, text: "carpets" }
-                    ]
-                },
-                {
-                    id: 13, text: "Storage", expanded: true, items: [
-                       { id: 14, text: "wall shelving" },
-                       { id: 15, text: "kids storage" },
-                       { id: 16, text: "multimedia storage" },
-                       { id: 17, text: "floor shelving" },
-                       { id: 18, text: "toilet roll holders" },
-                       { id: 19, text: "storage jars" },
-                       { id: 20, text: "drawers" },
-                       { id: 21, text: "boxes" }
-                    ]
-                }
+            }
+ 
             ]
         });
 
@@ -262,6 +294,10 @@ document.getElementById("connectingLines").appendChild(polyline);
 
                 if (node.checked) {
                     checkedNodes.push({ text: node.text, id: node.id });
+					console.log(node.text);
+					//drawConnectivity("flare","ShortestPaths",node.text.toString());
+					var split= node.text.toString().split('_')
+					drawConnectivity("flare",split[0],split[1]);
                 }
 
                 if (node.hasChildren) {
@@ -289,6 +325,7 @@ document.getElementById("connectingLines").appendChild(polyline);
 
             if (checkedNodes > 0) {
                 message = checkedNodes + " categories selected";
+				
             }
             else {
                 message = "0 categories selected";
@@ -331,8 +368,10 @@ document.getElementById("connectingLines").appendChild(polyline);
                 $(".selectAll").css("visibility", "visible");
             }
         });
+		
     </script>
     <style>
+	
         html .k-dialog .k-window-titlebar {
             padding-left: 17px;
         }
@@ -367,6 +406,24 @@ document.getElementById("connectingLines").appendChild(polyline);
         #openWindow {
             min-width: 180px;
         }
+		.border {
+  height: 100px;
+  width: 200px;
+  background: linear-gradient(90deg, blue 50%, transparent 50%), linear-gradient(90deg, blue 50%, transparent 50%), linear-gradient(0deg, blue 50%, transparent 50%), linear-gradient(0deg, blue 50%, transparent 50%);
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 15px 4px, 15px 4px, 4px 15px, 4px 15px;
+  background-position: 0px 0px, 200px 100px, 0px 100px, 200px 0px;
+  padding: 10px;
+  animation: border-dance 4s infinite linear;
+}
+@keyframes border-dance {
+  0% {
+    background-position: 0px 0px, 300px 116px, 0px 150px, 216px 0px;
+  }
+  100% {
+    background-position: 300px 0px, 0px 116px, 0px 0px, 216px 150px;
+  }
+}
     </style>
 </body>
 </html>
