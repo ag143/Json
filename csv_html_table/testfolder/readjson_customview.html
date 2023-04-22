@@ -76,7 +76,7 @@ console.log(jsonobj.name);
 var colors = ["blue","green","aqua","orange","voilet","indigo","pink","purple","plum","orange","tomato"];
 var rand = Math.floor(Math.random()*colors.length);
 var leftvar = 
-htmlbody = htmlbody + "<div id="+jsonobj.name+" style=\"position:relative;border:dotted;padding:1em;overflow:hidden;block-size: fit-content;width:fit-content;border-Color:"+colors[rand]+";margin:5px;display: flex;flex-direction: row;flex-wrap: wrap;gap: 10px;\">"+jsonobj.name;
+htmlbody = htmlbody + "<div id="+jsonobj.name+" style=\"position:relative;border:dotted 0.1px;padding:1em;overflow:hidden;block-size: fit-content;width:fit-content;border-Color:"+colors[rand]+";margin:5px;display: flex;flex-direction: row;flex-wrap: wrap;gap: 10px;\">"+jsonobj.name;
 if(('children' in jsonobj)){
 if(jsonobj.children.length>0)
 for (var i=0;i<jsonobj.children.length;i++)
@@ -94,8 +94,7 @@ htmlbody=htmlbody+"</div>"
 
 function drawConnectivity(parent1,source1,target1,nodeChecked)
 {
-leftside=leftside+10;
-topside=topside+2;
+
 var parent=document.getElementById(parent1);
 var source=document.getElementById(source1);
 var target=document.getElementById(target1);
@@ -134,10 +133,14 @@ polyline.style.transition = polyline.style.webkitTransition = 'none';
   //polyline.style.strokeDashoffset = '0';
 
 document.getElementById("connectingLines").appendChild(polyline);
+leftside=leftside+10;
+topside=topside+2;
 }
 else{
 var polyid=document.getElementById("polylineid")
 document.getElementById("connectingLines").removeChild(polyid);
+leftside=leftside-10;
+topside=topside-2;
 }
 //polyline.beginElement();
 //document.getElementById("connectingLines").appendChild(svg);
