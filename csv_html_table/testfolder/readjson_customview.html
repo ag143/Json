@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <body>
@@ -8,7 +9,7 @@
 </div>
 
 <div style="position:absolute;" ">
-<svg height=7000 width=1000 id="connectingLines">
+<svg height=5000 width=5000 id="connectingLines">
   <!--<polyline points="20,20 20,40 60,40 80,120 120,140 200,180" style="fill:none;stroke:black;stroke-width:1;" /> -->
   
   Sorry, your browser does not support inline SVG.
@@ -67,6 +68,8 @@ const txt = '{ "name": "flare", "children": [  {   "name": "analytics",   "child
 var sourceobj,targetobj;
 var htmlbody="";
 const obj = JSON.parse(txt);
+var leftside=0;
+var topside=0;
 
 
 function read(jsonobj){
@@ -92,19 +95,22 @@ htmlbody=htmlbody+"</div>"
 
 function drawConnectivity(parent1,source1,target1)
 {
+leftside=leftside+10;
+topside=topside+2;
 var parent=document.getElementById(parent1);
 var source=document.getElementById(source1);
 var target=document.getElementById(target1);
 var polyline = document.createElementNS(svgNS,'polyline');
 //polyline.setAttribute("points", parseInt(source.clientLeft+(source.clientWidth)/2)+","+parseInt(source.clientTop+(source.clientHeight)/2)+" "+parseInt(target.clientLeft+(target.clientWidth)/2)+","+parseInt(target.clientTop+(target.clientHeight)/2));
 polyline.setAttribute("points", parseInt(source.getBoundingClientRect().x)+","+parseInt(source.getBoundingClientRect().y)+
-							 " "+parseInt(source.getBoundingClientRect().x)+","+parseInt(source.getBoundingClientRect().y-20)+
-                             " "+parseInt(parent.getBoundingClientRect().x)+","+parseInt(source.getBoundingClientRect().y-20)+
-							 " "+parseInt(parent.getBoundingClientRect().x)+","+parseInt(target.getBoundingClientRect().y-20)+
-							 " "+parseInt(target.getBoundingClientRect().x)+","+parseInt(target.getBoundingClientRect().y-20)+
+							 " "+parseInt(source.getBoundingClientRect().x)+","+parseInt(source.getBoundingClientRect().y-topside-20)+
+                             " "+parseInt(parent.getBoundingClientRect().width+leftside)+","+parseInt(source.getBoundingClientRect().y-topside-20)+
+							 " "+parseInt(parent.getBoundingClientRect().width+leftside)+","+parseInt(target.getBoundingClientRect().y-topside-20)+
+							 " "+parseInt(target.getBoundingClientRect().x)+","+parseInt(target.getBoundingClientRect().y-topside-20)+
 							 " "+parseInt(target.getBoundingClientRect().x)+","+parseInt(target.getBoundingClientRect().y));
-
-polyline.style.stroke = "red";
+var colors = ["blue","green","aqua","orange","voilet","indigo","pink","purple","plum","orange","tomato"];
+var rand = Math.floor(Math.random()*colors.length);
+polyline.style.stroke = colors[rand];
 polyline.style.fill = "none";
 
 //polyline.style.webkitTransform = "animate 5s linear infinite";
