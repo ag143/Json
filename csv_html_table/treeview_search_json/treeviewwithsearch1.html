@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+   
+
+
+  <script
+    type="text/javascript"
+    src="./js/jquery-2.2.4.js"
+    
+  ></script>
+  
+
+   <!-- <link rel="stylesheet" type="text/css" href="/css/result-light.css">-->
+
+      <script type="text/javascript" src="./js/bootstrap-treeview.js"></script>
+      <link rel="stylesheet" type="text/css" href="./css/bootstrap-treeview.css">
+      <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+      <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+
+  <style id="compiled-css" type="text/css">
+    
+
+    /* EOS */
+  </style>
+
+  <script id="insert"></script>
+
+    
+    <script>
+      const customConsole = (w) => {
+        const pushToConsole = (payload, type) => {
+          w.parent.postMessage({
+            console: {
+              payload: stringify(payload),
+              type:    type
+            }
+          }, "*")
+        }
+
+        w.onerror = (message, url, line, column) => {
+          // the line needs to correspond with the editor panel
+          // unfortunately this number needs to be altered every time this view is changed
+          line = line - 70
+          if (line < 0){
+            pushToConsole(message, "error")
+          } else {
+            pushToConsole(`[${line}:${column}] ${message}`, "error")
+          }
+        }
+
+        let console = (function(systemConsole){
+          return {
+            log: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "log")
+              systemConsole.log.apply(this, args)
+            },
+            info: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "info")
+              systemConsole.info.apply(this, args)
+            },
+            warn: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "warn")
+              systemConsole.warn.apply(this, args)
+            },
+            error: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "error")
+              systemConsole.error.apply(this, args)
+            },
+            system: function(arg){
+              pushToConsole(arg, "system")
+            },
+            clear: function(){
+              systemConsole.clear.apply(this, {})
+            },
+            time: function(){
+              let args = Array.from(arguments)
+              systemConsole.time.apply(this, args)
+            },
+            assert: function(assertion, label){
+              if (!assertion){
+                pushToConsole(label, "log")
+              }
+
+              let args = Array.from(arguments)
+              systemConsole.assert.apply(this, args)
+            }
+          }
+        }(window.console))
+
+        window.console = { ...window.console, ...console }
+
+        console.system("Running fiddle")
+      }
+
+      if (window.parent){
+        customConsole(window)
+      }
+    </script>
+</head>
+<body>
+    <div class="row" style="margin:5px;overflow-y:auto;">
+  <hr>
+  <h2>Searchable Tree</h2>
+  <div class="col-sm-4">
+    <!-- <form> -->
+    <div class="form-group">
+
+      <input type="input" class="form-control" id="input-search" placeholder="Type to search..." value="">
+    </div>
+    <button type="button" class="btn btn-success" id="btn-search">Search</button>
+    <button type="button" class="btn btn-default" id="btn-clear-search">Clear</button>
+    <!-- </form> -->
+  </div>
+  <div class="col-sm-4" style="margin:5px;">
+    <h2>Tree</h2>
+    <div id="tree" style=" overflow-y:auto; height: 250px; border: 1px solid #ccc ;"></div>
+  </div>
+</div>
+
+
+    <script type="text/javascript">//<![CDATA[
+
+
+var myTree = [{
+  text: "Parent1",
+  nodes: [{
+    text: "Child11",
+    nodes: [{
+      text: "GrandChild111"
+    }, {
+      text: "GrandChild112"
+    }]
+  }, {
+    text: "Child12"
+  }]
+}, {
+  text: "Parent2",
+  nodes: [{
+    text: "Child21"
+  }, {
+    text: "Child22"
+  }]
+}, {
+  text: "Parent3",
+  nodes: [{
+    text: "Child31"
+  }, {
+    text: "Child32"
+  }, {
+    text: "Child33"
+  }]
+}, {
+  text: "Parent4"
+}, {
+  text: "Parent5",
+  nodes: [{
+    text: "Child51"
+  }, {
+    text: "Child52"
+  }, {
+    text: "Child33"
+  }]
+}, {
+  text: "Parent6"
+}, {
+  text: "Parent7",
+  nodes: [{
+    text: "Child71",
+    nodes: [{
+      text: "GrandChild711"
+    }, {
+      text: "GrandChild712"
+    }]
+  }, {
+    text: "Child72",
+    nodes: [{
+      text: "GrandChild711"
+    }, {
+      text: "GrandChild712"
+    }]
+  }]
+}, {
+  text: "Parent8"
+}, {
+  text: "Parent9",
+  nodes: [{
+    text: "Child91"
+  }, {
+    text: "Child92"
+  }]
+}, {
+  text: "Parent10"
+}];
+
+function getTree() {
+  // Some logic to retrieve, or generate tree structure
+  return myTree;
+}
+$('#tree').bind('mousewheel', function(e) {
+  $(this).scrollTop($(this).scrollTop() - e.originalEvent.wheelDeltaY);
+  return false;
+});
+var $searchableTree = $('#tree').treeview({
+  data: getTree(),
+  levels: 1
+});
+var search = function(e) {
+  var input, filter, div, ul, li, a, i;
+  var pattern = $('#input-search').val();
+  var options = {
+    ignoreCase: true,
+    exactMatch: false,
+    revealResults: true,
+  };
+  $searchableTree.treeview('search', [pattern, options]);
+  
+  //Scrolling to the element that is searched
+  input = document.getElementById("input-search");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("tree");
+  li = div.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].scrollIntoView(false)[0];
+
+    }
+  }
+}
+$('#btn-search').on('click', search);
+
+$('#btn-clear-search').on('click', function(e) {
+  $searchableTree.treeview('clearSearch');
+  $('#input-search').val('');
+  $('#search-output').html('');
+});
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "854zsLLh"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+    <script>
+      let allLines = []
+
+      window.addEventListener("message", (message) => {
+        if (message.data.console){
+          let insert = document.querySelector("#insert")
+          allLines.push(message.data.console.payload)
+          insert.innerHTML = allLines.join(";\r")
+
+          let result = eval.call(null, message.data.console.payload)
+          if (result !== undefined){
+            console.log(result)
+          }
+        }
+      })
+    </script>
+
+</body>
+</html>
+
