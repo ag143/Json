@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <body>
@@ -9,7 +8,7 @@
 </div>
 
 <div style="position:absolute;" ">
-<svg height=8000 width=5000 id="connectingLines">
+<svg height=7000 width=5000 id="connectingLines">
   <!--<polyline points="20,20 20,40 60,40 80,120 120,140 200,180" style="fill:none;stroke:black;stroke-width:1;" /> -->
   
   Sorry, your browser does not support inline SVG.
@@ -93,7 +92,7 @@ htmlbody=htmlbody+"</div>"
 }
 
 
-function drawConnectivity(parent1,source1,target1)
+function drawConnectivity(parent1,source1,target1,nodeChecked)
 {
 leftside=leftside+10;
 topside=topside+2;
@@ -101,6 +100,7 @@ var parent=document.getElementById(parent1);
 var source=document.getElementById(source1);
 var target=document.getElementById(target1);
 var polyline = document.createElementNS(svgNS,'polyline');
+if(nodeChecked){
 //polyline.setAttribute("points", parseInt(source.clientLeft+(source.clientWidth)/2)+","+parseInt(source.clientTop+(source.clientHeight)/2)+" "+parseInt(target.clientLeft+(target.clientWidth)/2)+","+parseInt(target.clientTop+(target.clientHeight)/2));
 polyline.setAttribute("points", parseInt(source.getBoundingClientRect().x)+","+parseInt(source.getBoundingClientRect().y)+
 							 " "+parseInt(source.getBoundingClientRect().x)+","+parseInt(source.getBoundingClientRect().y-topside-20)+
@@ -108,6 +108,7 @@ polyline.setAttribute("points", parseInt(source.getBoundingClientRect().x)+","+p
 							 " "+parseInt(parent.getBoundingClientRect().width+leftside)+","+parseInt(target.getBoundingClientRect().y-topside-20)+
 							 " "+parseInt(target.getBoundingClientRect().x)+","+parseInt(target.getBoundingClientRect().y-topside-20)+
 							 " "+parseInt(target.getBoundingClientRect().x)+","+parseInt(target.getBoundingClientRect().y));
+polyline.setAttribute("id","polylineid");							 
 var colors = ["blue","green","aqua","orange","voilet","indigo","pink","purple","plum","orange","tomato"];
 var rand = Math.floor(Math.random()*colors.length);
 polyline.style.stroke = colors[rand];
@@ -130,9 +131,14 @@ polyline.style.transition = polyline.style.webkitTransition = 'none';
   // Define our transition
   polyline.style.transition = polyline.style.webkitTransition = 'stroke-dashoffset 3s ease-in-out';
   // Go!
-  polyline.style.strokeDashoffset = '0';
+  //polyline.style.strokeDashoffset = '0';
 
 document.getElementById("connectingLines").appendChild(polyline);
+}
+else{
+var polyid=document.getElementById("polylineid")
+document.getElementById("connectingLines").removeChild(polyid);
+}
 //polyline.beginElement();
 //document.getElementById("connectingLines").appendChild(svg);
 
@@ -294,6 +300,7 @@ document.getElementById("connectingLines").appendChild(polyline);
 
         function getCheckedNodes(nodes, checkedNodes) {
             var node;
+			var nodeChecked;
 
             for (var i = 0; i < nodes.length; i++) {
                 node = nodes[i];
@@ -303,8 +310,12 @@ document.getElementById("connectingLines").appendChild(polyline);
 					console.log(node.text);
 					//drawConnectivity("flare","ShortestPaths",node.text.toString());
 					var split= node.text.toString().split('_')
-					drawConnectivity("flare",split[0],split[1]);
+					drawConnectivity("flare",split[0],split[1],true);
                 }
+				else{
+				var split= node.text.toString().split('_')
+				drawConnectivity("flare",split[0],split[1],false);
+				}
 
                 if (node.hasChildren) {
                     getCheckedNodes(node.children.view(), checkedNodes);
