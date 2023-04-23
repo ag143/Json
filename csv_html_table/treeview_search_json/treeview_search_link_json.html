@@ -11,10 +11,10 @@
 
     <link rel="stylesheet" type="text/css" href="/css/result-light.css">
 
-      <script type="text/javascript" src="https://rawgit.com/jonmiles/bootstrap-treeview/master/public/js/bootstrap-treeview.js"></script>
-      <link rel="stylesheet" type="text/css" href="https://rawgit.com/jonmiles/bootstrap-treeview/master/public/css/bootstrap-treeview.css">
-      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap-treeview.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/bootstrap-treeview.css">
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
   <style id="compiled-css" type="text/css">
       
@@ -126,24 +126,29 @@ function toggleVisibility(id) {
 <body>
 
 <br>
-<div style="width:40%; float:left;padding:1%;position:fixed;  overflow: auto;;height:100%">
+<div style="width:100%; float:left;padding:1%;position:fixed;  overflow: auto;;height:100%">
 	
     <div class="row">
-		 
+	
    <div class="col-sm-4">
+   <input type="input" class="form-control" id="input-search" placeholder="Type to search..." value="">
+		 <button type="button" class="btn btn-success" id="btn-search">Search</button>
+    <button type="button" class="btn btn-default" id="btn-clear-search">Clear</button>
+    <h2>Tree</h2>
+    <div id="tree" style=" overflow-y:auto; height: 2500px;width:1000px border: 1px solid #ccc ;"></div>
     <!-- <form> -->
     <div class="form-group">
 
-      <input type="input" class="form-control" id="input-search" placeholder="Type to search..." value="">
-    </div>
-    <button type="button" class="btn btn-success" id="btn-search">Search</button>
-    <button type="button" class="btn btn-default" id="btn-clear-search">Clear</button>
+    
     <!-- </form> -->
-  </div>
+  
   <div class="col-sm-4" style="margin:5px;">
-    <h2>Tree</h2>
-    <div id="tree" style=" overflow-y:auto; height: 250px; border: 1px solid #ccc ;"></div>
+    
+    
+    
   </div>
+  </div>
+	</div>
 	</div>
 	 
 	
@@ -415,7 +420,7 @@ function initTree(treeData) {
     $('#tree').treeview('collapseAll', { silent: true });
 }
 
-//initTree(tree);
+initTree(tree);
 
 
   //]]></script>
