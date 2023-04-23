@@ -4,7 +4,7 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
- 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script id="insert"></script>
 
   <script type="text/javascript" src="./js/jquery-2.2.4.js"></script>
@@ -131,9 +131,10 @@ function toggleVisibility(id) {
     <div class="row">
 	
    <div class="col-sm-4">
-   <input type="input" class="form-control" id="input-search" placeholder="Type to search..." value="">
-		 <button type="button" class="btn btn-success" id="btn-search">Search</button>
-    <button type="button" class="btn btn-default" id="btn-clear-search">Clear</button>
+   <input type="text" style="width:60%;-webkit-appearance:searchfield-cancel-button" class="deletable" id="input-search" placeholder="Type to search..." value="">
+		 <button type="button" style="background: transparent;border:0;" class="fa fa-search" id="btn-search"></button>
+    <button type="button" style="background: transparent;border:0;" class="fa fa-times" "btn btn-default" id="btn-clear-search"></button>
+	
     <h2>Tree</h2>
     <div id="tree" style=" overflow-y:auto; height: 2500px;width:1000px border: 1px solid #ccc ;"></div>
     <!-- <form> -->
