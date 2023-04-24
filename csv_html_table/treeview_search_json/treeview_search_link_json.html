@@ -121,6 +121,12 @@ function toggleVisibility(id) {
           el.style.visibility="visible";
      }
  }
+ 
+ function clickPress(event) {
+    if (event.keyCode == 13) {
+        document.getElementById("btn-search").click();
+    }
+}
 </script>
 </head>
 <body>
@@ -131,7 +137,7 @@ function toggleVisibility(id) {
     <div class="row">
 	
    <div class="col-sm-4">
-   <input type="text" style="width:60%;-webkit-appearance:searchfield-cancel-button" class="deletable" id="input-search" placeholder="Type to search..." value="">
+   <input type="text" style="width:60%;-webkit-appearance:searchfield-cancel-button" class="deletable" id="input-search" placeholder="Type to search..." value="" onkeypress="clickPress(event)">
 		 <button type="button" style="background: transparent;border:0;" class="fa fa-search" id="btn-search"></button>
     <button type="button" style="background: transparent;border:0;" class="fa fa-times" "btn btn-default" id="btn-clear-search"></button>
 	
