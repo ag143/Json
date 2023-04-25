@@ -1,27 +1,44 @@
+
 <body>
-check the console
+check console
 </body>
-<script>
- 
-var csvoutput= "";
-var lineoutput;
-var linesplit;
-var nestedJsonObject={}
-var jsonObject = [];
-var tempName= "";
-var tempValue = "";
-var tempUrl= "";
-var jsonData = {
-"name":tempName,
-"value":tempValue,
-"url":tempUrl
+<script>// define data array
+var data = [
+    { name: "A", parentName: "root",has_children: true},
+
+    { name: "A1", parentName: "A",has_children: true},
+
+    { name: "A11", parentName: "A1",has_children: false},
+    { name: "A12", parentName: "A1",has_children: false},
+    { name: "A13", parentName: "A1",has_children: false},
+
+    { name: "B", parentName: "root",has_children: true},
+
+    { name: "B1", parentName: "A",has_children: true},
+
+    { name: "B11", parentName: "B1",has_children: false},
+    { name: "B12", parentName: "B1",has_children: false},
+    { name: "B13", parentName: "B1",has_children: false}
+];
+console.log(JSON.stringify(data));
+
+var csvoutput= httpGet("https://ag143.github.io/Json/flare.csv");
+
+var array = [];
+var linesplit =[];
+
+var lineOutput = csvoutput.split("\n") ;
+for(var k=0;k<lineOutput.length;k++)
+{
+linesplit = lineOutput[k].split(",");
+let jsonObject = {
+"name":linesplit[0],
+"parentName":linesplit[1],
+"has_children":linesplit[2],
 }
-nestedJsonObject.jsonObject = jsonObject;
-//console.log(nestedJsonObject);
-nestedJsonObject.jsonObject.push(jsonData);
-//console.log(nestedJsonObject);
-csvoutput= httpGet("https://ag143.github.io/Json/flare.csv");
-lineoutput = csvoutput.split("\n");
+array.push(jsonObject);
+}
+console.log(JSON.stringify(array));
 
 function httpGet(theUrl)
 {
@@ -31,71 +48,31 @@ function httpGet(theUrl)
     return xmlHttp.responseText;
 }
 
-for (var x = 0; x < lineoutput.length; x++) {
-//console.log(lineoutput[x]);
+var root = {};
+var parentCache = {};
+// for each element definition in the data array
+for (var i = 0; i < array.length-1; i++) {
+    var element = array[i];
+    var name = element.name;
+	console.log(element.name);
+    // XXX - check for duplicate name here.
 
-linesplit = lineoutput[x].split(",");
-for (var y=0;y<linesplit.length;y++)
-{
-//console.log(linesplit[y]);
-
-}
-buildjsonobject(jsonObject,linesplit[0],linesplit[1],linesplit[2],linesplit[3]);
-
-}
-console.log(nestedJsonObject);
-function buildjsonobject(jsonObject1,name,parentName,value,url){
-jsonData = {
-"name":name,
-"value":value,
-"url":url
-};
-nestedJsonObject.jsonObject.push(jsonData);
-}
-
-var ob = {
-    name: "root",
-    id: 1,
-    children: [
-        {
-        name: "child one",
-        id: 11,
-        children: [
-            {
-            name: "grand child 1",
-            id: 111,
-            children: []},
-        {
-            name: "grand child 2",
-            id: 112,
-            children: []}
-        ]},
-    {
-        name: "child two",
-        id: 12,
-        children: []}
-    ]
-};
-function findObjectById(root, id) {
-    if (root.children) {
-        for (var k in root.children) {
-            if (root.children[k].id == id) {
-                return root.children[k];
-            }
-            else if (root.children.length) {
-                return findObjectById(root.children[k], id);
-            }
-        }
+    // create a new object and initialize
+    var newObj = {"name" : name};
+    if (element.has_children) {
+        newObj["children"] = [];
     }
-};
+    // put this object into its parent
+    if (element.parentName === "root") {
+        root[name] = newObj;
+    } else {
+        // XXX - if the parent isn't defined first this will fail
+        var parent = parentCache[element.parentName];
+        parent.children.push(newObj);
+    }
+    // store this object in case it is a parent
+    parentCache[name] = newObj;
+}
 
-var bla = findObjectById(ob, 111);
-
-//console.log(bla);
-bla.children.push({
-        name: "child x",
-        id: 1111,
-        children: []
-});
-//console.log(ob);
+//console.log(JSON.stringify(root));
 </script>
