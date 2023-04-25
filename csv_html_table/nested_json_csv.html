@@ -1,0 +1,60 @@
+<script>
+var ob = JSON.parse(httpGet("https://ag143.github.io/Json/flare.json"));
+var csvoutput="";
+csvoutput = csvoutput + "name,parentname,value,url\n";
+csvoutput = csvoutput + "flare,"+","+",";
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+function findObjectById(root, name,parentname) {
+	if('name' in root && root.name!= "flare"){
+	//console.log(root.name);
+	csvoutput= csvoutput+root.name+",";
+	}
+	if(root.name!= "flare")
+	{
+	csvoutput=csvoutput+parentname+",";
+	}
+	if('value' in root&& root.name!= "flare"){
+	//console.log(root.value);
+	csvoutput= csvoutput+root.value+",";
+	}
+	else if(root.name!= "flare")
+	{
+	csvoutput= csvoutput+",";
+	}
+	if('url' in root&& root.name!= "flare"){
+	//console.log(root.url);
+	csvoutput= csvoutput+root.url;
+	
+	}
+	else
+	{
+	csvoutput= csvoutput+"";
+	}
+	csvoutput= csvoutput+ "\n"
+	
+	
+    if (root.children) {
+		for (var k =0;k<root.children.length;k++) {
+			findObjectById(root.children[k], name,root.name);
+		}
+    }
+};
+
+findObjectById(ob, "TreeMapLayout","flare");
+console.log(csvoutput);
+
+//console.log(bla);
+/*bla.children.push({
+        name: "child x",
+        id: 1111,
+        children: []
+});*/
+//console.log(ob);
+</script>
