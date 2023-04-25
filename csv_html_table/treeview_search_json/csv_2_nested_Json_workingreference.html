@@ -1,0 +1,49 @@
+<body>
+check console
+</body>
+<script>// define data array
+var data = [
+    { title: "A", parent_id: "root",has_children: true},
+
+    { title: "A1", parent_id: "A",has_children: true},
+
+    { title: "A11", parent_id: "A1",has_children: false},
+    { title: "A12", parent_id: "A1",has_children: false},
+    { title: "A13", parent_id: "A1",has_children: false},
+
+    { title: "B", parent_id: "root",has_children: true},
+
+    { title: "B1", parent_id: "A",has_children: true},
+
+    { title: "B11", parent_id: "B1",has_children: false},
+    { title: "B12", parent_id: "B1",has_children: false},
+    { title: "B13", parent_id: "B1",has_children: false}
+];
+
+var root = {};
+var parentCache = {};
+// for each element definition in the data array
+for (var i = 0; i < data.length; i++) {
+    var element = data[i];
+    var title = element.title;
+    // XXX - check for duplicate title here.
+
+    // create a new object and initialize
+    var newObj = {"title" : title};
+    if (element.has_children) {
+        newObj["children"] = [];
+    }
+    // put this object into its parent
+    if (element.parent_id === "root") {
+        root[title] = newObj;
+    } else {
+        // XXX - if the parent isn't defined first this will fail
+        var parent = parentCache[element.parent_id];
+        parent.children.push(newObj);
+    }
+    // store this object in case it is a parent
+    parentCache[title] = newObj;
+}
+
+console.log(JSON.stringify(root));
+</script>

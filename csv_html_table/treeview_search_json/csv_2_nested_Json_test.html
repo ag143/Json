@@ -1,0 +1,103 @@
+
+<body>
+check the console
+</body>
+<script>
+ 
+var csvoutput= "";
+var lineoutput;
+var linesplit;
+var nestedJsonObject={}
+var flare = [];
+var tempName= "";
+var tempValue = "";
+var tempUrl= "";
+var jsonData = {
+"name":tempName,
+"value":tempValue,
+"url":tempUrl
+}
+nestedJsonObject.flare = flare;
+//console.log(nestedJsonObject);
+nestedJsonObject.flare.push(jsonData);
+//console.log(nestedJsonObject);
+csvoutput= httpGet("https://ag143.github.io/Json/flare.csv");
+lineoutput = csvoutput.split("\n");
+
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+for (var x = 2; x < lineoutput.length; x++) {
+//console.log(lineoutput[x]);
+
+linesplit = lineoutput[x].split(",");
+var requiredobject = findobject(flare,"cluster",linesplit[1],linesplit[2],linesplit[3],x);
+buildjsonobject(flare,linesplit[0],linesplit[1],linesplit[2],linesplit[3]);
+
+}
+function findobject(jsonObject1,name,parentName,value,url,iterator)
+{
+if(name == jsonObject1.name)
+console.log("matching")
+}
+//console.log(JSON.stringify(nestedJsonObject));
+function buildjsonobject(jsonObject1,name,parentName,value,url){
+jsonData = {
+"name":name,
+"value":value,
+"url":url
+};
+nestedJsonObject.flare.push(jsonData);
+}
+
+var ob = {
+    name: "root",
+    id: 1,
+    children: [
+        {
+        name: "child one",
+        id: 11,
+        children: [
+            {
+            name: "grand child 1",
+            id: 111,
+            children: []},
+        {
+            name: "grand child 2",
+            id: 112,
+            children: []}
+        ]},
+    {
+        name: "child two",
+        id: 12,
+        children: []}
+    ]
+};
+function findObjectById(root, id) {
+    if (root.children) {
+        for (var k in root.children) {
+            if (root.children[k].id == id) {
+                return root.children[k];
+            }
+            else if (root.children.length) {
+                return findObjectById(root.children[k], id);
+            }
+        }
+    }
+};
+
+var bla = findObjectById(ob, 111);
+
+//console.log(bla);
+bla.children.push({
+        name: "child x",
+        id: 1111,
+        children: []
+});
+//console.log(ob);
+</script>

@@ -1,0 +1,48 @@
+<script>
+var ob = {
+    name: "root",
+    id: 1,
+    children: [
+        {
+        name: "child one",
+        id: 11,
+        children: [
+            {
+            name: "grand child 1",
+            id: 111,
+            children: []},
+        {
+            name: "grand child 2",
+            id: 112,
+            children: []}
+        ]},
+    {
+        name: "child two",
+        id: 12,
+        children: []}
+    ]
+};
+
+function findObjectById(root, id) {
+    if (root.children) {
+        for (var k in root.children) {
+            if (root.children[k].id == id) {
+                return root.children[k];
+            }
+            else if (root.children.length) {
+                return findObjectById(root.children[k], id);
+            }
+        }
+    }
+};
+
+var bla = findObjectById(ob, 111);
+
+console.log(bla);
+bla.children.push({
+        name: "child x",
+        id: 1111,
+        children: []
+});
+console.log(ob);
+</script>
